@@ -49,6 +49,184 @@ body {
     margin: 0 auto;
 }
 
+
+.good-wrap {
+    position: relative;
+    display: block;
+    margin-bottom: 70px;
+}
+
+.good-link {
+    position: relative;
+    display: block;
+    width: 288px;
+    /* height: 370px; */
+    float: left;
+    margin-left: 16px;
+    background-color: #fff;
+}
+
+.good-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 288px;
+    overflow: hidden;
+}
+
+.good-img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.0);
+    width: 100%;
+    transition: transform 0.5s;
+}
+
+.good-img:hover img {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.good-info {
+    position: relative;
+    display: block;
+    margin-top: 14px;
+}
+
+.good-cate {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.good-cate-txt {
+    position: relative;
+    display: block;
+
+    float: left;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #888;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    padding: 0 7px;
+    margin-right: 5px;
+    margin-bottom: 13px;
+}
+
+/* dotdotdot.js 적용 검토 */
+.good-title {
+    position: relative;
+    display: block;
+
+    height: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+
+    font-size: 17px;
+    line-height: 22px;
+
+    /* margin-bottom: 13px; */
+}
+
+.good-price {
+    position: relative;
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0;
+
+}
+
+.good-price b {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.good-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    text-align: center;
+    line-height: 50px;
+    background-color: #76bd42;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.375px;
+}
+
+.good-cart {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    background: url('../images/btnCartList.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.good-cart:hover {
+    background-position: 0px -30px;
+}
+
+.section-title {
+    position: relative;
+    display: block;
+    padding-bottom: 24px;
+}
+.section-title::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color:#777;
+}
+.section-title h2 {
+    position: relative;
+    display: block;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.8px;
+}
+.section-title b {
+    position: relative;
+    display: block;
+    font-weight: 700;
+}
+
+.no-ml {
+    margin-left: 0px !important;
+}
+
+.no-mr {
+    margin-right: 0px !important;
+}
+
+.no-mb {
+    margin-bottom: 0;
+}
+
 .wrap {
     position: relative;
     display: block;
@@ -70,17 +248,19 @@ body {
 .header-top .container {
     height: 100%;
     padding-top: 23px;
-    padding-bottom:17px;
+    padding-bottom: 16px;
 }
+
 .logo {
     position: relative;
     display: block;
     width: 190px;
     height: 31px;
     float: left;
-    margin-top:6px;
+    margin-top: 6px;
     background: url('../images/logo.png')no-repeat;
 }
+
 .day {
     position: relative;
     float: left;
@@ -95,54 +275,65 @@ body {
     letter-spacing: -0.325px;
 
     padding-left: 21px;
-    background: url('../images/icoLocation.png') no-repeat;
+    background: url('../images/icolocation.png') no-repeat;
     background-position: left center;
 }
+
 .login {
     position: relative;
     display: block;
-    float:right;
+    float: right;
 }
+
 .login li {
     position: relative;
     display: block;
     float: left;
     margin: 0 10px
 }
+
 .login li a {
     font-size: 13px;
     line-height: 13px;
     color: #666;
     letter-spacing: -0.325px;
 }
-.login li i {
+
+#login-menu::after {
+    content: '';
     position: relative;
     display: inline-block;
-    top:1px;
     width: 10px;
-    height: 10px;
-    background: url('../images/icomymenu1.png') no-repeat;
+    height: 6px;
+    background: url('../images/down.png') no-repeat center;
+    margin-left: 5px;
+    vertical-align: 2px;
 }
-.login li:first-child{
+
+.login li:first-child {
     margin-left: 0;
 
 }
+
 .login li::after {
-    content:'';
+    content: '';
     position: absolute;
     right: -10px;
-    top:50%;
+    top: 50%;
     width: 1px;
     height: 8px;
     background-color: #bbb;
     transform: translateY(-50%);
 }
-.login li:last-child{
+
+.login li:last-child {
     margin-right: 0;
 }
+
 .login li:last-child::after {
     content: none;
 }
+
 .header-main {
     position: relative;
     display: block;
@@ -155,6 +346,182 @@ body {
     height: 53px;
 }
 
+.header-main-left {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    float: left;
+    padding-bottom: 15px;
+}
+
+#all {
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.header-main-left img {
+    position: relative;
+    margin-right: 15px;
+    vertical-align: -3px;
+}
+
+.nav {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.gnb {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.gnb li {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.gnb li:last-child a {
+    padding-right: 0;
+}
+
+.gnb li a {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #000;
+    line-height: 28px;
+}
+
+.gnb li:first-child a {
+    margin-left: 23px;
+}
+
+.ball {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 2px;
+    width: 5px;
+    height: 5px;
+    background: #f58320;
+    border-radius: 50%;
+}
+
+.gnbdown {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    background: url('../images/gnbdown.png') no-repeat;
+    vertical-align: 3px;
+    margin-left: 3px;
+}
+
+#more {
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #666;
+    padding-right: 15px;
+    background: url('../images/gnbdown.png') no-repeat;
+    background-position: right center;
+
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.header-main-right {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.search {
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 40px;
+    float: left;
+}
+
+#searchtext {
+    position: relative;
+    display: block;
+    float: left;
+    line-height: 40px;
+    width: 100%;
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    border-style: none;
+    background: #f7f7f7;
+    padding: 0 20px;
+    border-radius: 20px;
+    border: 1px solid #f7f7f7;
+    padding-right: 30px;
+}
+
+#searchtext::placeholder {
+    color: #bebebe;
+}
+
+#searchtext:focus {
+    border: 1px solid#76bd42;
+    background: #fff;
+    outline: 1px solid#76bd42;
+}
+
+.searchbtn {
+    position: absolute;
+    display: block;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+}
+
+.bucket {
+    position: relative;
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: url('../images/btnCart.png') no-repeat;
+    margin-left: 25px;
+    margin-top: 8px;
+
+}
+
+.bucket i {
+    position: absolute;
+    display: block;
+    right: -7px;
+    top: -1px;
+    width: 18px;
+    height: 18px;
+    background-color: #76bd42;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 11px;
+}
+
 /* 메인 */
 .contents {
     position: relative;
@@ -165,6 +532,8 @@ body {
 .visual {
     position: relative;
     display: block;
+    height: 410px;
+    background: url('../images/visual.jpeg') no-repeat center;
 }
 
 .visual .container {
@@ -181,17 +550,58 @@ body {
 .recommend .container {
     position: relative;
     display: block;
+    padding: 85px 0;
+}
+
+.recommend h2 {
+    position: relative;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 35px;
 }
 
 /* 알뜰물품 */
 .sale {
     position: relative;
     display: block;
+    background-color: #edf9f9;
 }
 
 .sale .container {
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.sale-left {
     position: relative;
     display: block;
+    float: left;
+}
+
+.sale-right {
+    position: relative;
+    display: block;
+    width: 896px;
+    height: 410px;
+
+    overflow: hidden;
+
+    float: right;
+}
+
+.sale-right .good-link {
+    padding-bottom: 45px;
+}
+
+.sale-right .good-link .good-info {
+    padding: 0 13px;
+}
+
+.sale-right .good-cart {
+    right: 19px;
+    bottom: 45px;
 }
 
 /* 새상품 */
@@ -288,21 +698,25 @@ body {
     display: block;
     height: 239px;
 }
+
 .footer-top {
     position: relative;
     display: block;
     height: 56px;
 }
-.footer-top .container{
+
+.footer-top .container {
     position: relative;
     display: block;
 }
+
 .footer-bottom {
     position: relative;
     display: block;
     height: calc(239px - 56px);
 }
-.footer-bottom .container{
+
+.footer-bottom .container {
     position: relative;
     display: block;
 }

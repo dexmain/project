@@ -1111,8 +1111,32 @@ body {
 .banner .container {
     position: relative;
     display: block;
+    padding-top: 80px;
+    overflow: hidden;
 }
-
+.banner-img{
+    position: relative;
+    display: block;
+    float: left;
+    width: 50%;
+}
+.banner-prev,
+.banner-next {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 19px;
+    height: 34px;
+    background: url('../images/bannerarr1.png')no-repeat center bottom;
+}
+.banner-prev {
+    left:0;
+}
+.banner-next {
+    right:0;
+    transform: rotate(180deg);
+}
 /* 제철요리 */
 .cook {
     position: relative;

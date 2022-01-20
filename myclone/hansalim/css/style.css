@@ -161,11 +161,18 @@ body {
 
     text-align: center;
     line-height: 50px;
-    background-color: #76bd42;
     color: #fff;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: -0.375px;
+}
+
+.poptag {
+    background-color: #76bd42;
+}
+
+.saletag {
+    background-color: #e14949;
 }
 
 .good-cart {
@@ -189,18 +196,22 @@ body {
 .section-title {
     position: relative;
     display: block;
-    padding-bottom: 24px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 19px;
 }
+
 .section-title::after {
-    content:'';
+    content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     display: block;
     width: 20px;
     height: 2px;
-    background-color:#777;
+    background-color: #777;
 }
+
 .section-title h2 {
     position: relative;
     display: block;
@@ -209,12 +220,40 @@ body {
     line-height: 40px;
     letter-spacing: 0.8px;
 }
+
 .section-title b {
     position: relative;
     display: block;
     font-weight: 700;
 }
 
+.section-desc {
+    position: relative;
+    display: block;
+    margin-top: 24px;
+}
+
+.section-bt {
+    position: relative;
+    display: block;
+    width: 114px;
+    margin: 25px 0 108px 0;
+    color: #000;
+    border: 1px solid #bbb;
+    background: #fff;
+    transition:background-color 0.5s;
+}
+.section-bt:hover {
+    background-color: #f8f8f8;
+}
+
+.section-bt-txt {
+    position: relative;
+    display: block;
+    font-size: 13px;
+    line-height: 32px;
+    text-align: center;
+}
 .no-ml {
     margin-left: 0px !important;
 }
@@ -574,7 +613,7 @@ body {
     overflow: hidden;
 }
 
-.sale-left {
+.section-left {
     position: relative;
     display: block;
     float: left;
@@ -585,9 +624,7 @@ body {
     display: block;
     width: 896px;
     height: 410px;
-
     overflow: hidden;
-
     float: right;
 }
 
@@ -604,26 +641,164 @@ body {
     bottom: 45px;
 }
 
-/* 새상품 */
+/* 새물품 */
 .new {
     position: relative;
     display: block;
 }
 
 .new .container {
+    padding: 85px 0 80px 0;
+}
+
+/* 새물품 타이틀 */
+.new-top {
     position: relative;
     display: block;
+    overflow: hidden;
+}
+
+.new-top h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+    float: left;
+}
+
+.new-top h2 b {
+    font-weight: 700;
+}
+
+.new-top .section-bt {
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+    margin: 0;
+
+    width: 100px;
+}
+
+/* 새물품  */
+.new-main {
+    position: relative;
+    display: block;
+    height: 524px;
+    padding: 5px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 새물품 내용 왼쪽 */
+.new-main-left {
+    position: relative;
+    display: block;
+    float: left;
+    margin-top: 22px;
+}
+
+.new-main-left img {
+    position: relative;
+    display: block;
+}
+
+.new-main-left b {
+    position: relative;
+    display: block;
+    margin-top: 16px;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 37px;
+    letter-spacing: -0.625px;
+}
+
+.new-main-left span {
+    position: relative;
+    margin-top: 4px;
+    display: block;
+}
+
+
+/* 새물품 내용 오른쪽 */
+.new-main-right {
+    position: relative;
+    display: block;
+    float: right;
+    width: 608px;
+}
+
+.new-main-right li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 288px;
+    margin-left: 16px;
+    margin-top: 22px;
+}
+
+.new-main-right-list {
+    position: relative;
+    display: block;
+}
+
+.new-good-sm-img {
+    width: 100%;
+    height: 182px;
+    position: relative;
+    display: block;
+}
+
+.new-good-sm-title {
+    position: relative;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 25px;
+    margin-top: 10px;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* 조합원추천물품 */
 .copartner {
     position: relative;
     display: block;
+    background: #fff8fa;
+
 }
 
 .copartner .container {
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.copartner .section-title span {
+    color: #76bd42 !important;
+    font-weight: 700;
+}
+
+.copartner .section-desc {
+    font-size: 17px;
+    line-height: 29px;
+}
+
+.copartner .section-desc:after {
+    content: '';
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #76bd42;
+}
+
+.copartner-right {
     position: relative;
     display: block;
+    width: 896px;
+    height: 410px;
+    overflow: hidden;
+    float: right;
 }
 
 /* 인기물품 */
@@ -633,6 +808,37 @@ body {
 }
 
 .popular .container {
+    padding: 80px 0;
+}
+
+.popular-top {
+    position: relative;
+    display: block;
+}
+.popular-top .section-title{
+    padding-bottom: 0;
+}
+.popular-top .section-title:after {
+    content:none;
+}
+.popular-top .section-title b {
+    display: inline-block;
+}
+.popular-top .section-bt{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    display: inline-block;
+    margin:0;
+    padding: 0 8px;
+}
+.popular-middle {
+    position: relative;
+    display: block;
+}
+
+.popular-bottom {
     position: relative;
     display: block;
 }

@@ -1,33 +1,141 @@
 @charset 'utf-8';
 
 * {
-    padding:0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
     /* outline-style: none; */
 }
+
 a {
     color: #333;
     text-decoration: none;
 }
+
 li {
     list-style: none;
 }
+
 img {
     border: 0;
     vertical-align: middle;
 }
+
 html {
     font-size: 10px;
 }
+
 body {
     font-size: 1.2rem;
 }
 
+/* 공통영역 */
+.container {
+    position: relative;
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+}
 
-
-
+/* 전체 */
 .wrap {
     position: relative;
     display: block;
 }
+
+/* 상단 */
+.header {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    z-index: 999;
+    border-bottom: 1px solid #bbb;
+}
+
+.header .container {
+    height: 100%;
+}
+
+.logo {
+    position: relative;
+    display: block;
+    top:0;
+    left: 0;
+    float: left;
+    width: 100px;
+    background: url('../images/logo.png')no-repeat;
+    height: 100%;
+}
+.nav {
+    position: relative;
+    display: block;
+}
+.gnb {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+.gnb >li{
+    position: relative;
+    display: block;
+    float: left;
+    line-height: 80px;
+}
+.gnb >li >a{}
+/* 메인 */
+.visual {
+    position: relative;
+    display: block;
+}
+
+.visual .container {}
+
+.business {
+    position: relative;
+    display: block;
+}
+
+.business .container {}
+
+.product {
+    position: relative;
+    display: block;
+}
+
+.product .container {}
+
+.esg {
+    position: relative;
+    display: block;
+}
+
+.esg .container {}
+
+.news {
+    position: relative;
+    display: block;
+}
+
+.news .container {}
+
+/* 하단 */
+.footer {
+    position: relative;
+    display: block;
+}
+
+.footer-top {
+    position: relative;
+    display: block;
+}
+
+.footer-top .container {}
+
+.footer-bottom {
+    position: relative;
+    display: block;
+}
+
+.footer-bottom .container {}

@@ -1,212 +1,122 @@
 
-/* 제철요리 */
-.cook {
+/* 커뮤니티 */
+.comm {
     position: relative;
     display: block;
 }
-
-.cook .container {
+.comm .container {
     padding-top: 85px;
-    padding-bottom: 80px;
+    padding-bottom: 124px;
 }
-
-.cook .section-title b {
-    display: inline-block;
-}
-
-.cook .section-title::after {
-    content: none;
-}
-
-.cook-main {
+.comm-box {
     position: relative;
     display: block;
+    width: 360px;
+    float: left;    
 }
 
-/* js 로 배경을 인라인 방식으로 변경 해보자. */
-.cook-left {
+.notice-menu {
     position: relative;
     display: block;
-    width: 787px;
-    height: 420px;
-    float: left;
-}
-
-.cook-left a {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.cook-box {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    display: block;
-    width: 640px;
-    height: 155px;
-
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-.cook-title {
-    position: relative;
-    display: block;
-    width: 155px;
-    height: 100%;
-
-    background-color: #76bd42;
-    float: left;
-
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 30px;
-    color: #fff;
-    letter-spacing: -0.625px;
-
-    padding-left: 16px;
-    padding-top: 95px;
-}
-
-.cook-desc {
-    position: relative;
-    display: block;
-    width: calc(100% - 155px);
-    height: 100%;
-    float: left;
-
-    font-size: 25px;
-    line-height: 37px;
-    color: #333;
-    letter-spacing: -0.375px;
-
-    padding-left: 30px;
-    padding-top: 40px;
-}
-
-.cook-desc b {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 45px;
-    color: #000;
-}
-
-.cook-right {
-    position: relative;
-    display: block;
-    width: 343px;
-    height: 420px;
-    float: right;
-
-}
-
-.cook-wrap {
-    position: relative;
-    
-    display: block;
-    width: 100%;
-    height: 270px;
-
     overflow: hidden;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 30px;
+
+    margin-bottom: 30px;
 }
 
-.cook-bt {
-    position: absolute;
-    left: 0;
-    top:50%;
-    transform: translateY(-50%);
-    display: block;
-    width: 18px;
-    height: 18px;
-    background: url('../images/inpCheck.png') no-repeat;
-    background-position: 0px -36px;
-    border: 0;
-    cursor: pointer;
-}
-.cook-total {
+.notice-menu button {
     position: relative;
     display: block;
+
+    float: left;
+    border: 0;
+    background-color: #fff;
+
+    font-weight: 700;
+    color: #000;
     font-size: 20px;
     line-height: 29px;
-    letter-spacing: -0.375px;
-    padding: 35px 0;
-}
-.cook-list {
-    position: relative;
-    display: block;
-}
-.cook-list li{
-    position: relative;
-    display: block;
-    margin-bottom: 13px;
-}
-.cook-good {
-    position: relative;
-    display: block;
-    margin-left:48px
-}
-.cook-good > img{
-    position: relative;
-    display: block;
-    width: 70px;
-    height: 70px;
-    float: left;
-}
-.cook-good-info{
-    position: relative;
-    display: block;
-    margin-left: 20px;
-    float: left;
-}
-.cook-good-title{
-    position: relative;
-    display: block;
-    font-size: 15px;
-    line-height: 22px;
-    letter-spacing: -0.375px;
+    letter-spacing: -0.5px;
 
-    padding-top: 12px;
-    padding-bottom: 10px;
+    margin: 0 10px;
+    color: #999;
 }
-.cook-good-price{
+
+.notice-menu button:first-child::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 1px;
+    height: 18px;
+    background-color: #e5e5e5;
+}
+
+.notice-menu-focus {
+    color: #000 !important;
+}
+
+.notice-wrap {
     position: relative;
     display: block;
+
+    padding-right: 25px;
+}
+
+.notice-list,
+.news-list {    
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: none;
+}
+
+.notice-list-focus {
+    display: block !important;
+}
+
+.notice-list li, 
+.news-list li {   
+    position: relative;
+    display: block; 
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+
+.notice-list a, 
+.news-list a {
+    position: relative;
+    display: block;
+    width: 260px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
     font-size: 13px;
-    line-height: 24px;
-    letter-spacing: -0.5px;
-}
-.cook-good-price b{
-    position: relative;
-    display: block;
-    font-size: 20px;
-    font-weight: 500;
-}
-.cook-bt-all {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    padding-left: 40px;
-}
-.cook-link {
-    position: relative;
-    display: block;
+    line-height: 19px;
+    letter-spacing: -0.325px;
 
-    font-size: 20px;
-    letter-spacing: -0.5px;
-    line-height: 20px;
-    text-align: center;
-    border: 1px solid #bbb;
-    background-color: #fff;
-    transition: background-color 0.5s;
-    padding: 20px 0;
-    cursor: pointer;
+    float: left;
 }
-.cook-link:hover {
-    background-color: #f8f8f8;
+
+
+.notice-date {   
+    position: relative;
+    display: block; 
+
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.325px;
+    color: #999;
+
+    float:right;
 }
-#cook-price-total {
-    font-weight: 700;
-}
+
+/* 하단 */

@@ -694,7 +694,7 @@
                                     </li>
                                 </ul>
                             </a>
-                        <!-- </div>
+                            <!-- </div>
                         <div class="brand-nature">
                             <a href="#">
                                 <p class="brand-nature-title">
@@ -749,24 +749,28 @@
                                 </ul>
                             </a>
                         </div> -->
+                        </div>
                     </div>
-                </div>
             </section>
             <!-- 배너 -->
             <section class="banner">
                 <div class="container">
-                    <a href="#" class ="banner-img">
-                        <img src="images/banner1.jpeg" alt="">
-                    </a>
-                    <a href="#" class ="banner-img">
-                        <img src="images/banner2.jpeg" alt="">
-                    </a>
-                    <!-- <a href="#">
-                        <img src="images/banner3.jpeg" alt="">
-                    </a>
-                    <a href="#">
-                        <img src="images/banner4.jpeg" alt="">
-                    </a> -->
+                    <div class="banner-slide clearfix">
+                        <a href="#" class="banner-img">
+                            <img src="images/banner1.jpeg" alt="">
+                        </a>
+                        <a href="#" class="banner-img">
+                            <img src="images/banner2.jpeg" alt="">
+                        </a>
+                        <!-- <a href="#">
+                            <img src="images/banner3.jpeg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="images/banner4.jpeg" alt="">
+                        </a> -->
+                    </div>
+
+
                     <a href="#" class="banner-prev">
                     </a>
                     <a href="#" class="banner-next">
@@ -775,9 +779,304 @@
             </section>
             <!-- 제철요리 -->
             <section class="cook">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>
+                            제철제맛 가득한
+                            <b>요리</b>
+                        </h2>
+                    </div>
+                    <div class="cook-main clearfix">
+                        <div class="cook-left">
+                            <!-- js 로 배경을 인라인 방식으로 변경 해보자. -->
+                            <a href="#" style="background:url('/images/cook1.jpeg') no-repeat center"></a>
+                            <div class="cook-box">
+                                <span class="cook-title">
+                                    요리방법
+                                </span>
+                                <span class="cook-desc">
+                                    제철요리 <br>
+                                    <b>생굴배무침</b>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="cook-right">
+                            <div class="cook-wrap">
+                                <ul class="cook-list">
+                                    <li>
+                                        <button class="cook-bt"></button>
+                                        <a href="#" class="cook-good">
+                                            <img src="images/cook2.jpeg" alt="제품">
+                                            <p class="cook-good-info">
+                                                <span class="cook-good-title">월앙매실(선물용/1L)</span>
+                                                <span class="cook-good-price">
+                                                    <b>29,000</b>원
+                                                </span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button class="cook-bt"></button>
+                                        <a href="#" class="cook-good">
+                                            <img src="images/cook3.jpeg" alt="제품">
+                                            <p class="cook-good-info">
+                                                <span class="cook-good-title">월앙매실(선물용/1L)</span>
+                                                <span class="cook-good-price">
+                                                    <b>29,000</b>원
+                                                </span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button class="cook-bt"></button>
+                                        <a href="#" class="cook-good">
+                                            <img src="images/cook4.jpeg" alt="제품">
+                                            <p class="cook-good-info">
+                                                <span class="cook-good-title">월앙매실(선물용/1L)</span>
+                                                <span class="cook-good-price">
+                                                    <b>29,000</b>원
+                                                </span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button class="cook-bt"></button>
+                                        <a href="#" class="cook-good">
+                                            <img src="images/cook2.jpeg" alt="제품">
+                                            <p class="cook-good-info">
+                                                <span class="cook-good-title">월앙매실(선물용/1L)</span>
+                                                <span class="cook-good-price">
+                                                    <b>29,000</b>원
+                                                </span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="cook-total">
+                                <button class="cook-bt"></button>
+                                <span class="cook-bt-all">
+                                    전체선택<em id="cook-count">5</em>개
+                                </span>
+                            </div>
+
+                            <a href="#" class="cook-link">
+                                총
+                                <em id="cook-price-total">65,650</em>
+                                원 장바구니 담기
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- 이용후기  -->
             <section class="review">
+                <div class="container clearfix">
+                    <div class="review-left">
+                        <div class="section-title">
+                            <h2>
+                                조합원의 생생한
+                                <b>이용후기</b>
+                            </h2>
+                        </div>
+                        <p class="section-desc">
+                            이웃 조합원은 <br>
+                            어떤 물품을 구매했을까요?
+                        </p>
+                    </div>
+                    <div class="review-right clearfix">
+                        <div class="review-box no-ml">
+                            <div class="review-box-title">
+                                <div class="review-box-left">
+                                    <a href="#" class="review-box-link">한우사골농축액140g(14g×10)</a>
+
+                                    <span class="review-box-star">
+                                        4.0
+                                    </span>
+                                </div>
+                                <div class="review-box-right">
+                                    <a href="#"><img src="images/review1.jpeg" alt="제품" class="review-box-img"></a>
+                                </div>
+                            </div>
+                            <p class="review-box-desc">
+                                <a href="#">
+                                    시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
+                                    작은 문어지만 저렴하게 먹을 수 있어 좋네요.
+                                    숙회로. 문어라면으로.
+                                    튀김으로 먹었네요~
+                                    다만 너무 작은것 3마리로 와서 아쉬웠어요
+                                    2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                </a>
+                            </p>
+                            <span class="review-box-id">
+                                김*영 (한살림청주)
+                            </span>
+                        </div>
+                        <div class="review-box">
+                            <div class="review-box-title">
+                                <div class="review-box-left">
+                                    <a href="#" class="review-box-link">한우사골농축액140g(14g×10)</a>
+
+                                    <span class="review-box-star">
+                                        4.0
+                                    </span>
+                                </div>
+                                <div class="review-box-right">
+                                    <a href="#"><img src="images/review1.jpeg" alt="제품" class="review-box-img"></a>
+                                </div>
+                            </div>
+                            <p class="review-box-desc">
+                                <a href="#">
+                                    시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
+                                    작은 문어지만 저렴하게 먹을 수 있어 좋네요.
+                                    숙회로. 문어라면으로.
+                                    튀김으로 먹었네요~
+                                    다만 너무 작은것 3마리로 와서 아쉬웠어요
+                                    2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                </a>
+                            </p>
+                            <span class="review-box-id">
+                                김*영 (한살림청주)
+                            </span>
+                        </div>
+                        <div class="review-box">
+                            <div class="review-box-title">
+                                <div class="review-box-left">
+                                    <a href="#" class="review-box-link">한우사골농축액140g(14g×10)</a>
+
+                                    <span class="review-box-star">
+                                        4.0
+                                    </span>
+                                </div>
+                                <div class="review-box-right">
+                                    <a href="#"><img src="images/review1.jpeg" alt="제품" class="review-box-img"></a>
+                                </div>
+                            </div>
+                            <p class="review-box-desc">
+                                <a href="#">
+                                    시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
+                                    작은 문어지만 저렴하게 먹을 수 있어 좋네요.
+                                    숙회로. 문어라면으로.
+                                    튀김으로 먹었네요~
+                                    다만 너무 작은것 3마리로 와서 아쉬웠어요
+                                    2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                </a>
+                            </p>
+                            <span class="review-box-id">
+                                김*영 (한살림청주)
+                            </span>
+                        </div>
+                        <!-- <div class="review-box">
+                            <div class="review-box-title">
+                                <div class="review-box-left">
+                                    <a href="#" class="review-box-link">한우사골농축액140g(14g×10)</a>
+
+                                    <span class="review-box-star">
+                                        4.0
+                                    </span>
+                                </div>
+                                <div class="review-box-right">
+                                    <a href="#"><img src="images/review1.jpeg" alt="제품" class="review-box-img"></a>
+                                </div>
+                            </div>
+                            <p class="review-box-desc">
+                                <a href="#">
+                                    시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
+                                    작은 문어지만 저렴하게 먹을 수 있어 좋네요.
+                                    숙회로. 문어라면으로.
+                                    튀김으로 먹었네요~
+                                    다만 너무 작은것 3마리로 와서 아쉬웠어요
+                                    2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                </a>
+                            </p>
+                            <span class="review-box-id">
+                                김*영 (한살림청주)
+                            </span>
+                        </div>
+                        <div class="review-box">
+                            <div class="review-box-title">
+                                <div class="review-box-left">
+                                    <a href="#" class="review-box-link">한우사골농축액140g(14g×10)</a>
+
+                                    <span class="review-box-star">
+                                        4.0
+                                    </span>
+                                </div>
+                                <div class="review-box-right">
+                                    <a href="#"><img src="images/review1.jpeg" alt="제품" class="review-box-img"></a>
+                                </div>
+                            </div>
+                            <p class="review-box-desc">
+                                <a href="#">
+                                    시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
+                                    작은 문어지만 저렴하게 먹을 수 있어 좋네요.
+                                    숙회로. 문어라면으로.
+                                    튀김으로 먹었네요~
+                                    다만 너무 작은것 3마리로 와서 아쉬웠어요
+                                    2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                </a>
+                            </p>
+                            <span class="review-box-id">
+                                김*영 (한살림청주)
+                            </span>
+                        </div>
+                        <div class="review-box">
+                            <div class="review-box-title">
+                                <div class="review-box-left">
+                                    <a href="#" class="review-box-link">한우사골농축액140g(14g×10)</a>
+
+                                    <span class="review-box-star">
+                                        4.0
+                                    </span>
+                                </div>
+                                <div class="review-box-right">
+                                    <a href="#"><img src="images/review1.jpeg" alt="제품" class="review-box-img"></a>
+                                </div>
+                            </div>
+                            <p class="review-box-desc">
+                                <a href="#">
+                                    시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
+                                    작은 문어지만 저렴하게 먹을 수 있어 좋네요.
+                                    숙회로. 문어라면으로.
+                                    튀김으로 먹었네요~
+                                    다만 너무 작은것 3마리로 와서 아쉬웠어요
+                                    2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                </a>
+                            </p>
+                            <span class="review-box-id">
+                                김*영 (한살림청주)
+                            </span>
+                        </div>
+                        <div class="review-box">
+                            <div class="review-box-title">
+                                <div class="review-box-left">
+                                    <a href="#" class="review-box-link">한우사골농축액140g(14g×10)</a>
+
+                                    <span class="review-box-star">
+                                        4.0
+                                    </span>
+                                </div>
+                                <div class="review-box-right">
+                                    <a href="#"><img src="images/review1.jpeg" alt="제품" class="review-box-img"></a>
+                                </div>
+                            </div>
+                            <p class="review-box-desc">
+                                <a href="#">
+                                    시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
+                                    작은 문어지만 저렴하게 먹을 수 있어 좋네요.
+                                    숙회로. 문어라면으로.
+                                    튀김으로 먹었네요~
+                                    다만 너무 작은것 3마리로 와서 아쉬웠어요
+                                    2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                </a>
+                            </p>
+                            <span class="review-box-id">
+                                김*영 (한살림청주)
+                            </span>
+                        </div> -->
+                    </div>
+                </div>
             </section>
             <!-- 커뮤니티 -->
             <section class="comm">

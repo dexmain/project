@@ -863,10 +863,11 @@ body {
     height: 140px;
     background-color: #f9f9f9;
     padding-top: 20px;
-    border:1px solid #f9f9f9;
+    border: 1px solid #f9f9f9;
     float: left;
-    margin-left:10px;
+    margin-left: 10px;
 }
+
 .popular-bt:hover .popular-bt-img {
     background-position: 0px -64px;
 }
@@ -875,13 +876,16 @@ body {
     background-color: #fff;
     border: 1px solid #76bd42;
 }
+
 .popular-bt-focus {
     background: #fff !important;
     border: 1px solid #76bd42 !important;
 }
+
 .popular-bt-focus .popular-bt-img {
     background-position: 0px -64px;
 }
+
 .popular-bt-img {
     position: relative;
     display: block;
@@ -1007,51 +1011,58 @@ body {
     position: relative;
     display: block;
     background-color: #f3f9f0;
-    padding:80px 0;
+    padding: 80px 0;
 }
 
-.brand .container {
-}
+.brand .container {}
+
 .brand-left {
     position: relative;
     display: block;
     float: left;
 }
-.brand-left .section-bt{
-    color:#000;
+
+.brand-left .section-bt {
+    color: #000;
 }
+
 .brand-right {
     position: relative;
     display: block;
     float: right;
     width: 895px;
 }
+
 .brand-nature {
     position: relative;
     display: block;
     width: 285px;
     height: 285px;
     background-color: #fff;
-    padding:35px 0;
+    padding: 35px 0;
     float: left;
     margin-left: 20px;
-    
+
 }
-.brand-nature a{
+
+.brand-nature a {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
 }
-.brand-nature-title{
+
+.brand-nature-title {
     position: relative;
     display: block;
 }
+
 .brand-nature-title img {
     position: relative;
     display: block;
     margin: 0 auto;
 }
+
 .brand-nature-title span {
     position: relative;
     display: block;
@@ -1059,18 +1070,20 @@ body {
     font-size: 18px;
     font-weight: 500;
     text-align: center;
-    margin-top:15px;
+    margin-top: 15px;
     line-height: 27px;
     letter-spacing: -0.45px;
 }
-.brand-nature-detail{
+
+.brand-nature-detail {
     position: relative;
     display: block;
     overflow: hidden;
     margin-top: 34px;
     padding-top: 6px;
 }
-.brand-nature-detail:after{
+
+.brand-nature-detail:after {
     content: '';
     position: absolute;
     left: 50%;
@@ -1079,6 +1092,7 @@ body {
     height: 62px;
     background: #e3e3e3;
 }
+
 .brand-nature-detail li {
     position: relative;
     display: block;
@@ -1087,7 +1101,7 @@ body {
     width: 50%;
 }
 
-.brand-nature-cate{
+.brand-nature-cate {
     position: relative;
     display: block;
     font-size: 16px;
@@ -1095,13 +1109,15 @@ body {
     color: #666;
     letter-spacing: -0.4px;
 }
-.brand-nature-desc{
+
+.brand-nature-desc {
     margin-top: 5px;
     font-size: 18px;
     font-weight: 500;
     line-height: 27px;
     letter-spacing: -0.45px;
 }
+
 /* 배너 */
 .banner {
     position: relative;
@@ -1111,32 +1127,49 @@ body {
 .banner .container {
     position: relative;
     display: block;
-    padding-top: 80px;
-    overflow: hidden;
+    margin-top: 80px;
+    height: 220px;
 }
-.banner-img{
+
+.banner-slide {
+    position: relative;
+    display: block;
+}
+
+.banner-img {
     position: relative;
     display: block;
     float: left;
     width: 50%;
 }
+
 .banner-prev,
 .banner-next {
     position: absolute;
-    top:50%;
-    transform: translateY(-50%);
+    top: 50%;
     display: block;
     width: 19px;
     height: 34px;
-    background: url('../images/bannerarr1.png')no-repeat center bottom;
+    background: url('../images/bannerarr1.png')no-repeat;
+    background-position: 0px -34px;
 }
+
 .banner-prev {
-    left:0;
+    transform: translateY(-50%);
+    left: 20px;
 }
+
 .banner-next {
-    right:0;
-    transform: rotate(180deg);
+    right: 20px;
+    transform: translateY(-50%) scale(-1);
+
 }
+
+.banner-prev:hover,
+.banner-next:hover {
+    background-position: 0px 0px;
+}
+
 /* 제철요리 */
 .cook {
     position: relative;
@@ -1144,19 +1177,345 @@ body {
 }
 
 .cook .container {
+    padding-top: 85px;
+    padding-bottom: 80px;
+}
+
+.cook .section-title b {
+    display: inline-block;
+}
+
+.cook .section-title::after {
+    content: none;
+}
+
+.cook-main {
     position: relative;
     display: block;
 }
+
+/* js 로 배경을 인라인 방식으로 변경 해보자. */
+.cook-left {
+    position: relative;
+    display: block;
+    width: 787px;
+    height: 420px;
+    float: left;
+}
+
+.cook-left a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.cook-box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 640px;
+    height: 155px;
+
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cook-title {
+    position: relative;
+    display: block;
+    width: 155px;
+    height: 100%;
+
+    background-color: #76bd42;
+    float: left;
+
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #fff;
+    letter-spacing: -0.625px;
+
+    padding-left: 16px;
+    padding-top: 95px;
+}
+
+.cook-desc {
+    position: relative;
+    display: block;
+    width: calc(100% - 155px);
+    height: 100%;
+    float: left;
+
+    font-size: 25px;
+    line-height: 37px;
+    color: #333;
+    letter-spacing: -0.375px;
+
+    padding-left: 30px;
+    padding-top: 40px;
+}
+
+.cook-desc b {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 45px;
+    color: #000;
+}
+
+.cook-right {
+    position: relative;
+    display: block;
+    width: 343px;
+    height: 420px;
+    float: right;
+
+}
+
+.cook-wrap {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    height: 270px;
+
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+
+}
+
+.cook-bt {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url('../images/inpCheck.png') no-repeat;
+    background-position: 0px -36px;
+    border: 0;
+    cursor: pointer;
+}
+
+.cook-list {
+    position: relative;
+    display: block;
+}
+
+.cook-list li {
+    position: relative;
+    display: block;
+    margin-bottom: 13px;
+}
+
+.cook-good {
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
+
+    overflow: hidden;
+}
+
+.cook-good>img {
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 70px;
+
+    float: left;
+}
+
+.cook-good-info {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 20px;
+}
+
+.cook-good-title {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.375px;
+
+    padding-top: 12px;
+    padding-bottom: 10px;
+}
+
+.cook-good-price {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+}
+
+.cook-good-price b {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.cook-total {
+    position: relative;
+    display: block;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.375px;
+    padding: 35px 0;
+}
+
+.cook-bt-all {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 40px;
+}
+
+.cook-link {
+    position: relative;
+    display: block;
+
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 20px;
+    text-align: center;
+
+    border: 1px solid #bbb;
+    background-color: #fff;
+    transition: background-color 0.5s;
+    padding: 20px 0;
+}
+
+.cook-link:hover {
+    background-color: #f8f8f8;
+}
+
+#cook-price-total {
+    font-weight: 700;
+}
+
 
 /* 이용후기 */
 .review {
     position: relative;
     display: block;
+    background-color: #fcf6f2;
 }
 
 .review .container {
+    padding: 80px 0;
+}
+
+.review-left {
     position: relative;
     display: block;
+    float: left;
+}
+
+.review-right {
+    position: relative;
+    display: block;
+    float: right;
+    width: 896px;
+    overflow: hidden;
+}
+
+.review-box {
+    position: relative;
+    display: block;
+    width: 288px;
+    height: 234px;
+    background-color: #fff;
+    padding: 30px 20px;
+    float: left;
+    margin-left: 16px;
+}
+
+.review-box-title {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.review-box-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.review-box-link {
+    position: relative;
+    display: block;
+    width: 165px;
+    font-size: 17px;
+    font-weight: 700px;
+    letter-spacing: -0.425px;
+    line-height: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.review-box-star {
+    position: relative;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.425px;
+    padding-left: 24px;
+    background: url('../images/icoRating.png') no-repeat left center;
+    margin-top: 5px;
+}
+
+.review-box-right {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.review-box-img {
+    width: 66px;
+    height: 66px;
+}
+
+.review-box-desc {
+    position: relative;
+    display: block;
+}
+
+.review-box-desc a {
+    position: relative;
+    height: 60px;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.325px;
+
+    /* 3줄 줄임 dotdotdot.js 고려 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top: 20px;
+}
+
+.review-box-id {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.325px;
+    margin-top: 20px;
 }
 
 /* 커뮤니티 */

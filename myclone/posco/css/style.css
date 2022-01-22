@@ -1,6 +1,7 @@
 @charset 'utf-8';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('../css/Apple_SD_Neo/');
+
 * {
     padding: 0;
     margin: 0;
@@ -28,7 +29,7 @@ html {
 
 body {
     font-size: 1.2rem;
-    font-family: 'Noto Sans KR','Apple SD Gothic Neo','malgun gothic','맑은 고딕','돋움','dotum';
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'malgun gothic', '맑은 고딕', '돋움', 'dotum';
 }
 
 /* 공통영역 */
@@ -37,6 +38,15 @@ body {
     display: block;
     width: 1200px;
     margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+
 }
 
 /* 전체 */
@@ -51,9 +61,8 @@ body {
     display: block;
     width: 100%;
     height: 80px;
-    background-color: #fff;
     z-index: 999;
-    border-bottom: 1px solid #bbb;
+    opacity: 1;
 }
 
 .header .container {
@@ -63,70 +72,179 @@ body {
 .logo {
     position: relative;
     display: block;
-    top:0;
+    top: 0;
     left: 0;
     float: left;
     width: 110px;
     background: url('../images/logo.png')no-repeat;
     height: 100%;
 }
+
 .nav {
     position: relative;
     display: block;
+    float: left;
+    height: 100%;
 }
+
 .gnb {
     position: relative;
     display: block;
     height: 100%;
 }
-.gnb >li{
+
+.gnb>li {
     position: relative;
     display: block;
     float: left;
-    line-height: 80px;
-}
-.gnb >li >a{
     padding: 0 13px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.gnb-link{
+    position: relative;
     display: block;
-    line-height: 80px;
+    float: right;
+    margin: 8px 0 0 8px;
+    width: 11px;
+    height: 11px;
+    background:url('../images/ico_newwin.png')no-repeat;
+}
+
+.gnb>li>a {
+    display: block;
     color: #222;
     font-size: 16px;
     float: left;
-    top: 0;
 }
+
 .header-right {
     position: relative;
     display: block;
     height: 100%;
+    float: right;
 }
+
 .user-area {
     position: relative;
     display: block;
+    height: 100%;
+    float: left;
 }
-.user-area div{
+
+.user-area div {
     position: relative;
     display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+    padding: 0 14px;
+}
+
+.modechange {}
+
+.languagechange {}
+
+.languagechange::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    background: url('../images/langArr.png')no-repeat;
+    width: 8px;
+    height: 6px;
+}
+
+.header-login {
+
+}
+.header-search{
+}
+.header-search-btn {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/headerSpt.png');
+    background-position: -20px 0;
+}
+.header-menu {
+
+}
+.header-menu-btn{
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/headerSpt.png');
+    background-position: 0 0;
+}
+.withlogo {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 116px;
+    height: 23px;
     float: right;
-}
-.modechange {
-    position: relative;
-    display: block;
-    width: 44px;
-    height: 18px;
-    background: url('../images/night.png') no-repeat;
-}
-.languagechange {
-    position: relative;
-    display: block;
+    margin-left: 12px;
+    background:url('../images/withlogo.png')no-repeat ;
 }
 /* 메인 */
 .visual {
     position: relative;
     display: block;
+    width:100%;
+    height: 732px;
 }
-
-.visual .container {}
-
+.visual-bg {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('../images/main_visual3.jpeg')no-repeat center;
+    background-size: cover;
+}
+.visual .container {
+    padding-top: 180px;
+    height: 100%;
+}
+.visual-txt p{
+    color: #222;
+    text-align: left;
+    line-height: 30px;
+    padding-top: 30px;
+    font-size: 18px;
+    text-shadow: 1px 1px 5px #eee;
+    letter-spacing: -0.5px;
+}
+.visual-txt b{
+    font-size: 50px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px #eee;
+    letter-spacing: -0.5px;
+}
+.visual-more {
+    position: relative;
+    display: block;
+    padding-top: 30px;
+}
+.visual-more-btn {
+    position: relative;
+    display: inline-block;
+    width: 138px;
+    height: 42px;
+    border: 1px solid #222;
+    font-size: 13px;
+    line-height: 42px;
+    text-align: center;
+    transition:background-color 0.5s;
+    letter-spacing: -1px;
+}
+.visual-more-btn:hover {
+    background-color: rgba(2,2,2,0.6);
+    color:#fff;
+}
 .business {
     position: relative;
     display: block;

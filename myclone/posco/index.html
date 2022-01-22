@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
     <div class="wrap">
         <!-- 상단영역 -->
@@ -22,12 +23,12 @@
             <div class="container">
                 <a href="index.html" class="logo"></a>
                 <nav class="nav">
-                    <ul class="gnb">
+                    <ul class="gnb clearfix">
                         <li>
-                            <a href="#">회사소개</a>
+                            <a href="#">회사소개<a>
                         </li>
                         <li>
-                            <a href="#">제품</a>
+                            <a href="#">제품<a>
                         </li>
                         <li>
                             <a href="#">ESG</a>
@@ -39,27 +40,32 @@
                             <a href="#">홍보채널</a>
                         </li>
                         <li>
-                            <a href="#">기업시민</a>
+                            <a href="#">기업시민<span class="gnb-link"></span></a>
                         </li>
                     </ul>
                 </nav>
-                <div class="header-right">
+                <div class="header-right clearfix">
                     <div class="user-area">
                         <div class="modechange">
-                            
+                            <a href="#">
+                                <img src="images/night.png" alt="야간모드">
+                            </a>
                         </div>
                         <div class="languagechange">
+                            <a href="#">KOR</a>
 
+                        </div>
+                        <div class="header-login">
+                            <a href="#">로그인</a>
                         </div>
                         <div class="header-search">
+                            <a href="#" class="header-search-btn"></a>
                         </div>
-                        <div class="hamburger">
-
-                        </div>
-                        <div class="logo2">
-
+                        <div class="header-menu">
+                            <a href="#" class="header-menu-btn"></a>
                         </div>
                     </div>
+                    <a class="withlogo"></a>
 
                 </div>
             </div>
@@ -67,8 +73,19 @@
         <!-- 메인영역 -->
         <div class="content">
             <div class="visual">
+                <div class="visual-bg">
+                </div>
                 <div class="container">
-
+                    <div class="visual-txt">
+                        <b>포스코의 수소 탐구생활</b>
+                        <p>
+                            "나는 언젠가 물이 연료로 쓰일 날이 오리라고 믿네."<br>
+                            미래의 친환경 원료 '수소'와 운명적으로 마주한 '스틸'에 대한 이야기
+                        </p>
+                    </div>
+                    <div class="visual-more">
+                        <a href="#" class="visual-more-btn">자세히 보기</a>
+                    </div>
                 </div>
             </div>
             <div class="business">
@@ -95,12 +112,12 @@
         <footer class="footer">
             <div class="footer-top">
                 <div class="container">
-                    
+
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="container">
-                    
+
                 </div>
             </div>
         </footer>

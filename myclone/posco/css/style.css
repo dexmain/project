@@ -245,6 +245,22 @@ body {
     background-color: rgba(2,2,2,0.6);
     color:#fff;
 }
+.visual-menu {
+    position: relative;
+    display: block;
+}
+.visual-bar {
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    background:rgba(0,0,0,0.5);
+    border-top: rgba(255,255,255, 0.7);
+    height: 56px;
+}
+.visual-bar .container {
+    height: 100%;
+}
 .business {
     position: relative;
     display: block;

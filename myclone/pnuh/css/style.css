@@ -612,6 +612,7 @@ body {
     color: #fff;
 
 }
+
 .link-list a:hover {
     text-decoration: underline;
 }
@@ -741,15 +742,19 @@ body {
 .health .container {
     padding: 50px 0;
 }
+
 .health h2 {
     width: 100%;
     text-align: center;
     margin-bottom: 25px;
 }
+
 .health-list {
     position: relative;
     display: block;
+    overflow: hidden;
 }
+
 .health-box {
     position: relative;
     display: block;
@@ -762,19 +767,33 @@ body {
     float: left;
     cursor: pointer;
 }
+
+.health-box:first-child {
+    margin-left: 14px;
+}
+
+.health-box:nth-child(4n+1) {
+    margin-left: 14px;
+}
+
+.health-box:nth-child(4n) {
+    margin-right: 14px;
+}
+
 .health-img {
     position: relative;
     display: block;
     width: 100%;
     height: 192px;
 }
-.health-img img{
+
+.health-img img {
     position: relative;
     display: block;
-    width: 100%;
     height: 100%;
     transition: 0.5s;
 }
+
 .health-box span {
     margin: 0 20px 10px;
     color: #00589e;
@@ -785,37 +804,246 @@ body {
     white-space: nowrap;
     text-transform: capitalize;
 }
+
 .health-box p {
     display: block;
     overflow: hidden;
     max-height: 52px;
     margin: 0 20px;
     color: #000;
-    
+
     font-size: 20px;
     font-weight: 500;
     line-height: 26px;
     letter-spacing: -1px;
 }
+
 .health-box:hover p {
     text-decoration: underline;
 }
-.health-box:hover img{
+
+.health-box:hover img {
     transform: scale(1.1);
 }
+
+.health-more {
+    position: relative;
+    display: block;
+    text-align: center;
+    height: 16px;
+}
+
+.health-bt {
+    position: relative;
+    display: inline-block;
+}
+
+.health-bt span {
+    position: relative;
+    display: inline-block;
+    padding-right: 11px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -1px;
+}
+
+.health-more img {
+    position: relative;
+    display: inline-block;
+    top: -1px;
+}
+/* 고객 서비스 메뉴 */
 .service {
     position: relative;
     display: block;
 }
 
-.service .container {}
+.service .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
+.service-wrap {
+    position: relative;
+    display: block;
+}
+
+.service-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.service-list li {
+    position: relative;
+    display: block;
+    float:left;
+    margin-right: calc(60px / 3);
+    margin-bottom: 20px;
+}
+
+.service-list li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.service-list li a {
+    position: relative;
+    display: block;
+    width: 305px;
+    height: 100px;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: calc(100px - 50px);
+    letter-spacing: -1px;
+
+    padding: 25px;
+    border: 1px solid #dddddd;
+}
+.service-list a:hover {
+    text-decoration: underline;
+}
+.service-list li:nth-child(1) a {
+    background: url('../images/icoBnr2_01.png') no-repeat;
+    background-position: calc(100% - 25px) center;
+}
+
+.service-list li:nth-child(2) a {
+    background: url('../images/icoBnr2_02.png') no-repeat;
+    background-position: calc(100% - 25px) center;
+}
+
+.service-list li:nth-child(3) a {
+    background: url('../images/icoBnr2_03.png') no-repeat;
+    background-position: calc(100% - 25px) center;
+}
+
+.service-list li:nth-child(4) a {
+    background: url('../images/icoBnr2_04.png') no-repeat;
+    background-position: calc(100% - 25px) center;
+}
+
+.service-list li:nth-child(5) a {
+    background: url('../images/icoBnr2_05.png') no-repeat;
+    background-position: calc(100% - 25px) center;
+}
+
+.service-list li:nth-child(6) a {
+    background: url('../images/icoBnr2_06.png') no-repeat;
+    background-position: calc(100% - 25px) center;
+}
+
+.service-list li:nth-child(7) a {
+    background: url('../images/icoBnr2_07.png') no-repeat;
+    background-position: calc(100% - 25px) center;
+}
+
+.service-list li:nth-child(8) a {
+    background: url('../images/icoBnr2_08.png') no-repeat;
+    background-position: calc(100% - 25px) center;
+}
+.service-list span {
+    position: relative;
+    display: block;
+    line-height: 22px;
+}
 .notice {
     position: relative;
     display: block;
 }
 
-.notice .container {}
+.notice .container {
+    padding-bottom: 70px;
+    overflow: hidden;
+}
+.notice-left {
+    position: relative;
+    display: block;
+    float: left;
+    width: calc(50% - 80px);
+    margin-right: 80px;
+}
+.notice-title {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.notice-title h2{
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 30px !important;
+    line-height: 34px !important;
+}
+.notice-title a{
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.notice-list {
+    position: relative;
+    display: block;
+}
+.notice-list li {
+    position: relative;
+    display: block;
+    padding:20px 0;
+    overflow: hidden;
+}
+.notice-list li+li {
+    border-top: 1px solid #ddd;
+}
+.notice-list li a{
+    display: block;
+    float: left;
+    width: calc(100% - 90px);
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -1px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.notice-list li a:hover{
+    text-decoration: underline;
+}
+.notice-list li span{
+    display: block;
+    width: 90px;
+    box-sizing: border-box;
+    padding-right: 10px;
+    color: #888;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: right;
+    letter-spacing: -1px;
+
+    float: right;
+}
+.notice-right {
+    position: relative;
+    display: block;
+    float: right;
+}
+.notice-slide {
+    position: relative;
+    display: block;
+    width: 600px;
+    height: 275px;
+}
+.notice-slide img {
+    position: relative;
+    display: block;
+}
 
 /* 하단 */
 .footer {
@@ -827,10 +1055,81 @@ body {
 .footer-network {
     position: relative;
     display: block;
+    background-color: #141e2e;
+    height: 55px;
+    text-align: center;
 }
-
+.footer-network .container{
+    height: 100%;
+}
+.footer-network a {
+    position: relative;
+    display: inline-block;
+    padding-right: 25px;
+    background: url('../images/ico_arrT_white.png') no-repeat right center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 55px;
+}
 /* 하단내용 */
 .footer-wrap {
+    position: relative;
+    display: block;
+    background-color: #1c293c;
+}
+.footer-wrap .container {
+    padding-top: 28px;
+    padding-bottom: 35px;
+}
+.footer-top  {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.mark-list {
+    position: relative;
+    display: block;
+    float: left;
+
+    overflow: hidden;
+}
+.mark-list li{
+    position: relative;
+    display: block;
+    float: left;
+}
+.mark-list span {
+    position: relative;
+    display: block;
+    padding-left: 50px;
+    color: #a1a7b0;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 17px;
+    letter-spacing: -1px;
+}
+.mark-1 {
+    background:url('../images/f_mark_isms.png')no-repeat left;
+}
+.mark-2 {}
+.mark-3 {}
+.sns-list{
+    position: relative;
+    display: block;
+    float: right;
+}
+.sns-list li{
+    position: relative;
+    display: block;
+}
+.sns-list li a{
+    position: relative;
+    display: block;
+}
+
+.footer-bottom  {
     position: relative;
     display: block;
 }

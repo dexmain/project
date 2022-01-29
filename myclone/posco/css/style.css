@@ -27,6 +27,9 @@ html {
     font-size: 10px;
 }
 
+button {
+    border: 0;
+}
 body {
     font-size: 1.2rem;
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'malgun gothic', '맑은 고딕', '돋움', 'dotum';
@@ -36,8 +39,9 @@ body {
 .container {
     position: relative;
     display: block;
-    width: 1200px;
+    width: 100vw;
     margin: 0 auto;
+    padding: 0 10vw;
 }
 
 .clearfix::after {
@@ -67,6 +71,7 @@ body {
 
 .header .container {
     height: 100%;
+    white-space: nowrap;
 }
 
 .logo {
@@ -98,17 +103,22 @@ body {
     display: block;
     float: left;
     padding: 0 13px;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
 }
-.gnb-link{
+
+.gnb>li:last-child {
+    padding-right: 0;
+}
+
+.gnb-link {
     position: relative;
     display: block;
     float: right;
     margin: 8px 0 0 8px;
     width: 11px;
     height: 11px;
-    background:url('../images/ico_newwin.png')no-repeat;
+    background: url('../images/ico_newwin.png')no-repeat;
 }
 
 .gnb>li>a {
@@ -154,11 +164,10 @@ body {
     height: 6px;
 }
 
-.header-login {
+.header-login {}
 
-}
-.header-search{
-}
+.header-search {}
+
 .header-search-btn {
     position: relative;
     display: block;
@@ -167,10 +176,10 @@ body {
     background: url('../images/headerSpt.png');
     background-position: -20px 0;
 }
-.header-menu {
 
-}
-.header-menu-btn{
+.header-menu {}
+
+.header-menu-btn {
     position: relative;
     display: block;
     width: 20px;
@@ -178,6 +187,7 @@ body {
     background: url('../images/headerSpt.png');
     background-position: 0 0;
 }
+
 .withlogo {
     position: relative;
     top: 50%;
@@ -188,28 +198,33 @@ body {
     height: 23px;
     float: right;
     margin-left: 12px;
-    background:url('../images/withlogo.png')no-repeat ;
+    background: url('../images/withlogo.png')no-repeat;
 }
+
 /* 메인 */
+.content {}
+
+/* 비주얼 */
 .visual {
-    position: relative;
-    display: block;
-    width:100%;
-    height: 732px;
-}
-.visual-bg {
     position: absolute;
     display: block;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: url('../images/main_visual3.jpeg')no-repeat center;
-    background-size: cover;
 }
+
 .visual .container {
-    padding-top: 180px;
-    height: 100%;
+    padding-left: 10vw
 }
-.visual-txt p{
+
+.visual-txt {
+    position: relative;
+    display: block;
+    padding-top: 180px;
+
+}
+
+.visual-txt p {
     color: #222;
     text-align: left;
     line-height: 30px;
@@ -218,17 +233,20 @@ body {
     text-shadow: 1px 1px 5px #eee;
     letter-spacing: -0.5px;
 }
-.visual-txt b{
+
+.visual-txt b {
     font-size: 50px;
     font-weight: 600;
     text-shadow: 1px 1px 2px #eee;
     letter-spacing: -0.5px;
 }
+
 .visual-more {
     position: relative;
     display: block;
     padding-top: 30px;
 }
+
 .visual-more-btn {
     position: relative;
     display: inline-block;
@@ -238,29 +256,150 @@ body {
     font-size: 13px;
     line-height: 42px;
     text-align: center;
-    transition:background-color 0.5s;
+    transition: background-color 0.5s;
     letter-spacing: -1px;
 }
+
 .visual-more-btn:hover {
-    background-color: rgba(2,2,2,0.6);
-    color:#fff;
+    background-color: rgba(2, 2, 2, 0.6);
+    color: #fff;
 }
+
 .visual-menu {
+    position: absolute;
+    padding-left: 10vw;
+    bottom: 100px;
+    display: block;
+}
+.visual-menu-list {
     position: relative;
     display: block;
+    float: left;
+    margin-left: 30px;
+    margin-right: 70px;
+}
+
+.visual-menu-list li {
+    position: relative;
+    display: block;
+    width: 142px;
+    text-align: center;
+    float: left;
+    border-bottom: 2px solid #ccc;
+    opacity:0.8;
+    cursor: pointer;
+}
+.visual-menu-list li + li{
+    margin-left: 10px;
+}
+.visual-menu-list-focus{
+    border-bottom: 2px solid #000 !important;
+    opacity: 1 !important;
+}
+
+.visual-menu-list li a {
+    position: absolute;
+    width: 100%;
+    bottom: 7px;
+    display: block;
+    color: #222;
+    font-weight: 500;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px #eee;
+    text-transform: capitalize;
+    line-height: 12px;
+}
+.visual-pause {
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 16px;
+    bottom: 2px;
+    right: 40px;
+    background:url('../images/pause.png')no-repeat;
+}
+.visual-menu::before {
+    content:'';
+    position: absolute;
+    display: block;
+    bottom: 2px;
+    width: 10px;
+    height: 16px;
+    background:url('../images/prev.png')no-repeat center;
+}
+.visual-menu::after {
+    content:'';
+    position: absolute;
+    display: block;
+    bottom: 2px;
+    right: 0;
+    width: 10px;
+    height: 16px;
+    background:url('../images/next.png')no-repeat center;
 }
 .visual-bar {
     position: absolute;
     display: block;
     width: 100%;
-    bottom: 0;
-    background:rgba(0,0,0,0.5);
-    border-top: rgba(255,255,255, 0.7);
+    bottom: 0vh;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.7);
     height: 56px;
 }
+
 .visual-bar .container {
     height: 100%;
 }
+
+.visual-bar-up {
+    position: absolute;
+    bottom: calc(50% + 4px);
+
+    display: block;
+    width: 8px;
+    height: 9px;
+    background: url('../images/page_up.png')no-repeat center;
+    margin-left: 5px;
+}
+
+.visual-bar-down {
+    position: absolute;
+    top: calc(50% + 4px);
+
+    display: block;
+    width: 8px;
+    height: 9px;
+    background: url('../images/page_down.png')no-repeat center;
+    margin-left: 5px;
+}
+
+.visual-bar-slide {
+    position: relative;
+    display: block;
+    height: 100%;
+    line-height: 55px;
+}
+
+.visual-bar-tit {
+    position: relative;
+    display: inline-block;
+    margin-left: 31px;
+    color: #fff;
+    font-size: 14px;
+    height: 100%;
+}
+
+.visual-bar-txt {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    height: 100%;
+    padding-left: 18px;
+}
+
+/*  // 비주얼 */
+/* 비즈니스  */
 .business {
     position: relative;
     display: block;
@@ -268,6 +407,8 @@ body {
 
 .business .container {}
 
+/*  // 비즈니스 */
+/* 프로덕트 */
 .product {
     position: relative;
     display: block;
@@ -275,6 +416,8 @@ body {
 
 .product .container {}
 
+/* //프로덕트 */
+/* esg */
 .esg {
     position: relative;
     display: block;
@@ -282,6 +425,8 @@ body {
 
 .esg .container {}
 
+/* // esg */
+/* 소식 */
 .news {
     position: relative;
     display: block;
@@ -289,6 +434,7 @@ body {
 
 .news .container {}
 
+/* // 소식 */
 /* 하단 */
 .footer {
     position: relative;

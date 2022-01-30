@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('../css/Apple_SD_Neo/');
 
+@-webkit-keyframes sign-anm {
+    0% { opacity: 0;}
+    50% { opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -61,17 +67,20 @@ body {
     top: 50%;
     z-index: 9999;
 }
+
 .page-bar-list {
     position: relative;
     display: block;
     width: 14px;
     height: 118px;
 }
-.page-bar li{
+
+.page-bar li {
     position: relative;
     display: block;
     width: 100%;
 }
+
 .page-bar button {
     position: relative;
     display: block;
@@ -83,12 +92,15 @@ body {
     cursor: pointer;
 
 }
+
 .page-bar button:hover {
     background-color: #f08900;
 }
+
 .page-focus {
     background-color: #000 !important;
 }
+
 .page-1 {}
 
 .page-2 {}
@@ -96,6 +108,41 @@ body {
 .page-3 {}
 
 .page-4 {}
+
+.page-5 {}
+
+/* 아래로 */
+.down-sign {
+    position: absolute;
+    display: block;
+    top:calc(50% + 134px);
+    right: 40px;
+    z-index: 999;
+}
+.down-sign span{
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-bottom: 2px solid #222;
+    border-right: 2px solid #222;
+    transform: rotate(45deg);
+}
+.sign-1 {
+    -webkit-animation: sign-anm 0.5s linear infinite;
+    animation-direction:alternate;
+} 
+.sign-2 {
+    -webkit-animation: sign-anm 0.5s linear infinite;
+    animation-delay: 0.2s;
+    animation-direction:alternate;
+}
+.sign-3 {
+    -webkit-animation: sign-anm 0.5s linear infinite;
+    animation-delay: 0.4s;
+    animation-direction:alternate;
+}
+
 
 /* 전체 */
 .wrap {
@@ -365,7 +412,7 @@ body {
     bottom: 2px;
     right: 40px;
     background: url('../images/pause.png')no-repeat;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .visual-menu::before {
@@ -376,7 +423,7 @@ body {
     width: 10px;
     height: 16px;
     background: url('../images/prev.png')no-repeat center;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .visual-menu::after {
@@ -388,7 +435,7 @@ body {
     width: 10px;
     height: 16px;
     background: url('../images/next.png')no-repeat center;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .visual-bar {

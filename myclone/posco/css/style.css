@@ -526,8 +526,9 @@ body {
     float: left;
     background: url('../images/business_slide_01.jpg') no-repeat center;
     background-size: cover;
-
+    transition:width 1s;
 }
+
 
 .effect-left {
     position: absolute;
@@ -549,13 +550,14 @@ body {
 }
 
 .business-right {
-    position: relative;
+    position: absolute;
     display: block;
+    right: 0;
     width: 50%;
     height: 100%;
-    float: right;
     background: url('../images/business_slide_02.jpg') no-repeat center;
     background-size: cover;
+    transition: width 1s;
 }
 
 .effect-right {
@@ -618,7 +620,18 @@ body {
     padding-bottom: 50px;
     color: #fff;
 }
-
+.business-left:hover {
+    width: 60% !important;
+}
+.business-left:hover + div{
+    width: 40% !important;
+}
+.business:hover .business-left {
+    width: 40%;
+}
+.business:hover .business-right {
+    width: 60%;
+}
 /*  // 비즈니스 */
 
 /* 프로덕트 */

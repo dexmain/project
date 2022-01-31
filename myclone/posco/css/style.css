@@ -926,10 +926,21 @@ body {
     font-weight: bold;
     font-size: 15px;
 }
-
 .esg-slide .nav-count{
+    position: relative;
+    display: block;
     left: calc(50% + 350px);
     top: 50%;
+}
+.count-line {
+    content:'';
+    position: absolute;
+    display: block;
+    left: -57px;
+    top: 12px;
+    width: 52px;
+    height: 1px;
+    background-color: #333;
 }
 .esg-slide .nav-count::before{
     content: none;

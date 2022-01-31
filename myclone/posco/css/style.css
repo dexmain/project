@@ -48,6 +48,7 @@ button {
 body {
     font-size: 1.2rem;
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'malgun gothic', '맑은 고딕', '돋움', 'dotum';
+    overflow-x: hidden;
 }
 
 /* 공통영역 */
@@ -69,8 +70,7 @@ body {
 }
 
 .page-bar {
-    position: absolute;
-    display: fixed;
+    position:fixed;
     right: 40px;
     top: 50%;
     z-index: 9999;
@@ -347,7 +347,7 @@ body {
     padding-top: 30px;
 }
 
-.visual-more-btn {
+.more-btn {
     position: relative;
     display: inline-block;
     width: 138px;
@@ -360,7 +360,7 @@ body {
     letter-spacing: -1px;
 }
 
-.visual-more-btn:hover {
+.more-btn:hover {
     background-color: rgba(2, 2, 2, 0.6);
     color: #fff;
 }
@@ -526,7 +526,7 @@ body {
     float: left;
     background: url('../images/business_slide_01.jpg') no-repeat center;
     background-size: cover;
-    transition:width 1s;
+    transition: width 1s;
 }
 
 
@@ -620,18 +620,23 @@ body {
     padding-bottom: 50px;
     color: #fff;
 }
+
 .business-left:hover {
     width: 60% !important;
 }
-.business-left:hover + div{
+
+.business-left:hover+div {
     width: 40% !important;
 }
+
 .business:hover .business-left {
     width: 40%;
 }
+
 .business:hover .business-right {
     width: 60%;
 }
+
 /*  // 비즈니스 */
 
 /* 프로덕트 */
@@ -647,13 +652,13 @@ body {
     transform: translateY(-50%);
 }
 
-.product-top {
+.section-top {
     position: relative;
     display: block;
     overflow: hidden;
 }
 
-.product-top h1 {
+.section-top h1 {
     display: inline-block;
     font-size: 36px;
     color: #333;
@@ -661,7 +666,7 @@ body {
     text-transform: uppercase;
 }
 
-.product-top span {
+.section-top span {
     display: inline-block;
     font-size: 18px;
     color: #333;
@@ -701,6 +706,7 @@ body {
     margin: 0 15px;
 
 }
+
 .product-box-focus {
     height: 300px !important;
 }
@@ -720,8 +726,9 @@ body {
     transform: scale(1.0);
     transition: all 0.5s;
 }
+
 .product-box:hover img {
-    transform:scale(1.05);
+    transform: scale(1.05);
 }
 
 .product-box span {
@@ -732,6 +739,7 @@ body {
     font-size: 25px;
     font-weight: bold;
 }
+
 .product-box a::after {
     content: '';
     position: absolute;
@@ -746,7 +754,7 @@ body {
 .product-nav {
     position: relative;
     display: inline-block;
-    width: 75px;
+
     margin-top: 40px;
     left: 50%;
 }
@@ -754,6 +762,7 @@ body {
 .nav-count {
     position: relative;
     display: block;
+    width: 75px;
 }
 
 .nav-count::before {
@@ -814,9 +823,120 @@ body {
 .esg {
     position: relative;
     display: block;
+    width: 100%;
+    height: 100vh;
 }
 
-.esg .container {}
+.esg .container {
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+}
+
+.esg-main {
+    position: relative;
+    display: block;
+    padding-top: 30px;
+    width: 95%;
+    height: 100%;
+    margin:0 auto;
+}
+
+.esg-slide {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.esg-slide::before{
+    content:'';
+    position: absolute;
+    top: calc(50% - 120px);
+    left: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+.esg-slide::after{
+    content:'';
+    position: absolute;
+    top: calc(50% - 120px);
+    right: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.esg-slide-list {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    height: 100%;
+}
+
+.esg-slide-box .more-btn {
+    margin-top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 118px;
+    height: 44px;
+}
+
+.esg-slide-box .more-btn:hover {
+    background-color: #333 !important;
+}
+
+.esg-slide-box img {
+    position: relative;
+    display: block;
+}
+
+.slide-box-txt {
+    position: relative;
+    display: block;
+    margin-top: 44px;
+    overflow: hidden;
+}
+
+.slide-box-txt h3 {
+    position: relative;
+    display: block;
+    float: left;
+    width: 35%;
+    font-size: 30px;
+    line-height: 1.1;
+    color: #009ee5;
+    font-weight: bold;
+}
+
+.slide-box-txt span {
+    position: relative;
+    display: block;
+    float: right;
+    width: 65%;
+    color: #333333;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.esg-slide .nav-count{
+    left: calc(50% + 350px);
+    top: 50%;
+}
+.esg-slide .nav-count::before{
+    content: none;
+}
+.esg-slide .nav-count::after{
+    content: none;
+}
 
 /* // esg */
 /* 소식 */

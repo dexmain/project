@@ -754,6 +754,7 @@ body {
     border-top: 2px solid #333;
     border-left: 2px solid #333;
     transform: rotate(-45deg);
+    cursor: pointer;
 }
 
 .nav-count::after {
@@ -767,6 +768,7 @@ body {
     border-top: 2px solid #333;
     border-right: 2px solid #333;
     transform: rotate(45deg);
+    cursor: pointer;
 }
 
 .nav-count-now {

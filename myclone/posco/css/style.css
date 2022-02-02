@@ -73,7 +73,7 @@ body {
 .page-bar {
     position: fixed;
     right: 40px;
-    top: 50%;
+    top: 45%;
     z-index: 9999;
 }
 
@@ -124,7 +124,7 @@ body {
 .down-sign {
     position: absolute;
     display: block;
-    top: calc(50% + 134px);
+    top: calc(45% + 134px);
     right: 40px;
     z-index: 999;
 }
@@ -218,12 +218,34 @@ body {
     color: #666666;
 }
 
+.gotop {
+    content:'';
+    position: fixed;
+    right: 20px;
+    bottom: 7%;
+    
+    display: block;    
+    width: 52px;
+    height: 68px;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.2s;
+    background:url('../images/gotop.png')no-repeat center;
+    z-index: 9999;
+
+    cursor: pointer;
+
+}
+.gotop-active {
+    visibility: visible;
+    opacity: 1;
+}
 /* 전체 */
 .wrap {
     position: relative;
     display: block;
 }
-
 /* 상단 */
 .header {
     position: fixed;
@@ -384,11 +406,10 @@ body {
     position: relative;
     display: block;
     padding-top: 180px;
-
+    color: #222;
 }
 
 .visual-txt p {
-    color: #222;
     text-align: left;
     line-height: 30px;
     padding-top: 30px;

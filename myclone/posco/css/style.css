@@ -24,7 +24,7 @@
 }
 
 a {
-    color: #333;
+    color: #666;
     text-decoration: none;
 }
 
@@ -49,6 +49,7 @@ body {
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'malgun gothic', '맑은 고딕', '돋움', 'dotum';
     overflow-x: hidden;
     line-height: 1;
+    color:#666;
 }
 
 /* 공통영역 */
@@ -155,6 +156,68 @@ body {
     animation-direction: alternate;
 }
 
+.nav-count {
+    position: relative;
+    display: block;
+    width: 75px;
+}
+
+.nav-count::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: -22px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #333;
+    border-left: 2px solid #333;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+
+.nav-count::after {
+    content: '';
+    position: absolute;
+    display: block;
+    right: -22px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.nav-count-now {
+    position: relative;
+    display: block;
+    float: left;
+    font-weight: bold;
+    font-size: 18px;
+    color: #009ee5;
+}
+
+.nav-count-bar {
+    position: absolute;
+    width: 26px;
+    left: 25px;
+    bottom: -12px;
+    height: 2px;
+    background: #999999;
+    transform: rotate(-40deg);
+}
+
+.nav-count-tot {
+    position: relative;
+    display: block;
+    float: right;
+    font-weight: bold;
+    font-size: 18px;
+    color: #666666;
+}
+
 /* 전체 */
 .wrap {
     position: relative;
@@ -213,11 +276,11 @@ body {
     padding-right: 0;
 }
 
-.gnb-link {
+.link-tag {
     position: relative;
-    display: block;
-    float: right;
-    margin: 8px 0 0 8px;
+    display: inline-block;
+    margin-left: 8px;
+    top: 50%;
     width: 11px;
     height: 11px;
     background: url('../images/ico_newwin.png')no-repeat;
@@ -755,71 +818,9 @@ body {
     background-color: rgba(0, 0, 0, 0.55);
 }
 
-.product-nav {
-    position: relative;
-    display: inline-block;
-
-    margin-top: 40px;
+.product .nav-count {
     left: 50%;
-}
-
-.nav-count {
-    position: relative;
-    display: block;
-    width: 75px;
-}
-
-.nav-count::before {
-    content: '';
-    position: absolute;
-    display: block;
-    left: -20px;
-    top: 7px;
-    width: 12px;
-    height: 12px;
-    border-top: 2px solid #333;
-    border-left: 2px solid #333;
-    transform: rotate(-45deg);
-    cursor: pointer;
-}
-
-.nav-count::after {
-    content: '';
-    position: absolute;
-    display: block;
-    right: -20px;
-    top: 7px;
-    width: 12px;
-    height: 12px;
-    border-top: 2px solid #333;
-    border-right: 2px solid #333;
-    transform: rotate(45deg);
-    cursor: pointer;
-}
-
-.nav-count-now {
-    font-weight: bold;
-    font-size: 18px;
-    color: #009ee5;
-    float: left;
-}
-
-.nav-count-bar {
-    position: absolute;
-    float: left;
-    width: 26px;
-    left: 25px;
-    bottom: -16px;
-    height: 2px;
-    background: #999999;
-    transform: rotate(-40deg);
-}
-
-.nav-count-tot {
-    font-weight: bold;
-    font-size: 18px;
-    color: #666666;
-    float: right;
+    margin-top: 40px;
 }
 
 /* //프로덕트 */
@@ -834,7 +835,6 @@ body {
 .esg .container {
     top: 50%;
     transform: translateY(-50%);
-    height: 100%;
 }
 
 .esg-main {
@@ -842,7 +842,6 @@ body {
     display: block;
     padding-top: 30px;
     width: 95%;
-    height: 100%;
     margin: 0 auto;
 }
 
@@ -850,7 +849,6 @@ body {
     position: relative;
     display: block;
     width: 100%;
-    height: 100%;
 }
 
 .esg-slide::before {
@@ -882,13 +880,16 @@ body {
 }
 
 .esg-slide-list {
-    position: absolute;
+    position: relative;
+    width: 645px;
     left: 50%;
     transform: translateX(-50%);
     display: block;
-    height: 100%;
 }
-
+.esg-slide-box {
+    position: relative;
+    display: block;
+} 
 .esg-slide-box .more-btn {
     margin-top: 30px;
     left: 50%;
@@ -932,13 +933,14 @@ body {
     color: #333333;
     font-weight: bold;
     font-size: 15px;
+    line-height: 25px;
 }
 
-.esg-slide .nav-count {
-    position: relative;
+.esg-nav {
+    position: absolute;
     display: block;
-    left: calc(50% + 350px);
-    top: 50%;
+    left: calc(50% + 365px);
+    top: calc(50% + 20px);
 }
 
 .count-line {
@@ -972,7 +974,6 @@ body {
 .news .container {
     top: 50%;
     transform: translateY(-50%);
-    height: 100%;
     padding: 0;
 }
 
@@ -1056,16 +1057,29 @@ body {
     position: relative;
     display: block;
     border-top: 1px solid #ccc;
+    background-color: #fff;
+    width: 100%;
+    z-index: 999;
 }
-.footer .container {}
+.footer .container {
+}
+.footer .container>div{
+    padding: 0 10px;
+}
 
 .footer-top {
     position: relative;
     display: block;
+    margin-top: 30px;
+    margin-bottom: 13px;
+    padding:0 5px;
+    width: 100%;
+    
 }
 .footer-menu {
     position: relative;
     display: block;
+    width: 100%;
 }
 .footer-menu li {
     position: relative;
@@ -1074,14 +1088,39 @@ body {
     width: 20%;
 }
 .footer-menu span {
+    position: relative;
+    display: block;
     color: #333;
     font-weight: 700;
     margin-bottom: 25px;
+}
+.footer-menu-list {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.footer-menu-list li{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
 }
 .footer-all {
     position: relative;
     display: block;
     width: 40% !important;
+}
+.footer-all .footer-menu-list{
+    position: relative;
+    display: block;
+}
+.footer-all li{
+    width: 50%;
+}
+
+.promotion {
+    position: relative;
+    display: block;
 }
 .service {
     position: relative;
@@ -1106,6 +1145,7 @@ body {
 .here {
     position: relative;
     display: block;
+    margin-bottom: 20px !important;
 }
 
 
@@ -1117,3 +1157,73 @@ body {
 }
 
 .footer-bottom .container {}
+
+.footer-sns {
+    position: relative;
+    display: block;
+}
+.footer-sns a{
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    font-size: 0;
+}
+.footer-sns a + a{
+    margin-left: 13px;
+}
+.footer-sns img{
+    position: relative;
+    display: block;
+}
+.kwac {
+    position: absolute;
+    right: 10px;
+    top: -13px;
+    display: block;
+    width: 100px;
+    height: 67px;
+    background:url('../images/kwac_posco.png')no-repeat center;
+    background-size: cover;
+}
+
+.footer-link {
+    position: relative;
+    display: block;
+    margin-top: 35px;
+}
+.footer-link li{
+    position: relative;
+    display: inline-block;
+}
+.footer-link li + li{
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #dedede;
+}
+.footer-link a{
+    position: relative;
+    display: block;
+}
+.address {
+    position: relative;
+    display: block;
+    margin-top: 20px;
+}
+.address li{
+    position: relative;
+    display: inline-block;
+}
+.address li:last-child{
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #dedede;
+}
+.copy {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    color: #999999;
+}
+

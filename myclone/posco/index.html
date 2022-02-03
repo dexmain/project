@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <script src="js/script.js"></script>
 </head>
 
@@ -34,7 +36,7 @@
         <span class="sign-2"></span>
         <span class="sign-3"></span>
     </div>
-<!-- 위로가기 -->
+    <!-- 위로가기 -->
 
     <button class="gotop"></button>
 
@@ -165,48 +167,60 @@
                         </span>
                     </div>
                     <div class="product-main">
-                        <div class="product-slide">
-                            <ul class="product-list clearfix">
+                        <div class="swiper product-slide">
+                            <div class="product-list swiper-wrapper clearfix">
                                 <!-- 포커스 js 작업 예정 -->
-                                <li class="product-box product-box-focus">
+                                <div class="product-box swiper-slide product-box-focus">
                                     <a href="#">
                                         <img src="images/products_slide_01.jpeg" alt="">
                                         <span>INDUSTRIES</span>
                                     </a>
-                                </li>
-                                <li class="product-box">
+                                </div>
+                                <div class="product-box swiper-slide">
                                     <a href="#">
                                         <img src="images/products_slide_02.jpeg" alt="">
                                         <span>PRODUCTS</span>
                                     </a>
-                                </li>
-                                <li class="product-box">
+                                </div>
+                                <div class="product-box swiper-slide">
                                     <a href="#">
                                         <img src="images/products_slide_03.jpeg" alt="">
                                         <span>MEGA TREND</span>
                                     </a>
-                                </li>
-                                <li class="product-box">
+                                </div>
+                                <div class="product-box swiper-slide">
                                     <a href="#">
                                         <img src="images/products_slide_04.jpeg" alt="">
                                         <span>APPLICATION TECHNOLOGY</span>
                                     </a>
-                                </li>
-                                <li class="product-box">
+                                </div>
+                                <div class="product-box swiper-slide">
                                     <a href="#">
                                         <img src="images/products_slide_05.jpeg" alt="">
                                         <span>INNOVILT</span>
                                     </a>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="product-nav">
                             <div class="nav-count clearfix">
+                                <button class="product-slide-prev"></button>
                                 <span class="nav-count-now">01</span>
                                 <span class="nav-count-bar"></span>
                                 <span class="nav-count-tot">05</span>
+                                <button class="product-slide-next"></button>
                             </div>
                         </div>
+                        <script>
+                            var swiper = new Swiper(".product-slide", {
+                                navigation: {
+                                    nextEl: ".product-slide-next",
+                                    prevEl: ".product-slide-prev",
+                                },
+                                slidesPerView: 2,
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
@@ -249,46 +263,63 @@
                 <div class="container">
                     <h1 class="news-title"># 포스코 그룹의 소식을 전합니다</h1>
                     <div class="news-slide">
-                        <ul class="news-slide-list">
-                            <li class="news-box">
-                                <a href="#">
-                                    <img src="images/news_01.jpeg" alt="">
-                                    <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
-                                    <div class="news-box-date">2022.1.19</div>
-                                </a>
-                            </li>
-                            <li class="news-box">
-                                <a href="#">
-                                    <img src="images/news_02.jpeg" alt="">
-                                    <div class="news-box-txt">미래에서 온 남자 (feat. 장항준) | Green Tomorrow | POSCO</div>
-                                    <div class="news-box-date">2022.1.22</div>
-                                </a>
-                            </li>
-                            <li class="news-box">
-                                <a href="#">
-                                    <img src="images/news_03.jpeg" alt="">
-                                    <div class="news-box-txt">[스페이스 워크 영상 공모전] 내 손으로 찍는 포항의 우주 'Space Walk'</div>
-                                    <div class="news-box-date">2022.1.25</div>
-                                </a>
-                            </li>
-                            <li class="news-box">
-                                <a href="#">
-                                    <img src="images/news_04.jpeg" alt="">
-                                    <div class="news-box-txt">포스코 동반성장지원단의 2021년 다시 보기 & 2022년 미리 보기!</div>
-                                    <div class="news-box-date">2022.1.26</div>
-                                </a>
-                            </li>
-                            <li class="news-box">
-                                <a href="#">
-                                    <img src="images/news_05.jpeg" alt="">
-                                    <div class="news-box-txt">포항 명소 Park1538 ‘철의문명’, 앤어워드 디지털 콘텐츠 분야...</div>
-                                    <div class="news-box-date">2022.1.30</div>
-                                </a>
-                            </li>
-                        </ul>
+                        <!-- Swiper -->
+                        <div class="swiper news-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="news-box swiper-slide">
+                                    <a href="#">
+                                        <img src="images/news_01.jpeg" alt="">
+                                        <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
+                                        <div class="news-box-date">2022.1.19</div>
+                                    </a>
+                                </div>
+                                <div class="news-box swiper-slide">
+                                    <a href="#">
+                                        <img src="images/news_02.jpeg" alt="">
+                                        <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
+                                        <div class="news-box-date">2022.1.19</div>
+                                    </a>
+                                </div>
+                                <div class="news-box swiper-slide">
+                                    <a href="#">
+                                        <img src="images/news_03.jpeg" alt="">
+                                        <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
+                                        <div class="news-box-date">2022.1.19</div>
+                                    </a>
+                                </div>
+                                <div class="news-box swiper-slide">
+                                    <a href="#">
+                                        <img src="images/news_04.jpeg" alt="">
+                                        <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
+                                        <div class="news-box-date">2022.1.19</div>
+                                    </a>
+                                </div>
+                                <div class="news-box swiper-slide">
+                                    <a href="#">
+                                        <img src="images/news_05.jpeg" alt="">
+                                        <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
+                                        <div class="news-box-date">2022.1.19</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-news-next"></div>
+                            <div class="sw-news-prev"></div>
+                        </div>
+                        <script>
+                            var swiper = new Swiper(".news-swiper", {
+                                navigation: {
+                                    nextEl: ".sw-news-next",
+                                    prevEl: ".sw-news-prev",
+                                },
+                                slidesPerView: 3,
+                                loop: true,
+                                slidesPerGroup: 1,
+                            });
+                        </script>
                     </div>
                     <a href="#" class="more-btn">POSCO Newsroom 바로가기</a>
                 </div>
+                
             </div>
         </div>
         <footer class="footer">

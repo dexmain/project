@@ -49,7 +49,7 @@ body {
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'malgun gothic', '맑은 고딕', '돋움', 'dotum';
     overflow-x: hidden;
     line-height: 1;
-    color:#666;
+    color: #666;
 }
 
 /* 공통영역 */
@@ -162,7 +162,7 @@ body {
     width: 75px;
 }
 
-.nav-count::before {
+.product-slide-prev{
     content: '';
     position: absolute;
     display: block;
@@ -176,7 +176,7 @@ body {
     cursor: pointer;
 }
 
-.nav-count::after {
+.product-slide-next{
     content: '';
     position: absolute;
     display: block;
@@ -219,33 +219,36 @@ body {
 }
 
 .gotop {
-    content:'';
+    content: '';
     position: fixed;
     right: 20px;
     bottom: 7%;
-    
-    display: block;    
+
+    display: block;
     width: 52px;
     height: 68px;
 
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease-in-out 0.2s;
-    background:url('../images/gotop.png')no-repeat center;
+    background: url('../images/gotop.png')no-repeat center;
     z-index: 9999;
 
     cursor: pointer;
 
 }
+
 .gotop-active {
     visibility: visible;
     opacity: 1;
 }
+
 /* 전체 */
 .wrap {
     position: relative;
     display: block;
 }
+
 /* 상단 */
 .header {
     position: fixed;
@@ -253,18 +256,19 @@ body {
     width: 100%;
     height: 80px;
     z-index: 999;
-    background-color:rgba(255,255,255,0);
-    -webkit-transition-duration:0.4s;
-    -webkit-transition-timing-function:ease;
-    transition-duration:0.4s;
-    transition-timing-function:ease;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
-.down{
-    background-color: rgba(255,255,255,1);
-    -webkit-transition-duration:0.4s;
-    -webkit-transition-timing-function:ease;
-    transition-duration:0.4s;
-    transition-timing-function:ease;
+
+.down {
+    background-color: rgba(255, 255, 255, 1);
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
 .header .container {
@@ -784,34 +788,32 @@ body {
 
     position: relative;
     display: block;
-    width: 20000px;
     height: 300px;
     left: calc(50% - 380px);
+    right: calc(50% - 380px);
 }
 
-.product-list {
-    position: relative;
-    display: block;
-    white-space: nowrap;
-
+.product-list{
 }
 
 .product-box {
-    position: relative;
-    display: block;
-    float: left;
-    width: 530px;
-    height: 240px;
+    width: 530px !important;
+    height: 240px !important;
     margin: 0 15px;
+    top: 50%;
+    transform: translateY(-50%);
 
 }
 
 .product-box-focus {
     height: 300px !important;
 }
+.product-box-focus a::after {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
 
 .product-box a {
-    width: 100%;
+    width: 530px;
     height: 100%;
     position: relative;
     display: block;
@@ -827,6 +829,7 @@ body {
 }
 
 .product-box:hover img {
+    
     transform: scale(1.05);
 }
 
@@ -842,10 +845,9 @@ body {
 .product-box a::after {
     content: '';
     position: absolute;
-    display: block;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 530px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.55);
 }
@@ -918,10 +920,12 @@ body {
     transform: translateX(-50%);
     display: block;
 }
+
 .esg-slide-box {
     position: relative;
     display: block;
-} 
+}
+
 .esg-slide-box .more-btn {
     margin-top: 30px;
     left: 50%;
@@ -1020,42 +1024,26 @@ body {
 }
 
 .news-slide {
-    position: relative;
-    display: block;
-    width: 10000px;
     padding-top: 60px;
-    overflow: hidden;
 }
 
 .news-box {
-    position: relative;
-    display: block;
-    float: left;
-    width: 356px;
+    width: 356px !important;
+    height: 100%;
     margin: 0 17px;
 }
 
 .news-box a {
-    position: relative;
-    display: block;
     width: 100%;
 }
 
 .news-box img {
-    position: relative;
-    display: block;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 356px;
+    width: 100%;
     height: 200px;
 }
 
 .news-box-txt {
     margin-top: 40px;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 56px;
     line-height: 30px;
     margin-bottom: 30px;
     font-size: 22px;
@@ -1064,8 +1052,6 @@ body {
 }
 
 .news-box-date {
-    position: relative;
-    display: block;
     font-size: 15px;
 }
 
@@ -1083,6 +1069,38 @@ body {
     background-color: #333 !important;
 }
 
+.sw-news-next {
+    width: 24px;
+    height: 24px;
+    
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    
+    right: 50px;
+    transform: rotate(-45deg);
+    z-index: 9999;
+    cursor:pointer;
+    
+}
+
+.sw-news-prev {
+    width: 24px;
+    height: 24px;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    
+    transform: rotate(-45deg);
+    z-index: 9999;
+    cursor:pointer;
+}
+
 /* // 소식 */
 /* 하단 */
 .footer {
@@ -1093,9 +1111,10 @@ body {
     width: 100%;
     z-index: 999;
 }
-.footer .container {
-}
-.footer .container>div{
+
+.footer .container {}
+
+.footer .container>div {
     padding: 0 10px;
 }
 
@@ -1104,21 +1123,24 @@ body {
     display: block;
     margin-top: 30px;
     margin-bottom: 13px;
-    padding:0 5px;
+    padding: 0 5px;
     width: 100%;
-    
+
 }
+
 .footer-menu {
     position: relative;
     display: block;
     width: 100%;
 }
+
 .footer-menu li {
     position: relative;
     display: block;
     float: left;
     width: 20%;
 }
+
 .footer-menu span {
     position: relative;
     display: block;
@@ -1126,27 +1148,32 @@ body {
     font-weight: 700;
     margin-bottom: 25px;
 }
+
 .footer-menu-list {
     position: relative;
     display: block;
     width: 100%;
 }
-.footer-menu-list li{
+
+.footer-menu-list li {
     position: relative;
     display: block;
     width: 100%;
     margin-bottom: 15px;
 }
+
 .footer-all {
     position: relative;
     display: block;
     width: 40% !important;
 }
-.footer-all .footer-menu-list{
+
+.footer-all .footer-menu-list {
     position: relative;
     display: block;
 }
-.footer-all li{
+
+.footer-all li {
     width: 50%;
 }
 
@@ -1154,26 +1181,30 @@ body {
     position: relative;
     display: block;
 }
+
 .service {
     position: relative;
     display: block;
 }
+
 .link {
     position: relative;
     display: block;
-    color:#333;
+    color: #333;
     font-weight: 700;
     margin-bottom: 20px;
 }
+
 .link::after {
-    content:'';
+    content: '';
     position: relative;
     display: inline-block;
     margin-left: 10px;
     width: 13px;
     height: 13px;
-    background:url('../images/footer_ico_plus.png')no-repeat center;
+    background: url('../images/footer_ico_plus.png')no-repeat center;
 }
+
 .here {
     position: relative;
     display: block;
@@ -1194,20 +1225,24 @@ body {
     position: relative;
     display: block;
 }
-.footer-sns a{
+
+.footer-sns a {
     position: relative;
     display: inline-block;
     width: 32px;
     height: 32px;
     font-size: 0;
 }
-.footer-sns a + a{
+
+.footer-sns a+a {
     margin-left: 13px;
 }
-.footer-sns img{
+
+.footer-sns img {
     position: relative;
     display: block;
 }
+
 .kwac {
     position: absolute;
     right: 10px;
@@ -1215,7 +1250,7 @@ body {
     display: block;
     width: 100px;
     height: 67px;
-    background:url('../images/kwac_posco.png')no-repeat center;
+    background: url('../images/kwac_posco.png')no-repeat center;
     background-size: cover;
 }
 
@@ -1224,33 +1259,40 @@ body {
     display: block;
     margin-top: 35px;
 }
-.footer-link li{
+
+.footer-link li {
     position: relative;
     display: inline-block;
 }
-.footer-link li + li{
+
+.footer-link li+li {
     margin-left: 10px;
     padding-left: 10px;
     border-left: 1px solid #dedede;
 }
-.footer-link a{
+
+.footer-link a {
     position: relative;
     display: block;
 }
+
 .address {
     position: relative;
     display: block;
     margin-top: 20px;
 }
-.address li{
+
+.address li {
     position: relative;
     display: inline-block;
 }
-.address li:last-child{
+
+.address li:last-child {
     margin-left: 10px;
     padding-left: 10px;
     border-left: 1px solid #dedede;
 }
+
 .copy {
     position: relative;
     display: block;
@@ -1258,4 +1300,3 @@ body {
     padding-bottom: 30px;
     color: #999999;
 }
-

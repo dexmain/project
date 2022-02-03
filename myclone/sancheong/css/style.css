@@ -935,6 +935,11 @@ body {
     display: table;
     table-layout: fixed;
     width: 100%;
+    /* 일단 모두 숨김 */
+    display: none !important;
+}
+.notice-box-focus {
+    display: table !important;
 }
 
 .notice-link {
@@ -1109,18 +1114,284 @@ body {
     background-color: skyblue;
 }
 
+
 /* 서비스 */
 .service {
     position: relative;
     display: block;
+    background-color: #effaff;
+}
+.service .container {
+    padding-top: 70px;
+    padding-bottom: 120px;
+}
+.service h2 {
+    position: relative;
+    display: block;
+
+    color: #1e1e1e;
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'GmarketSans', sans-serif;
+    line-height: 34px;
+    text-align: center;
+    margin-bottom: 48px;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.service-slide .swiper-container {
+    width: 95%;
+    height: 180px;
+}
+
+.service-slide .swiper-slide a {
+    position: relative;
+    display: block;
+    width: 113px;
+
+    text-align: center;
+    padding-top: 150px;
+    color: #313131;
+    font-size: 17px;
+    line-height: 23px;  
+
+    margin: 0 auto;
+}
+
+.service-slide .swiper-slide a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 113px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.service-slide .swiper-slide a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 113px;
+    background: url('../images/service_sprite.png') no-repeat;
+
+    transition: transform 0.3s;
+    
+}
+
+.service-1::after {
+    background-position: 0px 0px !important;
+}
+.service-2::after {
+    background-position: 0px 8.33% !important;
+}
+.service-3::after {
+    background-position: 0px 16.66% !important;
+}
+.service-4::after {
+    background-position: 0px 24.99% !important;
+}
+.service-5::after {
+    background-position: 0px 33.32% !important;
+}
+.service-6::after {
+    background-position: 0px 41.65% !important;
+}
+.service-7::after {
+    background-position: 0px 49.98% !important;
+}
+.service-8::after {
+    background-position: 0px 58.31% !important;
+}
+.service-9::after {
+    background-position: 0px 66.64% !important;
+}
+.service-10::after {
+    background-position: 0px 74.97% !important;
+}
+.service-11::after {
+    background-position: 0px 83.3% !important;
+}
+.service-12::after {
+    background-position: 0px 99.96% !important;
+}
+.service-13::after {
+    background-position: 0px 91.63% !important;
+}
+.service-14::after {
+    background: url('../images/service_icon_add01.png') no-repeat !important;
+    background-position: 0px 0px !important;
+}
+
+.service-slide .swiper-slide a:hover {
+    font-weight: 600;
+    line-height: 24px;
+}
+.service-slide .swiper-slide a:hover::before {
+    background:linear-gradient(-30deg, #adc8f1 0, #def4ff 100%); 
+    box-shadow:0 10px 16px rgba(64,124,206,0.1);
+}
+
+.service-slide .swiper-slide a:hover::after {
+    transform: translate(-50%, -7px);
+}
+
+.sw-service-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 31px;
+    height: 31px;
+    border: 0;
+    background: url('../images/service_arrow.png') no-repeat center;
+    z-index: 999;
+    cursor: pointer;
+}
+.sw-service-prev {
+    
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1.0);
+    display: block;
+    width: 31px;
+    height: 31px;
+    border: 0;
+
+    background-image: url('../images/service_arrow.png');
+    background-repeat:  no-repeat;
+    background-position:  center;
+    background-color: transparent;
+
+    z-index: 999;
+    cursor: pointer;
 }
 
 /* 퀵메뉴 */
 .quick {
     position: relative;
     display: block;
+    background-color: #effaff;
 }
 
+.quick .container {
+    padding-bottom: 45px;
+}
+.quick-wrap {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.quick-menu {
+    position: relative;
+    display: block;
+}
+
+.quick-menu-list {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+
+    display: block;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.quick-menu-list li {
+    position: relative;
+    display: inline-block;
+    /* float: left; */
+    margin-left: 20px;
+}
+.quick-menu-list li:first-child {
+    margin-left: 0;
+}
+
+.quick-menu-list li a {
+    position: relative;
+    display: block;
+    width: 266px;
+    height: 71px;
+    
+    border-radius: 13px;
+    background-color: #0b3d6e;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 71px;
+
+    text-align: center;
+
+    transition: background-color 0.3s;
+}
+
+.quick-menu-list li a::after {
+    content: '';
+    position: absolute;
+    right: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 33px;
+    height: 30px;
+    background: url('../images/info_icon_w.png') no-repeat center;
+    
+    opacity: 0;
+
+    transition: right 0.3s, opacity 0.3s;
+}
+
+.blank {
+    position: relative;
+    display: inline-block;
+    width: 0px;
+    height: 10px;
+    /* background-color: yellow; */
+    transition: width 0.3s;
+}
+
+
+.quick-menu-focus {
+    background-color: #4688e3 !important;
+}
+.quick-menu-focus .blank{
+    width: 55px !important;
+}
+
+.quick-menu-focus-icon-1::after {
+    right: 25% !important;
+    opacity: 1 !important;
+}
+.quick-menu-focus-icon-2::after {
+    right: 23.5% !important;
+    opacity: 1 !important;
+}
+.quick-menu-focus-icon-3::after {
+    right: 22.5% !important;
+    opacity: 1 !important;
+}
+
+
+
+.quick-main {
+    position: relative;
+    display: block;
+}
+
+/* 슬라이드 */
 /* 슬라이드 */
 .slide {
     position: relative;

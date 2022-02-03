@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
+    <script src="js/swiper/swiper.min.js"></script>
 </head>
 
 <body>
@@ -155,7 +158,7 @@
 
                         <div class="notice-main">
                             <!-- 새소식 -->
-                            <div class="notice-box">
+                            <div class="notice-box notice-box-focus">
 
                                 <a href="#" class="notice-link">
 
@@ -307,8 +310,8 @@
                                         2022-01-28
                                     </span>
                                 </a>
-                                
-                                
+
+
                             </div>
                             <!-- 채용/시험 -->
                             <div class="notice-box">
@@ -387,7 +390,7 @@
                                         2022-01-28
                                     </span>
                                 </a>
-                                
+
                             </div>
                             <!-- 모집 -->
                             <div class="notice-box">
@@ -466,7 +469,7 @@
                             </div>
                             <!-- 교육/강좌 -->
                             <div class="notice-box">
-                                
+
                             </div>
                             <!-- 계약정보 -->
                             <div class="notice-box notice-box-info">
@@ -510,7 +513,7 @@
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
-                                    
+
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
 
@@ -609,16 +612,136 @@
                         <div class="notice-slide"></div>
                     </div>
             </section>
+
             <!-- 서비스 -->
             <section class="service">
                 <div class="container">
+                    <div class="service-slide">
+                        <!-- Swiper -->
+                        <div class="swiper-container sw-service">
+                            <div class="swiper-wrapper">
 
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-1">
+                                        군민평생학습
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-2">
+                                        인구정책
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-3">
+                                        일자리
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-4">
+                                        귀농귀촌
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-5">
+                                        부동산정보
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-6">
+                                        예산정보
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-7">
+                                        계약정보
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-8">
+                                        뉴스/홍보
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-9">
+                                        군정일정
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-10">
+                                        공시지가
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-11">
+                                        장례정보
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-12">
+                                        통계정보
+                                    </a>
+                                </div>
+                                
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-13">
+                                        자치법규
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="service-14">
+                                        도서관
+                                    </a>
+                                </div>
+                                
+
+
+                            </div>
+                            
+                        </div>
+                        <button class="sw-service-prev"></button>
+                        <button class="sw-service-next"></button>
+                    </div>
                 </div>
+
+                <!-- Initialize Swiper -->
+                <script>
+                    var swiper = new Swiper(".sw-service", {
+                        navigation: {
+                            nextEl: ".sw-service-next",
+                            prevEl: ".sw-service-prev",
+                        },
+                        slidesPerView: 9,
+                        loop: true,
+                        slidesPerGroup: 9,
+                    });
+                </script>
             </section>
-            <!-- 퀵메뉴-->
             <section class="quick">
                 <div class="container">
+                    <div class="quick-wrap">
 
+                        <div class="quick-menu">
+                            <ul class="quick-menu-list">
+                                <li><a href="#" class="quick-menu-focus quick-menu-focus-icon-1">민원정보 <i class="blank"></i> </a></li>
+                                <li><a href="#" >신고/건의 <i class="blank"></i> </a></li>
+                                <li><a href="#" >분야별정보 <i class="blank"></i> </a></li>
+                            </ul>
+                        </div>
+
+                        <div class="quick-main">
+
+                        </div>
+                    </div>
                 </div>
             </section>
             <!-- 슬라이드 -->

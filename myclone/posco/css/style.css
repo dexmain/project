@@ -1065,14 +1065,14 @@ body {
     position: absolute;
     display: block;
     width: 420px;
-    height: 400px;
-    background-color:rgba(66, 163, 170, 0.1);
-    transform: translate(340px,-930px) rotate(40deg);
+    height: 390px;
+    background-color:rgba(66, 128, 170, 0.335);
+    transform: translate(318px,-855px) rotate(40deg);
     border-bottom: 300px solid rgba(255, 255, 255, 0.5);
     transition: transform 0.5s;
 }
 .news-box:hover .news-box-img::after {
-    transform: translate(-140px,-290px) rotate(40deg);
+    transform: translate(-130px,-330px) rotate(40deg);
 }
 .news-box-img img {
     position: relative;

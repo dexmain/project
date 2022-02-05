@@ -432,9 +432,9 @@ body {
 }
 
 /* 메인 */
-.content {}
 
 /* 비주얼 */
+
 .visual {
     position: relative;
     display: block;
@@ -443,6 +443,13 @@ body {
     background: url('../images/main_visual3.jpeg')no-repeat center;
 }
 
+.header-point {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+}
 .visual .container {}
 
 .visual-txt {

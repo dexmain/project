@@ -21,7 +21,7 @@ $(document).ready(function(){
 });
 $(function(){
     var $header = $('header'); //헤더를 변수에 넣기
-    var $page = $('.business'); //색상이 변할 부분
+    var $page = $('.header-point'); //색상이 변할 부분
     var $window = $(window);
     var pageOffsetTop = $page.offset().top;//색상 변할 부분의 top값 구하기
     

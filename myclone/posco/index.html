@@ -167,41 +167,41 @@
                         </span>
                     </div>
                     <div class="product-main">
-                        <div class="swiper product-slide">
-                            <div class="product-list swiper-wrapper clearfix">
-                                <!-- 포커스 js 작업 예정 -->
-                                <div class="product-box swiper-slide product-box-focus">
-                                    <a href="#">
+                        <!-- focus js 작업 예정 -->
+                        <div class="swiper sw-product-slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a class="product-box product-box-focus">
                                         <img src="images/products_slide_01.jpeg" alt="">
-                                        <span>INDUSTRIES</span>
+                                        <span>INDUSTIES</span>
                                     </a>
                                 </div>
-                                <div class="product-box swiper-slide">
-                                    <a href="#">
+                                <div class="swiper-slide">
+                                    <a class="product-box">
                                         <img src="images/products_slide_02.jpeg" alt="">
-                                        <span>PRODUCTS</span>
+                                        <span>INDUSTIES</span>
                                     </a>
                                 </div>
-                                <div class="product-box swiper-slide">
-                                    <a href="#">
+                                <div class="swiper-slide">
+                                    <a class="product-box">
                                         <img src="images/products_slide_03.jpeg" alt="">
-                                        <span>MEGA TREND</span>
+                                        <span>INDUSTIES</span>
                                     </a>
                                 </div>
-                                <div class="product-box swiper-slide">
-                                    <a href="#">
+                                <div class="swiper-slide">
+                                    <a class="product-box">
                                         <img src="images/products_slide_04.jpeg" alt="">
-                                        <span>APPLICATION TECHNOLOGY</span>
+                                        <span>INDUSTIES</span>
                                     </a>
                                 </div>
-                                <div class="product-box swiper-slide">
-                                    <a href="#">
+                                <div class="swiper-slide">
+                                    <a class="product-box">
                                         <img src="images/products_slide_05.jpeg" alt="">
-                                        <span>INNOVILT</span>
+                                        <span>INDUSTIES</span>
                                     </a>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="product-nav">
                             <div class="nav-count clearfix">
@@ -213,12 +213,13 @@
                             </div>
                         </div>
                         <script>
-                            var swiper = new Swiper(".product-slide", {
+                            var swiper = new Swiper(".sw-product-slide", {
                                 navigation: {
                                     nextEl: ".product-slide-next",
                                     prevEl: ".product-slide-prev",
                                 },
-                                slidesPerView: 2,
+                                speed: 700,
+                                slidesPerView: 1,
                             });
                         </script>
                     </div>
@@ -234,29 +235,74 @@
                         </span>
                     </div>
                     <div class="esg-main">
+                        <div class="sw-esg-next"></div>
+                        <div class="sw-esg-prev"></div>
+
                         <div class="esg-slide">
-                            <ul class="esg-slide-list">
-                                <li class="esg-slide-box">
-                                    <img src="images/esg_slide_01.jpeg" alt="">
-                                    <div class="slide-box-txt">
-                                        <h3>기업시민보고서</h3>
-                                        <span>지속가능한 미래를 위한 포스코의 '기업시민' 경영이념과 그에 맞춘 Business, Society, People 분야의 성과를
-                                            담았습니다.</span>
+                            <div class="swiper sw-esg-slide">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="esg-slide-box">
+                                            <img src="images/esg_slide_01.jpeg" alt="">
+                                            <div class="slide-box-txt">
+                                                <h3>기업시민보고서</h3>
+                                                <span>지속가능한 미래를 위한 포스코의 '기업시민' 경영이념과 그에 맞춘 Business, Society, People 분야의
+                                                    성과를
+                                                    담았습니다.</span>
+                                            </div>
+                                            <a href="#" class="more-btn">자세히 보기</a>
+                                        </div>
                                     </div>
-                                    <a href="#" class="more-btn">자세히 보기</a>
-                                </li>
-                            </ul>
-                            <div class="esg-nav">
-                                <div class="nav-count">
-                                    <span class="count-line"></span>
-                                    <span class="nav-count-now">01</span>
-                                    <span class="nav-count-bar"></span>
-                                    <span class="nav-count-tot">05</span>
+                                    <div class="swiper-slide">
+                                        <div class="esg-slide-box">
+                                            <img src="images/esg_slide_02.jpeg" alt="">
+                                            <div class="slide-box-txt">
+                                                <h3>ESG Factbook</h3>
+                                                <span>환경, 사회, 거버넌스 분야에서 회사가 지속 관리해야할 중요한 ESG 지표를 선정하고, 최근 4년간 Data를 투명하게
+                                                    공개하였습니다.</span>
+                                            </div>
+                                            <a href="#" class="more-btn">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="esg-slide-box">
+                                                <img src="images/esg_slide_03.jpeg" alt="">
+                                            <div class="slide-box-txt">
+                                                <h3>기후행동보고서</h3>
+                                                <span>포스코는 2050 탄소중립을 선언하고, 기후변화 대응 노력을 담아 탄소감축 목표와 기술 개발 로드맵을
+                                                    공개하였습니다.</span>
+                                            </div>
+                                            <a href="#" class="more-btn">자세히 보기</a>
+                                        </div>
+                                    </div>
                                 </div>
+
+
+
+                                <script>
+                                    var swiper = new Swiper(".sw-esg-slide", {
+                                        navigation: {
+                                            nextEl: ".sw-esg-next",
+                                            prevEl: ".sw-esg-prev",
+                                        },
+                                        loop: true,
+                                        slidesPerView: 1,
+                                        speed: 500,
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="esg-nav">
+                            <div class="nav-count">
+                                <div class="count-line"></div>
+                                <span class="nav-count-now">01</span>
+                                <span class="nav-count-bar"></span>
+                                <span class="nav-count-tot">05</span>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="news">
                 <!-- 슬라이드 js 작업 예정 -->
@@ -264,144 +310,160 @@
                     <h1 class="news-title"># 포스코 그룹의 소식을 전합니다</h1>
                     <div class="news-slide">
                         <!-- Swiper -->
-                        <div class="swiper news-swiper">
+                        <div class="swiper sw-news-slide">
                             <div class="swiper-wrapper">
-                                <div class="news-box swiper-slide">
-                                    <a href="#">
-                                        <img src="images/news_01.jpeg" alt="">
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-box">
+                                        <div class="news-box-img">
+                                            <img src="images/news_01.jpeg" alt="">
+                                        </div>
+
                                         <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
                                         <div class="news-box-date">2022.1.19</div>
                                     </a>
                                 </div>
-                                <div class="news-box swiper-slide">
-                                    <a href="#">
-                                        <img src="images/news_02.jpeg" alt="">
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-box">
+                                        <div class="news-box-img">
+                                            <img src="images/news_02.jpeg" alt="">
+                                        </div>
+
                                         <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
                                         <div class="news-box-date">2022.1.19</div>
                                     </a>
                                 </div>
-                                <div class="news-box swiper-slide">
-                                    <a href="#">
-                                        <img src="images/news_03.jpeg" alt="">
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-box">
+                                        <div class="news-box-img">
+                                            <img src="images/news_03.jpeg" alt="">
+                                        </div>
+
                                         <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
                                         <div class="news-box-date">2022.1.19</div>
                                     </a>
                                 </div>
-                                <div class="news-box swiper-slide">
-                                    <a href="#">
-                                        <img src="images/news_04.jpeg" alt="">
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-box">
+                                        <div class="news-box-img">
+                                            <img src="images/news_04.jpeg" alt="">
+                                        </div>
+
                                         <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
                                         <div class="news-box-date">2022.1.19</div>
                                     </a>
                                 </div>
-                                <div class="news-box swiper-slide">
-                                    <a href="#">
-                                        <img src="images/news_05.jpeg" alt="">
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-box">
+                                        <div class="news-box-img">
+                                            <img src="images/news_05.jpeg" alt="">
+                                        </div>
+
                                         <div class="news-box-txt">겨울을 더욱 즐겁게, 겨울 스포츠 속 스틸 이야기!</div>
                                         <div class="news-box-date">2022.1.19</div>
                                     </a>
                                 </div>
                             </div>
-                            <div class="sw-news-next"></div>
-                            <div class="sw-news-prev"></div>
                         </div>
+                        <div class="sw-news-next"></div>
+                        <div class="sw-news-prev"></div>
                         <script>
-                            var swiper = new Swiper(".news-swiper", {
+                            var swiper = new Swiper(".sw-news-slide", {
                                 navigation: {
                                     nextEl: ".sw-news-next",
                                     prevEl: ".sw-news-prev",
                                 },
-                                slidesPerView: 3,
+                                slidesPerView: 1,
                                 loop: true,
-                                slidesPerGroup: 1,
+                                loopAdditionalSlides: 5,
                             });
                         </script>
                     </div>
-                    <a href="#" class="more-btn">POSCO Newsroom 바로가기</a>
-                </div>
-                
-            </div>
-        </div>
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-top">
-                    <ul class="footer-menu clearfix">
-                        <li class="footer-all">
-                            <span>전체메뉴</span>
-                            <ul class="footer-menu-list">
-                                <li><a href="#">회사소개</a></li>
-                                <li><a href="#">인재채용<i class="link-tag"></i></a></li>
-                                <li><a href="#">제품<i class="link-tag"></i></a></li>
-                                <li><a href="#">기업시민<i class="link-tag"></i></a></li>
-                                <li><a href="#">ESG</a></li>
-                                <li><a href="#">신고센터</a></li>
-                                <li><a href="#">투자자정보</a></li>
-                            </ul>
-                        </li>
-                        <li class="promotion">
-                            <span>홍보채널</span>
-                            <ul class="footer-menu-list">
-                                <li><a href="#">포스코 뉴스룸<i class="link-tag"></i></a></li>
-                                <li><a href="#">미디어라이브러리</a></li>
-                                <li><a href="#">문화행사</a></li>
-                                <li><a href="#">견학신청</a></li>
-                            </ul>
-                        </li>
-                        <li class="service">
-                            <span>고객지원</span>
-                            <ul class="footer-menu-list">
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">문의하기<i class="link-tag"></i></a></li>
-                                <li><a href="#">그룹방문예약</a></li>
-                                <li><a href="#">관련사이트</a></li>
-                            </ul>
-                        </li>
-                        <li class="go-set">
-                            <a href="#" class="link">국내그룹사 바로가기</a>
-                            <span class="here">찾아오시는 길</span>
-                            <ul class="footer-menu-list">
-                                <li><a href="#">포항</a></li>
-                                <li><a href="#">광양</a></li>
-                                <li><a href="#">서울/송도</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-bottom">
-                    <div class="footer-sns">
-                        <a href="#">
-                            <img src="images/footer_youtube.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="images/footer_linkdin.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="images/footer_facebook.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="images/footer_insta.png" alt="">
-                        </a>
-                    </div>
-                    <a href="#" class="kwac"></a>
 
-                    <ul class="footer-link">
-                        <li><a href="#"><span>이용약관</span></a></li>
-                        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
-                        <li><a href="#"><span>영상정보처리기기 운영·관리 방침</span></a></li>
-                        <li><a href="#"><span>이메일주소무단수집거부</span></a></li>
-                        <li><a href="#"><span>사이트맵</span></a></li>
-                        <li><a href="#"><span>회원가입</span></a></li>
-                        <li><a href="#"><span>포스코 기업시민보고서</span></a></li>
-                    </ul>
-                    <ul class="address">
-                        <li>(우)37859 경상북도 포항시 남구 동해안로 6261</li>
-                        <li>(포항시 남구 괴동동1)</li>
-                        <li>대표전화: 054-220-0114, 02-3457-0114</li>
-                    </ul>
-                    <span class="copy">(c) POSCO, All rights reserved.</span>
+                    <a href="#" class="more-btn">POSCO Newsroom 바로가기</a>
+
                 </div>
+
             </div>
-        </footer>
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-top">
+                        <ul class="footer-menu clearfix">
+                            <li class="footer-all">
+                                <span>전체메뉴</span>
+                                <ul class="footer-menu-list">
+                                    <li><a href="#">회사소개</a></li>
+                                    <li><a href="#">인재채용<i class="link-tag"></i></a></li>
+                                    <li><a href="#">제품<i class="link-tag"></i></a></li>
+                                    <li><a href="#">기업시민<i class="link-tag"></i></a></li>
+                                    <li><a href="#">ESG</a></li>
+                                    <li><a href="#">신고센터</a></li>
+                                    <li><a href="#">투자자정보</a></li>
+                                </ul>
+                            </li>
+                            <li class="promotion">
+                                <span>홍보채널</span>
+                                <ul class="footer-menu-list">
+                                    <li><a href="#">포스코 뉴스룸<i class="link-tag"></i></a></li>
+                                    <li><a href="#">미디어라이브러리</a></li>
+                                    <li><a href="#">문화행사</a></li>
+                                    <li><a href="#">견학신청</a></li>
+                                </ul>
+                            </li>
+                            <li class="service">
+                                <span>고객지원</span>
+                                <ul class="footer-menu-list">
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">문의하기<i class="link-tag"></i></a></li>
+                                    <li><a href="#">그룹방문예약</a></li>
+                                    <li><a href="#">관련사이트</a></li>
+                                </ul>
+                            </li>
+                            <li class="go-set">
+                                <a href="#" class="link">국내그룹사 바로가기</a>
+                                <span class="here">찾아오시는 길</span>
+                                <ul class="footer-menu-list">
+                                    <li><a href="#">포항</a></li>
+                                    <li><a href="#">광양</a></li>
+                                    <li><a href="#">서울/송도</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="footer-sns">
+                            <a href="#">
+                                <img src="images/footer_youtube.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="images/footer_linkdin.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="images/footer_facebook.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="images/footer_insta.png" alt="">
+                            </a>
+                        </div>
+                        <a href="#" class="kwac"></a>
+
+                        <ul class="footer-link">
+                            <li><a href="#"><span>이용약관</span></a></li>
+                            <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                            <li><a href="#"><span>영상정보처리기기 운영·관리 방침</span></a></li>
+                            <li><a href="#"><span>이메일주소무단수집거부</span></a></li>
+                            <li><a href="#"><span>사이트맵</span></a></li>
+                            <li><a href="#"><span>회원가입</span></a></li>
+                            <li><a href="#"><span>포스코 기업시민보고서</span></a></li>
+                        </ul>
+                        <ul class="address">
+                            <li>(우)37859 경상북도 포항시 남구 동해안로 6261</li>
+                            <li>(포항시 남구 괴동동1)</li>
+                            <li>대표전화: 054-220-0114, 02-3457-0114</li>
+                        </ul>
+                        <span class="copy">(c) POSCO, All rights reserved.</span>
+                    </div>
+                </div>
+            </footer>
 </body>
 
 </html>

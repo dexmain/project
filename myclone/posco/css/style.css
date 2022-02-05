@@ -156,10 +156,61 @@ body {
     animation-direction: alternate;
 }
 
+
+.count-line {
+    content: '';
+    position: absolute;
+    display: block;
+    top:9px;
+    left: -57px;
+    width: 52px;
+    border-top: 1px solid #333;
+}
+
 .nav-count {
     position: relative;
     display: block;
     width: 75px;
+    height: 18px;
+    z-index: 1;
+}
+.nav-count-now {
+    position: relative;
+    display: block;
+    float: left;
+    font-weight: bold;
+    font-size: 18px;
+    color: #009ee5;
+}
+
+.nav-count-bar {
+    position: absolute;
+    display: block;
+    width: 26px;
+    left: 25px;
+    top: 50%;
+    height: 2px;
+    background: #999999;
+    transform: rotate(-40deg);
+}
+.esg-nav .nav-count-bar {
+    height: 1px;
+}
+
+.nav-count-tot {
+    position: relative;
+    display: block;
+    float: right;
+    font-weight: bold;
+    font-size: 18px;
+    color: #666666;
+}
+.esg-slide .nav-count::before {
+    content: none;
+}
+
+.esg-slide .nav-count::after {
+    content: none;
 }
 
 .product-slide-prev{
@@ -192,33 +243,8 @@ body {
     background-color: transparent;
 }
 
-.nav-count-now {
-    position: relative;
-    display: block;
-    float: left;
-    font-weight: bold;
-    font-size: 18px;
-    color: #009ee5;
-}
 
-.nav-count-bar {
-    position: absolute;
-    width: 26px;
-    left: 25px;
-    top: 50%;
-    height: 2px;
-    background: #999999;
-    transform: rotate(-40deg);
-}
 
-.nav-count-tot {
-    position: relative;
-    display: block;
-    float: right;
-    font-weight: bold;
-    font-size: 18px;
-    color: #666666;
-}
 
 .gotop {
     content: '';
@@ -778,6 +804,7 @@ body {
     text-align: left;
     margin-left: 30px;
     bottom: 0;
+    white-space: nowrap;
 }
 
 .product-main {
@@ -786,46 +813,39 @@ body {
     padding-top: 60px;
 }
 
-.product-slide {
-
+.sw-product-slide {
     position: relative;
+    left: calc(50% - 380px);
+    /* right: calc(50% - 380px); */
     display: block;
     height: 300px;
-    left: calc(50% - 380px);
-    right: calc(50% - 380px);
+    width: 560px;
 }
-
-.product-list{
-}
-
 .product-box {
-    width: 530px !important;
-    height: 240px !important;
-    margin: 0 15px;
+    position: relative;
+    display: block;
+    width: 530px;
+    height: 240px;
     top: 50%;
+    margin-right: 30px;
     transform: translateY(-50%);
-
+    border-radius: 0 50px 0 0;
+    overflow: hidden;
 }
 
 .product-box-focus {
     height: 300px !important;
 }
-.product-box-focus a::after {
+.product-box-focus::after {
     background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-.product-box a {
-    width: 530px;
-    height: 100%;
-    position: relative;
-    display: block;
-    overflow: hidden;
-    border-radius: 0 50px 0 0;
-}
 
 .product-box img {
     position: relative;
     display: block;
+    width: 100%;
+    height: 100%;
     transform: scale(1.0);
     transition: all 0.5s;
 }
@@ -839,12 +859,18 @@ body {
     position: absolute;
     bottom: 20px;
     left: 30px;
+    
     color: #fff;
     font-size: 25px;
     font-weight: bold;
+    transition: color 0.5s;
+}
+.product-box-focus span {
+    color: rgba(255, 255, 255, 1);
+    z-index: 1;
 }
 
-.product-box a::after {
+.product-box::after {
     content: '';
     position: absolute;
     left: 0;
@@ -884,10 +910,12 @@ body {
 .esg-slide {
     position: relative;
     display: block;
-    width: 100%;
+    width: 645px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-.esg-slide::before {
+.sw-esg-prev {
     content: '';
     position: absolute;
     top: 25%;
@@ -901,7 +929,7 @@ body {
     cursor: pointer;
 }
 
-.esg-slide::after {
+.sw-esg-next {
     content: '';
     position: absolute;
     top: 25%;
@@ -915,17 +943,11 @@ body {
     cursor: pointer;
 }
 
-.esg-slide-list {
-    position: relative;
-    width: 645px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-}
 
 .esg-slide-box {
     position: relative;
     display: block;
+    width: 100%;
 }
 
 .esg-slide-box .more-btn {
@@ -981,24 +1003,7 @@ body {
     top: calc(50% + 20px);
 }
 
-.count-line {
-    content: '';
-    position: absolute;
-    display: block;
-    left: -57px;
-    top: 12px;
-    width: 52px;
-    height: 1px;
-    background-color: #333;
-}
 
-.esg-slide .nav-count::before {
-    content: none;
-}
-
-.esg-slide .nav-count::after {
-    content: none;
-}
 
 /* // esg */
 /* 소식 */
@@ -1026,32 +1031,70 @@ body {
 }
 
 .news-slide {
+    position: relative;
+    display: block;
     padding-top: 60px;
-}
-
-.news-box {
-    width: 356px !important;
+    width: 100%;
     height: 100%;
+}
+.sw-news-slide {
+    position: relative;
+    display: block;
+    width: 394px;
+    height: 100%;
+    margin: 0 auto;
+}
+.news-box {
+    position: relative;
+    display: block;
+    width: 360px;
     margin: 0 17px;
 }
-
-.news-box a {
-    width: 100%;
+.news-box:hover .news-box-txt {
+    color: #009ee5;
 }
-
-.news-box img {
+.news-box-img {
+    position: relative;
+    display: block;
     width: 100%;
     height: 200px;
+    overflow: hidden;
+}   
+.news-box-img::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 420px;
+    height: 400px;
+    background-color:rgba(66, 163, 170, 0.1);
+    transform: translate(340px,-930px) rotate(40deg);
+    border-bottom: 300px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.5s;
+}
+.news-box:hover .news-box-img::after {
+    transform: translate(-140px,-290px) rotate(40deg);
+}
+.news-box-img img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.0);
+    transition: transform 0.5s;
+}
+.news-box:hover img {
+    transform: scale(1.1);
 }
 
 .news-box-txt {
-    margin-top: 40px;
+    padding-top: 40px;
     line-height: 30px;
     margin-bottom: 30px;
     font-size: 22px;
     color: #666666;
     font-weight: bold;
 }
+
 
 .news-box-date {
     font-size: 15px;
@@ -1079,7 +1122,7 @@ body {
     border-bottom: 1px solid #fff;
     display: block;
     position: absolute;
-    top: 50%;
+    top: 38%;
     
     right: 50px;
     transform: rotate(-45deg);
@@ -1095,7 +1138,7 @@ body {
     border-top: 1px solid #fff;
     display: block;
     position: absolute;
-    top: 50%;
+    top: 38%;
     left: 50px;
     
     transform: rotate(-45deg);

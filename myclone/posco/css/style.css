@@ -24,8 +24,9 @@
 }
 
 a {
-    color: #666;
+    color: #222;
     text-decoration: none;
+    font-size: 13px;
 }
 
 li {
@@ -57,7 +58,6 @@ body {
     position: relative;
     display: block;
     width: 100vw;
-    margin: 0 auto;
     padding: 0 10vw;
 }
 
@@ -68,6 +68,20 @@ body {
     width: 100%;
     clear: both;
 
+}
+
+.link-tag {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    top: 50%;
+    width: 11px;
+    height: 11px;
+    background: url('../images/ico_newwin.png')no-repeat;
+}
+
+.gnb-col .link-tag {
+    margin-left: 4px !important;
 }
 
 .page-bar {
@@ -161,7 +175,7 @@ body {
     content: '';
     position: absolute;
     display: block;
-    top:9px;
+    top: 9px;
     left: -57px;
     width: 52px;
     border-top: 1px solid #333;
@@ -174,6 +188,7 @@ body {
     height: 18px;
     z-index: 1;
 }
+
 .nav-count-now {
     position: relative;
     display: block;
@@ -193,6 +208,7 @@ body {
     background: #999999;
     transform: rotate(-40deg);
 }
+
 .esg-nav .nav-count-bar {
     height: 1px;
 }
@@ -205,6 +221,7 @@ body {
     font-size: 18px;
     color: #666666;
 }
+
 .esg-slide .nav-count::before {
     content: none;
 }
@@ -213,7 +230,7 @@ body {
     content: none;
 }
 
-.product-slide-prev{
+.product-slide-prev {
     content: '';
     position: absolute;
     display: block;
@@ -228,7 +245,7 @@ body {
     background-color: transparent;
 }
 
-.product-slide-next{
+.product-slide-next {
     content: '';
     position: absolute;
     display: block;
@@ -316,16 +333,17 @@ body {
 }
 
 .nav {
-    position: relative;
+    position: absolute;
     display: block;
-    float: left;
-    height: 100%;
+    width: 100vw;
+    top: 100%;
+    left: 0;
 }
 
 .gnb {
-    position: relative;
-    display: block;
-    height: 100%;
+    position: absolute;
+    bottom: 100%;
+    left: 260px;
 }
 
 .gnb>li {
@@ -333,30 +351,92 @@ body {
     display: block;
     float: left;
     padding: 0 13px;
-    top: 50%;
-    transform: translateY(-50%);
+}
+
+.gnb-a-focus {
+    color: #005891 !important;
+    line-height: 78px !important;
+    border-bottom: 2px solid #005891;
 }
 
 .gnb>li:last-child {
     padding-right: 0;
 }
 
-.link-tag {
-    position: relative;
-    display: inline-block;
-    margin-left: 8px;
-    top: 50%;
-    width: 11px;
-    height: 11px;
-    background: url('../images/ico_newwin.png')no-repeat;
-}
-
 .gnb>li>a {
+    position: relative;
     display: block;
     color: #222;
+    line-height: 80px;
     font-size: 16px;
     float: left;
+
 }
+
+.gnb-menu {
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 80px;
+    background-color: #fff;
+}
+
+.gnb-menu .container {}
+
+.gnb-on {
+    display: block !important;
+}
+
+.gnb-col {
+    position: relative;
+    display: block;
+    width: 25%;
+    padding: 30px 0;
+    float: left;
+}
+
+.gnb-col li {
+    position: relative;
+    display: block;
+    margin-bottom: 17px;
+}
+
+.gnb-col a {
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+}
+
+.gnb-col a:hover {
+    text-decoration: underline;
+}
+
+.gnb-col b {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 3px;
+    color: #333;
+    font-weight: 700;
+}
+
+.gnb-col b:hover {
+    text-decoration: underline;
+}
+
+.close-bt {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    top: 30px;
+    right: 10vw;
+    background: url('../images/header_close.png')no-repeat center;
+    cursor: pointer;
+    z-index: 1;
+}
+
 
 .header-right {
     position: relative;
@@ -440,7 +520,20 @@ body {
     display: block;
     width: 100%;
     height: 100vh;
-    background: url('../images/main_visual3.jpeg')no-repeat center;
+}
+
+.sw-visual-slide {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.visual-img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .header-point {
@@ -450,13 +543,18 @@ body {
     width: 100%;
     top: 50%;
 }
-.visual .container {}
+
+.visual .container {
+    height: 100%;
+}
 
 .visual-txt {
     position: relative;
     display: block;
+    width: 100%;
     padding-top: 180px;
     color: #222;
+    z-index: 1;
 }
 
 .visual-txt p {
@@ -503,11 +601,16 @@ body {
     color: #fff;
 }
 
+.visual-txt-img {
+    padding-top: 180px;
+}
+
 .visual-menu {
     position: absolute;
     padding-left: 10vw;
     bottom: 100px;
     display: block;
+    z-index: 1;
 }
 
 .visual-menu-list {
@@ -562,7 +665,7 @@ body {
     cursor: pointer;
 }
 
-.visual-menu::before {
+.sw-visual-prev {
     content: '';
     position: absolute;
     display: block;
@@ -573,7 +676,7 @@ body {
     cursor: pointer;
 }
 
-.visual-menu::after {
+.sw-visual-next {
     content: '';
     position: absolute;
     display: block;
@@ -593,12 +696,16 @@ body {
     background: rgba(0, 0, 0, 0.5);
     border-top: 2px solid rgba(255, 255, 255, 0.7);
     height: 56px;
+    z-index: 1;
 }
 
 .visual-bar .container {
     height: 100%;
 }
-
+.sw-bar-slide {
+    width: 100%;
+    height: 56px;
+}
 .visual-bar-up {
     position: absolute;
     bottom: calc(50% + 4px);
@@ -622,24 +729,31 @@ body {
 }
 
 .visual-bar-slide {
-    position: relative;
-    display: block;
-    height: 100%;
+    width: 100%;
+    height: 56px;
     line-height: 55px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .visual-bar-tit {
     position: relative;
     display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 100%;
     margin-left: 31px;
     color: #fff;
     font-size: 14px;
-    height: 100%;
 }
 
 .visual-bar-txt {
     position: relative;
     display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     color: #fff;
     font-size: 12px;
     height: 100%;
@@ -828,6 +942,7 @@ body {
     height: 300px;
     width: 560px;
 }
+
 .product-box {
     position: relative;
     display: block;
@@ -843,6 +958,7 @@ body {
 .product-box-focus {
     height: 300px !important;
 }
+
 .product-box-focus::after {
     background-color: rgba(0, 0, 0, 0.2) !important;
 }
@@ -858,7 +974,7 @@ body {
 }
 
 .product-box:hover img {
-    
+
     transform: scale(1.05);
 }
 
@@ -866,12 +982,13 @@ body {
     position: absolute;
     bottom: 20px;
     left: 30px;
-    
+
     color: #fff;
     font-size: 25px;
     font-weight: bold;
     transition: color 0.5s;
 }
+
 .product-box-focus span {
     color: rgba(255, 255, 255, 1);
     z-index: 1;
@@ -1044,6 +1161,7 @@ body {
     width: 100%;
     height: 100%;
 }
+
 .sw-news-slide {
     position: relative;
     display: block;
@@ -1051,36 +1169,42 @@ body {
     height: 100%;
     margin: 0 auto;
 }
+
 .news-box {
     position: relative;
     display: block;
     width: 360px;
     margin: 0 17px;
 }
+
 .news-box:hover .news-box-txt {
     color: #009ee5;
 }
+
 .news-box-img {
     position: relative;
     display: block;
     width: 100%;
     height: 200px;
     overflow: hidden;
-}   
+}
+
 .news-box-img::after {
     content: '';
     position: absolute;
     display: block;
     width: 420px;
     height: 390px;
-    background-color:rgba(66, 128, 170, 0.335);
-    transform: translate(318px,-855px) rotate(40deg);
+    background-color: rgba(66, 128, 170, 0.335);
+    transform: translate(318px, -855px) rotate(40deg);
     border-bottom: 300px solid rgba(255, 255, 255, 0.5);
     transition: transform 0.5s;
 }
+
 .news-box:hover .news-box-img::after {
-    transform: translate(-130px,-330px) rotate(40deg);
+    transform: translate(-130px, -330px) rotate(40deg);
 }
+
 .news-box-img img {
     position: relative;
     display: block;
@@ -1089,6 +1213,7 @@ body {
     transform: scale(1.0);
     transition: transform 0.5s;
 }
+
 .news-box:hover img {
     transform: scale(1.1);
 }
@@ -1124,18 +1249,18 @@ body {
 .sw-news-next {
     width: 24px;
     height: 24px;
-    
+
     border-right: 1px solid #fff;
     border-bottom: 1px solid #fff;
     display: block;
     position: absolute;
     top: 38%;
-    
+
     right: 50px;
     transform: rotate(-45deg);
     z-index: 9999;
-    cursor:pointer;
-    
+    cursor: pointer;
+
 }
 
 .sw-news-prev {
@@ -1147,10 +1272,10 @@ body {
     position: absolute;
     top: 38%;
     left: 50px;
-    
+
     transform: rotate(-45deg);
     z-index: 9999;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 /* // 소식 */

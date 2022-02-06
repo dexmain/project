@@ -706,7 +706,7 @@ body {
     width: 100%;
     height: 56px;
 }
-.visual-bar-up {
+.sw-bar-up {
     position: absolute;
     bottom: calc(50% + 4px);
 
@@ -715,9 +715,11 @@ body {
     height: 9px;
     background: url('../images/page_up.png')no-repeat center;
     margin-left: 5px;
+    cursor: pointer;
+    z-index: 1;
 }
 
-.visual-bar-down {
+.sw-bar-down {
     position: absolute;
     top: calc(50% + 4px);
 
@@ -726,6 +728,8 @@ body {
     height: 9px;
     background: url('../images/page_down.png')no-repeat center;
     margin-left: 5px;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .visual-bar-slide {

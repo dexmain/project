@@ -288,8 +288,7 @@
                 <div class="visual-bar">
                     <!-- 슬라이드 js 작업 예정 -->
                     <div class="container">
-                        <button class="visual-bar-up"></button>
-                        <button class="visual-bar-down"></button>
+
                         <div class="swiper sw-bar-slide">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -318,13 +317,10 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
+                        <div class="sw-bar-up"></div>
+                        <div class="sw-bar-down"></div>
                     </div>
-                    <!-- Swiper JS -->
-                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
                     <!-- Initialize Swiper -->
                     <script>
                         var swiper = new Swiper(".sw-bar-slide", {
@@ -335,10 +331,10 @@
                             autoplay: {
                                 delay: 3000,
                             },
-                            // navigation: {
-                            //     nextEl: ".sw-bar-down",
-                            //     prevEl: ".sw-bar-up",
-                            // },
+                            navigation: {
+                                nextEl: ".sw-bar-down",
+                                prevEl: ".sw-bar-up",
+                            },
                         });
                     </script>
                 </div>

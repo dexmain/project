@@ -947,6 +947,7 @@ body {
 
 .sw-product-slide {
     position: relative;
+    left: -90px;
     /* right: calc(50% - 380px); */
     display: block;
     height: 300px;

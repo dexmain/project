@@ -907,6 +907,13 @@ body {
     top: 50%;
     transform: translateY(-50%);
 }
+.product .swiper {
+    overflow: visible !important;
+    
+}
+.product .swiper-slide {
+    width: 560px !important;
+}
 
 .section-top {
     position: relative;
@@ -940,7 +947,6 @@ body {
 
 .sw-product-slide {
     position: relative;
-    left: calc(50% - 380px);
     /* right: calc(50% - 380px); */
     display: block;
     height: 300px;

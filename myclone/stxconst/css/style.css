@@ -102,11 +102,21 @@ body {
     letter-spacing: 0;
     font-size: 0;
 }
-
+.gnb::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    left: -540px;
+    top: 52px;
+    height: 331px;
+}
 .gnb>li {
     position: relative;
     display: inline-block;
     padding: 0 35px;
+    z-index: 1;
 
 }
 
@@ -117,7 +127,22 @@ body {
     font-weight: 500;
     color: #000;
 }
+.sub-menu {
+    position: absolute;
+    display: block;
+    top: 52px;
+    margin: 35px 0;
+}
 
+.sub-list {
+    position: relative;
+    display: block;
+    line-height: 28px;
+}
+.sub-list a{
+    color: #fff;
+    font-size: 15px;
+}
 
 .language {
     position: absolute;

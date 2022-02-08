@@ -34,11 +34,10 @@ $(function () {
         var scrolled = $window.scrollTop() >= pageOffsetTop; //스크롤된 상태; true or false 
         var mode = document.getElementById("modechanger");
         var modeval = mode.value;
-        if(modeval == 'true'){
+        if (modeval == 'true') {
             $header.toggleClass('down', scrolled); //클래스 토글
             console.log(modeval);
-        }
-        else {
+        } else if(modeval == 'false'){
             $header.toggleClass('dark-down', scrolled); //클래스 토글
             console.log(modeval);
         }
@@ -47,12 +46,13 @@ $(function () {
 });
 
 function Buttontoggle() {
+    var body = document.getElementById("main");
     var mode = document.getElementById("modechanger");
     var modeval = mode.value;
     if (modeval == 'true') {
         mode.setAttribute('value', 'false');
-        mode.style.backgroundimage = "url(day.png)"
     } else {
         mode.setAttribute('value', 'true');
     }
+    body.classList.toggle("darkmode");
 }

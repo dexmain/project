@@ -485,6 +485,9 @@ body {
     background: url('../images/night.png')no-repeat center;
     cursor: pointer;
 }
+.darkmode #modechanger {
+    background: url('../images/day.png')no-repeat center;
+}
 
 .languagechange {}
 

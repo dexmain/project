@@ -54,6 +54,10 @@ body {
 }
 
 /* 공통영역 */
+.light {}
+
+.dark {}
+
 .container {
     position: relative;
     display: block;
@@ -316,6 +320,14 @@ body {
     transition-timing-function: ease;
 }
 
+.dark-down {
+    background-color: #000;
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+}
+
 .header .container {
     height: 100%;
     white-space: nowrap;
@@ -461,7 +473,18 @@ body {
     padding: 0 14px;
 }
 
-.modechange {}
+#modechanger {
+    position: relative;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+    width: 44px;
+    height: 18px;
+    margin: 0 14px;
+    background: url('../images/night.png')no-repeat center;
+    cursor: pointer;
+}
 
 .languagechange {}
 
@@ -1415,14 +1438,16 @@ body {
     display: none;
     z-index: 1;
 }
+
 .link-wrap .close-bt {
     position: absolute;
-    display:block;
+    display: block;
     top: 50px;
     right: 15px;
     width: 21px !important;
     height: 21px !important;
 }
+
 .link-wrap-top {
     position: relative;
     display: block;
@@ -1431,7 +1456,7 @@ body {
 
 
 .link-wrap-top h2 {
-    
+
     font-size: 26px;
     color: #333;
     font-weight: 700;
@@ -1472,7 +1497,8 @@ body {
     position: relative;
     display: block;
 }
-.link-wrap-row-list li{
+
+.link-wrap-row-list li {
     margin-top: 20px;
     font-size: 15px;
     color: #333;

@@ -871,6 +871,9 @@ body {
     opacity: 1.0 !important;
 }
 
+.sw-news .swiper-slide img {
+    width: 100%;
+}
 
 .news-bottom {
     position: relative;
@@ -984,6 +987,8 @@ body {
     position: relative;
     display: inline-block;
     width: 93%;
+    height: 150px;
+    padding-top: 70px;
 
     font-family: 'NanumSquare';
     font-size: 21px;
@@ -1003,8 +1008,18 @@ body {
 }
 
 .news-link-list li a .link-bt {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
     display: block;
-    margin: 0 auto;
+    white-space: nowrap;
+
+    background-color: #92989b;
+}
+
+.news-link-list li a:hover .link-bt {    
+    background-color: #108ad3;
 }
 
 .news-link-list li:nth-child(1) a {
@@ -1024,6 +1039,191 @@ body {
 .customer {
     position: relative;
     display: block;
+    height: 100vh;
+    background-color: #fff;
+}
+.customer .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.customer-top {
+    position: relative;
+    display: block;    
+    margin-bottom: 40px;
+}
+
+.customer-info {
+    position: relative;
+    display: block;
+    width: 590px;
+    height: 345px;
+    float: left;
+}
+.customer-info .section-title {
+    text-align: left;
+}
+.customer-info .section-title::before {
+    left: 0;
+    transform: translateX(0);
+}
+
+.customer-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.customer-list li {
+    position: relative;
+    display: block;
+    width: calc(50% - 17px);
+    float: left;
+    margin-right: 34px;
+}
+.customer-list li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.customer-list li a {
+    position: relative;
+    display: block;
+
+    font-size: 16px;
+    color: #505050;
+    line-height: 39px;
+
+    padding-left: 28px;
+
+    border-bottom: 1px solid #e1e1e1;
+    transition: color 0.3s;
+}
+
+.customer-list li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url('../images/icon_arrow01.png') no-repeat center #1c1c1c;
+    border-radius: 50%;
+
+    transition: background 0.4s;
+}
+
+.customer-list li a:hover{
+    color: #1089d2;
+}
+
+.customer-list li a:hover::before {
+    background: #1089d2 url('../images/icon_arrow01.png') no-repeat center;
+}
+
+
+.customer-img {
+    position: relative;
+    display: block;
+    width: 620px;
+    height: 345px;
+    float: right;
+
+    background: url('../images/s03_bg.jpeg') no-repeat center;
+    background-size: cover;
+
+    border-radius: 16px;
+}
+
+
+.customer-bottom {
+    position: relative;
+    display: block;
+}
+
+.customer-box-cont {
+    position: relative;
+    display: block;
+    width: 23.80%;
+    height: 100%;
+
+    margin: 0px 0.79%;
+    
+    background-color: #fff;
+    border-radius: 16px;
+    transition: background-color 0.4s;
+
+    float: left;
+    border: 1px solid #d4d5d8;
+}
+.customer-box-cont:first-child {
+    margin-left: 0;
+}
+.customer-box-cont:last-child {
+    margin-right: 0;
+}
+
+
+
+.customer-box-cont:hover {
+    background-color: #108ad3 !important;
+}
+.customer-bottom .pd-all-25 {
+    padding-top: 30px !important;
+}
+
+.customer-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.customer-link h3 {
+    font-family: 'NanumSquare','돋움',Dotum,'굴림',Gulim, 'Apple SD Gothic Neo';
+    font-weight: 700;
+    font-size: 25px;
+    color: #262626;
+    line-height: 1.15;
+    transition: color 0.4s;
+}
+
+.customer-link p {
+    height: 75px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #838383;
+    line-height: 1.25;
+    transition: color 0.4s;
+}
+
+
+.customer-link:hover h3 {
+    color: #fff;
+}
+
+.customer-link:hover p {
+    color: #fff;
+}
+
+.customer-link:hover .link-bt {
+    background-color: #fff;
+    color: #050505;
+}
+
+.customer-bottom .box-h-50 {
+    height: 206px !important;
+}
+
+.customer-box-cont:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+
+.box-h-50 .customer-link img {
+    position: absolute;
+    bottom: 25px;
 }
 
 /* 모집종사자 */

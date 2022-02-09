@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" type="image/x-icon" href="images/faviconV2.png">
-    <title>생명보험협회</title>
+    <title>생명보험협회 clone</title>
     <!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <![endif]-->
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
     <script src="js/prefixfree.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
 
@@ -125,6 +125,109 @@
                                     <p class="visual-desc-on">보험상품광고심의, 신상품심의,<br>IFRS 17, 옴부즈만 등</p>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visual-news">
+                    <div class="container clearfix">
+                        <div class="visual-news-left">
+                            <p>
+                                <a href="#" class="visual-news-link">
+                                    <img src="images/icon_notice.png" alt="">
+                                    공지사항
+                                </a>
+                            </p>
+                            <div class="swiper-container sw-vs-notice">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <입찰재공고> FY2021 우수인증설계사 소식지 발간
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <입찰공고> 금융보험 학교 방문교육 및 체험.진로학습 기념품 제작(카드형 USB)
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">2022 국내박사과정 생명보험사회공헌장학생 선발</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <입찰공고> FY2021 우수인증설계사 소식지 발간 제작 및 발송
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <입찰재공고> 월간 생명보험 인쇄계약(연간, 면당단가)
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="sw-vs-notice-next"></button>
+                            <script>
+                                var swiper = new Swiper(".sw-vs-notice", {
+                                    direction: "vertical",
+                                    slidesPerView: 1,
+                                    loop: true,
+                                    speed: 500,
+                                    autoplay: {
+                                        delay: 3000,
+                                        disableOnInteraction:false,
+                                    },
+                                    navigation: {
+                                        nextEl: ".sw-vs-notice-next",
+                                    },
+                                });
+                                
+                            </script>
+                            
+                        </div>
+                        <div class="visual-news-right">
+                            <p>
+                                <a href="#" class="visual-news-link">
+                                    <img src="images/icon_news.png" alt="">보도자료
+                                </a>
+                            </p>
+                            <div class="swiper-container sw-vs-news">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#">[보도자료] 생보업계 위기극복과 지속성장 기반 마련을 위한 3대 핵심과제 추진_2022신년 비대면 기자간담회</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">[보도자료] 기존 실손 가입자가 ’22년 6월까지 4세대 실손보험으로 전환시 1년간 보험료 50% 할인 혜택을 제공합니다.</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">[보도자료] 보험범죄방지 유공자 시상</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">[보도자료] 2022 달라지는 보험제도</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">[보도자료] ‘제16차 생명보험 성향조사 결과’</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">[보도자료] 생명보험사회공헌위원회, 걸음 기부로 취약계층을 위한 기부금 1억 원 전달</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="sw-vs-news-next"></button>
+                            <script>
+                                var swiper = new Swiper(".sw-vs-news", {
+                                    direction: "vertical",
+                                    slidesPerView: 1,
+                                    loop: true,
+                                    speed: 500,
+                                    disableOnInteraction:false,
+                                    autoplay: {
+                                        delay: 3000,
+                                    },
+                                    navigation: {
+                                        nextEl: ".sw-vs-news-next",
+                                    },
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -272,14 +375,20 @@
 
                             <a href="#" class="news-more">more</a>
                             <h3 class="notice-wrap-title">공지사항</h3>
-                           
+
                             <ul class="notice-list">
-                                <li><a href="#"><입찰재공고> FY2021 우수인증설계사 소식지 발간</a> <span class="date">2022-01-27</span></li>
-                                <li><a href="#"><입찰공고> 금융보험 학교 방문교육 및 체험.진로학습 기념품 제작(카드형 USB)</a> <span class="date">2022-01-27</span></li>
+                                <li><a href="#">
+                                        <입찰재공고> FY2021 우수인증설계사 소식지 발간
+                                    </a> <span class="date">2022-01-27</span></li>
+                                <li><a href="#">
+                                        <입찰공고> 금융보험 학교 방문교육 및 체험.진로학습 기념품 제작(카드형 USB)
+                                    </a> <span class="date">2022-01-27</span></li>
                                 <li><a href="#">2022 국내박사과정 생명보험사회공헌장학생 선발</a> <span class="date">2022-01-27</span></li>
-                                <li><a href="#"><입찰공고> FY2021 우수인증설계사 소식지 발간 제작 및 발송</a> <span class="date">2022-01-27</span></li>                                    
+                                <li><a href="#">
+                                        <입찰공고> FY2021 우수인증설계사 소식지 발간 제작 및 발송
+                                    </a> <span class="date">2022-01-27</span></li>
                             </ul>
-                             
+
 
                         </div>
 
@@ -389,16 +498,186 @@
             <!-- 모집종사자 -->
             <section class="worker">
                 <div class="container">
+                    <h2 class="section-title">모집종사자</h2>
+                    <div class="worker-list">
+                        <a href="#" class="worker-list-box">
+                            <div class="worker-ani">
+                                <img src="images/recruit_obj0101.png" alt="그림" class="ani-1-1">
+                                <img src="images/recruit_obj0102.png" alt="그림" class="ani-1-2">
+                            </div>
+                            <h3>모집종사자 <br>관련안내 및 조회</h3>
+                            <p>설계사 등록조회, 말소신청<br>e클린보험 서비스,<br>보험모집종사자 등록증 출력</p>
+                        </a>
+                        <a href="#" class="worker-list-box">
+
+                            <div class="worker-ani">
+                                <img src="images/recruit_obj0401.png" alt="그림" class="ani-2-1">
+                                <img src="images/recruit_obj0402.png" alt="그림" class="ani-2-2">
+                                <img src="images/recruit_obj0403.png" alt="그림" class="ani-2-3">
+                                <img src="images/recruit_obj0404.png" alt="그림" class="ani-2-4">
+                                <img src="images/recruit_obj0405.png" alt="그림" class="ani-2-5">
+                            </div>
+                            <h3>보험대리점 관리자</h3>
+                            <p>보험대리점 검사관련 안내 및<br>참고자료</p>
+                        </a>
+                        <a href="#" class="worker-list-box">
+                            <div class="worker-ani">
+                                <img src="images/recruit_obj0201.png" alt="그림" class="ani-3-1">
+                                <img src="images/recruit_obj0202.png" alt="그림" class="ani-3-2">
+                                <img src="images/recruit_obj0203.png" alt="그림" class="ani-3-3">
+                            </div>
+                            <h3>자격시험센터</h3>
+                            <p>설계사, 변액보험, 언더라이터, 종합자산관리사</p>
+                        </a>
+                        <a href="#" class="worker-list-box">
+                            <div class="worker-ani">
+                                <img src="images/recruit_obj0301.png" alt="그림" class="ani-4-1">
+                                <img src="images/recruit_obj0302.png" alt="그림" class="ani-4-2">
+                                <img src="images/recruit_obj0302_top.png" alt="그림" class="ani-4-3">
+                                <img src="images/recruit_obj0303.png" alt="그림" class="ani-4-4">
+                                <img src="images/recruit_obj0304.png" alt="그림" class="ani-4-5">
+                                <img src="images/recruit_obj0305.png" alt="그림" class="ani-4-6">
+                            </div>
+                            <h3>우수인증설계사</h3>
+                            <p>전문성과 윤리성을 충족한<br>우수설계사</p>
+                        </a>
+                    </div>
                 </div>
             </section>
             <!-- 회원사 -->
             <section class="partner">
                 <div class="container">
+                    <h2 class="section-title">회원사</h2>
+                    <div class="partner-list clearfix">
+                        <a href="#" class="partner-link">
+                            <h3 class="partner-2y">생명보험상품<br>광고심의</h3>
+                            <p>올바른 보험상품 광고문화<br>정착의 첫걸음</p>
+                        </a>
+                        <a href="#" class="partner-link">
+                            <h3>신상품심의위원회</h3>
+                            <p>신상품 개발이익보호를 위한<br>배타적사용권 부여</p>
+                        </a>
+                        <a href="#" class="partner-link">
+                            <h3 class="partner-2y">생명보험협회 <br>자율규제 운영</h3>
+                            <p>협회가 제정, 운영하는<br>각종규정 안내</p>
+                        </a>
+                        <a href="#" class="partner-link">
+                            <h3>IFRS 17</h3>
+                            <p>회원사IFRS17<br>정보공유 포털</p>
+                        </a>
+                        <a href="#" class="partner-link">
+                            <h3>홍보 신문고</h3>
+                            <p>언론 보도 관련 제보</p>
+                        </a>
+                        <a href="#" class="partner-link">
+                            <h3>옴부즈만</h3>
+                            <p>불합리한 금융규제 등에<br>대한 개선건의</p>
+                        </a>
+                    </div>
                 </div>
             </section>
             <!-- 관련업체 배너 -->
             <section class="banner">
                 <div class="container">
+
+                    <div class="swiper-container sw-banner">
+
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_1.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_2.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_3.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_4.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_5.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_6.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_7.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_8.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_9.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_10.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_11.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_12.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_13.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_14.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_15.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_16.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_17.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_18.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_19.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_20.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_21.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_22.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_23.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><img src="images/banner_24.png" alt=""></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <button class="sw-banner-prev"></button>
+                    <button class="sw-banner-next"></button>
+
+                    <script>
+                        new Swiper('.sw-banner', {
+                            loop: true,
+                            slidesPerView: 7,
+                            autoplay: {
+                                delay: 1000,
+                                disableOnInteraction: false,
+                            },
+                            speed: 500,
+                            navigation: {
+                                nextEl: '.sw-banner-next',
+                                prevEl: '.sw-banner-prev'
+                            }
+                        });
+                    </script>
                 </div>
             </section>
         </div>
@@ -406,6 +685,7 @@
         <!-- 하단 -->
         <footer class="footer">
             <div class="container">
+                
             </div>
         </footer>
         <!--// 하단 -->

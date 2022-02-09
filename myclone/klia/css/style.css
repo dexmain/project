@@ -317,7 +317,7 @@ body {
     background-size: cover;
 }
 
-.visual .container {
+.visual>.container {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -573,6 +573,96 @@ body {
 
 .visual-cate-link:hover .visual-desc-on {
     display: block;
+}
+.visual-news {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(11, 38, 67, .7);
+}
+.visual-news .container {
+    height: 100%;
+}
+.visual-news-left {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 0 40px;
+    border-left: 1px solid rgba(255,255,255,.1);
+    border-right: 1px solid rgba(255,255,255,.1);
+}
+.visual-news-right {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    padding: 0 40px;
+    border-right: 1px solid rgba(255,255,255,.1);
+}
+.visual-news-link {
+    position: relative;
+    display: block;
+    float: left;
+    line-height: 60px;
+    font-size: 16px;
+    color: #fff;
+    padding-right: 20px;
+}
+.visual-news-link::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform:translateX(-50%);
+    width: 1px;
+    height: 13px;
+    background-color: rgba(255,255,255,.2);
+}
+.visual-news-link img{
+    margin-right: 10px;
+    margin-bottom:5px;
+}
+.visual-news .swiper-container {
+    float: left;
+}
+.visual-news button {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform:translateY(-50%);
+    display: block;
+    width: 10px;
+    height: 17px;
+    cursor: pointer;
+    float: right;
+    border: 0;
+    background:url('../images/icon_arrow02.png')no-repeat center;
+}
+.visual-news .swiper-container {
+    float: left;
+    width: 400px;
+    height: 100%;
+    margin-left: 15px;
+}
+.visual-news .swiper-slide a {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 60px;
+    letter-spacing: -0.64px;
+    color: #fff;
+
 }
 
 /* 협회소식 */
@@ -1018,7 +1108,7 @@ body {
     background-color: #92989b;
 }
 
-.news-link-list li a:hover .link-bt {    
+.news-link-list li a:hover .link-bt {
     background-color: #108ad3;
 }
 
@@ -1042,15 +1132,17 @@ body {
     height: 100vh;
     background-color: #fff;
 }
+
 .customer .container {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 .customer-top {
     position: relative;
-    display: block;    
+    display: block;
     margin-bottom: 40px;
 }
 
@@ -1061,9 +1153,11 @@ body {
     height: 345px;
     float: left;
 }
+
 .customer-info .section-title {
     text-align: left;
 }
+
 .customer-info .section-title::before {
     left: 0;
     transform: translateX(0);
@@ -1074,6 +1168,7 @@ body {
     display: block;
     overflow: hidden;
 }
+
 .customer-list li {
     position: relative;
     display: block;
@@ -1081,6 +1176,7 @@ body {
     float: left;
     margin-right: 34px;
 }
+
 .customer-list li:nth-child(2n) {
     margin-right: 0;
 }
@@ -1114,7 +1210,7 @@ body {
     transition: background 0.4s;
 }
 
-.customer-list li a:hover{
+.customer-list li a:hover {
     color: #1089d2;
 }
 
@@ -1149,7 +1245,7 @@ body {
     height: 100%;
 
     margin: 0px 0.79%;
-    
+
     background-color: #fff;
     border-radius: 16px;
     transition: background-color 0.4s;
@@ -1157,9 +1253,11 @@ body {
     float: left;
     border: 1px solid #d4d5d8;
 }
+
 .customer-box-cont:first-child {
     margin-left: 0;
 }
+
 .customer-box-cont:last-child {
     margin-right: 0;
 }
@@ -1169,6 +1267,7 @@ body {
 .customer-box-cont:hover {
     background-color: #108ad3 !important;
 }
+
 .customer-bottom .pd-all-25 {
     padding-top: 30px !important;
 }
@@ -1181,7 +1280,7 @@ body {
 }
 
 .customer-link h3 {
-    font-family: 'NanumSquare','돋움',Dotum,'굴림',Gulim, 'Apple SD Gothic Neo';
+    font-family: 'NanumSquare', '돋움', Dotum, '굴림', Gulim, 'Apple SD Gothic Neo';
     font-weight: 700;
     font-size: 25px;
     color: #262626;
@@ -1230,22 +1329,436 @@ body {
 .worker {
     position: relative;
     display: block;
+    height: 100vh;
+    background: url('../images/section04_bg.jpeg');
+}
+
+.worker .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.worker .section-title {
+    color: #fff;
+}
+
+.worker .section-title::before {
+    background-color: #fff;
+}
+
+.worker-list {
+    position: relative;
+    display: block;
+}
+
+.worker-list-box {
+    position: relative;
+    display: block;
+    float: left;
+    width: 300px;
+    height: 420px;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0 10px;
+    padding: 45px 35px;
+
+}
+
+.worker-list-box:first-child {
+    margin-left: 0;
+}
+
+.worker-list-box:last-child {
+    margin-right: 0;
+}
+
+.worker-list-box h3 {
+    position: relative;
+    display: block;
+    font-family: 'NanumSquare', '돋움', Dotum, '굴림', Gulim, 'Apple SD Gothic Neo';
+    font-size: 30px;
+    line-height: 36.99px;
+    color: #262626;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.worker-list-box p {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    color: #838383;
+    line-height: 23.94px;
+}
+
+.worker-ani {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.worker-ani img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.worker-ani .ani-1-1 {
+    left: -53px;
+    top: -72px;
+
+    transition: all 0.3s ease-out 0s;
+}
+
+.worker-ani .ani-1-2 {
+    left: -52px;
+    top: -80px;
+    transition: all 0.3s ease-out 0.02s;
+}
+
+.worker-list-box:hover .ani-1-1,
+.worker-list-box:hover .ani-2-1,
+.worker-list-box:hover .ani-3-1,
+.worker-list-box:hover .ani-4-1 {
+    left: -52px;
+    top: -93px;
+}
+
+
+.worker-list-box:hover .ani-1-2 {
+    left: -35px;
+    top: -90px;
+}
+
+
+.worker-ani .ani-2-1 {
+    left: -53px;
+    top: -72px;
+
+    transition: all 0.3s ease-out 0s;
+}
+
+.worker-ani .ani-2-2 {
+    left: -55px;
+    top: -66px;
+
+    transition: all 0.35s ease-out 0.02s;
+}
+
+.worker-list-box:hover .ani-2-2 {
+    left: -70px;
+    top: -110px;
+}
+
+.worker-ani .ani-2-3 {
+    left: -55px;
+    top: -66px;
+
+    transition: all 0.35s ease-out 0.02s;
+}
+
+.worker-list-box:hover .ani-2-3 {
+    left: -60px;
+    top: -110px;
+}
+
+.worker-ani .ani-2-4 {
+    left: -55px;
+    top: -66px;
+
+    transition: all 0.35s ease-out 0.02s;
+}
+
+.worker-list-box:hover .ani-2-4 {
+    left: -60px;
+    top: -110px;
+}
+
+.worker-ani .ani-2-5 {
+    left: -55px;
+    top: -66px;
+
+    transition: all 0.35s ease-out 0.02s;
+}
+
+.worker-list-box:hover .ani-2-5 {
+    left: -60px;
+    top: -110px;
+}
+
+.worker-ani .ani-3-1 {
+    left: -53px;
+    top: -72px;
+
+    transition: all 0.3s ease-out 0.03s;
+}
+
+.worker-ani .ani-3-2 {
+    left: -50px;
+    top: -60px;
+
+    transition: all 0.3s ease-out 0.03s;
+}
+
+.worker-list-box:hover .ani-3-2 {
+    left: -30px;
+    top: -75px;
+}
+
+.worker-ani .ani-3-3 {
+    left: -50px;
+    top: -62px;
+
+    transition: all 0.3s ease-out 0.1s;
+}
+
+.worker-list-box:hover .ani-3-3 {
+    left: -24px;
+    top: -80px;
+}
+
+.worker-ani .ani-4-1 {
+    left: -53px;
+    top: -72px;
+
+    transition: all 0.3s ease-out 0.03s;
+}
+
+.worker-ani .ani-4-2 {
+    left: -68px;
+    top: -62px;
+
+    transition: all 0.3s ease-out 0.03s;
+}
+
+.worker-list-box:hover .ani-4-2 {
+    left: -68px;
+    top: -84px;
+}
+
+.worker-ani .ani-4-3 {
+    left: -68px;
+    top: 286px;
+
+    transition: all 0.3s ease-out 0.03s;
+}
+
+.worker-list-box:hover .ani-4-3 {
+    left: -68px;
+    top: 245px;
+}
+
+.worker-ani .ani-4-4 {
+    left: -65px;
+    top: -62px;
+
+    transition: all 0.3s ease-out 0.03s;
+}
+
+.worker-list-box:hover .ani-4-4 {
+    left: -65px;
+    top: -105px;
+}
+
+.worker-ani .ani-4-5 {
+    left: -67px;
+    top: -61px;
+
+    transition: all 0.3s ease-out 0.03s;
+}
+
+.worker-list-box:hover .ani-4-5 {
+    left: -60px;
+    top: -81px;
+}
+
+.worker-ani .ani-4-6 {
+    left: -70px;
+    top: -63px;
+
+    transition: all 0.3s ease-out 0.03s;
+}
+
+.worker-list-box:hover .ani-4-6 {
+    left: -74px;
+    top: -80px;
 }
 
 /* 회원사 */
 .partner {
     position: relative;
     display: block;
+    height: 100vh;
+    background: url('../images/section05_bg.jpeg');
 }
+
+.partner .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.partner-list {
+    position: relative;
+    display: block;
+}
+
+.partner-list a {
+    position: relative;
+    display: block;
+    width: 14.12%;
+    /*  178px / 1260 * 100    */
+    /* 너비 / 컨테이너 * 100% = 14.12% */
+
+    margin-right: 3.05%;
+    /*   100 - (14.12 *  6)  = 15.28  */
+    /*  100% - (너비 6개) = 남는 공간   */
+    /*   15.28 / 5 = 3.05  */
+    /* 남은 공간 / 5개 여백 = 여백값 */
+
+    float: left;
+    text-align: center;
+
+    padding-top: 195px;
+}
+
+.partner-list a:last-child {
+    margin-right: 0;
+}
+
+.partner-list a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(1.0);
+    top: 0;
+    display: block;
+    width: 178px;
+    border: 6px solid #fff;
+    height: 178px;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.partner-link:nth-child(1)::before {
+    background: url('../images/icon_mcompany01.png') no-repeat center;
+    background-size: cover;
+    transition: transform 0.4s;
+}
+
+.partner-link:nth-child(2)::before {
+    background: url('../images/icon_mcompany02.png') no-repeat center;
+    background-size: cover;
+    transition: transform 0.4s;
+
+}
+
+.partner-link:nth-child(3)::before {
+    background: url('../images/icon_mcompany04.png') no-repeat center;
+    background-size: cover;
+    transition: transform 0.4s;
+}
+
+.partner-link:nth-child(4)::before {
+    background: url('../images/icon_mcompany05.png') no-repeat center;
+    background-size: cover;
+    transition: transform 0.4s;
+}
+
+.partner-link:nth-child(5)::before {
+    background: url('../images/icon_mcompany07.png') no-repeat center;
+    background-size: cover;
+    transition: transform 0.4s;
+}
+
+.partner-link:nth-child(6)::before {
+    background: url('../images/icon_mcompany06.png') no-repeat center;
+    background-size: cover;
+    transition: transform 0.4s;
+}
+
+.partner-link:hover::before {
+    transform: translateX(-50%) scale(1.2);
+}
+
+.partner-list a h3 {
+    position: relative;
+    display: block;
+    font-family: 'NanumSquare', '돋움', Dotum, '굴림', Gulim, 'Apple SD Gothic Neo';
+    font-size: 22px;
+    color: #101010;
+    font-weight: 700;
+    line-height: 2.4;
+    margin-bottom: 10px;
+}
+
+.partner-2y {
+    line-height: 1.2 !important;
+}
+
+.partner-list a p {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    line-height: 19.95px;
+}
+
 
 /* 관련업체 배너 */
 .banner {
     position: relative;
     display: block;
+    
+    background-color: #fff;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
 }
 
+.banner .container {}
+
+.sw-banner a {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+.sw-banner-prev {
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 15px;
+    height: 27px;
+    border: 0;
+    cursor: pointer;
+    background: url('../images/icon_f_prev.png') no-repeat center;
+}
+
+.sw-banner-next {
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 15px;
+    height: 27px;
+    border: 0;
+    cursor: pointer;
+    background: url('../images/icon_f_next.png') no-repeat center;
+}
 /* 하단 */
 .footer {
     position: relative;
     display: block;
+}
+.footer .container {
+    padding-top: 40px;
+    padding-bottom: 60px;
 }

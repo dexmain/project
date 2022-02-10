@@ -30,6 +30,7 @@ button {
 
 html {
     font-size: 10px;
+    overflow-x: hidden;
 }
 
 body {
@@ -1719,6 +1720,8 @@ body {
     background-color: #fff;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
+
+    overflow: hidden;
 }
 
 .banner .container {}
@@ -1757,8 +1760,64 @@ body {
 .footer {
     position: relative;
     display: block;
+    background-color: #f3f4f5;
 }
 .footer .container {
     padding-top: 40px;
     padding-bottom: 60px;
+}
+.footer-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+.footer-logo {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 40px;
+}
+.footer-logo img{
+    width: 135px;
+    mix-blend-mode: multiply;
+
+}
+.footer-list{
+    position: relative;
+    display: block;
+    float: left;
+}
+.footer-list li{
+    position: relative;
+    display: block;
+    font-size: 14px;
+    color: #828282;
+    line-height: 1.4285;
+    letter-spacing: -0.42px;
+}
+.footer-list li:first-child{
+    margin-bottom: 20px;
+}
+.footer-list li:last-child{
+    margin-top: 15px;
+}
+.footer-list li a{
+    color: #828282;
+}
+.footer-list li strong{
+    font-size: 15px;
+    color: #141313;
+    font-weight: 500;
+}
+.footer-right {
+    position: relative;
+    display: block;
+    float: right;
+}
+.wa {
+    width: 100px;
+    margin-right: 20px;
+}
+.web {
+    width: 57px;
 }

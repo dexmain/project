@@ -2,9 +2,41 @@ $(document).ready(function () {
 
     // 위로가기 기능
     let gotop = $('.gotop');
+    var height = document.getElementById('v1').style.height;
+    console.log(height);
     gotop.click(function () {
         $('html, body').stop().animate({
             scrollTop: 0
+        }, 400);
+    });
+    let page1 = $('.page-1');
+    page1.click(function () {
+        $('html, body').stop().animate({
+            scrollTop: 0
+        }, 400);
+    });
+    let page2 = $('.page-2');
+    page2.click(function () {
+        $('html, body').stop().animate({
+            scrollTop : 789
+        }, 400);
+    });
+    let page3 = $('.page-3');
+    page3.click(function () {
+        $('html, body').stop().animate({
+            scrollTop: 789*2
+        }, 400);
+    });
+    let page4 = $('.page-4');
+    page4.click(function () {
+        $('html, body').stop().animate({
+            scrollTop: 789*3
+        }, 400);
+    });
+    let page5 = $('.page-5');
+    page5.click(function () {
+        $('html, body').stop().animate({
+            scrollTop: 789*4
         }, 400);
     });
 

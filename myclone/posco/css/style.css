@@ -687,6 +687,14 @@ body {
     border: 1px solid #222 !important;
     color: #222 !important;
 }
+.darkmode .visual-more .more-btn:hover {
+    background-color: rgba(2, 2, 2, 0.6) !important; 
+    color: #fff !important;
+}
+.visual-more .more-btn:hover {
+    background-color: rgba(2, 2, 2, 0.6) !important; 
+    color: #fff !important;
+}
 .more-btn {
     position: relative;
     display: inline-block;

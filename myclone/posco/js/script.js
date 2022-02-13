@@ -2,8 +2,6 @@ $(document).ready(function () {
 
     // 위로가기 기능
     let gotop = $('.gotop');
-    var height = document.getElementById('v1').style.height;
-    console.log(height);
     gotop.click(function () {
         $('html, body').stop().animate({
             scrollTop: 0
@@ -17,27 +15,35 @@ $(document).ready(function () {
     });
     let page2 = $('.page-2');
     page2.click(function () {
-        $('html, body').stop().animate({
-            scrollTop : 789
-        }, 400);
+        var location = document.querySelector(".business").offsetTop;
+        window.scrollTo({
+            top: location,
+            behavior: 'smooth'
+        });
     });
     let page3 = $('.page-3');
     page3.click(function () {
-        $('html, body').stop().animate({
-            scrollTop: 789*2
-        }, 400);
+        var location = document.querySelector(".product").offsetTop;
+        window.scrollTo({
+            top: location,
+            behavior: 'smooth'
+        });
     });
     let page4 = $('.page-4');
     page4.click(function () {
-        $('html, body').stop().animate({
-            scrollTop: 789*3
-        }, 400);
+        var location = document.querySelector(".esg").offsetTop;
+        window.scrollTo({
+            top: location,
+            behavior: 'smooth'
+        });
     });
     let page5 = $('.page-5');
     page5.click(function () {
-        $('html, body').stop().animate({
-            scrollTop: 789*4
-        }, 400);
+        var location = document.querySelector(".news").offsetTop;
+        window.scrollTo({
+            top: location,
+            behavior: 'smooth'
+        });
     });
 
     // 위로가기 사라짐 효과

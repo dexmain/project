@@ -109,7 +109,9 @@ body {
     background: url('../images/ico_sprite_pc.png') no-repeat;
     background-position: -250px -10px;
 }
-
+.good-heart-active {
+    background-position: -287px -10px !important;
+}
 .good-icon {
     position: absolute;
     left: 10px;

@@ -113,6 +113,10 @@ window.onload = function () {
             // a 태그의 href 를 막는다.
             event.preventDefault();
 
+            // 같은 번호를 클릭한다면 리턴
+            if(best_cate_index == index) {
+                return;
+            }
             // 실제 내용을 배치합니다.
             showBest(index);
 
@@ -121,19 +125,43 @@ window.onload = function () {
 
     // 실제 내용을 보여주는 함수
     function showBest(_index) {
-
+        best_cate_index = _index;
         let base_data;
+
         // 메뉴 배경 위치 잡기
-        best_cate_bg.css('top', best_cate_bg_pos[_index]);
+        best_cate_bg.css('top', best_cate_bg_pos[_index] );
         // 메뉴 색상 바꾸기
         best_cate.removeClass('best-cate-active');
         best_cate.eq(_index).addClass('best-cate-active');
-        // 아이콘
-        best_cate.eq(0).find('i').removeClass('best-10-active');
-        best_cate.eq(4).find('i').removeClass('best-50-active');
+        // 아이콘 바꾸기
+        if(_index == 0) {
+            best_cate.eq(0).find('i').stop().animate({
+                opacity: 0
+            }, 150, function(){
+                best_cate.eq(0).find('i').addClass('best-10-active');
+            }).animate({
+                opacity: 1
+            }, 150);   
+
+            best_cate.eq(4).find('i').removeClass('best-50-active');
+            
+        }else if(_index == 4){
+
+            best_cate.eq(4).find('i').stop().animate({
+                opacity: 0
+            }, 150, function(){
+                best_cate.eq(4).find('i').addClass('best-50-active');
+            }).animate({
+                opacity: 1
+            }, 150);
+            best_cate.eq(0).find('i').removeClass('best-10-active');
+        }else{
+            best_cate.eq(0).find('i').removeClass('best-10-active');
+            best_cate.eq(4).find('i').removeClass('best-50-active');
+        }
+
         if (_index == 0) {
-            base_data = good_10;
-            best_cate.eq(0).find('i').addClass('best-10-active');
+            base_data = good_10;            
         } else if (_index == 1) {
             base_data = good_20;            
         } else if (_index == 2) {
@@ -142,7 +170,6 @@ window.onload = function () {
             base_data = good_40;
         } else if (_index == 4) {
             base_data = good_50;
-            best_cate.eq(4).find('i').addClass('best-50-active');
         }
 
         $.each(best_good, function (index, item) {
@@ -166,10 +193,6 @@ window.onload = function () {
                 good.find('.good-heart').removeClass('good-heart-active');
             }
 
-            // 연령대를 클릭할떄 마다 Click 자꾸 등록이 된다.
-            // 그래서 한번 클릭에도 여러번 클릭 된 결과가
-            // 화면에 적용이 된다.          
-
             good.find('.good-heart').off('click').on('click', function (event) {
 
                 // 클릭을 아래로 전달하는 것을 막는다.
@@ -186,12 +209,8 @@ window.onload = function () {
                     $(this).removeClass('good-heart-active');
                     base_data[index].like = false;
                 }
-
-
             });
-
         });
-
     }
 
 

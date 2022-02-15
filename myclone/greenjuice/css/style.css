@@ -722,6 +722,7 @@ body {
     height: 15px;
     background: url('../images/ico_sprite_pc.png') no-repeat;
     background-position: -227px -50px;
+    
 }
 .best-50-active {
     background-position: -202px -50px !important;

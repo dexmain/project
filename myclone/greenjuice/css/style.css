@@ -630,7 +630,6 @@ body {
 
 .best .container {
     padding: 110px 0;
-    overflow: hidden;
 }
 
 .best-left {
@@ -651,6 +650,30 @@ body {
     padding-bottom: 25px;
 }
 
+
+.best-cate-bg {
+    position: absolute;
+    left: -30px;
+    top: 70px;
+    display: block;
+    width: 100%;
+    height: 56px;
+    background-color: #f0831f;
+    box-shadow: 4px 0 15px rgb(0 0 0 / 10%);
+    transition: top 0.3s;
+}
+.best-cate-bg::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 7px;
+    height: 13px;
+    background:url('../images/ico_sprite_pc.png')no-repeat;
+    background-position: -251px -50px;
+}
 .best-cate {
     position: relative;
     display: block;
@@ -668,8 +691,11 @@ body {
     line-height: 55px;
     font-size: 17px;
     color: #b5b5b5;
+    transition: color 0.5s ;
 }
-
+.best-cate-active {
+    color: #fff !important;
+}
 .best-cate li a em {
     font-style: normal;
     font-size: 18px;
@@ -682,7 +708,11 @@ body {
     width: 14px;
     height: 15px;
     background: url('../images/ico_sprite_pc.png') no-repeat;
+
     background-position: -176px -50px;
+}
+.best-10-active {
+    background-position: -151px -50px !important;
 }
 
 .best-50 {
@@ -693,7 +723,9 @@ body {
     background: url('../images/ico_sprite_pc.png') no-repeat;
     background-position: -227px -50px;
 }
-
+.best-50-active {
+    background-position: -202px -50px !important;
+}
 .best-right {
     position: relative;
     display: block;

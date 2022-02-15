@@ -33,217 +33,60 @@ $(document).ready(function () {
 window.onload = function () {
 
     // 베스트 제품 관련 코드
+    // 2. 객체 생성자 함수 방식코드
+    //    원형(틀 - 구조 - class)
+
+    function BestGood(_rank, _like, _title, _price, _ml, _image, _link) {
+        this.rank = _rank;
+        this.like = _like;
+        this.title = _title;
+        this.price = _price;
+        this.ml = _ml;
+        this.image = _image;
+        this.link = _link;
+    }
+
+    // 사용자 객체 생성 함수에 값을 전달해서
+    // 새로운 변수(복제본 - 인스턴스)로 저장한다.
+    // 10 대 제품
+
+    let good11 = new BestGood(1, false, '매일아침 튼튼플러스', '1500원', '100ml', 'images/1-1.jpg', '#');
+    let good12 = new BestGood(2, false, '아이러브 루테인', '2,700원', '130ml', 'images/1-2.jpg', '#');
+    let good13 = new BestGood(3, false, '당근즙', '2,900원', '130ml', 'images/1-3.jpg', '#');
+    let good14 = new BestGood(4, false, '러브미 케일&셀러리', '1,900원', '130ml', 'images/1-4.jpg', '#');
+    let good15 = new BestGood(5, false, '핸디밀 프로틴 PRO', '2,400원', '150ml', 'images/1-5.jpg', '#');
+    // 20대 제품
+    let good21 = new BestGood(1, false, '식물성유산균쌀요거트', '2,100원', '150ml', 'images/2-1.jpg', '#');
+    let good22 = new BestGood(2, false, '러브미 케일&셀러리', '1,900원', '130ml', 'images/2-2.jpg', '#');
+    let good23 = new BestGood(3, false, '식물성유산균 위&캡슐', '2,100원', '130ml', 'images/2-3.jpg', '#');
+    let good24 = new BestGood(4, false, '노니&깔라만시', '2,300원', '130ml', 'images/2-4.jpg', '#');
+    let good25 = new BestGood(5, false, '식물성유산균 오메가&치아씨드', '2,100원', '130ml', 'images/2-5.jpg', '#');
+    // 30대 제품
+    let good31 = new BestGood(1, false, '위러브플러스', '2,700원', '130ml', 'images/3-1.jpg', '#');
+    let good32 = new BestGood(2, false, '러브미 케일&셀러리', '1,900원', '130ml', 'images/3-2.jpg', '#');
+    let good33 = new BestGood(3, false, '노니&깔라만시', '2,300원', '130ml', 'images/3-3.jpg', '#');
+    let good34 = new BestGood(4, false, '마시는 새싹', '2,200원', '130ml', 'images/3-4.jpg', '#');
+    let good35 = new BestGood(5, false, '식물성유산균 위&캡슐', '2,100원', '130ml', 'images/3-5.jpg', '#');
+    // 40대 제품
+    let good41 = new BestGood(1, false, '위러브플러스', '2,700원', '130ml', 'images/4-1.jpg', '#');
+    let good42 = new BestGood(2, false, '노니&깔라만시', '2,300원', '130ml', 'images/4-2.jpg', '#');
+    let good43 = new BestGood(3, false, '유기명일엽녹즙', '2,600원', '130ml', 'images/4-3.jpg', '#');
+    let good44 = new BestGood(4, false, '', '원', '', 'images/no_img.png', '#');
+    let good45 = new BestGood(5, false, '마시는 새싹', '2,200원', '130ml', 'images/4-5.jpg', '#');
+    // 50대 제품
+    let good51 = new BestGood(1, false, '위러브플러스', '2,700원', '130ml', 'images/5-1.jpg', '#');
+    let good52 = new BestGood(2, false, '노니&깔라만시', '2,300원', '130ml', 'images/5-2.jpg', '#');
+    let good53 = new BestGood(3, false, '돌미나리와 민들레', '2,600원', '130ml', 'images/5-3.jpg', '#');
+    let good54 = new BestGood(4, false, '식물성유산균 오메가&치아씨드', '2,100원', '130ml', 'images/5-4.jpg', '#');
+    let good55 = new BestGood(5, false, '유기명일엽녹즙', '2,600원', '130ml', 'images/5-5.jpg', '#');
 
     // 1. 객체 리터럴 방식코드
-    let good_10 = [{
-            rank: 1,
-            like: false,
-            title: '매일아침 튼튼플러스',
-            price: '1,500원',
-            ml: '100ml',
-            image: 'images/1-1.jpg'
-        },
-        {
-            rank: 2,
-            like: false,
-            title: '아이러브 루테인',
-            price: '2,700원',
-            ml: '130ml',
-            image: 'images/1-2.jpg'
-        },
-        {
-            rank: 3,
-            like: false,
-            title: '당근즙',
-            price: '2,900원',
-            ml: '130ml',
-            image: 'images/1-3.jpg'
-        },
-        {
-            rank: 4,
-            like: false,
-            title: '러브미 케일&셀러리',
-            price: '1,900원',
-            ml: '130ml',
-            image: 'images/1-4.jpg'
-        },
-        {
-            rank: 5,
-            like: false,
-            title: '핸디밀 프로틴 PRO',
-            price: '2,400원',
-            ml: '150ml',
-            image: 'images/1-5.jpg'
-        }
-    ];
+    let good_10 = [good11, good12, good13, good14, good15];
+    let good_20 = [good21, good22, good23, good24, good25];
+    let good_30 = [good31, good32, good33, good34, good35];
+    let good_40 = [good41, good42, good43, good44, good45];
+    let good_50 = [good51, good52, good53, good54, good55];
 
-    let good_20 = [{
-            rank: 1,
-            like: false,
-            title: '식물성유산균쌀요거트',
-            price: '2,100원',
-            ml: '150ml',
-            image: 'images/2-1.jpg'
-        },
-        {
-            rank: 2,
-            like: false,
-            title: '러브미 케일&셀러리',
-            price: '1,900원',
-            ml: '130ml',
-            image: 'images/2-2.jpg'
-        },
-        {
-            rank: 3,
-            like: false,
-            title: '식물성유산균 위&캡슐',
-            price: '2,100원',
-            ml: '130ml',
-            image: 'images/2-3.jpg'
-        },
-        {
-            rank: 4,
-            like: false,
-            title: '노니&깔라만시',
-            price: '2,300원',
-            ml: '130ml',
-            image: 'images/2-4.jpg'
-        },
-        {
-            rank: 5,
-            like: false,
-            title: '식물성유산균 오메가&치아씨드',
-            price: '2,100원',
-            ml: '130ml',
-            image: 'images/2-5.jpg'
-        }
-    ];
-    let good_30 = [{
-            rank: 1,
-            like: false,
-            title: '위러브플러스',
-            price: '2,700원',
-            ml: '130ml',
-            image: 'images/3-1.jpg'
-        },
-        {
-            rank: 2,
-            like: false,
-            title: '러브미 케일&셀러리',
-            price: '1,900원',
-            ml: '130ml',
-            image: 'images/3-2.jpg'
-        },
-        {
-            rank: 3,
-            like: false,
-            title: '노니&깔라만시',
-            price: '2,300원',
-            ml: '130ml',
-            image: 'images/3-3.jpg'
-        },
-        {
-            rank: 4,
-            like: false,
-            title: '마시는 새싹',
-            price: '2,200원',
-            ml: '130ml',
-            image: 'images/3-4.jpg'
-        },
-        {
-            rank: 5,
-            like: false,
-            title: '식물성유산균 위&캡슐',
-            price: '2,100원',
-            ml: '130ml',
-            image: 'images/3-5.jpg'
-        }
-    ];
-    let good_40 = [{
-            rank: 1,
-            like: false,
-            title: '위러브플러스',
-            price: '2,700원',
-            ml: '130ml',
-            image: 'images/4-1.jpg'
-        },
-        {
-            rank: 2,
-            like: false,
-            title: '노니&깔라만시',
-            price: '2,300원',
-            ml: '130ml',
-            image: 'images/4-2.jpg'
-        },
-        {
-            rank: 3,
-            like: false,
-            title: '유기명일엽녹즙',
-            price: '2,600원',
-            ml: '130ml',
-            image: 'images/4-3.jpg'
-        },
-        {
-            rank: 4,
-            like: false,
-            title: '',
-            price: '원',
-            ml: '',
-            image: 'images/no_img.png'
-        },
-        {
-            rank: 5,
-            like: false,
-            title: '마시는 새싹',
-            price: '2,200원',
-            ml: '130ml',
-            image: 'images/4-5.jpg'
-        }
-
-    ];
-    let good_50 = [{
-            rank: 1,
-            like: false,
-            title: '위러브플러스',
-            price: '2,700원',
-            ml: '130ml',
-            image: 'images/5-1.jpg'
-        },
-        {
-            rank: 2,
-            like: false,
-            title: '노니&깔라만시',
-            price: '2,300원',
-            ml: '130ml',
-            image: 'images/5-2.jpg'
-        },
-        {
-            rank: 3,
-            like: false,
-            title: '돌미나리와 민들레',
-            price: '2,600원',
-            ml: '130ml',
-            image: 'images/5-3.jpg'
-        },
-        {
-            rank: 4,
-            like: false,
-            title: '식물성유산균 오메가&치아씨드',
-            price: '2,100원',
-            ml: '130ml',
-            image: 'images/5-4.jpg'
-        },
-        {
-            rank: 5,
-            like: false,
-            title: '유기명일엽녹즙',
-            price: '2,600원',
-            ml: '130ml',
-            image: 'images/5-5.jpg'
-        }
-    ];
-
-    // 2. 객체 생성자 함수 방식코드
 
 
     // 3. 코드 구현
@@ -253,6 +96,14 @@ window.onload = function () {
     // 3.2. 각 순위 제품 저장
     let best_good = $('.best .good');
     // console.log(best_good);
+
+    // 배경박스
+    let best_cate_bg = $('.best-cate-bg');
+    let best_cate_bg_pos = [];
+    for (let i = 0; i < best_cate.length; i++) {
+        best_cate_bg_pos[i] = 70 + (55 * i);
+    }
+    console.log(best_cate_bg_pos);
 
     // 4. 카테고리를 클릭해서 내용을 변경
     $.each(best_cate, function (index, item) {
@@ -272,23 +123,33 @@ window.onload = function () {
     function showBest(_index) {
 
         let base_data;
-
+        // 메뉴 배경 위치 잡기
+        best_cate_bg.css('top', best_cate_bg_pos[_index]);
+        // 메뉴 색상 바꾸기
+        best_cate.removeClass('best-cate-active');
+        best_cate.eq(_index).addClass('best-cate-active');
+        // 아이콘
+        best_cate.eq(0).find('i').removeClass('best-10-active');
+        best_cate.eq(4).find('i').removeClass('best-50-active');
         if (_index == 0) {
             base_data = good_10;
+            best_cate.eq(0).find('i').addClass('best-10-active');
         } else if (_index == 1) {
-            base_data = good_20;
+            base_data = good_20;            
         } else if (_index == 2) {
             base_data = good_30;
         } else if (_index == 3) {
             base_data = good_40;
         } else if (_index == 4) {
             base_data = good_50;
+            best_cate.eq(4).find('i').addClass('best-50-active');
         }
 
         $.each(best_good, function (index, item) {
 
             // let good = best_good.eq(index);
             let good = $(this);
+            good.find('a').attr('href', base_data[index].link);
             good.find('.good-img').attr('src', base_data[index].image);
             good.find('.good-name').text(base_data[index].title);
             good.find('.good-price > b').text(base_data[index].price);
@@ -307,9 +168,7 @@ window.onload = function () {
 
             // 연령대를 클릭할떄 마다 Click 자꾸 등록이 된다.
             // 그래서 한번 클릭에도 여러번 클릭 된 결과가
-            // 화면에 적용이 된다.
-
-
+            // 화면에 적용이 된다.          
 
             good.find('.good-heart').off('click').on('click', function (event) {
 

@@ -1,5 +1,96 @@
 $(document).ready(function () {
 
+
+    // 페이징 바
+    let page1 = $('.page-1');
+    page1.click(function () {
+        $('html, body').stop().animate({
+            scrollTop: 0
+        }, 400);
+    });
+
+    var location2 = document.querySelector(".business").offsetTop;
+    var location3 = document.querySelector(".product").offsetTop;
+    var location4 = document.querySelector(".esg").offsetTop;
+    var location5 = document.querySelector(".news").offsetTop;
+    var screenH = screen.height;
+
+    let page2 = $('.page-2');
+    page2.click(function () {
+        window.scrollTo({
+            top: location2,
+            behavior: 'smooth'
+        });
+    });
+
+    let page3 = $('.page-3');
+    page3.click(function () {
+        window.scrollTo({
+            top: location3,
+            behavior: 'smooth'
+        });
+    });
+
+    let page4 = $('.page-4');
+    page4.click(function () {
+        window.scrollTo({
+            top: location4,
+            behavior: 'smooth'
+        });
+    });
+    let page5 = $('.page-5');
+    page5.click(function () {
+        window.scrollTo({
+            top: location5,
+            behavior: 'smooth'
+        });
+    });
+    // 페이징바 포커싱
+    function pageFocus() {
+        var winY = window.pageYOffset;
+        if (winY < location2-4 && winY >= 0) {
+            page1.addClass('page-focus');
+            page2.removeClass('page-focus');
+            page3.removeClass('page-focus');
+            page4.removeClass('page-focus');
+            page5.removeClass('page-focus');
+        } else if (winY < location3-1 && winY >= location2-1) {
+            page1.removeClass('page-focus');
+            page2.addClass('page-focus');
+            page3.removeClass('page-focus');
+            page4.removeClass('page-focus');
+            page5.removeClass('page-focus');
+        } else if (winY < location4-1 && winY >= location3-1) {
+            page1.removeClass('page-focus');
+            page2.removeClass('page-focus');
+            page3.addClass('page-focus');
+            page4.removeClass('page-focus');
+            page5.removeClass('page-focus');
+        } else if (winY < location5-1 && winY >= location4-1) {
+            page1.removeClass('page-focus');
+            page2.removeClass('page-focus');
+            page3.removeClass('page-focus');
+            page4.addClass('page-focus');
+            page5.removeClass('page-focus');
+        } else if (winY >= location5) {
+            page1.removeClass('page-focus');
+            page2.removeClass('page-focus');
+            page3.removeClass('page-focus');
+            page4.removeClass('page-focus');
+            page5.addClass('page-focus');
+        }
+        console.log(winY,location2-5,location3-5,location4);
+    }
+    window.addEventListener('scroll', function () {
+        pageFocus();
+    });
+    pageFocus();
+
+
+
+
+
+
     // 위로가기 기능
     let gotop = $('.gotop');
     gotop.click(function () {
@@ -7,45 +98,6 @@ $(document).ready(function () {
             scrollTop: 0
         }, 400);
     });
-    let page1 = $('.page-1');
-    page1.click(function () {
-        $('html, body').stop().animate({
-            scrollTop: 0
-        }, 400);
-    });
-    let page2 = $('.page-2');
-    page2.click(function () {
-        var location = document.querySelector(".business").offsetTop;
-        window.scrollTo({
-            top: location,
-            behavior: 'smooth'
-        });
-    });
-    let page3 = $('.page-3');
-    page3.click(function () {
-        var location = document.querySelector(".product").offsetTop;
-        window.scrollTo({
-            top: location,
-            behavior: 'smooth'
-        });
-    });
-    let page4 = $('.page-4');
-    page4.click(function () {
-        var location = document.querySelector(".esg").offsetTop;
-        window.scrollTo({
-            top: location,
-            behavior: 'smooth'
-        });
-    });
-    let page5 = $('.page-5');
-    page5.click(function () {
-        var location = document.querySelector(".news").offsetTop;
-        window.scrollTo({
-            top: location,
-            behavior: 'smooth'
-        });
-    });
-
     // 위로가기 사라짐 효과
     $(window).scroll(function () {
         // 스크롤 바가 이동한 거리 체크
@@ -56,6 +108,7 @@ $(document).ready(function () {
             gotop.removeClass('gotop-active');
         }
     });
+
 });
 $(function () {
     var $header = $('header'); //헤더를 변수에 넣기

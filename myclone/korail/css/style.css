@@ -63,6 +63,7 @@ body {
 .header {
     position: relative;
     display: block;
+    z-index: 9999;
 }
 
 .header-top {
@@ -71,6 +72,7 @@ body {
     width: 100%;
     height: 40px;
     background-color: #fff;
+    z-index:1;
 }
 
 .header-top::after {
@@ -185,20 +187,23 @@ body {
     background-color: rgba(0, 0, 0, .5);
 }
 
-.header-main-on {
+.header-on .header-main{
     background-color: #fff !important;
 }
-.header-main-on .gnb-a{
+.header-on .gnb-a{
     color: #000;
 }
-.header-main-on .logo {
+.header-on .logo {
     background:url('../images/logo-info-short--color.svg') no-repeat;
 }
-.header-main-on .search {
+.header-on .search {
     background:url('../images/scrolled_search_icon.svg') no-repeat;
 }
-.header-main-on .all-menu {
+.header-on .all-menu {
     background:url('../images/scrolled_ham_icon.svg') no-repeat;
+}
+.header-on .header-top::after {
+    background-color: #ccc;
 }
 
 .header-main .container {

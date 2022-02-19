@@ -4,9 +4,9 @@ $(window).ready(function () {
     let gnb_a = $('.gnb>li>a');
     let nav = $('.nav');
     let i;
-    let header_main = $('.header-main');
+    let header = $('.header');
     gnb.mouseenter(function(){
-        header_main.addClass('header-main-on');
+        header.addClass('header-on');
     })
 
     // nav 벗어 나기 전 까지 gnb>li>a 포커스 유지
@@ -37,7 +37,7 @@ $(window).ready(function () {
 
     nav.mouseleave(function(){
         gnb_a.removeClass('gnb-a-focus');
-        header_main.removeClass('header-main-on');
+        header.removeClass('header-on');
     })
 })
 

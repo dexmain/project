@@ -3,7 +3,6 @@ $(window).ready(function () {
     let gnb_li = $('.gnb>li');
     let gnb_a = $('.gnb>li>a');
     let nav = $('.nav');
-    let i;
     let header = $('.header');
     gnb.mouseenter(function(){
         header.addClass('header-on');
@@ -38,6 +37,21 @@ $(window).ready(function () {
     nav.mouseleave(function(){
         gnb_a.removeClass('gnb-a-focus');
         header.removeClass('header-on');
+    })
+
+
+
+    let h_link_menu =$('.header-link-menu');
+    let h_link_menu_list =$('.header-link-menu-list');
+    let h_link_lang =$('.header-link-lang');
+    let h_link_lang_list =$('.header-link-lang-list');
+
+    // 자주찾는 메뉴 언어전환
+    h_link_menu.click(function(){
+        h_link_menu.toggleClass('header-link-menu-on');
+    })
+    h_link_lang.click(function(){
+        h_link_lang.toggleClass('header-link-lang-on');
     })
 })
 

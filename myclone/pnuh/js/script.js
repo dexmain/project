@@ -52,9 +52,10 @@ $(document).ready(function () {
         site_search_bt.show();
 
         site_search_txt.addClass('site-search-active');
+        site_search_txt.focus();
     });
     site_search_bt.click(function(e){
-        event.preventDefault();
+        e.preventDefault();
         $(this).hide();
         site_search_txt.removeClass('site-search-active');
     })

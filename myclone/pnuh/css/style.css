@@ -923,8 +923,8 @@ body {
 
 .site-search-wrap {
     position: absolute;
-    top: 0;
-    right: 0;
+    top:-6px;
+    right: -6px;
     display: block;
 }
 
@@ -949,27 +949,24 @@ body {
     line-height: 35px;
     color: #000;
     border: 0px;
-
-    
-    
     transition: all 0.3s;
 }
 
 .site-search-active {
     border: 1px solid #00589d !important;
     padding: 0 10px !important;
-    width: 250px !important;
+    width: 213px !important;
 }
 
-site-search-txt::placeholder {
+.site-search-txt::placeholder {
     color: #00589d;
 }
 
-site-search-txt:focus::placeholder {
+.site-search-txt:focus::placeholder {
     color: #b2cce1;
 }
 
-site-search-txt:focus {
+.site-search-txt:focus {
     outline: none;
 }
 

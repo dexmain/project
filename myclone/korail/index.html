@@ -131,50 +131,59 @@
                 <div class="swiper sw-visual-slide">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="images/visual_bg1.jpeg"/>
+                            <img src="images/visual_bg1.jpeg" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="images/visual_bg2.jpeg"/>
+                            <img src="images/visual_bg2.jpeg" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="images/visual_bg3.jpeg"/>
+                            <img src="images/visual_bg3.jpeg" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="images/visual_bg4.jpeg"/>
+                            <img src="images/visual_bg4.jpeg" />
                         </div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="visual-control">
-                        <div class="swiper-pagination"></div>
+                        <div class="visual-control-txt-list">
+                            <span class="visual-control-txt">KTX 산천 북한강철교 운행</span>
+                            <span class="visual-control-txt">임진강 철도교량 점검</span>
+                            <span class="visual-control-txt">KTX 승무원 고객응대</span>
+                            <span class="visual-control-txt">전동열차 코로나19 방역</span>
+                        </div>
+                        <div class="sw-visual-pagination">
+                        </div>
                         <button class="visual-pause">
                             <span class="visual-pause-img"></span>
                         </button>
                     </div>
-                    <div class="slogan-img">
-                    </div>
-                    <div class="visual-bottom">
+                    <div class="visual-popup">
+                        <div class="v-popup-prev sw-popup-prev"></div>
+                        <div class="sw-popup-pause"></div>
+                        <div class="v-popup-next sw-popup-next"></div>
+                        <div class="v-popup-pagination sw-popup-pagination"></div>
+                        <div class="swiper sw-popup-slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/images/visual_pop1.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/visual_pop2.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/visual_pop3.png" alt="">
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                    <!-- 슬로건 이미지 -->
+                    <span class="slogan-img"></span>
+                    <div class="visual-bottom">
                     </div>
                 </div>
             </div>
-            <script>
-                var visual_swiper = new Swiper(".sw-visual-slide", {
-                    spaceBetween: 30,
-                    effect: "fade",
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                    },
-                    autoplay:{
-                        delay:3000,
-                    }
-                });
-            </script>
             <!-- // 이미지슬라이드 -->
             <!-- 자주 찾는 메뉴 -->
             <div class="quickmenu">
@@ -206,5 +215,41 @@
         </footer>
     </div>
 </body>
+
+<script>
+    // 비주얼 슬라이드 
+    var visual_swiper = new Swiper(".sw-visual-slide", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".sw-visual-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 3000,
+        }
+    });
+    // 
+    // 비주얼 팝업 슬라이드
+    var popup_swiper = new Swiper(".sw-popup-slide", {
+        loop: true,
+        pagination: {
+            el: ".v-popup-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".v-popup-next",
+            prevEl: ".v-popup-prev",
+        },
+        autoplay: {
+            delay: 2000,
+        }
+    });
+</script>
 
 </html>

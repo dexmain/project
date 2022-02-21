@@ -36,17 +36,35 @@ $(window).ready(function () {
     h_link_lang.click(function () {
         h_link_lang.toggleClass('header-link-lang-on');
     });
-    
+
     // 비주얼 슬라이드 오토플레이 on/off 버튼
     let visual_pause = $('.visual-pause');
     let visual_play = $('.visual-play');
-    visual_pause.click(function(){
+    visual_pause.click(function () {
         $(this).toggleClass('visual-play');
-        if($(this).hasClass('visual-play')){
+        if ($(this).hasClass('visual-play')) {
             visual_swiper.autoplay.stop();
-        }
-        else {
+        } else {
             visual_swiper.autoplay.start();
         }
     })
+    // 비주얼 팝업 슬라이드 오토플레이 on/off 버튼
+    let v_popup_pause = $('.sw-popup-pause');
+    let v_popup_play = $('.sw-popup-play');
+    v_popup_pause.click(function () {
+        $(this).toggleClass('sw-popup-play');
+        if ($(this).hasClass('sw-popup-play')) {
+            popup_swiper.autoplay.stop();
+        } else {
+            popup_swiper.autoplay.start();
+        }
+    })
+    // let swiper_bullet = $('.swiper-pagination-bullet');
+    // let visual_control_txt = $('.visual-control-txt');
+    // $.each(swiper_bullet, function (index, item) {
+    //     if ($(this).hasClass('swiper-pagination-bullet-active')) {
+    //         console.log(1);
+    //         visual_control_txt.eq(index).addClass('visual-control-txt-active');
+    //     }
+    // })d
 })

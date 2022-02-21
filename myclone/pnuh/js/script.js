@@ -53,10 +53,15 @@ $(document).ready(function () {
 
         site_search_txt.addClass('site-search-active');
         site_search_txt.focus();
+        // 언어 목록 숨기기
+        language_wrap.removeClass('language-wrap-active');
     });
     site_search_bt.click(function(e){
         e.preventDefault();
-        $(this).hide();
+        setTimeout(function(){
+            site_search_bt.hide();
+            site_search_txt.val('');
+        }, 200)
         site_search_txt.removeClass('site-search-active');
     })
 

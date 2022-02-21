@@ -946,10 +946,9 @@ body {
     font-family: 'Roboto', 'Noto Sans KR', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    line-height: 35px;
     color: #000;
-    border: 0px;
-    transition: all 0.3s;
+    border: 0;
+    transition: all 0.2s;
 }
 
 .site-search-active {
@@ -968,9 +967,11 @@ body {
 
 .site-search-txt:focus {
     outline: none;
+    /* transition: none; */
+    /* border: 2px solid #000 !important;  */
 }
 
-.site-search-wrap form input[type="submit"] {
+.site-search-bt {
     position: absolute;
     right: 0;
     top: 0;
@@ -982,7 +983,7 @@ body {
     border: 0;
     font-size: 0;
 
-    background: url('../images/ico_closeX_white.png') no-repeat center;
+    background: url('../images/ico_closeX_white2.png') no-repeat center;
     cursor: pointer;
 
     background-color: #00589d;

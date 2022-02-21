@@ -319,7 +319,7 @@ body {
     text-align: center;
 }
 
-.gnb>li:hover>.gnb-a {
+.gnb-a-focus {
     color: #0054a6 !important;
     border-bottom: 3px solid #0054a6;
     font-weight: 600;

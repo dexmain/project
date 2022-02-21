@@ -396,32 +396,115 @@ body {
 
 /* // 상단 */
 /* 메인 */
-.content {
-    position: relative;
-    display: block;
-}
+.content {}
 
 /* 비주얼 */
 .visual {
-    position: relative;
+    position: absolute;
+    top: 0;
     display: block;
     width: 100vw;
     height: 100vh;
+}
+
+.visual .container {
+    height: 100%;
+}
+
+.visual::after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(0, 84, 166, 0.85);
 }
 
 .sw-visual-slide {
     position: absolute;
     display: block;
     width: 100%;
-    height: 100%;
-    top: -140px;
+    z-index: -1;
 }
 
 .swiper-slide img {
+    height: 100vh;
+}
 
-    height: 100%;
+.visual-control {
+    position: absolute;
+    bottom: 40px;
+    display: block;
+    width: 128px;
+    height: 41px;
+    border-radius: 27px;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+.visual-pause {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.visual-pause-img {
+    position: absolute;
     left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 6px;
+    height: 8px;
+    
+    background: url('../images/visual_pause.svg')no-repeat;
+    background-size: contain;
+}
+
+.visual-play .visual-pause-img {
+    background: url('../images/visual_play.svg')no-repeat;
+    background-position: 1px;
+    background-size: contain;
+}
+
+.visual .swiper-pagination {
+    margin-left: 18px;
+    width: 64px !important;
+    bottom: 12px;
+}
+
+.visual .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    background-color: #fff;
+    opacity: .5;
+}
+
+.visual .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.slogan-img {
+    position: absolute;
+    right: 110px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 700px;
+    height: 426px;
+    background: url('../images/slogan-group@2x.png') no-repeat;
     background-size: cover;
+    z-index: 1;
 }
 
 /* 자주 찾는 메뉴 */

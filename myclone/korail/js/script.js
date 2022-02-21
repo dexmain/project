@@ -36,4 +36,17 @@ $(window).ready(function () {
     h_link_lang.click(function () {
         h_link_lang.toggleClass('header-link-lang-on');
     });
+    
+    // 비주얼 슬라이드 오토플레이 on/off 버튼
+    let visual_pause = $('.visual-pause');
+    let visual_play = $('.visual-play');
+    visual_pause.click(function(){
+        $(this).toggleClass('visual-play');
+        if($(this).hasClass('visual-play')){
+            visual_swiper.autoplay.stop();
+        }
+        else {
+            visual_swiper.autoplay.start();
+        }
+    })
 })

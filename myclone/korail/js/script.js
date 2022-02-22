@@ -59,12 +59,42 @@ $(window).ready(function () {
             popup_swiper.autoplay.start();
         }
     })
-    // let swiper_bullet = $('.swiper-pagination-bullet');
-    // let visual_control_txt = $('.visual-control-txt');
-    // $.each(swiper_bullet, function (index, item) {
-    //     if ($(this).hasClass('swiper-pagination-bullet-active')) {
-    //         console.log(1);
-    //         visual_control_txt.eq(index).addClass('visual-control-txt-active');
-    //     }
-    // })d
+    // 비주얼 슬라이드 
+    var visual_swiper = new Swiper(".sw-visual-slide", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".sw-visual-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 3000,
+        },
+        on: {
+            activeIndexChange: function() {
+                let visual_control_txt_list = [
+                    'KTX 산천 북한강철교 운행',
+                    '임진강 철도교량 점검',
+                    'KTX 승무원 고객응대',
+                    '전동열차 코로나19 방역',
+                ];
+                let i = this.realIndex;
+                let visual_control_txt = $('.visual-control-txt');
+                console.log(visual_control_txt_list[i]);
+                visual_control_txt.html('<span>' + visual_control_txt_list[i] + '</span>');
+            }
+        }
+    });
+
+    
+
+    
+
+
+
 })

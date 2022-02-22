@@ -30,7 +30,22 @@
         </div>
         <div class="search-wrap">
             <div class="container">
-                
+                <div class="search-close">닫기</div>
+                <div class="search-box">
+                    <form action="" class="search-form">
+                        <input type="text" class="search-form-txt" placeholder="검색어를 입력해주세요">
+                        <input type="submit" class="search-form-submit"></input>
+                    </form>
+                    <div class="keyword-box">
+                        <span class="hot-keyword">인기 검색어</span>
+                        <ul class="keyword-list">
+                            <li><a href="#">승차권예매</a></li>
+                            <li><a href="#">승차권 예매</a></li>
+                            <li><a href="#">승차권</a></li>
+                            <li><a href="#">철도</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- 상단 -->
@@ -129,9 +144,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <button class="search">
-                        
-                    </button>
+                    <button class="search-bt"></button>
                     <a href="#" class="all-menu"></a>
 
                 </div>
@@ -160,7 +173,7 @@
                 <div class="container">
                     <div class="visual-control">
                         <div class="visual-control-txt">
-                            
+
                         </div>
                         <div class="sw-visual-pagination">
                         </div>
@@ -228,7 +241,6 @@
 </body>
 
 <script>
-    
     // 비주얼 팝업 슬라이드
     var popup_swiper = new Swiper(".sw-popup-slide", {
         loop: true,

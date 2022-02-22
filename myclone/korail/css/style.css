@@ -148,6 +148,7 @@ body {
     position: relative;
     display: block;
 }
+
 .chatbot {
     position: fixed;
     bottom: 40px;
@@ -156,6 +157,7 @@ body {
     z-index: 9;
     cursor: pointer;
 }
+
 .chatbot span {
     position: relative;
     display: block;
@@ -172,9 +174,11 @@ body {
     background-color: #003569;
     border-radius: 0 40px 40px 0;
 }
-.chatbot span b{
+
+.chatbot span b {
     font-weight: 600;
 }
+
 .chatbot::after {
     content: '';
     position: absolute;
@@ -191,9 +195,11 @@ body {
     background-size: 66px;
     z-index: 99;
 }
-.chatbot:hover::after{
+
+.chatbot:hover::after {
     background-color: #1971c8;
 }
+
 /* 상단 */
 .header {
     position: relative;
@@ -405,7 +411,7 @@ body {
     background: url('../images/logo-info-short--color.svg') no-repeat;
 }
 
-.header-on .search {
+.header-on .search-bt {
     background: url('../images/scrolled_search_icon.svg') no-repeat;
 }
 
@@ -505,7 +511,7 @@ body {
     color: #000;
 }
 
-.search {
+.search-bt {
     position: absolute;
     right: 52px;
     top: 50%;
@@ -517,20 +523,29 @@ body {
     border: 0;
     cursor: pointer;
 }
+
 .search-wrap {
     position: absolute;
     display: block;
     z-index: 10000;
     width: 100vw;
+    height: 380px;
+    top: -100vw;
+    transition: top 0.3s;
+}
+.search-wrap-on {
+    top:0;
 }
 .search-wrap::before {
     content: '';
-    position:absolute;
+    position: absolute;
     display: block;
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
+    z-index: -2;
 }
+
 .search-wrap::after {
     content: '';
     position: absolute;
@@ -539,8 +554,137 @@ body {
     width: 100%;
     height: 430px;
     background: url('../images/search_bg.jpeg')no-repeat;
+    z-index: -1;
 }
-.search-wrap .container{}
+
+.search-wrap .container {
+    height: 100%;
+}
+
+.search-close {
+    position: absolute;
+    top: 37px;
+    right: 0;
+    padding-right: 35px;
+    display: block;
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px;
+    cursor: pointer;
+}
+.search-close::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 0;
+    display: block;
+    width: 22px;
+    height: 22px;
+    background:url('../images/close_icon.svg')no-repeat center;
+}
+.search-box {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 25px);
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.search-form {
+    position: relative;
+    border: 3px solid #fff;
+    display: block;
+    width: 650px;
+}
+
+.search-form-txt {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-right: 70px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: Noto sans KR, "Malgun Gothic", "맑은 고딕", Dotum, "돋움", Gulim, "굴림", sans-serif;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: -0.6px;
+    color: #fff;
+    height: 70px;
+    background-color: transparent;
+    border: 0;
+}
+.search-form-txt::placeholder {
+    color: #fff;
+}
+.search-form-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 70px;
+    height: 70px;
+    border: 0;
+    font-size: 0;
+    background: transparent url('../images/search_icon.svg')no-repeat center;
+    cursor: pointer;
+}
+
+.keyword-box {
+    position: relative;
+    display: block;
+    margin-top: 30px;
+}
+
+.hot-keyword {
+    position: relative;
+    display: block;
+    float: left;
+    padding-left: 27px;
+    font-size: 16px;
+    line-height: 31px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.hot-keyword:before {
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 20px;
+    height: 13px;
+    background: url('../images/search_popular.svg')no-repeat center;
+}
+
+.keyword-list {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.keyword-list li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 7px;
+}
+.keyword-list li:first-child {
+    margin-left: 33px !important;
+}
+
+.keyword-list li a {
+    position: relative;
+    padding: 0 11px;
+    display: block;
+    height: 31px;
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 16px;
+    color: #fff;
+    background-color: #03a0dc;
+}
 
 
 .all-menu {

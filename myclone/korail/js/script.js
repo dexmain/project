@@ -86,4 +86,15 @@ $(window).ready(function () {
             }
         }
     });
+
+    // 서치 버튼
+    let search_bt = $('.search-bt');
+    let search_close_bt = $('.search-close');
+    let search_wrap = $('.search-wrap');
+    search_bt.click(function(){
+        search_wrap.addClass('search-wrap-on');
+    })
+    search_close_bt.click(function(){
+        search_wrap.removeClass('search-wrap-on');
+    })
 })

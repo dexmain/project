@@ -216,17 +216,6 @@ body {
     z-index: 1;
 }
 
-.header-top::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-    z-index: -1;
-}
-
 .header-top .container {}
 
 .header-top-left {
@@ -420,6 +409,13 @@ body {
 }
 
 .header-on .header-top::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    display: block;
+    width: 100%;
+    height: 1px;
+    z-index: -1;
     background-color: #ccc;
 }
 

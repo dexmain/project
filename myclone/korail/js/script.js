@@ -1,16 +1,25 @@
 $(window).ready(function () {
+    let nav = $('.nav');
     let gnb = $('.gnb');
     let gnb_li = $('.gnb>li');
     let gnb_a = $('.gnb>li>a');
-    let nav = $('.nav');
+    let sub_menu = $('.sub-menu');
     let header = $('.header');
+    let header_main = $('.header-main');
+    // 헤더 마우스 호버
     gnb.mouseenter(function () {
         header.addClass('header-on');
+        sub_menu.addClass('sub-menu-on');
     })
 
     // gnb-a-focus
     $.each(gnb_li, function (index, item) {
         $(this).mouseenter(function () {
+            let ul_height = $(this).find('ul').height();
+            header.addClass('header-on');
+            gnb.find('ul').stop().fadeOut(300);
+            $(this).find('ul').stop().fadeIn(300);
+            header_main.height(ul_height + 100);
             gnb_a.removeClass('gnb-a-focus');
             $(this).children('a').addClass('gnb-a-focus');
         })
@@ -18,16 +27,36 @@ $(window).ready(function () {
 
     // 헤더 색상 해제
     nav.mouseleave(function () {
+        gnb.find('ul').stop().fadeOut(300);
         gnb_a.removeClass('gnb-a-focus');
         header.removeClass('header-on');
+        sub_menu.removeClass('sub-menu-on');
+        header_main.height(100);
+    });
+
+    // 챗봇
+    function chatbot_scroll() {
+        let chatbot = $('.chatbot');
+        let sc = $(window).scrollTop();
+        if (sc >= 1) {
+            chatbot.addClass('chatbot-scroll');
+        } else {
+            chatbot.removeClass('chatbot-scroll');
+        }
+    }
+    chatbot_scroll();
+    $(window).scroll(function () {
+        chatbot_scroll();
+    });
+    $(window).resize(function () {
+        chatbot_scroll();
     });
 
 
-
+    // 자주찾는 메뉴 언어 파트
     let h_link_menu = $('.header-link-menu');
     let h_link_lang = $('.header-link-lang');
 
-    // 자주찾는 메뉴 언어 파트
     h_link_menu.click(function () {
         h_link_menu.toggleClass('header-link-menu-on');
     });
@@ -91,10 +120,36 @@ $(window).ready(function () {
     let search_bt = $('.search-bt');
     let search_close_bt = $('.search-close');
     let search_wrap = $('.search-wrap');
-    search_bt.click(function(){
+    search_bt.click(function () {
         search_wrap.addClass('search-wrap-on');
-    })
-    search_close_bt.click(function(){
+    });
+    search_close_bt.click(function () {
         search_wrap.removeClass('search-wrap-on');
-    })
+    });
+    var quick_swiper = new Swiper(".sw-quick-slide", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".quick-slide-next",
+            prevEl: ".quick-slide-prev",
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+            },
+            1200: {
+                slidesPerView: 7,
+                spaceBetween: 50,
+            },
+        },
+    });
 })

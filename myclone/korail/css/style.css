@@ -143,6 +143,72 @@ body {
     font-size: 17px;
 }
 
+
+.slide-prev {
+    position: relative;
+    display: inline-block;
+    width: 51px;
+    height: 51px;
+    margin: 0 10px;
+    border-radius: 17px;
+    border: 1px solid #000;
+    background-color: #fff;
+    transform: rotate(45deg);
+    transition: background-color .2s;
+}
+.slide-next {
+    position: relative;
+    display: inline-block;
+    width: 51px;
+    height: 51px;
+    margin: 0 10px;
+    border-radius: 17px;
+    border: 1px solid #000;
+    background-color: #fff;
+    transform: rotate(45deg);
+    transition: background-color .2s;
+}
+.slide-next:hover {
+    background-color: #0054a6;
+    border-color: #0054a6;
+}
+.slide-prev:hover {
+    background-color: #0054a6;
+    border-color: #0054a6;
+}
+
+.slide-next::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 14px;
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.slide-next:hover::after {
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.slide-prev::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 21px;
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+}
+.slide-prev:hover::after {
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
 /* 전체 */
 .wrap {
     position: relative;
@@ -1138,46 +1204,9 @@ body {
 
 .quick-slide-bt {
     position: relative;
-    display: none;
+    display: block;
     text-align: center;
     margin-top: 63px;
-}
-
-.quick-slide-bt button {
-    position: relative;
-    display: inline-block;
-    width: 51px;
-    height: 51px;
-    margin: 0 10px;
-    border-radius: 17px;
-    border: 1px solid #000;
-    background-color: #fff;
-    transform: rotate(45deg);
-    transition: background-color .2s;
-}
-
-.quick-slide-next::after {
-    content: '';
-    position: absolute;
-    top: 21px;
-    left: 14px;
-    display: block;
-    width: 13px;
-    height: 13px;
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
-}
-
-.quick-slide-prev::after {
-    content: '';
-    position: absolute;
-    top: 14px;
-    left: 21px;
-    display: block;
-    width: 13px;
-    height: 13px;
-    border-bottom: 1px solid #000;
-    border-left: 1px solid #000;
 }
 
 /* 주요 사업 */

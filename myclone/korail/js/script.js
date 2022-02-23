@@ -126,6 +126,7 @@ $(window).ready(function () {
     search_close_bt.click(function () {
         search_wrap.removeClass('search-wrap-on');
     });
+
     var quick_swiper = new Swiper(".sw-quick-slide", {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -149,6 +150,7 @@ $(window).ready(function () {
             1200: {
                 slidesPerView: 7,
                 spaceBetween: 50,
+
             },
         },
     });

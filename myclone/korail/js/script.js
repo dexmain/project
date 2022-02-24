@@ -36,8 +36,8 @@ $(window).ready(function () {
 
     // 챗봇
     function chatbot_scroll() {
-        let chatbot = $('.chatbot');
         let sc = $(window).scrollTop();
+        let chatbot = $('.chatbot');
         if (sc >= 1) {
             chatbot.addClass('chatbot-scroll');
         } else {
@@ -45,12 +45,6 @@ $(window).ready(function () {
         }
     }
     chatbot_scroll();
-    $(window).scroll(function () {
-        chatbot_scroll();
-    });
-    $(window).resize(function () {
-        chatbot_scroll();
-    });
 
 
     // 자주찾는 메뉴 언어 파트
@@ -153,5 +147,29 @@ $(window).ready(function () {
 
             },
         },
+    });
+    // 자주 찾는 메뉴 애니메이션
+    function quickOn() {
+        let sc = $(window).scrollTop();
+        let quick_top = $('.quickmenu').offset().top;
+        let quickmenu = $('.quickmenu');
+        if (sc >= quick_top / 2) {
+            quickmenu.addClass('quickmenu-on');
+        } else {
+            quickmenu.removeClass('quickmenu-on');
+        }
+    }
+    quickOn();
+
+
+
+    $(window).scroll(function () {
+        console.log($(window).scrollTop());
+        chatbot_scroll();
+        quickOn();
+    });
+    $(window).resize(function () {
+        chatbot_scroll();
+        quickOn();
     });
 })

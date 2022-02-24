@@ -786,7 +786,10 @@ body {
     background: url('../images/pause.png')no-repeat;
     cursor: pointer;
 }
-
+.visual-play {
+    background: url('../images/play.png')no-repeat ;
+    width: 10px;
+}
 .sw-visual-prev {
     content: '';
     position: absolute;

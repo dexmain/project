@@ -19,7 +19,7 @@ $(document).ready(function () {
         '기업시민 함께 미래가 되다',
         '수소 탐구생활'
     ];
-    var swiper = new Swiper(".sw-visual-slide", {
+    var visual_swiper = new Swiper(".sw-visual-slide", {
         spaceBetween: 30,
         effect: "fade",
         loop: true,
@@ -38,6 +38,17 @@ $(document).ready(function () {
             delay: 5000,
         },
     });
+    // 비주얼 슬라이드 오토플레이 on / off
+    let visual_pause = $('.visual-pause');
+    let visual_play = $('.visual-play');
+    visual_pause.click(function () {
+        $(this).toggleClass('visual-play');
+        if ($(this).hasClass('visual-play')) {
+            visual_swiper.autoplay.stop();
+        } else {
+            visual_swiper.autoplay.start();
+        }
+    })
     var swiper = new Swiper(".sw-bar-slide", {
         direction: "vertical",
         slidesPerView: 1,

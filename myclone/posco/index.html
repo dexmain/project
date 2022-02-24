@@ -22,7 +22,7 @@
     <script src="js/script.js"></script>
 </head>
 
-<body id="main" class="">
+<body id="main">
     <!-- 페이징 바 -->
     <div class="page-bar-list">
         <button class="page-bar"></button>
@@ -202,7 +202,7 @@
                 </nav>
                 <div class="header-right clearfix">
                     <div class="user-area">
-                        <button id="modechanger" onclick="Buttontoggle()" value=true></button>
+                        <button id="modechanger" value=true></button>
                         <div class="languagechange">
                             <a href="#">KOR</a>
 
@@ -265,17 +265,15 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="header-point"></div>
-
                 <div class="visual-menu">
-                    <ul class="visual-menu-list clearfix">
-                        <li class=""><a href="#">park1538</a></li>
-                        <li class=""><a href="#">기업시민 함께 미래가 되다</a></li>
-                        <li class="visual-menu-list-focus"><a href="#">수소 탐구생활</a></li>
-                    </ul>
+                    <div class="visual-menu-list clearfix">
+                        <div class="visual-pagination"></div>
+                    </div>
                     <div class="sw-visual-next"></div>
                     <div class="sw-visual-prev"></div>
                     <button class="visual-pause"></button>
@@ -318,40 +316,12 @@
                     </div>
                     <!-- Initialize Swiper -->
                     <script>
-                        var swiper = new Swiper(".sw-bar-slide", {
-                            direction: "vertical",
-                            slidesPerView: 1,
-                            loop: true,
-                            spaceBetween: 30,
-                            speed: 700,
-                            autoplay: {
-                                delay: 3000,
-                            },
-                            navigation: {
-                                nextEl: ".sw-bar-down",
-                                prevEl: ".sw-bar-up",
-                            },
-                        });
+
                     </script>
                 </div>
             </div>
             <script>
-                var swiper = new Swiper(".sw-visual-slide", {
-                    spaceBetween: 30,
-                    effect: "fade",
-                    loop: true,
-                    navigation: {
-                        nextEl: ".sw-visual-next",
-                        prevEl: ".sw-visual-prev",
-                        pagination: {
-                            el: ".swiper-pagination",
-                            clickable: true,
-                        },
-                    },
-                    autoplay: {
-                        delay: 5000,
-                    },
-                });
+
             </script>
 
             <!-- 비즈니스 -->
@@ -431,21 +401,13 @@
                         <div class="product-nav">
                             <div class="nav-count clearfix">
                                 <button class="product-slide-prev"></button>
-                                <span class="nav-count-now">01</span>
                                 <span class="nav-count-bar"></span>
-                                <span class="nav-count-tot">05</span>
                                 <button class="product-slide-next"></button>
+                                <div class="product-pagination"></div>
                             </div>
                         </div>
                         <script>
-                            var swiper = new Swiper(".sw-product-slide", {
-                                navigation: {
-                                    nextEl: ".product-slide-next",
-                                    prevEl: ".product-slide-prev",
-                                },
-                                speed: 700,
-                                slidesPerView: 1,
-                            });
+
                         </script>
                     </div>
                 </div>
@@ -501,26 +463,13 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <script>
-                                    var swiper = new Swiper(".sw-esg-slide", {
-                                        navigation: {
-                                            nextEl: ".sw-esg-next",
-                                            prevEl: ".sw-esg-prev",
-                                        },
-                                        loop: true,
-                                        slidesPerView: 1,
-                                        speed: 500,
-                                    });
-                                </script>
                             </div>
                         </div>
                         <div class="esg-nav">
                             <div class="nav-count">
                                 <div class="count-line"></div>
-                                <span class="nav-count-now">01</span>
                                 <span class="nav-count-bar"></span>
-                                <span class="nav-count-tot">05</span>
+                                <div class="esg-pagination"></div>
                             </div>
                         </div>
                     </div>

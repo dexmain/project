@@ -2,10 +2,8 @@ $(document).ready(function () {
 
 
     // 페이징 바
+
     // 페이징바 포커싱
-
-    window.addEventListener('scroll', function () {});
-
     var $header = $('header'); //헤더를 변수에 넣기
     var $gnb = $('gnb');
     var $header_on = $('.header-point'); //색상이 변할 부분
@@ -15,28 +13,84 @@ $(document).ready(function () {
     $window.resize(function () { //반응형을 대비하여 리사이즈시 top값을 다시 계산
         pageOffsetTop = $header_on.offset().top;
     });
+    // 스와이퍼
+    let visual_menu_list =[
+        'park1538',
+        '기업시민 함께 미래가 되다',
+        '수소 탐구생활'
+    ];
+    var swiper = new Swiper(".sw-visual-slide", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        navigation: {
+            nextEl: ".sw-visual-next",
+            prevEl: ".sw-visual-prev",
+        },
+        pagination: {
+            el: ".visual-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + ' visual-menu-item' + '">' + visual_menu_list[index] + "</span>";
+            },
+        },
+        autoplay: {
+            delay: 5000,
+        },
+    });
+    var swiper = new Swiper(".sw-bar-slide", {
+        direction: "vertical",
+        slidesPerView: 1,
+        loop: true,
+        spaceBetween: 30,
+        speed: 700,
+        autoplay: {
+            delay: 3000,
+        },
+        navigation: {
+            nextEl: ".sw-bar-down",
+            prevEl: ".sw-bar-up",
+        },
+    });
+    var swiper = new Swiper(".sw-product-slide", {
+        navigation: {
+            nextEl: ".product-slide-next",
+            prevEl: ".product-slide-prev",
+        },
+        pagination: {
+            el: ".product-pagination",
+            type: "fraction",
+        },
+        speed: 700,
+        slidesPerView: 1,
+    });
+    var swiper = new Swiper(".sw-esg-slide", {
+        navigation: {
+            nextEl: ".sw-esg-next",
+            prevEl: ".sw-esg-prev",
+        },
+        pagination: {
+            el: ".esg-pagination",
+            type: "fraction",
+        },
+        loop: true,
+        slidesPerView: 1,
+        speed: 500,
+    });
 
 
-    
-
-
-    function Buttontoggle() {
-        var body = document.getElementById("main");
-        var mode = document.getElementById("modechanger");
-        var modeval = mode.value;
-        if (modeval == 'true') {
-            mode.setAttribute('value', 'false');
-        } else {
-            mode.setAttribute('value', 'true');
-        }
-        body.classList.toggle("darkmode");
-    }
+    // darkmode
+    let $modechanger = $('#modechanger');
+    $modechanger.click(function () {
+        var body = $("#main");
+        body.toggleClass("darkmode");
+    })
 
 
     // 내용별 section 을 저장한다.
     let section = $('.content > div');
     // 화면 이동속도 (1000은 1초)
-    let section_speed = 500;
+    let section_speed = 1000;
 
     // 일정 너비 이하는 일반 스크롤 
     let section_min_w = 760; // 값 결정은 개인적
@@ -74,7 +128,7 @@ $(document).ready(function () {
             }, 500);
         })
     });
-
+    // 좌표에 따라 페이지 바 컬러 변경 함수
     function page_bar_on() {
         $.each(section, function (index, item) {
             let temp = $(this).offset().top;
@@ -174,7 +228,7 @@ $(document).ready(function () {
 
     function sectionFn() {
 
-        $('html').animate({
+        $('html,body').animate({
             // 위치로 이동
             scrollTop: section_pos[section_index]
 

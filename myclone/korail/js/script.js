@@ -109,7 +109,22 @@ $(window).ready(function () {
             }
         }
     });
-
+    // 비주얼 팝업 슬라이드
+    var popup_swiper = new Swiper(".sw-popup-slide", {
+        loop: true,
+        pagination: {
+            el: ".v-popup-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".v-popup-next",
+            prevEl: ".v-popup-prev",
+        },
+        autoplay: {
+            delay: 2000,
+        }
+    });
+    
     // 서치 버튼
     let search_bt = $('.search-bt');
     let search_close_bt = $('.search-close');
@@ -121,6 +136,8 @@ $(window).ready(function () {
         search_wrap.removeClass('search-wrap-on');
     });
 
+
+    // 자주 찾는 메뉴 슬라이드
     var quick_swiper = new Swiper(".sw-quick-slide", {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -148,28 +165,56 @@ $(window).ready(function () {
             },
         },
     });
+    // 주요 사업 슬라이드
+    var business_swiper = new Swiper(".sw-business-slide", {
+        slidesPerView:3,
+        navigation: {
+            nextEl: ".business-slide-next",
+            prevEl: ".business-slide-prev",
+        },
+    });
+    let quickmenu = $('.quickmenu');
+    let business = $('.business');
+
+    let visual_top = $('.visual').offset().top;
+    let quick_top = $('.quickmenu').offset().top;
+    let business_top = $('.business').offset().top;
+    console.log(quick_top);
     // 자주 찾는 메뉴 애니메이션
     function quickOn() {
         let sc = $(window).scrollTop();
-        let quick_top = $('.quickmenu').offset().top;
-        let quickmenu = $('.quickmenu');
-        if (sc >= quick_top / 3) {
+        if (sc >= quick_top / 2) {
             quickmenu.addClass('quickmenu-on');
         } else {
             quickmenu.removeClass('quickmenu-on');
         }
     }
+
+    // 주요 사업 애니메이션
+    function businessOn() {
+        let sc = $(window).scrollTop();
+        if (sc >= quick_top) {
+            business.addClass('business-on');
+        } else {
+            business.removeClass('business-on');
+        }
+    }
+
+
     quickOn();
+    businessOn();
 
 
-
+    // 스크롤 시 함수 실행
     $(window).scroll(function () {
         console.log($(window).scrollTop());
         chatbot_scroll();
         quickOn();
+        businessOn();
     });
     $(window).resize(function () {
         chatbot_scroll();
         quickOn();
+        businessOn();
     });
 })

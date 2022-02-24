@@ -153,7 +153,7 @@ $(window).ready(function () {
         let sc = $(window).scrollTop();
         let quick_top = $('.quickmenu').offset().top;
         let quickmenu = $('.quickmenu');
-        if (sc >= quick_top / 2) {
+        if (sc >= quick_top / 3) {
             quickmenu.addClass('quickmenu-on');
         } else {
             quickmenu.removeClass('quickmenu-on');

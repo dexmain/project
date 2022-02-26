@@ -1272,6 +1272,7 @@ body {
 .business .content-title {
     padding-top: 50px;
 }
+
 .business-on .content-title {
     opacity: 1;
     transform: translateY(0);
@@ -1289,6 +1290,7 @@ body {
     opacity: 0;
     top: 50px;
 }
+
 .business-on .sw-business-slide {
     top: 0px;
     opacity: 1;
@@ -1484,7 +1486,6 @@ body {
     border: 0;
 }
 
-
 .business-slide-next::after {
     border-top: 2px solid #000;
     border-right: 2px solid #000;
@@ -1501,9 +1502,47 @@ body {
 
 
 
-/* 공지사항 */
-.notice {}
-
+/* 뉴스 */
+.news {
+    position: relative;
+    display: block;
+    padding-top: 125px;
+}
+.news .container {
+    position: relative;
+    display: flex;
+}
+.news-title {
+    position: relative;
+    display: block;
+    width: 298px;
+    height: 176px;
+    margin-top: 47px;
+    background: url('../images/news_title.png')no-repeat center;
+}
+.news-main {
+    position: relative;
+    display: block;
+    flex-grow: 1;
+    padding-left: 95px;
+}
+.news-main-top {
+    position: relative;
+    display: block;
+}
+.news-all-bt {
+    position: relative;
+    display: inline-block;
+    padding-right: 16px;
+}
+.notice-bt {
+    position: relative;
+    display: inline-block;
+}
+.press-bt {
+    position: relative;
+    display: inline-block;
+}
 /* 커리어 */
 .career {}
 

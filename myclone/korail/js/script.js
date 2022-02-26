@@ -167,11 +167,17 @@ $(window).ready(function () {
     });
     // 주요 사업 슬라이드
     var business_swiper = new Swiper(".sw-business-slide", {
-        slidesPerView:3,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        loop: true,
         navigation: {
             nextEl: ".business-slide-next",
             prevEl: ".business-slide-prev",
         },
+        on: {
+            slideChange: function(){
+            }
+        }
     });
     let quickmenu = $('.quickmenu');
     let business = $('.business');
@@ -193,7 +199,7 @@ $(window).ready(function () {
     // 주요 사업 애니메이션
     function businessOn() {
         let sc = $(window).scrollTop();
-        if (sc >= quick_top) {
+        if (sc >= quick_top + 100) {
             business.addClass('business-on');
         } else {
             business.removeClass('business-on');

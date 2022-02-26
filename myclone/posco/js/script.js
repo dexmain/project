@@ -200,6 +200,7 @@ $(document).ready(function () {
 
     $(window).bind('mousewheel DOMMouseScroll', function (event) {
         var distance = event.originalEvent.wheelDelta;
+        console.log(distance);
         if (distance == null) {
             distance = event.originalEvent.detail * -1;
         }

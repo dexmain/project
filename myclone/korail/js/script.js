@@ -124,7 +124,7 @@ $(window).ready(function () {
             delay: 2000,
         }
     });
-    
+
     // 서치 버튼
     let search_bt = $('.search-bt');
     let search_close_bt = $('.search-close');
@@ -175,48 +175,103 @@ $(window).ready(function () {
             prevEl: ".business-slide-prev",
         },
         on: {
-            slideChange: function(){
-            }
+            slideChange: function () {}
         }
     });
     let quickmenu = $('.quickmenu');
     let business = $('.business');
+    let news = $('.news');
 
+    // section top 값
     let visual_top = $('.visual').offset().top;
     let quick_top = $('.quickmenu').offset().top;
     let business_top = $('.business').offset().top;
-    console.log(quick_top);
-    // 자주 찾는 메뉴 애니메이션
+    let news_top = $('.news').offset().top;
+    // secition 높이 값
+    let visual_h = $('.visual').height();
+    let quick_h = $('.quickmenu').height();
+    let business_h = $('.business').height();
+    let news_h = $('.news').height();
+    // 자주 찾는 메뉴 온 애니메이션
     function quickOn() {
         let sc = $(window).scrollTop();
-        if (sc >= quick_top / 2) {
+        if (sc >= quick_top - quick_h) {
             quickmenu.addClass('quickmenu-on');
-        } else {
-            quickmenu.removeClass('quickmenu-on');
-        }
+        } 
+        // 다시 숨기기
+        // else {
+        //     quickmenu.removeClass('quickmenu-on');
+        // }
     }
 
-    // 주요 사업 애니메이션
+    // 주요 사업 온 애니메이션
     function businessOn() {
         let sc = $(window).scrollTop();
-        if (sc >= quick_top + 100) {
+        if (sc >= quick_top) {
             business.addClass('business-on');
-        } else {
-            business.removeClass('business-on');
-        }
+        } 
+        // 다시 숨기기
+        // else {
+        //     business.removeClass('business-on');
+        // }
+    }
+    // 뉴스 온 애니메이션
+    function newsOn() {
+        let sc = $(window).scrollTop();
+        if (sc >= business_top + (business_h / 2)) {
+            news.addClass('news-on');
+        } 
+        // 다시 숨기기
+        // else {
+        //     news.removeClass('news-on');
+        // }
     }
 
 
     quickOn();
     businessOn();
+    newsOn();
+    // 뉴스 타이틀 버튼
+    let news_main_top = $('.news-main-top');
+    let news_all_bt = $('.news-all-bt');
+    let notice_bt = $('.notice-bt');
+    let press_bt = $('.press-bt');
 
+    let news_list = $('.news-list');
+    let notice_item = $('.notice-item');
+    let press_item = $('.press-item');
 
+    function newsAll() {
+        news_main_top.find('div').removeClass('news-focus');
+        news_main_top.addClass('news-all-focus');
+        news_list.children('').addClass('news-item-active');
+    };
+    newsAll();
+    news_all_bt.click(function () {
+        newsAll();
+    });
+    notice_bt.click(function () {
+        news_main_top.find('div').removeClass('news-focus');
+        news_main_top.removeClass('news-all-focus');
+        news_list.children('').removeClass('news-item-active');
+        notice_item.addClass('news-item-active');
+        notice_bt.addClass('news-focus');
+    });
+    press_bt.click(function () {
+        news_main_top.find('div').removeClass('news-focus');
+        news_main_top.removeClass('news-all-focus');
+        news_list.children('').removeClass('news-item-active');
+        press_item.addClass('news-item-active');
+        press_bt.addClass('news-focus');
+    });
     // 스크롤 시 함수 실행
     $(window).scroll(function () {
         console.log($(window).scrollTop());
+        console.log(business_top);
         chatbot_scroll();
         quickOn();
         businessOn();
+        newsOn();
     });
     $(window).resize(function () {
         chatbot_scroll();

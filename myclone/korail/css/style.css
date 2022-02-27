@@ -270,8 +270,8 @@ body {
 .chatbot-scroll::after {
     position: relative !important;
     transform: none;
-    top: 0 !important;
-    left: 0 !important;
+    top: 0px !important;
+    left: -25px !important;
 }
 
 .chatbot-scroll span {

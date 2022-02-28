@@ -69,16 +69,7 @@ $(window).ready(function () {
             visual_swiper.autoplay.start();
         }
     })
-    // 비주얼 팝업 슬라이드 오토플레이 on/off 버튼
-    let v_popup_pause = $('.sw-popup-pause');
-    v_popup_pause.click(function () {
-        $(this).toggleClass('sw-popup-play');
-        if ($(this).hasClass('sw-popup-play')) {
-            popup_swiper.autoplay.stop();
-        } else {
-            popup_swiper.autoplay.start();
-        }
-    })
+    
     // 비주얼 슬라이드 
     var visual_swiper = new Swiper(".sw-visual-slide", {
         spaceBetween: 30,
@@ -94,6 +85,7 @@ $(window).ready(function () {
         },
         autoplay: {
             delay: 3000,
+            disableOnInteraction: false,
         },
         on: {
             activeIndexChange: function () {
@@ -110,7 +102,7 @@ $(window).ready(function () {
         }
     });
     // 비주얼 팝업 슬라이드
-    var popup_swiper = new Swiper(".sw-popup-slide", {
+    var visual_sw = new Swiper(".visual-sw", {
         loop: true,
         pagination: {
             el: ".v-popup-pagination",
@@ -122,8 +114,31 @@ $(window).ready(function () {
         },
         autoplay: {
             delay: 2000,
+            disableOnInteraction: false,
         }
     });
+    // 비주얼 팝업 슬라이드 오토플레이 on/off 버튼
+    let sw_popup_pause = $('.sw-popup-pause');
+    sw_popup_pause.click(function () {
+        $(this).toggleClass('sw-popup-play');
+        if ($(this).hasClass('sw-popup-play')) {
+            visual_sw.autoplay.stop();
+        } else {
+            visual_sw.autoplay.start();
+        }
+    });
+    // 커리어 팝업 슬라이드 오토플레이 on/off 버튼
+    sw_popup_pause.click(function () {
+        $(this).toggleClass('sw-popup-play');
+        if ($(this).hasClass('sw-popup-play')) {
+            career_sw.autoplay.stop();
+        } else {
+            career_sw.autoplay.start();
+        }
+    });
+    let quickmenu = $('.quickmenu');
+    let business = $('.business');
+    let news = $('.news');
 
     // 서치 버튼
     let search_bt = $('.search-bt');
@@ -178,9 +193,24 @@ $(window).ready(function () {
             slideChange: function () {}
         }
     });
-    let quickmenu = $('.quickmenu');
-    let business = $('.business');
-    let news = $('.news');
+
+    // 커리어 팝업 슬라이드
+    var career_sw = new Swiper(".career-sw", {
+        loop: true,
+        pagination: {
+            el: ".c-popup-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".c-popup-next",
+            prevEl: ".c-popup-prev",
+        },
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        }
+    });
+    
 
     // section top 값
     let visual_top = $('.visual').offset().top;

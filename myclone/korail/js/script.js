@@ -136,9 +136,17 @@ $(window).ready(function () {
             career_sw.autoplay.start();
         }
     });
-    let quickmenu = $('.quickmenu');
-    let business = $('.business');
-    let news = $('.news');
+    // 배너 슬라이드 오토플레이 on/off 버튼
+    let sw_banner_pause = $('.sw-banner-pause');
+    sw_banner_pause.click(function () {
+        $(this).toggleClass('sw-banner-play');
+        if ($(this).hasClass('sw-banner-play')) {
+            banner_sw.autoplay.stop();
+        } else {
+            banner_sw.autoplay.start();
+        }
+    });
+    
 
     // 서치 버튼
     let search_bt = $('.search-bt');
@@ -181,7 +189,7 @@ $(window).ready(function () {
         },
     });
     // 주요 사업 슬라이드
-    var business_swiper = new Swiper(".sw-business-slide", {
+    var business_sw = new Swiper(".sw-business-slide", {
         slidesPerView: 'auto',
         centeredSlides: true,
         loop: true,
@@ -210,18 +218,35 @@ $(window).ready(function () {
             disableOnInteraction: false,
         }
     });
-    
-
+    // 배너 슬라이드
+    var banner_sw = new Swiper(".sw-banner-slide", {
+        slidesPerView: '4',
+        loop: true,
+        navigation: {
+            nextEl: ".sw-banner-next",
+            prevEl: ".sw-banner-prev",
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        }
+    });
+    let quickmenu = $('.quickmenu');
+    let business = $('.business');
+    let news = $('.news');
+    let career = $('.career');
     // section top 값
     let visual_top = $('.visual').offset().top;
     let quick_top = $('.quickmenu').offset().top;
     let business_top = $('.business').offset().top;
     let news_top = $('.news').offset().top;
+    let career_top = $('.career').offset().top;
     // secition 높이 값
     let visual_h = $('.visual').height();
     let quick_h = $('.quickmenu').height();
     let business_h = $('.business').height();
     let news_h = $('.news').height();
+    let career_h = $('.career').height();
     // 자주 찾는 메뉴 온 애니메이션
     function quickOn() {
         let sc = $(window).scrollTop();
@@ -256,11 +281,23 @@ $(window).ready(function () {
         //     news.removeClass('news-on');
         // }
     }
+    // 뉴스 온 애니메이션
+    function careerOn() {
+        let sc = $(window).scrollTop();
+        if (sc >= news_top + news_h) {
+            career.addClass('career-on');
+        } 
+        // 다시 숨기기
+        // else {
+        //     news.removeClass('news-on');
+        // }
+    }
 
 
     quickOn();
     businessOn();
     newsOn();
+    careerOn();
     // 뉴스 타이틀 버튼
     let news_main_top = $('.news-main-top');
     let news_all_bt = $('.news-all-bt');
@@ -302,10 +339,13 @@ $(window).ready(function () {
         quickOn();
         businessOn();
         newsOn();
+        careerOn();
     });
     $(window).resize(function () {
         chatbot_scroll();
         quickOn();
         businessOn();
+        newsOn();
+        careerOn();
     });
 })

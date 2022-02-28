@@ -69,7 +69,7 @@ $(window).ready(function () {
             visual_swiper.autoplay.start();
         }
     })
-    
+
     // 비주얼 슬라이드 
     var visual_swiper = new Swiper(".sw-visual-slide", {
         spaceBetween: 30,
@@ -146,7 +146,7 @@ $(window).ready(function () {
             banner_sw.autoplay.start();
         }
     });
-    
+
 
     // 서치 버튼
     let search_bt = $('.search-bt');
@@ -252,7 +252,7 @@ $(window).ready(function () {
         let sc = $(window).scrollTop();
         if (sc >= quick_top - quick_h) {
             quickmenu.addClass('quickmenu-on');
-        } 
+        }
         // 다시 숨기기
         // else {
         //     quickmenu.removeClass('quickmenu-on');
@@ -264,7 +264,7 @@ $(window).ready(function () {
         let sc = $(window).scrollTop();
         if (sc >= quick_top) {
             business.addClass('business-on');
-        } 
+        }
         // 다시 숨기기
         // else {
         //     business.removeClass('business-on');
@@ -275,7 +275,7 @@ $(window).ready(function () {
         let sc = $(window).scrollTop();
         if (sc >= business_top + (business_h / 2)) {
             news.addClass('news-on');
-        } 
+        }
         // 다시 숨기기
         // else {
         //     news.removeClass('news-on');
@@ -286,7 +286,7 @@ $(window).ready(function () {
         let sc = $(window).scrollTop();
         if (sc >= news_top + news_h) {
             career.addClass('career-on');
-        } 
+        }
         // 다시 숨기기
         // else {
         //     news.removeClass('news-on');
@@ -331,6 +331,26 @@ $(window).ready(function () {
         press_item.addClass('news-item-active');
         press_bt.addClass('news-focus');
     });
+    // 푸터 링크 버튼 
+    let site_box = $('.site-box');
+    let family_site = $('.family-site');
+    let site_link = $('.site-link');
+    family_site.click(function () {
+        if ($(this).hasClass('site-on')) {
+            $(this).removeClass('site-on');
+        } else {
+            site_box.find('div').removeClass('site-on');
+            $(this).addClass('site-on');
+        }
+    })
+    site_link.click(function () {
+        if ($(this).hasClass('site-on')) {
+            $(this).removeClass('site-on');
+        } else {
+            site_box.find('div').removeClass('site-on');
+            $(this).addClass('site-on');
+        }
+    })
     // 스크롤 시 함수 실행
     $(window).scroll(function () {
         console.log($(window).scrollTop());

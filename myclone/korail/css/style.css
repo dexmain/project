@@ -54,7 +54,6 @@ body {
 
 .clearfix::after {
     content: '';
-    position: absolute;
     display: block;
     width: 100%;
     clear: both;
@@ -2019,6 +2018,7 @@ body {
     background-color: #303642;
     letter-spacing: -0.7px;
     width: 100%;
+    z-index: 999;
 }
 
 .footer .container {}
@@ -2026,13 +2026,12 @@ body {
 .footer-top {
     position: relative;
     display: block;
-    overflow: hidden;
+    border-bottom: 1px solid #595e68;
 }
 
 .link-list {
     position: relative;
     display: block;
-    float: left;
     overflow: hidden;
     padding: 20px 0;
 }
@@ -2047,6 +2046,7 @@ body {
 .link-list li+li {
     padding-left: 12px;
 }
+
 .link-list li+li::before {
     content: '';
     position: absolute;
@@ -2070,61 +2070,272 @@ body {
 }
 
 .sns-list {
-    position: relative;
+    position: absolute;
     display: block;
-    height: 100%;
-    float: right;
     top: 50%;
+    transform: translateY(-50%);
+    right: 0;
 }
-.sns-list li{
+
+.sns-list li {
     position: relative;
     display: block;
     float: left;
 }
-.sns-list li+li{
+
+.sns-list li+li {
     margin-left: 15px;
 }
+
 .youtube {
     position: relative;
     display: block;
     width: 31px;
     height: 31px;
     border-radius: 50%;
-    background:#595e68 url('../images/footer_youtube.svg')no-repeat center;
+    background: #595e68 url('../images/footer_youtube.svg')no-repeat center;
 }
+
 .facebook {
     position: relative;
     display: block;
     width: 31px;
     height: 31px;
     border-radius: 50%;
-    background:#595e68 url('../images/footer_facebook.svg')no-repeat center;
+    background: #595e68 url('../images/footer_facebook.svg')no-repeat center;
 }
+
 .instagram {
     position: relative;
     display: block;
     width: 31px;
     height: 31px;
     border-radius: 50%;
-    background:#595e68 url('../images/footer_instagram.svg')no-repeat center;
+    background: #595e68 url('../images/footer_instagram.svg')no-repeat center;
 }
+
 .blog {
     position: relative;
     display: block;
     width: 31px;
     height: 31px;
     border-radius: 50%;
-    background:#595e68 url('../images/footer_blog.svg')no-repeat center;
+    background: #595e68 url('../images/footer_blog.svg')no-repeat center;
 }
+
 .twitter {
     position: relative;
     display: block;
     width: 31px;
     height: 31px;
     border-radius: 50%;
-    background:#595e68 url('../images/footer_twitter.svg')no-repeat center;
+    background: #595e68 url('../images/footer_twitter.svg')no-repeat center;
 }
 
-.footer-menu {}
+.footer-main {
+    position: relative;
+    display: block;
+    padding-top: 33px;
+    padding-bottom: 33px;
+}
+
+.footer-main img {
+    position: absolute;
+    left: 0;
+    display: block;
+}
+
+.footer-info {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 148px;
+    font-size: 0;
+}
+
+.footer-info span {
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+    padding-right: 13px;
+    line-height: 34px;
+}
+
+.footer-info span+span {
+    padding-left: 13px;
+
+}
+
+.info-list {}
+
+.info-list span {}
+
+.info-list span+span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #6f737b;
+}
+
+.address {}
+
+.address span {}
+
+.address span+span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #6f737b;
+}
+
+.copy {
+    position: relative;
+    display: block;
+    color: rgba(136, 137, 146, 0.7) !important;
+    letter-spacing: 0;
+}
+
+.footer-site {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.site-box {}
+
+.site-box>div {
+    position: relative;
+    display: block;
+    float: left;
+    width: 180px;
+    padding: 0 10px;
+    margin-left: 5px;
+
+
+    height: 43px;
+    
+    cursor: pointer;
+    background-image: radial-gradient(circle farthest-corner at center center, #fff 0%, #fff 50%, transparent 50.1%);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 0%;
+    transition: .7s .3s;
+}
+.site-on {
+    transition: .5s !important;
+    background-size: 200% 400% !important;
+}
+
+
+.site-box>div::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 160px;
+    height: 2px;
+    background-color: #fff;
+}
+
+
+.site-box>div::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    display: block;
+    width: 14px;
+    height: 8px;
+    background: url('../images/footer_arrow.svg')no-repeat center;
+    transition:background .3s .3s;
+}
+
+.site-box .site-on::after {
+    background: url('../images/footer_on_arrow.svg')no-repeat center;
+    transition:background .3s;
+}
+.site-title {
+    color: #fff;
+    line-height: 41px;
+    font-size: 15px;
+    transition: color .7s .3s;
+}
+.site-on .site-title{
+    color: #000 !important;
+    transition: .7s;
+}
+
+
+.site-box ul {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    display: block;
+    background-color: #fff;
+    transition: 0.3s;
+    padding-left: 10px;
+    box-shadow: 7px -13px 20px 0 rgb(0 0 0 / 5%);
+}
+.site-box ul::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 160px;
+    height: 2px;
+    background-color: #000;
+}
+.site-box ul li{
+    margin-top: 2px;
+}
+.site-on .family-list {
+    padding-top: 17px;
+    padding-bottom:10px;
+    height: 157px;
+    bottom: 100%;
+    transition: 0.3s 0.3s;
+}
+.site-on .site-list {
+    padding-top: 17px;
+    padding-bottom:10px;
+    height: 263px;
+    bottom: 100%;
+    transition: 0.3s 0.3s;
+}
+.site-item {
+    font-size: 15px;
+    color: #000;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.site-link {}
+
+.cert-box {
+    position: relative;
+    display: block;
+}
+
+.cert-item {
+    position: relative;
+    display: block;
+}
+
+.cert-item {
+    position: relative;
+    display: block;
+}
 
 /* // 하단 */

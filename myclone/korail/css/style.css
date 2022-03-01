@@ -31,6 +31,7 @@ img {
 
 html {
     font-size: 10px;
+    background-color: #303642;
 }
 
 body {
@@ -837,13 +838,14 @@ body {
 .content {
     position: relative;
     display: block;
-
+    
 }
-
+.content>div + div {
+    background-color: #fff;
+}
 /* 비주얼 */
 .visual {
     position: relative;
-
     display: block;
     width: 100vw;
     height: calc(100vh - 40px);
@@ -968,13 +970,10 @@ body {
 
 .visual-popup {
     position: absolute;
-    top: 25%;
+    top: 20%;
     display: block;
 }
 
-.visual-popup {
-    margin-top: 2px;
-}
 
 
 
@@ -983,7 +982,7 @@ body {
 .slogan-img {
     position: absolute;
     right: 112px;
-    top: 28%;
+    top: 25%;
     display: block;
     width: 700px;
     height: 426px;
@@ -2051,7 +2050,7 @@ body {
     content: '';
     position: absolute;
     top: 50%;
-    left: 0;
+    left: -2px;
     transform: translateY(-50%);
     display: block;
     width: 4px;
@@ -2209,7 +2208,10 @@ body {
     float: right;
 }
 
-.site-box {}
+.site-box {
+    position: relative;
+    display: block;
+}
 
 .site-box>div {
     position: relative;
@@ -2321,21 +2323,32 @@ body {
     font-weight: 400;
 }
 
-.site-link {}
+.site-link {
+}
 
 .cert-box {
     position: relative;
     display: block;
+    padding:24px 10px 0 10px;
 }
-
 .cert-item {
     position: relative;
     display: block;
+    float: left;
 }
-
-.cert-item {
+.cert-item + .cert-item{
+    margin-left: 12px;
+    margin-top: 5px;
+}
+.cert-item img{
     position: relative;
     display: block;
+    width: 70px;
+    height: 70px;
+}
+.cert-item + .cert-item img{
+    width: 58px;
+    height: 58px;
 }
 
 /* // 하단 */

@@ -69,7 +69,13 @@ $(window).ready(function () {
             visual_swiper.autoplay.start();
         }
     })
-
+    // 내려서 더보기
+    let visual_down = $('.visual-down');
+    visual_down.click(function(){
+        $('html,body').animate({
+            scrollTop:quick_top
+        },500)
+    });
     // 비주얼 슬라이드 
     var visual_swiper = new Swiper(".sw-visual-slide", {
         spaceBetween: 30,
@@ -146,7 +152,6 @@ $(window).ready(function () {
             banner_sw.autoplay.start();
         }
     });
-
 
     // 서치 버튼
     let search_bt = $('.search-bt');

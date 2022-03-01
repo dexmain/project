@@ -5,16 +5,65 @@ $(document).ready(function () {
 
     // 페이징바 포커싱
     var $header = $('header'); //헤더를 변수에 넣기
-    var $gnb = $('gnb');
+    var $gnb = $('.gnb');
+    var $gnb_a = $('.gnb-a');
+    let $close_bt = $('.close-bt'); // gnb-menu
     var $header_on = $('.header-point'); //색상이 변할 부분
     var $window = $(window);
+    let $lang_change = $('.lang-change');
+    let $eng = $('.eng');
 
     var pageOffsetTop = $header_on.offset().top; //색상 변할 부분의 top값 구하기
     $window.resize(function () { //반응형을 대비하여 리사이즈시 top값을 다시 계산
         pageOffsetTop = $header_on.offset().top;
     });
     // 스와이퍼
-    let visual_menu_list =[
+    let header_search_btn = $('.header-search-btn');
+    let search_wrap = $('.search-wrap');
+    let search_close = $('.search-close')
+
+    // 서치 버튼
+    header_search_btn.click(function () {
+        search_wrap.addClass('search-wrap-on');
+        $header.addClass('down');
+    });
+    search_close.click(function () {
+        search_wrap.removeClass('search-wrap-on');
+        var scrolled = $window.scrollTop() >= pageOffsetTop; //스크롤된 상태; true or false
+        $header.toggleClass('down', scrolled); //클래스 토글
+    });
+
+    // gnb 
+    $gnb_a.click(function (e) {
+        $gnb_a.removeClass('gnb-a-focus');
+        $header.addClass('down');
+        $(this).addClass('gnb-a-focus');
+        e.stopPropagation();
+    });
+    $close_bt.click(function () {
+        $gnb_a.removeClass('gnb-a-focus');
+        var scrolled = $window.scrollTop() >= pageOffsetTop; //스크롤된 상태; true or false
+        $header.toggleClass('down', scrolled); //클래스 토글
+    });
+
+    // lang-change
+    $lang_change.click(function () {
+        $(this).toggleClass('lang-change-on');
+    });
+
+    // 헤더 스크롤
+    $window.on('scroll', function () { //스크롤시
+        var scrolled = $window.scrollTop() >= pageOffsetTop; //스크롤된 상태; true or false
+        let search_true = search_wrap.hasClass('search-wrap-on');
+        let gnb_a_true = $gnb_a.hasClass('gnb-a-focus');
+        if (search_true == false && gnb_a_true == false) {
+            $header.toggleClass('down', scrolled); //클래스 토글
+        }
+        page_bar_on();
+    });
+
+
+    let visual_menu_list = [
         'park1538',
         '기업시민 함께 미래가 되다',
         '수소 탐구생활'
@@ -48,7 +97,7 @@ $(document).ready(function () {
         } else {
             visual_swiper.autoplay.start();
         }
-    })
+    });
     var swiper = new Swiper(".sw-bar-slide", {
         direction: "vertical",
         slidesPerView: 1,
@@ -71,7 +120,20 @@ $(document).ready(function () {
         pagination: {
             el: ".product-pagination",
             type: "fraction",
+            formatFractionCurrent: function (number) {
+                return ('0' + number).slice(-2);
+            },
+            formatFractionTotal: function (number) {
+                return ('0' + number).slice(-2);
+            },
         },
+        on: {
+            slideChange: function () {
+                $('.product-box').removeClass('product-box-active');
+                $('.product-box').eq(this.realIndex).addClass('product-box-active');
+            }
+        },
+
         speed: 700,
         slidesPerView: 1,
     });
@@ -83,6 +145,12 @@ $(document).ready(function () {
         pagination: {
             el: ".esg-pagination",
             type: "fraction",
+            formatFractionCurrent: function (number) {
+                return ('0' + number).slice(-2);
+            },
+            formatFractionTotal: function (number) {
+                return ('0' + number).slice(-2);
+            },
         },
         loop: true,
         slidesPerView: 1,
@@ -158,11 +226,7 @@ $(document).ready(function () {
         }
     }
     page_bar_on();
-    $window.on('scroll', function () { //스크롤시
-        var scrolled = $window.scrollTop() >= pageOffsetTop; //스크롤된 상태; true or false
-        $header.toggleClass('down', scrolled); //클래스 토글
-        page_bar_on();
-    });
+
 
     // 최초 화면의 너비를 비교한다.
     let window_w = $(window).width();
@@ -250,6 +314,15 @@ $(document).ready(function () {
             section_scroll = 0;
         });
     }
+    let link_bt = $('.link-bt');
+    let close_bt = $('.close-bt');
+    let link_wrap = $('.link-wrap');
+    link_bt.click(function () {
+        link_wrap.css('display', 'block');
+    });
+    close_bt.click(function () {
+        link_wrap.css('display', 'none');
+    });
 
     // 최초에 한번 실행
     windowWidthFn();

@@ -24,6 +24,7 @@ $(document).ready(function () {
 
     // 서치 버튼
     header_search_btn.click(function () {
+        $gnb_a.removeClass('gnb-a-focus');
         search_wrap.addClass('search-wrap-on');
         $header.addClass('down');
     });
@@ -35,10 +36,11 @@ $(document).ready(function () {
 
     // gnb 
     $gnb_a.click(function (e) {
+        search_wrap.removeClass('search-wrap-on');
         $gnb_a.removeClass('gnb-a-focus');
         $header.addClass('down');
         $(this).addClass('gnb-a-focus');
-        e.stopPropagation();
+        e.preventDefault();
     });
     $close_bt.click(function () {
         $gnb_a.removeClass('gnb-a-focus');

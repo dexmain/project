@@ -1,4 +1,4 @@
-$(window).ready(function () {
+$(document).ready(function () {
     let nav = $('.nav');
     let gnb = $('.gnb');
     let gnb_li = $('.gnb>li');

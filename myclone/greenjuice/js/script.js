@@ -31,6 +31,34 @@ $(document).ready(function () {
 
 
 window.onload = function () {
+    // 비주얼 슬라이드
+    let sw_visual = new Swiper('.sw-visual', {
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        autoplay: {
+            delay: 2000,
+            disableOninteraction: false,
+        },
+        pagination: {
+            el: '.sw-visual-pg',
+            type: 'fraction',
+        }
+    });
+
+    // 서비스 슬라이드
+    let sw_service = new Swiper('.sw-service', {
+        slidesPerView: 4,
+        spaseBetween: 0,
+        slidesPerGroup : 4,
+        pagination: {
+            el: '.sw-service-pg',
+            clickable: true,
+        }
+    });
+
 
     // 베스트 제품 관련 코드
     // 2. 객체 생성자 함수 방식코드
@@ -97,13 +125,17 @@ window.onload = function () {
     let best_good = $('.best .good');
     // console.log(best_good);
 
-    // 배경박스
+    // 배경 박스
     let best_cate_bg = $('.best-cate-bg');
     let best_cate_bg_pos = [];
+
     for (let i = 0; i < best_cate.length; i++) {
-        best_cate_bg_pos[i] = 70 + (55 * i);
+        let temp = (55 * i) + 70;
+        best_cate_bg_pos[i] = temp;
     }
-    console.log(best_cate_bg_pos);
+
+    // 활성화된 번호를 저장한다.
+    let best_cate_index;
 
     // 4. 카테고리를 클릭해서 내용을 변경
     $.each(best_cate, function (index, item) {
@@ -113,10 +145,11 @@ window.onload = function () {
             // a 태그의 href 를 막는다.
             event.preventDefault();
 
-            // 같은 번호를 클릭한다면 리턴
-            if(best_cate_index == index) {
+            // 같은 번호를 클릭한다면 리턴한다.
+            if (best_cate_index == index) {
                 return;
             }
+
             // 실제 내용을 배치합니다.
             showBest(index);
 
@@ -125,45 +158,48 @@ window.onload = function () {
 
     // 실제 내용을 보여주는 함수
     function showBest(_index) {
+
+        // 현재 보고 있는 번호를 기억한다.
         best_cate_index = _index;
+
         let base_data;
 
         // 메뉴 배경 위치 잡기
-        best_cate_bg.css('top', best_cate_bg_pos[_index] );
+        best_cate_bg.css('top', best_cate_bg_pos[_index]);
         // 메뉴 색상 바꾸기
         best_cate.removeClass('best-cate-active');
         best_cate.eq(_index).addClass('best-cate-active');
         // 아이콘 바꾸기
-        if(_index == 0) {
+        if (_index == 0) {
             best_cate.eq(0).find('i').stop().animate({
                 opacity: 0
-            }, 150, function(){
+            }, 150, function () {
                 best_cate.eq(0).find('i').addClass('best-10-active');
             }).animate({
                 opacity: 1
-            }, 150);   
+            }, 150);
 
             best_cate.eq(4).find('i').removeClass('best-50-active');
-            
-        }else if(_index == 4){
+
+        } else if (_index == 4) {
 
             best_cate.eq(4).find('i').stop().animate({
                 opacity: 0
-            }, 150, function(){
+            }, 150, function () {
                 best_cate.eq(4).find('i').addClass('best-50-active');
             }).animate({
                 opacity: 1
             }, 150);
             best_cate.eq(0).find('i').removeClass('best-10-active');
-        }else{
+        } else {
             best_cate.eq(0).find('i').removeClass('best-10-active');
             best_cate.eq(4).find('i').removeClass('best-50-active');
         }
 
         if (_index == 0) {
-            base_data = good_10;            
+            base_data = good_10;
         } else if (_index == 1) {
-            base_data = good_20;            
+            base_data = good_20;
         } else if (_index == 2) {
             base_data = good_30;
         } else if (_index == 3) {
@@ -193,6 +229,10 @@ window.onload = function () {
                 good.find('.good-heart').removeClass('good-heart-active');
             }
 
+            // 연령대를 클릭할떄 마다 Click 자꾸 등록이 된다.
+            // 그래서 한번 클릭에도 여러번 클릭 된 결과가
+            // 화면에 적용이 된다.          
+
             good.find('.good-heart').off('click').on('click', function (event) {
 
                 // 클릭을 아래로 전달하는 것을 막는다.
@@ -212,7 +252,6 @@ window.onload = function () {
             });
         });
     }
-
 
     // 최초 무조건 기능을 위해서 실행해 준다.
     showBest(1);

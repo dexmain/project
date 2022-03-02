@@ -4,61 +4,61 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>산청군청</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/sancheong_favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="images/mobile_web_icon.png">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>산청군청</title>
     <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <![endif]-->
+  <script src="js/html5shiv.js"></script>
+  <![endif]-->
     <script src="js/prefixfree.min.js"></script>
-    <script src="js/html5shiv.js"></script>
-
+    <script src="js/respond.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <script src="js/swiper/swiper.min.js"></script>
+
     <!-- 사이트 스크립트 작성 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="wrap">
+
         <!-- 상단 -->
         <header class="header">
             <div class="header-top">
                 <div class="container">
+
                     <a href="index.html" class="logo">
                         <img src="images/logo.png" alt="산엔청 SAN CHEONG">
                     </a>
+
                     <div class="link clearfix">
                         <ul class="link-list clearfix">
-                            <li><a href="#">산청군청</a></li>
+                            <li><a href="#"><b>산청군청</b></a></li>
                             <li><a href="#">산청군의회</a></li>
                             <li><a href="#">문화관광</a></li>
                             <li><a href="#">동의보감촌</a></li>
                             <li><a href="#">산엔청쇼핑몰</a></li>
                         </ul>
-                        <button class="family-site">패밀리사이트</button>
+                        <button class="family">패밀리사이트</button>
                     </div>
 
                     <div class="help">
                         <ul class="help-list clearfix">
                             <li><a href="#">인증하기</a></li>
-                            <li><a href="#">전체메뉴</a></li>
-                            <li>
-                                <a href="#">language</a>
-                                <ul class="lang-list">
-                                    <li><a href="#"></a></li>
-                                    <li><a href="#"></a></li>
-                                    <li><a href="#"></a></li>
-                                </ul>
-                            </li>
+                            <li><a href="#"><b>전체메뉴</b></a></li>
+                            <li><a href="#">language</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="header-bottom clearfix">
+            <div class="header-bottom">
                 <div class="container">
                     <nav class="nav">
                         <ul class="gnb">
@@ -71,32 +71,42 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="header-line"></div>
+                <span class="header-line"></span>
             </div>
         </header>
-        <!-- // 상단 -->
+        <!--// 상단 -->
+
         <!-- 메인 -->
         <div class="main">
             <!-- 비주얼 -->
             <section class="visual">
                 <div class="container">
+
                     <div class="visual-top clearfix">
                         <div class="visual-left clearfix">
+
                             <div class="weather-wrap">
-                                <span class="weather-icon">2.8℃</span>
+                                <span class="weather-icon">
+                                    2.8℃
+                                </span>
+
                                 <span class="weather-txt">
-                                    미세먼지<i>강수량</i><em>0mm</em>
+                                    미세먼지 <i>강수량</i> <em>0mm</em>
                                     <img src="images/info_icon.png" alt="">
                                 </span>
+
                             </div>
+
                             <div class="search-wrap">
                                 <form action="" class="search-form">
-                                    <input type="text" id="search-txt" class="search-txt" placeholder="검색어를 입력해보세요">
                                     <label for="search-txt" class="search-label">Search</label>
+                                    <input type="text" id="search-txt" class="search-txt" placeholder="검색어를 입력해보세요.">
                                     <button class="search-bt"></button>
                                 </form>
                             </div>
+
                         </div>
+
                         <div class="visual-right">
                             <div class="sns-wrap">
 
@@ -114,9 +124,51 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="visual-main clearfix">
                         <div class="visual-left">
                             <div class="visual-slide">
+                                <div class="visual-slide-top">
+                                    <h2>알려드립니다</h2>
+
+                                    <div class="sw-visual-control clearfix">
+
+                                        <a href="#" class="link-vi">
+                                            <b>코로나19</b> 상황보러가기
+                                        </a>
+
+                                        <div class="swiper-pagination sw-visual-pg"></div>
+                                        <button class="sw-visual-prev"></button>
+                                        <button class="sw-visual-next"></button>
+                                        <button class="sw-visual-pause"></button>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-container sw-visual">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/visual1.png" alt="링크">
+                                            <a href="#" class="visual-link">자세히보기</a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/visual2.png" alt="링크">
+                                            <a href="#" class="visual-link">자세히보기</a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/visual3.png" alt="링크">
+                                            <a href="#" class="visual-link">자세히보기</a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/visual4.png" alt="링크">
+                                            <a href="#" class="visual-link">자세히보기</a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/visual5.png" alt="링크">
+                                            <a href="#" class="visual-link">자세히보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="visual-right">
@@ -128,33 +180,42 @@
                                 </ul>
                             </div>
                             <div class="mayor">
-                                <a class="mayor-txt">명품산청, 행복산청 <br>
-                                    <span>산청군수 <em>이재근 </em>입니다.</span>
+
+                                <a href="#">
+                                    명품산청, 행복산청<br>
+                                    산청군수 <span>이재근</span> 입니다.
                                 </a>
+
                                 <div class="mayor-link">
                                     <a href="#">공약사항</a>
                                     <a href="#">인사말</a> <br>
-                                    <a href="#">군수에게 바란다.</a>
+                                    <a href="#">군수에게바란다</a>
                                 </div>
-                                <img src="images/mayor_img.png" alt="">
+
+                                <img src="images/mayor_img.png" alt="산청군수 이재근" class="mayor-img">
+
                             </div>
                         </div>
+
                     </div>
+
                 </div>
             </section>
             <!-- 소식 -->
             <section class="notice">
                 <div class="container clearfix">
                     <div class="notice-left">
+
                         <div class="notice-top">
+
                             <ul class="notice-list clearfix">
                                 <li><a href="#" class="notice-list-focus">새소식</a></li>
-                                <li><a href="#" class="">공고</a></li>
-                                <li><a href="#" class="">채용/시험</a></li>
-                                <li><a href="#" class="">모집</a></li>
-                                <li><a href="#" class="">교육/강좌</a></li>
-                                <li><a href="#" class="">계약정보</a></li>
-                                <li><a href="#" class="">행사/공연</a></li>
+                                <li><a href="#">공고</a></li>
+                                <li><a href="#">채용/시험</a></li>
+                                <li><a href="#">모집</a></li>
+                                <li><a href="#">교육/강좌</a></li>
+                                <li><a href="#">계약정보</a></li>
+                                <li><a href="#">행사/공연</a></li>
                             </ul>
                             <a href="#" class="notice-more">더보기</a>
                         </div>
@@ -313,14 +374,14 @@
                                         2022-01-28
                                     </span>
                                 </a>
-
-
                             </div>
                             <!-- 채용/시험 -->
                             <div class="notice-box">
                                 <a href="#" class="notice-link">
 
-                                    <span class="notice-cate notice-cate-3">채용<br>·<br>시험</span>
+                                    <span class="notice-cate notice-cate-3">
+                                        채용 <br>·<br> 시험
+                                    </span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
 
@@ -345,7 +406,9 @@
                                 </a>
                                 <a href="#" class="notice-link">
 
-                                    <span class="notice-cate notice-cate-3">채용<br>·<br>시험</span>
+                                    <span class="notice-cate notice-cate-3">
+                                        채용 <br>·<br> 시험
+                                    </span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
 
@@ -370,7 +433,9 @@
                                 </a>
                                 <a href="#" class="notice-link">
 
-                                    <span class="notice-cate notice-cate-3">채용<br>·<br>시험</span>
+                                    <span class="notice-cate notice-cate-3">
+                                        채용 <br>·<br> 시험
+                                    </span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
 
@@ -393,11 +458,11 @@
                                         2022-01-28
                                     </span>
                                 </a>
-
                             </div>
                             <!-- 모집 -->
                             <div class="notice-box">
                                 <a href="#" class="notice-link">
+
                                     <span class="notice-cate notice-cate-4">모집</span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
@@ -422,6 +487,7 @@
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
+
                                     <span class="notice-cate notice-cate-4">모집</span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
@@ -446,6 +512,7 @@
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
+
                                     <span class="notice-cate notice-cate-4">모집</span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
@@ -476,67 +543,99 @@
                             </div>
                             <!-- 계약정보 -->
                             <div class="notice-box notice-box-info">
+
                                 <a href="#" class="notice-link">
+
                                     <span class="notice-cate notice-cate-6">계약<br>정보</span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
 
+
                                     <span class="notice-date">
                                         <i></i>
                                         2022-01-28
                                     </span>
                                 </a>
+
                                 <a href="#" class="notice-link">
+
                                     <span class="notice-cate notice-cate-6">계약<br>정보</span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
 
+
                                     <span class="notice-date">
                                         <i></i>
                                         2022-01-28
                                     </span>
                                 </a>
+
                                 <a href="#" class="notice-link">
+
                                     <span class="notice-cate notice-cate-6">계약<br>정보</span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
 
+
                                     <span class="notice-date">
                                         <i></i>
                                         2022-01-28
                                     </span>
                                 </a>
+
+                                <a href="#" class="notice-link">
+                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <span class="notice-date">
+                                        <i></i>
+                                        2022-01-28
+                                    </span>
+                                </a>
+
+                                <a href="#" class="notice-link">
+                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <span class="notice-date">
+                                        <i></i>
+                                        2022-01-28
+                                    </span>
+                                </a>
+
                                 <a href="#" class="notice-link">
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
-
                                     <span class="notice-date">
                                         <i></i>
                                         2022-01-28
                                     </span>
                                 </a>
-                                <a href="#" class="notice-link">
 
-
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
-
-                                    <span class="notice-date">
-                                        <i></i>
-                                        2022-01-28
-                                    </span>
-                                </a>
-                                <a href="#" class="notice-link">
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
-
-                                    <span class="notice-date">
-                                        <i></i>
-                                        2022-01-28
-                                    </span>
-                                </a>
                             </div>
                             <!-- 행사공연 -->
                             <div class="notice-box">
                                 <a href="#" class="notice-link">
+
+                                    <span class="notice-cate notice-cate-7">행사<br>·<br>공연</span>
+                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
+                                    <p class="notice-txt">
+                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
+                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
+
+                                        1. 부동산의 표시: 별첨
+                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
+                                        3. 취득 사유: 별첨
+                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
+
+                                        자세한 사항은 붙임을 참조하시기 바랍니다.
+
+                                        붙임.　공고문 1부. 끝.
+                                        　　　개별공고문 8부. 끝.
+                                    </p>
+                                    <span class="notice-date">
+                                        <i></i>
+                                        2022-01-28
+                                    </span>
+                                </a>
+                                <a href="#" class="notice-link">
+
                                     <span class="notice-cate notice-cate-7">행사<br>·<br>공연</span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
@@ -561,30 +660,7 @@
                                     </span>
                                 </a>
                                 <a href="#" class="notice-link">
-                                    <span class="notice-cate notice-cate-7">행사<br>·<br>공연</span>
 
-                                    <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
-
-                                    <p class="notice-txt">
-                                        「부동산소유권 이전등기 등에 관한 특별조치법 」제11조 제1항에 따른 확인서 발급신청이 있어 같은 법 제11조 제6항 제3호 및 같은 법 시행령
-                                        제14조에 의하여 다음 사항을 공고하오니, 이해관계인은 공고기간 내에 이의신청을 하시기 바랍니다.
-
-                                        1. 부동산의 표시: 별첨
-                                        2. 신청인의 성명 생년월일(법인 등의 경우 명칭 및 등록번호): 별첨
-                                        3. 취득 사유: 별첨
-                                        4. 공고 기간: 2022.1.28.~2022.3.28.(2개월)
-
-                                        자세한 사항은 붙임을 참조하시기 바랍니다.
-
-                                        붙임.　공고문 1부. 끝.
-                                        　　　개별공고문 8부. 끝.
-                                    </p>
-                                    <span class="notice-date">
-                                        <i></i>
-                                        2022-01-28
-                                    </span>
-                                </a>
-                                <a href="#" class="notice-link">
                                     <span class="notice-cate notice-cate-7">행사<br>·<br>공연</span>
 
                                     <p class="notice-tit">「부동산소유권 이전등기 등에 관한 특별조치법」 확인서 발급 신청사실 공고</p>
@@ -610,15 +686,19 @@
                                 </a>
                             </div>
                         </div>
+
                     </div>
                     <div class="notice-right">
-                        <div class="notice-slide"></div>
-                    </div>
-            </section>
+                        <div class="notice-slide">
 
+                        </div>
+                    </div>
+                </div>
+            </section>
             <!-- 서비스 -->
             <section class="service">
                 <div class="container">
+                    <h2>자주 찾는 서비스</h2>
                     <div class="service-slide">
                         <!-- Swiper -->
                         <div class="swiper-container sw-service">
@@ -671,11 +751,13 @@
                                         뉴스/홍보
                                     </a>
                                 </div>
+
                                 <div class="swiper-slide">
                                     <a href="#" class="service-9">
                                         군정일정
                                     </a>
                                 </div>
+
                                 <div class="swiper-slide">
                                     <a href="#" class="service-10">
                                         공시지가
@@ -707,7 +789,6 @@
                                 </div>
 
 
-
                             </div>
 
                         </div>
@@ -729,16 +810,17 @@
                     });
                 </script>
             </section>
+            <!-- 퀵메뉴-->
             <section class="quick">
                 <div class="container">
                     <div class="quick-wrap">
 
                         <div class="quick-menu">
                             <ul class="quick-menu-list">
-                                <li><a href="#" class="quick-menu-focus quick-menu-focus-icon-1">민원정보<i
-                                            class="blank"></i></a></li>
-                                <li><a href="#">신고/건의<i class="blank"></i> </a></li>
-                                <li><a href="#">분야별정보<i class="blank"></i> </a></li>
+                                <li><a href="#" class="quick-menu-focus quick-menu-focus-icon-1">민원정보 <i
+                                            class="blank"></i> </a></li>
+                                <li><a href="#">신고/건의 <i class="blank"></i> </a></li>
+                                <li><a href="#">분야별정보 <i class="blank"></i> </a></li>
                             </ul>
                         </div>
 
@@ -746,11 +828,13 @@
                             <h2>
                                 내가 원하는 정보를 한눈에
                             </h2>
+
                             <div class="quick-desc">
                                 <span class="quick-desc-focus">산청군청 민원정보입니다.</span>
                                 <span>산청군청 신고/건의입니다.</span>
                                 <span>산청군청 분야별정보입니다.</span>
                             </div>
+
                             <div class="quick-list-wrap">
                                 <div class="quick-list quick-list-focus">
                                     <a href="#" class="quick-link quick-icon-1">민원신청(정부24)</a>
@@ -760,7 +844,7 @@
                                     <a href="#" class="quick-link quick-icon-5 no-mr">지적측량</a>
                                     <a href="#" class="quick-link quick-icon-6">지방세</a>
                                     <a href="#" class="quick-link quick-icon-7">민원편람</a>
-                                    <a href="#" class="quick-link quick-icon-8 no-mr">민원서식</a>
+                                    <a href="#" class="quick-link quick-icon-8">민원서식</a>
                                 </div>
                                 <div class="quick-list">
                                     <a href="#" class="quick-link quick-icon-9">국민신문고</a>
@@ -769,7 +853,7 @@
                                     <a href="#" class="quick-link quick-icon-12">부조리신고</a>
                                     <a href="#" class="quick-link quick-icon-13 no-mr">가로등관리</a>
                                     <a href="#" class="quick-link quick-icon-14">상하수도신고</a>
-                                    <a href="#" class="quick-link quick-icon-15 no-mr">안전신문고</a>
+                                    <a href="#" class="quick-link quick-icon-15">안전신문고</a>
                                 </div>
                                 <div class="quick-list">
                                     <a href="#" class="quick-link quick-icon-16">복지</a>
@@ -784,20 +868,25 @@
                                     <a href="#" class="quick-link quick-icon-25 no-mr">부동산</a>
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
             </section>
             <!-- 여행 -->
             <section class="tour">
                 <div class="container">
+
                     <div class="tour-wrap clearfix">
                         <div class="tour-left">
+
                             <div class="tour-title">
                                 <span>전통과 문화 그리고 자연이 살아숨쉬는</span>
                                 <h2>산청으로</h2>
                                 <img src="images/tour_title.png" alt="">
                             </div>
+
                             <div class="tour-menu">
                                 <ul class="tour-menu-list">
                                     <li><a href="#" class="tour-menu-focus">산청 9경</a></li>
@@ -805,20 +894,24 @@
                                     <li><a href="#">오감만족 산청</a></li>
                                 </ul>
                             </div>
+
                             <div class="tour-help">
                                 <a href="#">관광안내지도</a>
                                 <a href="#">문화관광해설사</a>
                             </div>
+
                         </div>
+
                         <div class="tour-right">
                             <div class="tour-slide">
+
                                 <div class="swiper-container sw-tour-1">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img01.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
                                                         제 1경
@@ -831,11 +924,11 @@
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img02.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
-                                                        제 2경
-                                                        <b>대원사 계곡</b>
+                                                        제 1경
+                                                        <b>지리산 천왕봉</b>
                                                     </p>
                                                 </a>
                                             </div>
@@ -844,11 +937,11 @@
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img03.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
-                                                        제 3경
-                                                        <b>황매산 철쭉</b>
+                                                        제 1경
+                                                        <b>지리산 천왕봉</b>
                                                     </p>
                                                 </a>
                                             </div>
@@ -857,11 +950,11 @@
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img04.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
-                                                        제 4경
-                                                        <b>전구형 왕릉</b>
+                                                        제 1경
+                                                        <b>지리산 천왕봉</b>
                                                     </p>
                                                 </a>
                                             </div>
@@ -870,11 +963,11 @@
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img05.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
-                                                        제 5경
-                                                        <b>경호강 비경</b>
+                                                        제 1경
+                                                        <b>지리산 천왕봉</b>
                                                     </p>
                                                 </a>
                                             </div>
@@ -883,11 +976,11 @@
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img06.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
-                                                        제 6경
-                                                        <b>남사예담촌</b>
+                                                        제 1경
+                                                        <b>지리산 천왕봉</b>
                                                     </p>
                                                 </a>
                                             </div>
@@ -896,11 +989,11 @@
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img07.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
-                                                        제 7경
-                                                        <b>남명조식유적지</b>
+                                                        제 1경
+                                                        <b>지리산 천왕봉</b>
                                                     </p>
                                                 </a>
                                             </div>
@@ -909,11 +1002,11 @@
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img08.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
-                                                        제 8경
-                                                        <b>정취암 조망</b>
+                                                        제 1경
+                                                        <b>지리산 천왕봉</b>
                                                     </p>
                                                 </a>
                                             </div>
@@ -922,16 +1015,17 @@
                                             <div class="tour-box">
                                                 <a href="#" class="tour-box-link">
                                                     <div class="tour-box-img">
-                                                        <img src="images/tour_img09.jpeg" alt="">
+                                                        <img src="images/tour_img01.jpg" alt="이미지">
                                                     </div>
                                                     <p class="tour-box-title">
-                                                        제 9경
-                                                        <b>동의보감촌</b>
+                                                        제 1경
+                                                        <b>지리산 천왕봉</b>
                                                     </p>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- 투어 슬라이드 콘트롤러 -->
                                     <button class="sw-tour-1-prev"></button>
                                     <button class="sw-tour-1-next"></button>
                                 </div>
@@ -945,7 +1039,9 @@
                                         }
                                     });
                                 </script>
+
                             </div>
+
                             <div class="tour-slide">
 
                             </div>
@@ -953,13 +1049,17 @@
 
                             </div>
                         </div>
+
                     </div>
 
+
                     <p class="tour-text">지리산(천왕봉)일출</p>
+
                 </div>
             </section>
         </div>
-        <!-- //메인 -->
+        <!--// 메인 -->
+
         <!-- 하단 -->
         <footer class="footer">
             <div class="footer-top">
@@ -974,12 +1074,12 @@
                     <div class="banner-main">
                         <div class="swiper-container sw-banner">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide banner-widh-195">
+                                <div class="swiper-slide banner-width-195">
                                     <a href="#" class="banner-link">
-                                        지리산 둘레보고 앱
+                                        지리산 둘레보고 앱
                                     </a>
                                 </div>
-                                <div class="swiper-slide banner-widh-195">
+                                <div class="swiper-slide  banner-width-195">
                                     <a href="#" class="banner-link">
                                         공익신고자 보호제도
                                     </a>
@@ -989,8 +1089,8 @@
                                         생활법령정보
                                     </a>
                                 </div>
-                                <div class="swiper-slide banner-widh-195">
-                                    <a href="#" class="banner-link ">
+                                <div class="swiper-slide banner-width-195">
+                                    <a href="#" class="banner-link">
                                         중앙부처 법령 유권해석
                                     </a>
                                 </div>
@@ -1010,7 +1110,7 @@
                                     </a>
                                 </div>
                                 <div class="swiper-slide banner-width-250">
-                                    <a href="#" class="banner-link ">
+                                    <a href="#" class="banner-link">
                                         (주)경남장애인기업생산품 직판장
                                     </a>
                                 </div>
@@ -1020,27 +1120,29 @@
                                     </a>
                                 </div>
                             </div>
-                            <script>
-                                new Swiper('.sw-banner', {
-                                    slidesPerView: 'auto',
-                                    loop: true,
-                                    autoplay: {
-                                        delay: 2500,
-                                        disableOnInteraction: false,
-                                    },
-                                    speed: 500,
-                                    navigation: {
-                                        prevEl: '.sw-banner-prev',
-                                        nextEl: '.sw-banner-next',
-                                    }
-                                });
-                            </script>
                         </div>
+                        <!-- 배너 슬라이드 -->
+                        <script>
+                            new Swiper('.sw-banner', {
+                                slidesPerView: 'auto',
+                                loop: true,
+                                autoplay: {
+                                    delay: 1500,
+                                    disableOnInteraction: false,
+                                },
+                                speed: 500,
+                                navigation: {
+                                    prevEl: '.sw-banner-prev',
+                                    nextEl: '.sw-banner-next',
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
             <div class="footer-main">
                 <div class="container">
+
                     <div class="site-link">
                         <div class="site-box">
                             <button class="site-bt">
@@ -1194,75 +1296,3 @@
                                         <li><a href="#">국회</a></li>
                                         <li><a href="#">병무청</a></li>
                                         <li><a href="#">여성가족부</a></li>
-                                        <li><a href="#">해양수산부</a></li>
-                                        <li><a href="#">과학기술정보통신부</a></li>
-                                        <li><a href="#">국가인권위원회</a></li>
-                                        <li><a href="#">식품의약품안전처</a></li>
-                                        <li><a href="#">법제처</a></li>
-                                        <li><a href="#">국가보훈처</a></li>
-                                        <li><a href="#">공정거래위원회</a></li>
-                                        <li><a href="#">금융위원회</a></li>
-                                        <li><a href="#">국민권익위원회</a></li>
-                                        <li><a href="#">방송통신위원회</a></li>
-                                        <li><a href="#">국세청</a></li>
-                                        <li><a href="#">관세청</a></li>
-                                        <li><a href="#">조달청</a></li>
-                                        <li><a href="#">통계청</a></li>
-                                        <li><a href="#">대검찰청</a></li>
-                                        <li><a href="#">경찰청</a></li>
-                                        <li><a href="#">문화재청</a></li>
-                                        <li><a href="#">농촌진흥청</a></li>
-                                        <li><a href="#">산림청</a></li>
-                                        <li><a href="#">중소벤처기업부</a></li>
-                                        <li><a href="#">특허청</a></li>
-                                        <li><a href="#">기상청</a></li>
-                                        <li><a href="#">감사원</a></li>
-                                        <li><a href="#">헌법재판소</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="site-info">
-                        <div class="site-info-menu">
-                            <ul class="site-info-menu-list">
-                                <li>
-                                    <a href="#">
-                                        <strong>개인정보처리방침</strong>
-                                    </a>
-                                </li>
-                                <li><a href="#">이메일무단수집거부</a></li>
-                                <li><a href="#">홈페이지오류신고</a></li>
-                                <li><a href="#">오시는길</a></li>
-                            </ul>
-                        </div>
-                        <div class="site-info-address">
-                            <p class="address-wrap">
-
-                                <ul class="address-list">
-                                    <li>
-                                        <address class="address">[52221] 경상남도 산청군 산청읍 산엔청로 1</address>
-                                    </li>
-                                    <li>
-                                        <span>대표전화 : </span> <a href="#">055-970-6000</a>
-                                    </li>
-                                    <li>
-                                        <span>팩스 : 055-970-6789</span>
-                                    </li>
-                                </ul>
-                            </p>
-
-                            <p class="copy">COPYRIGHT(C) 2021 Sancheong-Gun. ALL RIGHTS RESERVED. 본 사이트에 게시된 이메일주소는
-                                자동수집을 거부하며, 이를 위반시 정보통신망법에 의해 처벌될 수 있습니다.</p>
-                        </div>
-                        <a href="#" class="site-info-img">
-                            <img src="images/wa_mark.png" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-</body>
-
-</html>

@@ -150,6 +150,8 @@ body {
 .pnuh-list>li:nth-child(3) {
     width: 440px;
     width: calc(100% / 6 * 2);
+
+    padding-right: 0;
 }
 
 .pnuh-cate {
@@ -230,7 +232,7 @@ body {
     width: 100%;
     height: 837px;
 
-    background: url('../images/bg_topEasy.jpeg') no-repeat center;
+    background: url('../images/bg_topEasy.jpg') no-repeat center;
     z-index: 99;
 }
 
@@ -238,17 +240,19 @@ body {
     position: absolute;
     left: 0;
     top: 0;
+
     display: block;
     width: 100%;
     height: 90px;
+
     background-color: #04315e;
     box-shadow: 0 10px 20px -10px rgb(0 0 0 / 50%);
+
     z-index: 1;
 }
 
 .quick-banner .container {
     height: 100%;
-
     text-align: center;
 }
 
@@ -604,10 +608,93 @@ body {
     position: relative;
     display: block;
     height: 150px;
-    background-color: red;
-
     margin-top: 50px;
 }
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.sw-quick .swiper-slide a {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.sw-quick-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 15px;
+    height: 27px;
+    background: url('../images/ico_transArrR_gray.png') no-repeat center;
+    cursor: pointer;
+    border: 0;
+    z-index: 99;
+}
+
+.sw-quick-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 15px;
+    height: 27px;
+    background: url('../images/ico_transArrL_gray.png') no-repeat center;
+    cursor: pointer;
+    border: 0;
+    z-index: 99;
+}
+
+.sw-quick-control {
+    position: absolute;
+    left: 45px;
+    bottom: 0;
+    display: block;
+    z-index: 99;
+}
+
+.sw-quick-pg {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.sw-quick-pg .swiper-pagination-bullet {
+    width: 9px !important;
+    height: 9px !important;
+    margin-left: 8px !important;
+    opacity: 1.0 !important;
+    background-color: #bbbcc1 !important;
+}
+
+.sw-quick-pg .swiper-pagination-bullet-active {
+    background-color: #00589e !important;
+}
+
+.sw-quick-pause {
+    position: relative;
+    display: block;
+    width: 6px;
+    height: 9px;
+    background: url('../images/btn_pause_gray.png') no-repeat center;
+    border: 0;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-left: 12px;
+
+    float: left;
+}
+
+.sw-quick-pause-active {
+    background: url('../images/btn_play_gray.png') no-repeat center;
+
+}
+
 
 /* 빠른 서비스 */
 .quick-link {
@@ -656,6 +743,7 @@ body {
     padding-top: 60px;
 
     box-shadow: -5px 0 20px -10px #000;
+
     transition: right 0.2s;
     z-index: 1;
 }
@@ -864,7 +952,9 @@ body {
     left: 50%;
     transform: translateX(-50%);
     top: 35px;
+
     display: none;
+
     border-radius: 5px;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -883,8 +973,7 @@ body {
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc;
     transform: rotate(45deg);
-    /* 이미지 화질문제로 직접 제작
-    background:url('../images/bg_balloonBox_topTri.png')no-repeat center; */
+    /* background:url('../images/bg_balloonBox_topTri.png')no-repeat center; */
 }
 
 .language-wrap-active {
@@ -902,6 +991,8 @@ body {
 }
 
 .language-list>li>a {
+    position: relative;
+    display: block;
     font-family: 'Roboto', 'Noto Sans KR', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -923,38 +1014,53 @@ body {
 
 .site-search-wrap {
     position: absolute;
-    top:-6px;
-    right: -6px;
+    right: 0;
+    top: -5px;
     display: block;
 }
 
-.site-search-wrap form {
-    position: relative;
+
+.site-search-wrap form {}
+
+.site-search-div {
+    position: absolute;
+    right: 35px;
+    top: 0;
     display: block;
+
+    width: 0px;
+    height: 35px;
+    background-color: #00589d;
+    padding: 1px;
+
+    visibility: hidden;
+
+    transition: width 0.2s, visibility 0.2s;
+}
+
+.site-search-div-active {
+    width: 215px !important;
+    visibility: visible !important;
 }
 
 .site-search-txt {
-    position: absolute;
-    right: 37px;
-    top: 0;
-    width: 0px;
-
+    position: relative;
     display: block;
-    height: 37px;
-    line-height: 37px;
-
+    width: 100%;
+    height: 33px;
+    line-height: 33px;
+    color: #000;
     font-family: 'Roboto', 'Noto Sans KR', sans-serif;
     font-size: 18px;
-    font-weight: 400;
-    color: #000;
-    border: 0;
-    transition: all 0.2s;
+    text-indent: 10px;
+
+    border: 1px solid #00589d;
 }
 
-.site-search-active {
-    border: 1px solid #00589d !important;
-    padding: 0 10px !important;
-    width: 213px !important;
+
+.site-search-txt:focus {
+    border: 1px solid #00589d;
+    outline: 1px solid #000;
 }
 
 .site-search-txt::placeholder {
@@ -962,32 +1068,22 @@ body {
 }
 
 .site-search-txt:focus::placeholder {
-    color: #b2cce1;
-}
-
-.site-search-txt:focus {
-    outline: none;
-    /* transition: none; */
-    /* border: 2px solid #000 !important;  */
+    color: #b3cde2;
 }
 
 .site-search-bt {
     position: absolute;
     right: 0;
     top: 0;
-
     display: none;
-    width: 37px;
-    height: 37px;
-
+    width: 35px;
+    height: 35px;
+    background: #00589d url('../images/ico_closeX_white2.png') no-repeat center;
+    cursor: pointer;
     border: 0;
     font-size: 0;
-
-    background: url('../images/ico_closeX_white2.png') no-repeat center;
-    cursor: pointer;
-
-    background-color: #00589d;
 }
+
 
 /* 메인 */
 .main {
@@ -995,9 +1091,11 @@ body {
     display: block;
 }
 
-.main-active {
+
+.main-acitve {
     padding-top: 100px !important;
 }
+
 
 /* 메인 비주얼 */
 .visual {
@@ -1008,8 +1106,143 @@ body {
 
 .visual .container {
     width: 1410px;
-    height: 100%;
-    background-color: green;
+    height: 530px;
+    margin-top: 15px;
+    transform: translateX(65px);
+}
+
+.sw-visual {}
+
+.sw-visual .swiper-slide a {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* overflow: hidden; */
+}
+
+.sw-visual-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.sw-visual-right {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.sw-visual-right img {
+    width: 800px;
+    height: 530px;
+}
+
+.sw-title {
+    position: relative;
+    display: block;
+    width: 530px;
+
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 52px !important;
+    font-weight: 700 !important;
+    line-height: 62px !important;
+    color: #000;
+    letter-spacing: -2px !important;
+
+    transition: 0.2s;
+    margin-left: 30px;
+}
+
+.sw-txt {
+    display: block;
+    width: 530px;
+    margin: 30px 0 0 30px;
+
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #555;
+
+    letter-spacing: -1px;
+    transition: 0.2s;
+}
+
+.sw-txt b {
+    font-weight: bold;
+}
+
+.sw-visual-control {
+    position: absolute;
+    left: 30px;
+    bottom: 50px;
+    display: block;
+    z-index: 99;
+}
+
+.sw-visual-prev {
+    position: relative;
+    display: block;
+    width: 13px;
+    height: 23px;
+    background: url('../images/ico_transArrL_gray.png') no-repeat center;
+    border: 0;
+    cursor: pointer;
+    float: left;
+
+    margin-right: 25px;
+}
+
+.sw-visual-pg {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.sw-visual-pg .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    background-color: #bbbcc1;
+    margin: 0 5px;
+}
+
+.sw-visual-pg .swiper-pagination-bullet-active {
+    background-color: #5fb84d;
+    transform: scale(1.5);
+}
+
+.sw-visual-pause {
+    position: relative;
+    display: block;
+    width: 6px;
+    height: 9px;
+    background: url('../images/btn_pause_gray.png') no-repeat;
+    cursor: pointer;
+    border: 0;
+    float: left;
+    margin-right: 25px;
+
+    margin-top: 7px;
+}
+
+.sw-visual-pause-active {
+    background: url('../images/btn_play_gray.png') no-repeat;
+}
+
+.sw-visual-next {
+    position: relative;
+    display: block;
+    width: 13px;
+    height: 23px;
+    background: url('../images/ico_transArrR_gray.png') no-repeat center;
+    border: 0;
+    cursor: pointer;
+    float: left;
 }
 
 /* 병원 소식 */
@@ -1394,42 +1627,42 @@ body {
 }
 
 .service-list li:nth-child(1) a {
-    background: url('../images/icoBnr2_01.png') no-repeat;
+    background: url('../images/service_1.png') no-repeat;
     background-position: calc(100% - 25px) center;
 }
 
 .service-list li:nth-child(2) a {
-    background: url('../images/icoBnr2_02.png') no-repeat;
+    background: url('../images/service_2.png') no-repeat;
     background-position: calc(100% - 25px) center;
 }
 
 .service-list li:nth-child(3) a {
-    background: url('../images/icoBnr2_03.png') no-repeat;
+    background: url('../images/service_3.png') no-repeat;
     background-position: calc(100% - 25px) center;
 }
 
 .service-list li:nth-child(4) a {
-    background: url('../images/icoBnr2_04.png') no-repeat;
+    background: url('../images/service_4.png') no-repeat;
     background-position: calc(100% - 25px) center;
 }
 
 .service-list li:nth-child(5) a {
-    background: url('../images/icoBnr2_05.png') no-repeat;
+    background: url('../images/service_5.png') no-repeat;
     background-position: calc(100% - 25px) center;
 }
 
 .service-list li:nth-child(6) a {
-    background: url('../images/icoBnr2_06.png') no-repeat;
+    background: url('../images/service_7.png') no-repeat;
     background-position: calc(100% - 25px) center;
 }
 
 .service-list li:nth-child(7) a {
-    background: url('../images/icoBnr2_09.png') no-repeat;
+    background: url('../images/service_6.png') no-repeat;
     background-position: calc(100% - 25px) center;
 }
 
 .service-list li:nth-child(8) a {
-    background: url('../images/icoBnr2_08.png') no-repeat;
+    background: url('../images/service_8.png') no-repeat;
     background-position: calc(100% - 25px) center;
 }
 
@@ -1546,6 +1779,56 @@ body {
     height: 275px;
 
     background-color: #003273;
+}
+
+.sw-notice {}
+
+.sw-notice .swiper-slide a {
+    position: relative;
+    display: block;
+}
+
+.sw-notice-control {
+    position: absolute;
+    left: 45px;
+    bottom: 30px;
+}
+
+.sw-notice-pg {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.sw-notice-pg .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background-color: #fff;
+    opacity: 0.3;
+    margin-right: 10px;
+}
+
+.sw-notice-pg .swiper-pagination-bullet-active {
+    background-color: #fff;
+    opacity: 1;
+}
+
+.sw-notice-pause {
+    position: relative;
+    display: block;
+    width: 6px;
+    height: 9px;
+    background: url('../images/btn_pause_white.png') no-repeat center;
+    float: left;
+    z-index: 99;
+    border: 0;
+    cursor: pointer;
+    margin-top: 2px;
+    
+}
+
+.sw-notice-pause-active {
+    background: url('../images/btn_play_white.png') no-repeat center;
 }
 
 /* 하단 */

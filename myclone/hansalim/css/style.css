@@ -699,7 +699,7 @@ body {
 
 .sw-visual-prev {
     position: absolute;
-    left: calc(50% - 620px);
+    left: calc(50% - 600px);
     top: 50%;
     transform: translate(-50%, -50%);
     display: block;
@@ -710,6 +710,9 @@ body {
     z-index: 99;
     border: 0;
     cursor: pointer;
+}
+.sw-visual-prev:hover {
+    background-position: 0px 0px;
 }
 .sw-visual-prev:hover::before {
     content: '';
@@ -725,7 +728,7 @@ body {
 
 .sw-visual-next {
     position: absolute;
-    left: calc(50% + 620px);
+    left: calc(50% + 600px);
     top: 50%;
     transform: translate(-50%, -50%);
     display: block;
@@ -738,6 +741,77 @@ body {
     cursor: pointer;
 }
 
+.sw-visual-next:hover {
+    background-position: 0px 0px;
+}
+.sw-visual-next:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.sw-visual-control {
+    position: absolute;
+    left: calc(50% - 600px);
+    bottom: 43px;
+    display: block;
+    z-index: 99;
+}
+
+.sw-visual-pause {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: url('../images/visualPlay.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+    float: left;
+    margin-right: 6px;
+}
+.sw-visual-pause-active{
+    background-position: 0px -30px;
+}
+
+.sw-visual-pg {    
+    position: relative;
+    display: block;
+    width: 52px;
+    height: 30px;
+    background: url('../images/visualNum.png') no-repeat;
+    float: left;
+    margin-right: 3px;
+
+    padding-left: 2px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 30px;
+    letter-spacing: -0.35px;
+
+}
+.sw-visual .swiper-pagination-fraction{
+    bottom: 0 !important;
+}
+
+.sw-visual-bt {  
+    position: relative;
+    display: block;
+    width: 29px;
+    height: 30px;
+    background: url('../images/visualMore.png') no-repeat;
+    border: 0;
+    cursor: pointer;
+    float: left;
+}
 
 /* 이 물품은 어떠세요? */
 .recommend {
@@ -776,6 +850,60 @@ body {
     float: left;
 }
 
+.sw-sale-control {
+    position: absolute;
+    left: 0;
+    top: 360px;
+    display: block;    
+}
+
+.sale-left .swiper-pagination-fraction{
+    bottom: 2px !important;
+}
+.sale-left .swiper-pagination-fraction .swiper-pagination-current {
+    color: #000;
+}
+
+.sw-sale-prev {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    background: url('../images/swiperArrP.png');
+    background-position: 0px 0px;
+    border: 0;
+    float: left;
+    cursor: pointer;
+}
+.sw-sale-prev:hover {
+    background-position: 0px -20px;
+}
+
+.sw-sale-pg {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 20px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    color: #bbb;
+}
+.sw-sale-next {    
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    background: url('../images/swiperArrN.png');
+    background-position: 0px 0px;
+    border: 0;
+    float: left;
+    cursor: pointer;
+}
+.sw-sale-next:hover {
+    background-position: 0px -20px;
+}
+
 .sale-right {
     position: relative;
     display: block;
@@ -787,6 +915,8 @@ body {
 
 .sale-right .good-link {
     padding-bottom: 45px;
+    margin-left: 0;
+    margin: 0 auto;
 }
 
 .sale-right .good-link .good-info {
@@ -932,6 +1062,59 @@ body {
     float: left;
 }
 
+.sw-copartner-control {
+    position: absolute;
+    left: 0;
+    top: 190px;
+    display: block;    
+}
+
+.copartner-left .swiper-pagination-fraction{
+    bottom: 2px !important;
+}
+.copartner-left .swiper-pagination-fraction .swiper-pagination-current {
+    color: #000;
+}
+
+.sw-copartner-prev {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    background: url('../images/swiperArrP.png');
+    background-position: 0px 0px;
+    border: 0;
+    float: left;
+    cursor: pointer;
+}
+.sw-copartner-prev:hover {
+    background-position: 0px -20px; 
+}
+
+.sw-copartner-pg {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 20px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    color: #bbb;
+}
+.sw-copartner-next {    
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    background: url('../images/swiperArrN.png');
+    background-position: 0px 0px;
+    border: 0;
+    float: left;
+    cursor: pointer;
+}
+.sw-copartner-next:hover {
+    background-position: 0px -20px; 
+}
 .section-b {
     display: inline-block !important;
     color: #76bd42;
@@ -958,6 +1141,12 @@ body {
 
 .copartner-right .good-link {
     padding-bottom: 45px;
+}
+
+.copartner-right .good-link {
+    padding-bottom: 45px;
+    margin-left: 0;
+    margin: 0 auto;
 }
 
 .copartner-right .good-link .good-info {
@@ -1027,6 +1216,10 @@ body {
     margin: 0 auto;
 }
 
+.sw-popular {}
+
+
+
 .popular-bt {
     position: relative;
     display: block;
@@ -1036,8 +1229,8 @@ body {
     padding-top: 20px;
     border: 1px solid #f9f9f9;
 
-    float: left;
-    margin-left: 10px;
+    /* float: left; */
+    /* margin-left: 10px; */
 }
 
 
@@ -1214,6 +1407,62 @@ body {
     color: #000;
 }
 
+
+.sw-brand-control {
+    position: absolute;
+    left: 0;
+    top: 260px;
+    display: block;    
+}
+
+.brand-left .swiper-pagination-fraction{
+    bottom: 2px !important;
+}
+.brand-left .swiper-pagination-fraction .swiper-pagination-current {
+    color: #000;
+}
+
+.sw-brand-prev {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    background: url('../images/swiperArrP.png');
+    background-position: 0px 0px;
+    border: 0;
+    float: left;
+    cursor: pointer;
+}
+.sw-brand-prev:hover {
+    background-position: 0px -20px; 
+}
+
+.sw-brand-pg {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 20px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    color: #bbb;
+}
+.sw-brand-next {    
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    background: url('../images/swiperArrN.png');
+    background-position: 0px 0px;
+    border: 0;
+    float: left;
+    cursor: pointer;
+}
+.sw-brand-next:hover {
+    background-position: 0px -20px; 
+}
+
+
 .brand-right {
     position: relative;
     display: block;
@@ -1230,8 +1479,8 @@ body {
     background-color: #fff;
     padding: 35px 0;
 
-    float: left;
-    margin-left: 20px;
+    /* float: left; */
+    /* margin-left: 20px; */
 }
 
 .brand-nature a {
@@ -1336,6 +1585,7 @@ body {
     height: 34px;
     background: url('../images/banner_arrow.png') no-repeat;
     background-position: 0px -34px;
+    z-index: 99;
 }
 
 .banner-prev:hover,
@@ -1602,6 +1852,61 @@ body {
     float: left;
 }
 
+.sw-review-control {
+    position: absolute;
+    left: 0;
+    top: 210px;
+    display: block;    
+}
+
+.review-left .swiper-pagination-fraction{
+    bottom: 2px !important;
+}
+.review-left .swiper-pagination-fraction .swiper-pagination-current {
+    color: #000;
+}
+
+.sw-review-prev {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    background: url('../images/swiperArrP.png');
+    background-position: 0px 0px;
+    border: 0;
+    float: left;
+    cursor: pointer;
+}
+.sw-review-prev:hover {
+    background-position: 0px -20px; 
+}
+
+.sw-review-pg {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 20px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    color: #bbb;
+}
+.sw-review-next {    
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    background: url('../images/swiperArrN.png');
+    background-position: 0px 0px;
+    border: 0;
+    float: left;
+    cursor: pointer;
+}
+.sw-review-next:hover {
+    background-position: 0px -20px; 
+}
+
+
 .review-right {
     position: relative;
     display: block;
@@ -1620,8 +1925,8 @@ body {
     background-color: #fff;
     padding: 30px 20px;
 
-    float: left;
-    margin-left: 16px;
+    /* float: left;
+    margin-left: 16px; */
 }
 
 

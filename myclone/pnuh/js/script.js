@@ -29,42 +29,61 @@ $(document).ready(function () {
     let language_wrap = $('.language-wrap');
     // laguage 클릭하면 language_wrap 에 
     // language-wrap-active 를 addClass 한다.
-    language.click(function (event) {
+    language.click(function(event){
         event.preventDefault();
         // language_wrap.addClass('language-wrap-active');
         language_wrap.toggleClass('language-wrap-active');
     });
 
-    language_wrap.mouseleave(function () {
+    language_wrap.mouseleave(function(){
         language_wrap.removeClass('language-wrap-active');
     });
 
-    // 사이트 검색 기능
+    // 사이트 검색 기능 구현
+    // 보기 버튼
     let site_search = $('#site-search');
+    // 보여줄 form
     let site_search_wrap = $('.site-search-wrap');
-    let site_search_txt = $('.site-search-txt');
+    // form 닫기 버튼
     let site_search_bt = $('.site-search-bt');
+    // form의 텍스트영역 저장
+    let site_search_div = $('.site-search-div');
+    // form의 텍스트 필드 저장
+    let site_search_txt = $('.site-search-txt');
 
 
-    site_search.click(function (event) {
+    // 버튼 클릭처리
+    site_search.click(function(event){
+        // href를 막는다.
         event.preventDefault();
-        // 버튼을 보이게 한다.
+        // form 닫기 버튼을 보여준다.
         site_search_bt.show();
+        // 텍스트 필드 넓이는 class 추가
+        site_search_div.addClass('site-search-div-active');
+        // 텍스트 필드 포커스 주기         
+        setTimeout(function(){
+            site_search_txt.focus();
+        }, 200);
 
-        site_search_txt.addClass('site-search-active');
-        site_search_txt.focus();
         // 언어 목록 숨기기
         language_wrap.removeClass('language-wrap-active');
     });
-    site_search_bt.click(function(e){
-        e.preventDefault();
+
+    // 닫기 버튼 클릭 처리
+    site_search_bt.click(function(event){
+        // form의 버튼을 클릭하면 갱신
+        // 막아준다.
+        event.preventDefault();
+        // 닫기 버튼을 숨긴다.        
         setTimeout(function(){
             site_search_bt.hide();
+            // 텍스트 필드 내용을 제어한다.
             site_search_txt.val('');
-        }, 200)
-        site_search_txt.removeClass('site-search-active');
-    })
-
+        }, 200);
+        // 텍스트 필드 넓이는 class 제거
+        site_search_div.removeClass('site-search-div-active');
+    });
+    
     // 주메뉴 고정 기능
     let header = $('.header');
     let main = $('.main');
@@ -257,5 +276,97 @@ $(document).ready(function () {
 
 //모든 리소스 로딩 완료
 window.onload = function () {
+
+    // 퀵링크 슬라이드
+    let sw_quick = new Swiper('.sw-quick', {
+        loop: true,
+        autoplay: {
+            delay: 1000,
+            disableOninteraction: false,
+        },
+        speed: 500,
+        navigation: {
+            nextEl: '.sw-quick-next',
+            prevEl: '.sw-quick-prev',
+        },
+        pagination: {
+            el: '.sw-quick-pg',
+            clickable: true,
+        },
+    });
+
+    let sw_quick_pause = $('.sw-quick-pause');
+    sw_quick_pause.click(function(){
+        let temp = $(this).hasClass('sw-quick-pause-active');
+        if(temp != true) {
+            $(this).addClass('sw-quick-pause-active');
+            sw_quick.autoplay.stop();
+        }else{
+            $(this).removeClass('sw-quick-pause-active');
+            sw_quick.autoplay.start();
+        }
+    });
+
+    // 비주얼 슬라이드
+    let sw_visual = new Swiper('.sw-visual', {
+        
+        loop: true,
+        autoplay: {
+            delay: 2000, 
+            disableOninteraction: false,
+        },
+        navigation: {
+            prevEl: '.sw-visual-prev',
+            nextEl: '.sw-visual-next',
+        },
+        pagination: {
+            el: '.sw-visual-pg',
+            clickable: true,
+        },
+
+    });
+
+    let sw_visual_pause = $('.sw-visual-pause');
+    sw_visual_pause.click(function(){
+        let temp = $(this).hasClass('sw-visual-pause-active');
+        if(temp != true) {
+            $(this).addClass('sw-visual-pause-active');
+            sw_visual.autoplay.stop();
+        }else{
+            $(this).removeClass('sw-visual-pause-active');
+            sw_visual.autoplay.start();
+        }
+    });
+
+    // 공지사항 슬라이드
+    let sw_notice = new Swiper('.sw-notice', {
+        
+        loop: true,
+        autoplay: {
+            delay: 2000, 
+            disableOninteraction: false,
+        },
+        navigation: {
+            prevEl: '.sw-notice-prev',
+            nextEl: '.sw-notice-next',
+        },
+        pagination: {
+            el: '.sw-notice-pg',
+            clickable: true,
+        },
+
+    });
+
+    let sw_notice_pause = $('.sw-notice-pause');
+    sw_notice_pause.click(function(){
+        let temp = $(this).hasClass('sw-notice-pause-active');
+        if(temp != true) {
+            $(this).addClass('sw-notice-pause-active');
+            sw_notice.autoplay.stop();
+        }else{
+            $(this).removeClass('sw-notice-pause-active');
+            sw_notice.autoplay.start();
+        }
+    });
 
 };

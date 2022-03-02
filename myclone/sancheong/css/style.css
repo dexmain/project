@@ -149,7 +149,7 @@ body {
     color: #145ba2;
 }
 
-.family-site {
+.family {
     position: relative;
     display: block;
 
@@ -389,6 +389,8 @@ body {
     display: table;
 
     float: left;
+
+    margin-left: -30px;
 }
 
 .weather-wrap>span {
@@ -624,7 +626,7 @@ body {
 
 .sns-insta {
     border: 1px solid #e7161b;
-    background: url('../images/sns_bg.jpeg') no-repeat center;
+    background: url('../images/sns_bg.jpg') no-repeat center;
 }
 
 .sns-insta::before {
@@ -652,7 +654,160 @@ body {
     position: relative;
     display: block;
     height: 400px;
-    background-color: skyblue;
+    
+}
+.visual-slide-top {
+    position: relative;
+    display: block;
+    height: 31px;
+
+    margin-bottom: 25px;
+}
+
+.visual-slide h2 {
+    position: relative;
+    display: block;
+    height: 31px;
+    color: #1e1e1e;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Gmarket Sans', sans-serif;
+    line-height: 37px;  
+}
+
+.sw-visual-control {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+}
+.link-vi {
+    position: relative;
+    display: block;
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Gmarket Sans', sans-serif;
+    line-height: 31px;
+
+    float: left;
+}
+
+.link-vi::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 36px;
+    background: url('../images/covid_icon.png') no-repeat center;
+    vertical-align: -10px;
+    margin-right: 10px;
+}
+.link-vi b {
+    color: #e7161b;
+}
+.link-vi::after {
+    content: '';
+    position: absolute;
+    left: 42px;
+    right: -10px;
+    bottom: 0;
+    z-index: -1;
+    height: 14px;
+    background-color: #f9f9f9;
+}
+.sw-visual-pg {    
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.sw-visual-prev {    
+    position: relative;
+    display: block;
+    width: 31px;
+    height: 31px;
+    float: left;
+    background: url('../images/control_sprite.png') no-repeat;
+    background-position: 0px 0px;
+    border: 0;
+    cursor: pointer;
+
+    transform: rotate(180deg);
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.sw-visual-next {    
+    position: relative;
+    display: block;
+    width: 31px;
+    height: 31px;
+    float: left;
+    background: url('../images/control_sprite.png') no-repeat;
+    background-position: 0px 0px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.sw-visual-pause {    
+    position: relative;
+    display: block;
+    width: 31px;
+    height: 31px;
+    float: left;
+    background: url('../images/control_sprite.png') no-repeat;
+    background-position: 0px -124px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+.sw-visual-pause-active{
+    background-position: 0px -83px;
+}
+
+.sw-visual {
+}
+
+.sw-visual .swiper-slide {
+    text-align: center;
+}
+
+.visual-link {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 42px;
+    height: 53px;
+    padding-right: 70px;
+    padding-left: 35px;
+    border-radius: 27px;
+    background-color: #0b3d6e;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 53px;
+}
+
+.visual-link::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 31px;
+    height: 31px;
+    background: url('../images/control_sprite.png') no-repeat;
+    background-position: 0px -41px;
+
+    transition: right 0.5s;
+}
+.visual-link:hover::after {
+    right: 0;
 }
 
 .group {
@@ -1758,7 +1913,7 @@ body {
     display: block;
     width: 100vw;
     height: 694px;
-    background: url('../images/rowgroup6_bg.jpeg') no-repeat;
+    background: url('../images/rowgroup6_bg.jpg') no-repeat;
     background-size: cover;
 
     border-radius: 24px;

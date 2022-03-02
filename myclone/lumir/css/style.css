@@ -13,6 +13,7 @@ a {
     /* #111 */
     cursor: pointer;
     text-decoration: none;
+    line-height: 1.4em;
 }
 
 li {
@@ -90,20 +91,94 @@ body {
     display: flex;
 }
 
-.gnb li {
-    position: relative;
-    padding-right: 80px;
+.gnb>li {
+    padding: 0 40px;
 }
 
-.gnb li a {
+.gnb>li>a {
     position: relative;
     display: block;
     font-size: 16px;
+    transition: all .3s ease;
+}
+
+.gnb>li:hover>a {
+    color: #00B5F9;
+}
+
+.submenu {
+    position: absolute;
+    top: 65px;
+    margin-left: -20px;
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+}
+
+.gnb>li:first-child .submenu {
+    display: flex;
+}
+
+.submenu>li {
+    position: relative;
+    display: block;
+    flex: 1 1 auto;
+    width: 25%;
+    padding: 0 20px;
+}
+
+
+.gnb>li:first-child .submenu li {
+    padding: 0;
+}
+
+.gnb>li:first-child .submenu li a+a {
+    padding-right: 70px;
+    word-break: keep-all;
+}
+
+.submenu-col {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    line-height: 3;
+    transition: all .3s ease;
+}
+
+.submenu-col:hover {
+    color: #00B5F9;
+}
+
+.submenu-row {
+    position: relative;
+    display: block;
+    padding-right: 70px;
+    padding-left: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    word-break: keep-all;
+    transition: all .3s ease;
+}
+
+.submenu-row:hover {
+    color: #9F4EC5;
+}
+.submenu-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #999;
 }
 
 .userarea {
     position: relative;
     display: flex;
+    margin-left: 40px;
     align-items: center;
 }
 
@@ -139,6 +214,7 @@ body {
     position: relative;
     display: block;
 }
+
 .kor::after {
     content: '';
     position: relative;
@@ -148,7 +224,7 @@ body {
     display: inline-block;
     width: 10px;
     height: 6px;
-    background:url('../images/ico_language_arrow_w.png')no-repeat;
+    background: url('../images/ico_language_arrow_w.png')no-repeat;
 }
 
 .eng {

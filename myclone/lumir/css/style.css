@@ -1,6 +1,7 @@
 @charset 'utf-8';
 @import url('../css/notosanskr/NotoSansKR.css');
 @import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
 @font-face {
     font-family: 'GongGothicMedium';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
@@ -85,6 +86,7 @@ body {
 .wrap {
     position: relative;
     display: block;
+    overflow: hidden;
 }
 
 /* 헤더 */
@@ -452,6 +454,20 @@ body {
     background: #f3f3f3;
 }
 
+.planet {
+    position: absolute;
+    top: 0;
+    right: -105px;
+    opacity: 0;
+    display: block;
+    transition: .8s;
+}
+
+.planet-active {
+    opacity: 1;
+    top: -116px;
+}
+
 .business .container {}
 
 .business-tit {
@@ -474,21 +490,46 @@ body {
     display: flex;
 }
 
-.business-item {}
-.business-item + .business-item{
+.business-active {
+}
+.business-item {
+    visibility: hidden;
+}
+.business-active .business-item{
+    visibility: visible;
+    animation: showBounce .6s ease both;
+
+}
+.business-active .business-item:nth-child(1) {
+    animation-delay: .3s;
+
+}
+.business-active .business-item:nth-child(2) {
+    animation-delay: .5s;
+
+}
+.business-active .business-item:nth-child(3) {
+    animation-delay: .7s;
+
+}
+
+.business-item+.business-item {
     padding-left: 60px;
 }
 
 .business-img {
     overflow: hidden;
 }
-.business-img img{
+
+.business-img img {
     transform: scale(1);
     transition: .3s;
 }
-.business-item:hover img{
+
+.business-item:hover img {
     transform: scale(1.1);
 }
+
 .txt-box {
     position: relative;
     display: block;
@@ -512,12 +553,14 @@ body {
     line-height: 30px;
     overflow: hidden;
 }
-.item-tit span{
+
+.item-tit span {
     font-size: 30px;
     line-height: 30px;
     position: relative;
     overflow: hidden;
 }
+
 .item-tit span::after {
     content: '';
     position: absolute;
@@ -527,8 +570,9 @@ body {
     height: 1px;
     background-color: #111;
 }
+
 .business-item:hover .item-tit span::after {
-    right:-300%;
+    right: -300%;
     transition: right .6s;
 }
 
@@ -538,7 +582,30 @@ body {
 
 /* // 비즈니스 */
 /* 프로덕트 */
-.product {}
+.product {
+    position: relative;
+    display: block;
+    padding: 150px 0 180px;
+    background: url('../images/bg_sec02.png')no-repeat center center / cover;
+}
+
+.product .container {
+
+    height: 540px;
+}
+
+.product-tit {
+    position: relative;
+    display: block;
+}
+.view-more {
+    position: relative;
+    display: inline-block;
+    margin-top: 45px;
+    font-size: 14px;
+    color: #fff;
+    transition: all .3s ease;
+}
 
 /* //프로덕트 */
 /* 슬로건 */

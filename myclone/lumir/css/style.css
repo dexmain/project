@@ -1,5 +1,12 @@
 @charset 'utf-8';
 @import url('../css/notosanskr/NotoSansKR.css');
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     border: 0;
@@ -52,15 +59,16 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: "Spoqa Han Sans Neo", 'Noto Sans KR', sans-serif;
     font-size: 17px;
-    color: #fff;
+    color: #111;
     /* #111 */
     background-color: #000;
 }
 
 /* 공통영역 */
 .container {
+    display: block;
     max-width: 1600px;
     padding: 0 20px;
     margin: 0 auto;
@@ -82,6 +90,7 @@ body {
 /* 헤더 */
 .header {
     position: fixed;
+    top: 0;
     z-index: 1;
     width: 100%;
     display: block;
@@ -105,11 +114,12 @@ body {
     align-items: center;
     transition: all .3s ease;
 }
+
 .down .container {
     height: 80px !important;
 
     box-shadow: 0 0 2px rgb(0 0 0 / 30%);
-    background: rgba(17,17,17,0.85);
+    background: rgba(17, 17, 17, 0.85);
 }
 
 .logo {
@@ -263,7 +273,7 @@ body {
 .kor {
     position: relative;
     display: inline-block;
-    
+
 }
 
 .kor::after {
@@ -278,7 +288,8 @@ body {
     background: url('../images/ico_language_arrow_w.png')no-repeat;
     transition: transform .3s;
 }
-.lang-active .kor::after{
+
+.lang-active .kor::after {
     transition: transform .3s;
     transform: rotate(180deg);
 }
@@ -295,6 +306,7 @@ body {
     background-color: #fff;
     transition: height .3s;
 }
+
 .eng-area {
     position: absolute;
     top: 28px;
@@ -305,10 +317,12 @@ body {
     height: 0;
     transition: height .2s;
 }
+
 .lang-active .eng-area {
     height: 36px;
     transition: height .2s;
 }
+
 .all-menu-bt {
     position: relative;
     display: block;
@@ -353,49 +367,176 @@ body {
 .main {
     position: relative;
     display: block;
+    top: 0;
 }
 
 /* 비주얼 */
 .visual {
-    position: absolute;
+    position: relative;
+    display: block;
     left: 0;
     top: 0;
     width: 100%;
     height: 1000px;
 }
+
 .visual-bg {
     position: absolute;
     left: 50%;
     top: 50%;
     width: 100%;
     height: 100%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: block;
-    background:url('../images/img_main_visual.png')no-repeat center;
+    background: url('../images/img_main_visual.png')no-repeat center;
 }
+
 .cap {
     position: relative;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
+
 .visual-txt {
-    position: relative;
-    margin-top: 300px;
+    position: absolute;
+    top: 300px;
     display: block;
     overflow: hidden;
     width: 100%;
 }
-.visual-txt img{
+
+.visual-txt img {
     position: relative;
     top: 120px;
     display: block;
-    transition: .7s cubic-bezier(.3,.90,.95,.99);
+    transition: .7s cubic-bezier(.3, .90, .95, .99);
 }
+
 .txt-up img {
     top: 0 !important;
 }
+
+.story-more {
+    position: absolute;
+    bottom: 230px;
+    font-size: 24px;
+    display: block;
+}
+
+.story-more::after {
+    content: '';
+    position: relative;
+    margin-top: 20px;
+    width: 32px;
+    height: 12px;
+    display: block;
+    background: url('../images/btn_main_arrow.png')no-repeat center;
+    transition: transform .3s;
+}
+
+.story-more:hover {
+    text-decoration: underline;
+}
+
+.story-more:hover::after {
+    transform: translateX(100%);
+}
+
 /* // 비주얼 */
+/* 비즈니스 */
+.business {
+    position: relative;
+    display: block;
+    padding: 150px 0 150px;
+    background: #f3f3f3;
+}
+
+.business .container {}
+
+.business-tit {
+    position: relative;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.business-txt {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    color: #000;
+    line-height: 1.5;
+    margin-bottom: 85px;
+}
+
+.business-list {
+    position: relative;
+    display: flex;
+}
+
+.business-item {}
+.business-item + .business-item{
+    padding-left: 60px;
+}
+
+.business-img {
+    overflow: hidden;
+}
+.business-img img{
+    transform: scale(1);
+    transition: .3s;
+}
+.business-item:hover img{
+    transform: scale(1.1);
+}
+.txt-box {
+    position: relative;
+    display: block;
+    margin-top: 60px;
+    padding-left: 60px;
+
+}
+
+.number {
+    position: absolute;
+    left: 0;
+    display: block;
+    font-family: 'GongGothicMedium';
+    font-size: 12px;
+}
+
+.item-tit {
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+    line-height: 30px;
+    overflow: hidden;
+}
+.item-tit span{
+    font-size: 30px;
+    line-height: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.item-tit span::after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    bottom: 1px;
+    width: 300%;
+    height: 1px;
+    background-color: #111;
+}
+.business-item:hover .item-tit span::after {
+    right:-300%;
+    transition: right .6s;
+}
+
+.item-desc {
+    font-size: 15px;
+}
+
+/* // 비즈니스 */
 /* 프로덕트 */
 .product {}
 

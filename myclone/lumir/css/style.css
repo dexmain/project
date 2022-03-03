@@ -601,12 +601,45 @@ body {
 .view-more {
     position: relative;
     display: inline-block;
+    width: 130px;
     margin-top: 45px;
     font-size: 14px;
     color: #fff;
     transition: all .3s ease;
 }
-
+.view-more span::before {
+    content: '';
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: rgba(255,255,255,0.5);
+    transition: width .3s;
+}
+.view-more:hover span::before {
+    width: 0;
+    margin-right: 0;
+}
+.view-more span::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    opacity: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(45deg);
+    transition: .3s;
+    
+}
+.view-more:hover span::after {
+    opacity: 1;
+    margin-left: 14px;
+}
 /* //프로덕트 */
 /* 슬로건 */
 .slogan {}

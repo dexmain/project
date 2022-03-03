@@ -11,7 +11,7 @@
 .showBounce {
     animation-name: showBounce;
 }
-.showBounce { animation-name: showBounce;}
+
 @keyframes showBounce {
     0% {
         opacity: 0;
@@ -82,6 +82,7 @@ body {
 /* 헤더 */
 .header {
     position: fixed;
+    z-index: 1;
     width: 100%;
     display: block;
 }
@@ -94,7 +95,7 @@ body {
     border-top: 1px solid #e5e5e5;
     border-color: rgba(255, 255, 255, 0.1);
     background: rgba(17, 17, 17, 0.85);
-    transition: height .3s;
+    transition: .3s;
 }
 
 .header .container {
@@ -103,6 +104,12 @@ body {
     height: 158px;
     align-items: center;
     transition: all .3s ease;
+}
+.down .container {
+    height: 80px !important;
+
+    box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+    background: rgba(17,17,17,0.85);
 }
 
 .logo {
@@ -131,6 +138,7 @@ body {
     position: relative;
     display: block;
     font-size: 16px;
+    white-space: nowrap;
     transition: all .3s ease;
 }
 
@@ -143,9 +151,6 @@ body {
     padding-bottom: 30px;
     top: 65px;
     margin-left: -20px;
-    display: none;
-}
-.li-on .submenu {
     display: flex;
 }
 
@@ -196,8 +201,9 @@ body {
     word-break: keep-all;
     transition: all .3s ease;
 }
+
 .li-on .submenu-row {
-    animation: showBounce .6s ease .5s both;
+    animation: showBounce .6s ease .6s both;
 }
 
 .submenu-row:hover {
@@ -228,6 +234,7 @@ body {
     display: block;
     font-weight: 500;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 .service::after {
@@ -236,7 +243,7 @@ body {
     display: inline-block;
     width: 1px;
     height: 9px;
-    margin: 0 30px;
+    margin: 0 35px 0 30px;
     background: #ebebeb;
 }
 
@@ -244,6 +251,8 @@ body {
     position: relative;
     display: block;
     margin-right: 45px;
+    white-space: nowrap;
+    z-index: 1;
 }
 
 .language a {
@@ -253,7 +262,8 @@ body {
 
 .kor {
     position: relative;
-    display: block;
+    display: inline-block;
+    
 }
 
 .kor::after {
@@ -266,14 +276,40 @@ body {
     width: 10px;
     height: 6px;
     background: url('../images/ico_language_arrow_w.png')no-repeat;
+    transition: transform .3s;
+}
+.lang-active .kor::after{
+    transition: transform .3s;
+    transform: rotate(180deg);
 }
 
 .eng {
-    position: absolute;
-    visibility: hidden;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    color: #111;
+    text-align: center;
+    background-color: #fff;
+    transition: height .3s;
 }
-
-.all-menu {
+.eng-area {
+    position: absolute;
+    top: 28px;
+    left: -36px;
+    display: block;
+    overflow: hidden;
+    width: 90px;
+    height: 0;
+    transition: height .2s;
+}
+.lang-active .eng-area {
+    height: 36px;
+    transition: height .2s;
+}
+.all-menu-bt {
     position: relative;
     display: block;
     width: 30px;
@@ -281,7 +317,7 @@ body {
     cursor: pointer;
 }
 
-.all-menu::before {
+.all-menu-bt::before {
     content: '';
     position: absolute;
     top: calc(50% - 4px);
@@ -293,7 +329,7 @@ body {
 
 }
 
-.all-menu::after {
+.all-menu-bt::after {
     content: '';
     position: absolute;
     top: calc(50% + 4px);
@@ -304,21 +340,61 @@ body {
     transition: all .3s ease;
 }
 
-.all-menu:hover::before {
+.all-menu-bt:hover::before {
     top: calc(50% - 6px);
 }
 
-.all-menu:hover::after {
+.all-menu-bt:hover::after {
     top: calc(50% + 6px);
 }
 
 /* // 헤더 */
 /* 메인 */
-.main {}
+.main {
+    position: relative;
+    display: block;
+}
 
 /* 비주얼 */
-.visual {}
-
+.visual {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1000px;
+}
+.visual-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%,-50%);
+    display: block;
+    background:url('../images/img_main_visual.png')no-repeat center;
+}
+.cap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.visual-txt {
+    position: relative;
+    margin-top: 300px;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+.visual-txt img{
+    position: relative;
+    top: 120px;
+    display: block;
+    transition: .7s cubic-bezier(.3,.90,.95,.99);
+}
+.txt-up img {
+    top: 0 !important;
+}
 /* // 비주얼 */
 /* 프로덕트 */
 .product {}

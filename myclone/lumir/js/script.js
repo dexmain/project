@@ -94,17 +94,19 @@ $(document).ready(function () {
     }
 
     // product 슬라이드
+    let $orbit = $('.orbit');
     let $satl_road = $('.satl-road');
     let $satellite = $('.satellite');
 
     var orbitSwiper = new Swiper('.sw-orbit', {
         effect: "fade",
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
+
+        pagination: {
+            el: '.sw-pg',
+            type: 'progressbar',
         },
         fadeEffect: {
-            crossFade: true
+            crossFade: true,
         },
         on: {
             activeIndexChange: function () {
@@ -112,12 +114,30 @@ $(document).ready(function () {
                 $satl_road.children('a').eq(this.realIndex).addClass('point-active');
             }
         },
-        
     })
+
+    function slideAuto() {
+        let sate_margin = $satellite.css('margin-bottom');
+        let num = Math.floor(parseFloat(sate_margin));
+        if(num == 0){
+
+        }
+        else {
+            orbitSwiper.slideTo((num-1) % 5, 1000, true);
+        }
+    }
     $satl_road.find('a').click(function () {
         let i = $(this).index();
+        console.log(i);
+        $satellite.removeClass('p0 p1 p2 p3 p4');
+        $satellite.hide();
+        $satellite.addClass('p' + i);
         orbitSwiper.slideTo(i, 1000, true);
+    });
+    $orbit.mouseleave(function(){
+        $satellite.fadeIn(300);
     })
+    setInterval(slideAuto, 100);
 
 
     visual_txt();

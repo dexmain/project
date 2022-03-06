@@ -40,34 +40,139 @@
     }
 }
 
-@keyframes turn1 {
+@keyframes turn {
+    0% {
+        margin-bottom: 1px;
+        transform: rotate(0deg);
+    }
+    20% {
+        margin-bottom: 2px;
+        transform: rotate(72deg);
+    }
+    40% {
+        margin-bottom: 3px;
+
+        transform: rotate(144deg);
+    }
+    60% {
+        margin-bottom: 4px;
+
+        transform: rotate(216deg);
+    }
+    80% {
+        margin-bottom: 5px;
+        transform: rotate(288deg);
+    }
     100% {
-        trasnform: rotate(72deg);
+        margin-bottom: 6px;
+        transform: rotate(360deg);
+    }
+}
+@keyframes turn1 {
+    0% {
+        margin-bottom: 2px;
+        transform: rotate(72deg);
+    }
+    20% {
+        margin-bottom: 3px;
+        transform: rotate(144deg);
+    }
+    40% {
+        margin-bottom: 4px;
+        transform: rotate(216deg);
+    }
+    60% {
+        margin-bottom: 5px;
+        transform: rotate(288deg);
+    }
+    80% {
+        margin-bottom: 6px;
+        transform: rotate(360deg);
+    }
+    100% {
+        margin-bottom: 7px;
+        transform: rotate(432deg);
     }
 }
 @keyframes turn2 {
+    0% {
+        margin-bottom: 3px;
+        transform: rotate(144deg);
+    }
+    20% {
+        margin-bottom: 4px;
+        transform: rotate(216deg);
+    }
+    40% {
+        margin-bottom: 5px;
+        transform: rotate(288deg);
+    }
+    60% {
+        margin-bottom: 6px;
+        transform: rotate(360deg);
+    }
+    80% {
+        margin-bottom: 7px;
+        transform: rotate(432deg);
+    }
     100% {
-        trasnform: rotate(144deg);
+        margin-bottom: 8px;
+        transform: rotate(506deg);
     }
 }
 @keyframes turn3 {
+    0% {
+        margin-bottom: 4px;
+        transform: rotate(216deg);
+    }
+    20% {
+        margin-bottom: 5px;
+        transform: rotate(288deg);
+    }
+    40% {
+        margin-bottom: 6px;
+        transform: rotate(360deg);
+    }
+    60% {
+        margin-bottom: 7px;
+        transform: rotate(432deg);
+    }
+    80% {
+        margin-bottom: 8px;
+        transform: rotate(506deg);
+    }
     100% {
-        trasnform: rotate(216deg);
+        margin-bottom: 9px;
+        transform: rotate(578deg);
     }
 }
 @keyframes turn4 {
+    0% {
+        margin-bottom: 5px;
+        transform: rotate(288deg);
+    }
+    20% {
+        margin-bottom: 6px;
+        transform: rotate(360deg);
+    }
+    40% {
+        margin-bottom: 7px;
+        transform: rotate(432deg);
+    }
+    60% {
+        margin-bottom: 8px;
+        transform: rotate(506deg);
+    }
+    80% {
+        margin-bottom: 9px;
+        transform: rotate(578deg);
+    }
     100% {
-        trasnform: rotate(288deg);
+        margin-bottom: 10px;
+        transform: rotate(650deg);
     }
 }
 
-@keyframes turn2 {}
-
-@keyframes turn3 {}
-
-@keyframes turn4 {}
-
-@keyframes turn5 {}
 
 * {
     border: 0;
@@ -697,6 +802,9 @@ body {
     top: 0;
     right: 20px;
 }
+.orbit:hover .satellite{
+    animation-play-state:paused;
+}
 
 .satl-road {
     position: relative;
@@ -705,7 +813,13 @@ body {
     border-radius: 50%;
     border: 1px dashed rgba(255, 255, 255, 0.8);
 }
-
+.sw-pg{
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
 .satellite {
     position: absolute;
     top: -25px;
@@ -716,7 +830,21 @@ body {
     background: url('../images/ico_satellite.png')no-repeat center;
     transform-origin: center 290px;
 }
-
+.p0 {
+    animation: turn 25s cubic-bezier(1, 1, 1, 1) infinite;
+}
+.p1 {
+    animation: turn1 25s cubic-bezier(1, 1, 1, 1) infinite;
+}
+.p2 {
+    animation: turn2 25s cubic-bezier(1, 1, 1, 1) infinite;
+}
+.p3 {
+    animation: turn3 25s cubic-bezier(1, 1, 1, 1) infinite;
+}
+.p4 {
+    animation: turn4 25s cubic-bezier(1, 1, 1, 1) infinite;
+}
 .satl-road a {
     position: absolute;
     top: -20px;

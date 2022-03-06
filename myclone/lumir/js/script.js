@@ -8,13 +8,13 @@ $(document).ready(function () {
     let $eng_area = $('.eng-area');
     let $language = $('.language');
     let $planet = $('.planet');
-    
+
     // 섹션
     let $visual = $('.visual');
     let $visual_txt = $('.visual-txt');
     let $product = $('.product');
     let $business = $('.business');
-    
+
     // Y 좌표
     let $businessTop = $business.offset().top;
     let $productTop = $product.offset().top;
@@ -60,40 +60,64 @@ $(document).ready(function () {
     $(window).scroll(function () {
         let sc = $(window).scrollTop();
         let bool = sc >= 50;
-        
-        $header.toggleClass('down',bool);
+
+        $header.toggleClass('down', bool);
     });
-    console.log($visual_h);
     // 윈도우 스크롤 
     $(window).scroll(function () {
         var scrollBottom = $(window).scrollTop() + $(window).height() + 30;
         // 비즈니스 애니메이션 (행성 이미지 & 비즈니스 아이템)
         let sc = $(window).scrollTop();
-        let bool = scrollBottom >= $visual_h + $business_h/1.8; 
-        let planet_bool = sc >= $visual_h/4;
-        $business.toggleClass('business-active',bool);
-        $planet.toggleClass('planet-active',planet_bool);
+        let bool = scrollBottom >= $visual_h + $business_h / 1.8;
+        let planet_bool = sc >= $visual_h / 4;
+        $business.toggleClass('business-active', bool);
+        $planet.toggleClass('planet-active', planet_bool);
     });
+
     function universe() {
         var scrollBottom = $(window).scrollTop() + $(window).height() + 30;
-        
+
 
         let bool = scrollBottom >= $productTop;
         let updown = scrollBottom - $productTop;
-        console.log($product.css('background-position-y'));
-        if(bool == true){
-            $product.css('background-position-y',-410 + (updown/2));
-            console.log(updown);
+        if (bool == true) {
+            $product.css('background-position-y', -410 + (updown / 2));
         }
     }
     universe();
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         universe();
     })
-    function visual_txt(){
+
+    function visual_txt() {
         $visual_txt.addClass('txt-up');
     }
-    
+
+    // product 슬라이드
+    let $satl_road = $('.satl-road');
+    let $satellite = $('.satellite');
+
+    var orbitSwiper = new Swiper('.sw-orbit', {
+        effect: "fade",
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        fadeEffect: {
+            crossFade: true
+        },
+        on: {
+            activeIndexChange: function () {
+                $satl_road.children('a').removeClass('point-active');
+                $satl_road.children('a').eq(this.realIndex).addClass('point-active');
+            }
+        },
+        
+    })
+    $satl_road.find('a').click(function () {
+        let i = $(this).index();
+        orbitSwiper.slideTo(i, 1000, true);
+    })
 
 
     visual_txt();

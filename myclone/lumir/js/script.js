@@ -14,13 +14,24 @@ $(document).ready(function () {
     let $visual_txt = $('.visual-txt');
     let $product = $('.product');
     let $business = $('.business');
+    let $slogan = $('.slogan');
+    let $news = $('.news');
+    let $story = $('.story');
+    let $storyBox = $('.story-box');
+    let $storyList = $('.story-list');
 
     // Y 좌표
     let $businessTop = $business.offset().top;
     let $productTop = $product.offset().top;
+    let $sloganTop = $slogan.offset().top;
+    let $newsTop = $news.offset().top;
+    let $storyTop = $story.offset().top;
     // 높이
     let $visual_h = $visual.height();
+    let $slogan_h = $slogan.height();
     let $business_h = $business.height();
+    let $news_h = $news.height();
+    let $story_h = $story.height();
     // let $submenu_col = $('.submenu-col');
     // let $submenu_row = $('.submenu-row');
 
@@ -70,8 +81,23 @@ $(document).ready(function () {
         let sc = $(window).scrollTop();
         let bool = scrollBottom >= $visual_h + $business_h / 1.8;
         let planet_bool = sc >= $visual_h / 4;
+        let slogan_bool = scrollBottom >= $sloganTop + $slogan_h / 2;
+        let news_bool = scrollBottom >= $newsTop + $news_h / 2;
+        let story_1_bool = scrollBottom >= $storyList.offset().top +30;
+        let story_2_bool = scrollBottom >= $storyBox.eq(3).offset().top;
+        
+
+        // console.log('sloganTop : ' + $sloganTop);
+        // console.log('$storylist-top : ' + $storyList.offset().top);
+        // console.log('sc : ' + sc);
+        // console.log('scrollBottom : ' + scrollBottom);
+
         $business.toggleClass('business-active', bool);
         $planet.toggleClass('planet-active', planet_bool);
+        $slogan.toggleClass('slogan-active', slogan_bool);
+        $news.toggleClass('news-active', news_bool);
+        $('.story-box:lt(3)').toggleClass('story-box-active',story_1_bool);
+        $('.story-box:gt(2)').toggleClass('story-box-active',story_2_bool);
     });
 
     function universe() {
@@ -119,11 +145,10 @@ $(document).ready(function () {
     function slideAuto() {
         let sate_margin = $satellite.css('margin-bottom');
         let num = Math.floor(parseFloat(sate_margin));
-        if(num == 0){
+        if (num == 0) {
 
-        }
-        else {
-            orbitSwiper.slideTo((num-1) % 5, 1000, true);
+        } else {
+            orbitSwiper.slideTo((num - 1) % 5, 1000, true);
         }
     }
     $satl_road.find('a').click(function () {
@@ -134,7 +159,7 @@ $(document).ready(function () {
         $satellite.addClass('p' + i);
         orbitSwiper.slideTo(i, 1000, true);
     });
-    $orbit.mouseleave(function(){
+    $orbit.mouseleave(function () {
         $satellite.fadeIn(300);
     })
     setInterval(slideAuto, 100);

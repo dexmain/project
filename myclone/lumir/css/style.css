@@ -230,12 +230,14 @@ img {
 
 html {
     display: block;
+    background-color: #000;
 }
 
 body {
     font-family: "Spoqa Han Sans Neo", 'Noto Sans KR', sans-serif;
     font-size: 17px;
     color: #111;
+    background-color: #fff;
     /* #111 */
 }
 
@@ -261,7 +263,26 @@ body {
     display: block;
     overflow: hidden;
 }
+.gotop {
+    position: fixed;
+    display: block;
+    visibility: hidden;
+    bottom: 30px;
+    right: 30px;
+    width: 30px;
+    height: 32px;
+    background:url('../images/btn_top_b.png')no-repeat center;
+    z-index: 9999;
+    cursor: pointer;
+    opacity: 0;
+    transition: .3s;
 
+}
+.gotop-active {
+    opacity: 1;
+    visibility: visible;
+    transition: .3s;
+}
 /* 헤더 */
 .header {
     position: fixed;

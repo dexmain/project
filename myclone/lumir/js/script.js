@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    let $gotop = $('.gotop');
     let $header = $('.header');
     let $gnb_field = $('.gnb-field');
     let $gnb_li = $('.gnb>li');
@@ -35,7 +36,12 @@ $(document).ready(function () {
     // let $submenu_col = $('.submenu-col');
     // let $submenu_row = $('.submenu-row');
 
-
+    // gotop
+    $gotop.click(function () {
+        $('html,body').animate({
+            scrollTop: 0
+        }, 500)
+    })
     // li on
     $submenu.hide();
     $gnb_field.hide();
@@ -83,21 +89,21 @@ $(document).ready(function () {
         let planet_bool = sc >= $visual_h / 4;
         let slogan_bool = scrollBottom >= $sloganTop + $slogan_h / 2;
         let news_bool = scrollBottom >= $newsTop + $news_h / 2;
-        let story_1_bool = scrollBottom >= $storyList.offset().top +30;
+        let story_1_bool = scrollBottom >= $storyList.offset().top + 30;
         let story_2_bool = scrollBottom >= $storyBox.eq(3).offset().top;
-        
-
+        let gotop_bool = sc >= 200;
         // console.log('sloganTop : ' + $sloganTop);
         // console.log('$storylist-top : ' + $storyList.offset().top);
         // console.log('sc : ' + sc);
         // console.log('scrollBottom : ' + scrollBottom);
 
+        $gotop.toggleClass('gotop-active', gotop_bool);
         $business.toggleClass('business-active', bool);
         $planet.toggleClass('planet-active', planet_bool);
         $slogan.toggleClass('slogan-active', slogan_bool);
         $news.toggleClass('news-active', news_bool);
-        $('.story-box:lt(3)').toggleClass('story-box-active',story_1_bool);
-        $('.story-box:gt(2)').toggleClass('story-box-active',story_2_bool);
+        $('.story-box:lt(3)').toggleClass('story-box-active', story_1_bool);
+        $('.story-box:gt(2)').toggleClass('story-box-active', story_2_bool);
     });
 
     function universe() {

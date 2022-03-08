@@ -212,7 +212,81 @@ body {
     position: relative;
     display: block;
 }
+/* 모달창 */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
 
+.modal-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    width: 500px;
+    height: 300px;
+    z-index: 999;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 4px solid #47ad1a;
+    text-align: center;
+}
+.modal-wrap b{
+    position: relative;
+    display: block;
+    font-weight: 600;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.modal-desc {
+    margin-top: 50px;
+}
+.modal-close {
+    position: absolute;
+    display: block;
+    top: 25px;
+    right: 25px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: rotate(45deg);
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.modal-close:hover {
+    transform: rotate(225deg);
+}
+.modal-close::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #999;
+}
+.modal-close::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: #999;
+}
 /* 상단 */
 .header {
     position: fixed;

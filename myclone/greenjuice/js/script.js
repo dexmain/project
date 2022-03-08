@@ -6,7 +6,14 @@ $(document).ready(function () {
     link_bt.click(function () {
         link_list.stop().slideToggle(300);
     });
-
+    // 모달창
+    let $modal = $('.modal');
+    let $modal_close = $('.modal-close');
+    $modal_close.click(function(){
+        $('html').css('overflow-y','auto');
+        $modal.fadeOut(300);
+    });
+    
     // 위로가기 기능
     let gotop = $('.gotop');
     gotop.click(function () {

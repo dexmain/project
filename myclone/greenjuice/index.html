@@ -4,21 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon_16x16.png" type="image/png">
+    <link rel="icon" href="images/favicon_32x32.png" type="image/png">
 
     <link rel="apple-touch-icon-precomposed" href="images/mobile_web_icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
     <title>풀무원 녹즙</title>
     <!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <![endif]-->
-
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
     <script src="js/respond.min.js"></script>
 
     <script src="js/prefixfree.min.js"></script>
     <script src="js/jquery.min.js"></script>
-    
+
     <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <script src="js/swiper/swiper.min.js"></script>
 
@@ -29,7 +29,17 @@
 </head>
 
 <body>
+    <div class="modal">
+        <div class="cap"></div>
+        <div class="modal-wrap">
+            <b>이 사이트는 학습을 목적으로 제작되었으며<br>리소스는 원저작자에게 있습니다.</b>
+            ※ 본 사이트는 Chrome 에 최적화 되어있습니다.
+            <div class="modal-desc">
+            </div>
 
+            <button class="modal-close"></button>
+        </div>
+    </div>
     <!-- 위로가기 -->
     <button class="gotop">
         <i></i>
@@ -109,7 +119,7 @@
             <section class="service">
                 <div class="container">
                     <h2>고객님 안녕하세요!</h2>
-                    <div class="service-wrap">
+                    <div class="service-wrap clearfix">
 
                         <div class="service-slide">
                             <div class="swiper-container sw-service">
@@ -147,7 +157,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- 컨트롤러 -->
                             <div class="sw-service-control">
                                 <div class="swiper-pagination sw-service-pg"></div>

@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
-
+    // 모달창
+    let $modal = $('.modal');
+    let $modal_close = $('.modal-close');
+    $modal_close.click(function(){
+        $modal.fadeOut(300);
+    });
     // 페이징 바
 
     // 페이징바 포커싱

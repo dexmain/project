@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    // 모달창
+    let $modal = $('.modal');
+    let $modal_close = $('.modal-close');
+    $modal_close.click(function(){
+        $('html').css('overflow-y','auto');
+        $modal.fadeOut(300);
+    });
     // 배너
     let quick_banner = $('.quick-banner');
     let quick_day_close = $('.quick-day-close');

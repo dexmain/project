@@ -1,5 +1,95 @@
 $(document).ready(function () {
 
+    // 전체 메뉴 관련
+    let all_menu_wrap = $('.all-menu-wrap');
+    all_menu_wrap.niceScroll({
+        cursoropacitymax : 0.3,
+        cursorwidth: "7px",
+        cursorborderradius: "10px",
+    });
+
+    let all_menu = $('.all-menu');
+    let all_list_cate_li = $('.all-list-cate > li');   
+    let all_menu_detail_list = $('.all-menu-detail-list');
+    // 모달창
+    let $modal = $('.modal');
+    let $modal_close = $('.modal-close');
+    $modal_close.click(function(){
+        $('html').css('overflow-y','auto');
+        $modal.fadeOut(300);
+    });
+    // 상세 메뉴가 사라지는 타이머를 저장한다.
+    // idntifier (식별자)
+    let all_menu_timer;
+    let all_menu_timer_delay = 100;
+
+    $.each(all_list_cate_li, function(index, item){
+
+        $(this).mouseenter(function(){            
+            clearTimeout(all_menu_timer);
+            all_menu.addClass('all-menu-active');
+            all_menu_detail_list.hide();
+            all_menu_detail_list.eq(index).show();
+        });
+
+        $(this).mouseleave(function(){
+            clearTimeout(all_menu_timer);
+
+            // 타이머 생성법 setTimeout(할일, 대기시간)
+            all_menu_timer = setTimeout(allMenuHide, all_menu_timer_delay);
+        });
+
+    });
+
+    // 상세 메뉴 영역을 감싸주는 div
+    let all_menu_detail = $('.all-menu-detail');
+
+    // 상세 메뉴 영역 div 에 롤오버를 하면 사라지려는 타이머를 지운다.
+    all_menu_detail.mouseenter(function(){
+        clearTimeout(all_menu_timer);
+    });
+
+    // 상세 메뉴 영역 div 에서 롤 아웃을 하면 조금 기다렸다가 사라지는 타이머 생성
+    all_menu_detail.mouseleave(function(){
+        clearTimeout(all_menu_timer);
+        all_menu_timer = setTimeout(allMenuHide, all_menu_timer_delay);
+    });
+
+    // 상세 메뉴 사라지기
+    function allMenuHide(){
+        clearTimeout(all_menu_timer);
+        all_menu.removeClass('all-menu-active');
+    }
+
+    // 전체 메뉴 보기 
+    let all = $('#all');
+    let all_timer;
+    let all_timer_delay = 100;
+
+    all.mouseenter(function(){
+        clearTimeout(all_timer);
+        all_menu.css('visibility', 'visible');
+    });
+    all.mouseleave(function(){
+        clearTimeout(all_timer);
+        all_timer = setTimeout(hideMenu, all_timer_delay);
+    });
+    all_menu.mouseenter(function(){
+        clearTimeout(all_timer);
+    });
+    all_menu.mouseleave(function(){
+        clearTimeout(all_timer);
+        all_timer = setTimeout(hideMenu, all_timer_delay);
+    });
+
+    function hideMenu(){
+        all_menu.css('visibility', 'hidden');
+    }
+
+    // 전체메뉴의 높이는 웹브라우저의 높이를 기준으로 지정
+    all_menu.css('height', 'calc(100vh - 200px)');
+
+
     // 로그인 펼침목록
     let login_menu = $('#login-menu');
     let arrow_list_login = $('.arrow-list-login');

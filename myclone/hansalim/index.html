@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <script src="js/swiper/swiper.min.js"></script>
 
+    <!-- nicescroll -->
+    <script src="js/jquery.nicescroll.min.js"></script>
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -28,7 +31,17 @@
 </head>
 
 <body>
+    <div class="modal">
+        <div class="cap"></div>
+        <div class="modal-wrap">
+            <b>이 사이트는 학습용으로 제작되었으며<br>리소스는 원저작자에게 있습니다.</b>
+            ※ 본 사이트는 Chrome 에 최적화 되어있습니다.
+            <div class="modal-desc">
+            </div>
 
+            <button class="modal-close"></button>
+        </div>
+    </div>
     <!-- 고정메뉴 -->
     <div class="fixmenu">
         <ul class="fixmenu-list">
@@ -89,7 +102,7 @@
                                 <li><a href="#">공지사항</a></li>
                                 <li><a href="#">방사성물질검사결과</a></li>
                                 <li><a href="#">축산물이력검사</a></li>
-                             </ul>
+                            </ul>
                         </li>
                         <li><a href="#">매장안내</a></li>
                     </ul>
@@ -100,6 +113,152 @@
                 <div class="container">
 
                     <div class="header-main-left">
+                        <!-- 전체메뉴 -->
+                        <div class="all-menu">
+
+                            <!-- 상세메뉴 -->
+                            <div class="all-menu-detail">
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>멥쌀/찹쌀</span></a></li>
+                                    <li><a href="#"><span>잡곡/깨</span></a></li>
+                                    <li><a href="#"><span>콩류</span></a></li>
+                                    <li><a href="#"><span>혼합곡/보리/유색미</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>콩나물/숙주</span></a></li>
+                                    <li><a href="#"><span>잎/줄기채소</span></a></li>
+                                    <li><a href="#"><span>열매채소</span></a></li>
+                                    <li><a href="#"><span>뿌리채소</span></a></li>
+                                    <li><a href="#"><span>버섯류</span></a></li>
+                                    <li><a href="#"><span>말린나물류</span></a></li>
+                                    <li><a href="#"><span>손질한채소</span></a></li>
+                                    <li><a href="#"><span>양념/조미채소</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>건조/냉동과일</span></a></li>
+                                    <li><a href="#"><span>견과류</span></a></li>
+                                    <li><a href="#"><span>과일/과채</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>유정란</span></a></li>
+                                    <li><a href="#"><span>한우</span></a></li>
+                                    <li><a href="#"><span>돼지</span></a></li>
+                                    <li><a href="#"><span>닭/오리</span></a></li>
+                                    <li><a href="#"><span>햄/소시지</span></a></li>
+                                    <li><a href="#"><span>육가공</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>생선/손질생선</span></a></li>
+                                    <li><a href="#"><span>멸치/황태/건어</span></a></li>
+                                    <li><a href="#"><span>패류/오징어/새우</span></a></li>
+                                    <li><a href="#"><span>미역/다시마/해조</span></a></li>
+                                    <li><a href="#"><span>김/조미김</span></a></li>
+                                    <li><a href="#"><span>젓갈/게장</span></a></li>
+                                    <li><a href="#"><span>말린오징어/어포</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>두부/어묵/묵</span></a></li>
+                                    <li><a href="#"><span>김치/밑반찬</span></a></li>
+                                    <li><a href="#"><span>된장/고추장/간장</span></a></li>
+                                    <li><a href="#"><span>기름/식초/소금</span></a></li>
+                                    <li><a href="#"><span>소스/양념/조청</span></a></li>
+                                    <li><a href="#"><span>곡식가루/혼합가루</span></a></li>
+                                    <li><a href="#"><span>과채/고춧가루</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>라면/간편조리면</span></a></li>
+                                    <li><a href="#"><span>국수/면</span></a></li>
+                                    <li><a href="#"><span>만두/피자/핫도그</span></a></li>
+                                    <li><a href="#"><span>씨리얼/생식/선식</span></a></li>
+                                    <li><a href="#"><span>국/탕/요리</span></a></li>
+                                    <li><a href="#"><span>죽/간편밥/밥양념</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>우리밀빵</span></a></li>
+                                    <li><a href="#"><span>떡/한과</span></a></li>
+                                    <li><a href="#"><span>과자</span></a></li>
+                                    <li><a href="#"><span>우유/두유/유제품</span></a></li>
+                                    <li><a href="#"><span>과즙/발효/전통/음용식초</span></a></li>
+                                    <li><a href="#"><span>잼/푸딩/빙과</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>홍삼/녹용/산양삼</span></a></li>
+                                    <li><a href="#"><span>건강즙/농축액</span></a></li>
+                                    <li><a href="#"><span>분말/환/절편</span></a></li>
+                                    <li><a href="#"><span>꿀/화분/로얄젤리</span></a></li>
+                                    <li><a href="#"><span>건강차</span></a></li>
+                                    <li><a href="#"><span>일반차</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>기초화장</span></a></li>
+                                    <li><a href="#"><span>색조화장품</span></a></li>
+                                    <li><a href="#"><span>세안제/팩</span></a></li>
+                                    <li><a href="#"><span>바디/핸드</span></a></li>
+                                    <li><a href="#"><span>남성화장품</span></a></li>
+                                    <li><a href="#"><span>유아/썬크림</span></a></li>
+                                    <li><a href="#"><span>오가닉코튼</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>주방세제/세정</span></a></li>
+                                    <li><a href="#"><span>세제/세탁비누</span></a></li>
+                                    <li><a href="#"><span>샴푸/린스/헤어용품</span></a></li>
+                                    <li><a href="#"><span>세안비누/온몸세정</span></a></li>
+                                    <li><a href="#"><span>치약/칫솔</span></a></li>
+                                    <li><a href="#"><span>주방소품</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>휴지/티슈</span></a></li>
+                                    <li><a href="#"><span>도서</span></a></li>
+                                    <li><a href="#"><span>생리대/위생용품</span></a></li>
+                                    <li><a href="#"><span>숯/원예</span></a></li>
+                                    <li><a href="#"><span>생활소품</span></a></li>
+                                    <li><a href="#"><span>선물포장</span></a></li>
+                                    <li><a href="#"><span>기금</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>사료/간식</span></a></li>
+                                </ul>
+                                <ul class="all-menu-detail-list">
+                                    <li><a href="#"><span>대용량/어린이집</span></a></li>
+                                </ul>
+                            </div>
+                            <!--// 상세메뉴 -->
+
+                            <!-- 기본메뉴 -->
+                            <div class="all-menu-wrap">
+                                <ul class="all-list-cate">
+                                    <li><a href="#"><span>쌀/잡곡</span></a></li>
+                                    <li><a href="#"><span>채소/버섯</span></a></li>
+                                    <li><a href="#"><span>과일/견과</span></a></li>
+                                    <li><a href="#"><span>축산/축산가공</span></a></li>
+                                    <li><a href="#"><span>수산/수산가공</span></a></li>
+                                    <li><a href="#"><span>반찬/양념/가루</span></a></li>
+                                    <li><a href="#"><span>식사대용/간편식</span></a></li>
+                                    <li><a href="#"><span>간식/음료/유제품</span></a></li>
+                                    <li><a href="#"><span>건강/차</span></a></li>
+                                    <li><a href="#"><span>화장품/오가닉코튼</span></a></li>
+                                    <li><a href="#"><span>주방/욕실/세정</span></a></li>
+                                    <li><a href="#"><span>휴지/생활</span></a></li>
+                                    <li><a href="#"><span>반려동물</span></a></li>
+                                    <li><a href="#"><span>대용량/어린이집</span></a></li>
+                                </ul>
+                                <ul class="all-list-theme">
+                                    <li><a href="#"><span class="ball">영유아</span></a></li>
+                                    <li><a href="#"><span class="ball">채식</span></a></li>
+                                </ul>
+                                <ul class="all-list-service">
+                                    <li><a href="#"><span>택배공급</span></a></li>
+                                    <li><a href="#"><span>사전예약</span></a></li>
+                                    <li><a href="#"><span>산지직송</span></a></li>
+                                    <li><a href="#"><span>매장만공급</span></a></li>
+                                    <li><a href="#"><span>브랜드관</span></a></li>
+                                </ul>
+                            </div>
+                            <!--// 기본메뉴  -->
+
+                        </div>
+                        <!--// 전체메뉴 -->
+
                         <a href="#" id="all">
                             <img src="images/menu_icon.png" alt="전체물품">
                             전체물품
@@ -115,7 +274,7 @@
                                 <li><a href="#" class="ball">채식</a></li>
                                 <li>
                                     <a href="#" id="arrow">참여<i></i></a>
-                                    <ul class="arrow-list arrow-list-event">               
+                                    <ul class="arrow-list arrow-list-event">
                                         <li><a href="#">신규물품제안</a></li>
                                         <li><a href="#">참여이벤트</a></li>
                                     </ul>
@@ -126,11 +285,12 @@
                         <div class="more-div">
                             <a href="#" id="more">더보기<i></i></a>
                             <ul class="arrow-list arrow-list-more">
-								<li><a href="/#">한살림이야기</a></li>
-								<li><a href="#">생산자와 물품</a></li>
-								<li><a href="#">세상의 밥</a></li>
-							</ul>
+                                <li><a href="/#">한살림이야기</a></li>
+                                <li><a href="#">생산자와 물품</a></li>
+                                <li><a href="#">세상의 밥</a></li>
+                            </ul>
                         </div>
+
                     </div>
 
                     <div class="header-main-right ">
@@ -904,9 +1064,9 @@
                                         <a href="#" class="popular-bt popular-bt-focus">
 
                                             <span class="popular-bt-img icon-1">
-            
+
                                             </span>
-            
+
                                             <span class="popular-bt-txt">
                                                 쌀/잡곡
                                             </span>
@@ -916,9 +1076,9 @@
                                         <a href="#" class="popular-bt">
 
                                             <span class="popular-bt-img icon-2">
-            
+
                                             </span>
-            
+
                                             <span class="popular-bt-txt">
                                                 채소/버섯
                                             </span>
@@ -928,9 +1088,9 @@
                                         <a href="#" class="popular-bt">
 
                                             <span class="popular-bt-img icon-3">
-            
+
                                             </span>
-            
+
                                             <span class="popular-bt-txt">
                                                 과일/견과
                                             </span>
@@ -940,9 +1100,9 @@
                                         <a href="#" class="popular-bt">
 
                                             <span class="popular-bt-img icon-4">
-            
+
                                             </span>
-            
+
                                             <span class="popular-bt-txt">
                                                 축산/축산가공
                                             </span>
@@ -952,9 +1112,9 @@
                                         <a href="#" class="popular-bt">
 
                                             <span class="popular-bt-img icon-5">
-            
+
                                             </span>
-            
+
                                             <span class="popular-bt-txt">
                                                 수산/수산가공
                                             </span>
@@ -964,9 +1124,9 @@
                                         <a href="#" class="popular-bt">
 
                                             <span class="popular-bt-img icon-6">
-            
+
                                             </span>
-            
+
                                             <span class="popular-bt-txt">
                                                 반찬/양념/가루
                                             </span>
@@ -976,9 +1136,9 @@
                                         <a href="#" class="popular-bt">
 
                                             <span class="popular-bt-img icon-7">
-            
+
                                             </span>
-            
+
                                             <span class="popular-bt-txt">
                                                 식사대용/간편식
                                             </span>
@@ -987,7 +1147,7 @@
                                     <div class="swiper-slide">
                                         <a href="#" class="popular-bt">
                                             <span class="popular-bt-img icon-8">
-                                            </span>                                
+                                            </span>
                                             <span class="popular-bt-txt">
                                                 간식/음료/유제품
                                             </span>
@@ -996,7 +1156,7 @@
                                     <div class="swiper-slide">
                                         <a href="#" class="popular-bt">
                                             <span class="popular-bt-img icon-9">
-                                            </span>                                
+                                            </span>
                                             <span class="popular-bt-txt">
                                                 건강/차
                                             </span>
@@ -1005,7 +1165,7 @@
                                     <div class="swiper-slide">
                                         <a href="#" class="popular-bt">
                                             <span class="popular-bt-img icon-10">
-                                            </span>                                
+                                            </span>
                                             <span class="popular-bt-txt">
                                                 화장품/오가닉코튼
                                             </span>
@@ -1014,7 +1174,7 @@
                                     <div class="swiper-slide">
                                         <a href="#" class="popular-bt">
                                             <span class="popular-bt-img icon-11">
-                                            </span>                                
+                                            </span>
                                             <span class="popular-bt-txt">
                                                 주방/욕실/세정
                                             </span>
@@ -1023,7 +1183,7 @@
                                     <div class="swiper-slide">
                                         <a href="#" class="popular-bt">
                                             <span class="popular-bt-img icon-12">
-                                            </span>                                
+                                            </span>
                                             <span class="popular-bt-txt">
                                                 휴지/생활
                                             </span>
@@ -1032,7 +1192,7 @@
                                     <div class="swiper-slide">
                                         <a href="#" class="popular-bt">
                                             <span class="popular-bt-img icon-13">
-                                            </span>                                
+                                            </span>
                                             <span class="popular-bt-txt">
                                                 반려동물
                                             </span>
@@ -1041,7 +1201,7 @@
                                     <div class="swiper-slide">
                                         <a href="#" class="popular-bt">
                                             <span class="popular-bt-img icon-14">
-                                            </span>                                
+                                            </span>
                                             <span class="popular-bt-txt">
                                                 대용량/어린이집
                                             </span>
@@ -1170,7 +1330,7 @@
                                 <div class="swiper-slide">
                                     <div class="brand-nature">
                                         <a href="#">
-            
+
                                             <p class="brand-nature-title">
                                                 <img src="images/brand_1.png" alt="">
                                                 <span>참여인증</span>
@@ -1185,15 +1345,15 @@
                                                     <span class="brand-nature-desc">7,122,439㎡</span>
                                                 </li>
                                             </ul>
-            
-            
+
+
                                         </a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="brand-nature">
                                         <a href="#">
-            
+
                                             <p class="brand-nature-title">
                                                 <img src="images/brand_2.png" alt="">
                                                 <span>병재사용</span>
@@ -1208,7 +1368,7 @@
                                                     <span class="brand-nature-desc">18,886그루 ↑</span>
                                                 </li>
                                             </ul>
-            
+
                                         </a>
                                     </div>
                                 </div>
@@ -1250,7 +1410,7 @@
                                                 </li>
                                             </ul>
                                         </a>
-                                    </div>   
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="brand-nature">
@@ -1270,7 +1430,7 @@
                                                 </li>
                                             </ul>
                                         </a>
-                                    </div>  
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="brand-nature">
@@ -1291,7 +1451,7 @@
                                             </ul>
                                         </a>
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1323,7 +1483,7 @@
                                 <div class="swiper-slide">
                                     <a href="#">
                                         <img src="images/banner_4.jpg" alt="">
-                                    </a> 
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1457,7 +1617,7 @@
                             어떤 물품을 구매했을까요?
                         </p>
 
-                        
+
 
                         <div class="sw-review-control">
                             <button class="sw-review-prev"></button>
@@ -1478,17 +1638,18 @@
                                                 <a href="#" class="review-box-link">
                                                     한우사골농축액140g(14g×10)
                                                 </a>
-            
+
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-            
+
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품" class="review-box-img"></a>
+                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                        class="review-box-img"></a>
                                             </div>
                                         </div>
-            
+
                                         <p class="review-box-desc">
                                             <a href="#">
                                                 시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
@@ -1499,7 +1660,7 @@
                                                 2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
                                             </a>
                                         </p>
-            
+
                                         <span class="review-box-id">
                                             김*영 (한살림청주)
                                         </span>
@@ -1513,17 +1674,18 @@
                                                 <a href="#" class="review-box-link">
                                                     한우사골농축액140g(14g×10)
                                                 </a>
-            
+
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-            
+
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품" class="review-box-img"></a>
+                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                        class="review-box-img"></a>
                                             </div>
                                         </div>
-            
+
                                         <p class="review-box-desc">
                                             <a href="#">
                                                 시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
@@ -1534,7 +1696,7 @@
                                                 2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
                                             </a>
                                         </p>
-            
+
                                         <span class="review-box-id">
                                             김*영 (한살림청주)
                                         </span>
@@ -1548,17 +1710,18 @@
                                                 <a href="#" class="review-box-link">
                                                     한우사골농축액140g(14g×10)
                                                 </a>
-            
+
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-            
+
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품" class="review-box-img"></a>
+                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                        class="review-box-img"></a>
                                             </div>
                                         </div>
-            
+
                                         <p class="review-box-desc">
                                             <a href="#">
                                                 시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
@@ -1569,7 +1732,7 @@
                                                 2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
                                             </a>
                                         </p>
-            
+
                                         <span class="review-box-id">
                                             김*영 (한살림청주)
                                         </span>
@@ -1583,63 +1746,29 @@
                                                 <a href="#" class="review-box-link">
                                                     한우사골농축액140g(14g×10)
                                                 </a>
-            
-                                                <span class="review-box-star">
-                                                    4.0
-                                                </span>
-            
-                                            </div>
-                                            <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품" class="review-box-img"></a>
-                                            </div>
-                                        </div>
-                                        
-                                        <p class="review-box-desc">
-                                            <a href="#">
-                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게  먹을 수 있어 좋네요.
-                                                숙회로. 문어라면으로.
-                                                튀김으로 먹었네요~
-                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.                             
-                                            </a>
-                                        </p>
-            
-                                        <span class="review-box-id">
-                                            김*영 (한살림청주)
-                                        </span>
-                                    </div> 
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="review-box">
 
-                                        <div class="review-box-title">
-                                            <div class="review-box-left">
-                                                <a href="#" class="review-box-link">
-                                                    한우사골농축액140g(14g×10)
-                                                </a>
-            
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-            
+
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품" class="review-box-img"></a>
+                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                        class="review-box-img"></a>
                                             </div>
                                         </div>
-                                        
+
                                         <p class="review-box-desc">
                                             <a href="#">
                                                 시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게  먹을 수 있어 좋네요.
+                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
                                                 숙회로. 문어라면으로.
                                                 튀김으로 먹었네요~
                                                 다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.                             
+                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
                                             </a>
                                         </p>
-            
+
                                         <span class="review-box-id">
                                             김*영 (한살림청주)
                                         </span>
@@ -1653,32 +1782,33 @@
                                                 <a href="#" class="review-box-link">
                                                     한우사골농축액140g(14g×10)
                                                 </a>
-            
+
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-            
+
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품" class="review-box-img"></a>
+                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                        class="review-box-img"></a>
                                             </div>
                                         </div>
-                                        
+
                                         <p class="review-box-desc">
                                             <a href="#">
                                                 시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게  먹을 수 있어 좋네요.
+                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
                                                 숙회로. 문어라면으로.
                                                 튀김으로 먹었네요~
                                                 다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.                             
+                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
                                             </a>
                                         </p>
-            
+
                                         <span class="review-box-id">
                                             김*영 (한살림청주)
                                         </span>
-                                    </div> 
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="review-box">
@@ -1688,28 +1818,65 @@
                                                 <a href="#" class="review-box-link">
                                                     한우사골농축액140g(14g×10)
                                                 </a>
-            
+
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-            
+
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품" class="review-box-img"></a>
+                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                        class="review-box-img"></a>
                                             </div>
                                         </div>
-                                        
+
                                         <p class="review-box-desc">
                                             <a href="#">
                                                 시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게  먹을 수 있어 좋네요.
+                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
                                                 숙회로. 문어라면으로.
                                                 튀김으로 먹었네요~
                                                 다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.                             
+                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
                                             </a>
                                         </p>
-            
+
+                                        <span class="review-box-id">
+                                            김*영 (한살림청주)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="review-box">
+
+                                        <div class="review-box-title">
+                                            <div class="review-box-left">
+                                                <a href="#" class="review-box-link">
+                                                    한우사골농축액140g(14g×10)
+                                                </a>
+
+                                                <span class="review-box-star">
+                                                    4.0
+                                                </span>
+
+                                            </div>
+                                            <div class="review-box-right">
+                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                        class="review-box-img"></a>
+                                            </div>
+                                        </div>
+
+                                        <p class="review-box-desc">
+                                            <a href="#">
+                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
+                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
+                                                숙회로. 문어라면으로.
+                                                튀김으로 먹었네요~
+                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
+                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                            </a>
+                                        </p>
+
                                         <span class="review-box-id">
                                             김*영 (한살림청주)
                                         </span>

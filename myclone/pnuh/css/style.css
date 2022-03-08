@@ -232,6 +232,8 @@ body {
     width: 100%;
     height: 837px;
 
+    overflow: hidden;
+
     background: url('../images/bg_topEasy.jpg') no-repeat center;
     z-index: 99;
 }
@@ -240,8 +242,9 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-
-    display: block;
+    
+    /* 처음에는 안보이는 것으로 출발  */
+    display: none;
     width: 100%;
     height: 90px;
 
@@ -290,6 +293,20 @@ body {
 
     white-space: nowrap;
     cursor: pointer;
+}
+.quick-day-bt::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    display: none;
+    width: 13px;
+    height: 13px;
+    background: url('../images/headerBnr_checkOn.png') no-repeat center;
+}
+
+.quick-day-bt-active::after {
+    display: block;
 }
 
 .quick-day-close {
@@ -821,17 +838,15 @@ body {
     position: relative;
     display: block;
     width: 100%;
-
     height: 100px;
-
     background-color: #fff;
-    border-bottom: 1px solid #e0e1e5;
-
-    z-index: 999;
+    z-index: 999;    
 }
 
-.header .container {
-    height: 100%;
+
+.header>.container {
+    height: 100px;
+    z-index: 1;
 }
 
 .header-fixed {
@@ -906,6 +921,14 @@ body {
 
 .gnb>li>a:hover+.gnb-bar {
     width: 100%;
+}
+
+/* 포커스 유지 */
+.gnb-li-focus a {
+    color: #00589d !important;
+}
+.gnb-li-focus .gnb-bar{
+    width: 100% !important;
 }
 
 .header-right {
@@ -1082,6 +1105,161 @@ body {
     cursor: pointer;
     border: 0;
     font-size: 0;
+}
+
+/* 서브메뉴 */
+.submenu-div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    height: 100px;    
+    width: 100%; 
+    background-color: #fff;
+    border-bottom: 1px solid #e0e1e5;
+    overflow: hidden;
+    transition: height 0.4s;
+}
+
+.submenu-dim {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    
+}
+
+
+.submenu-wrap {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    margin-top: 100px;
+    border-top: 1px solid #e0e1e5;
+}
+
+.submenu-wrap .container {}
+
+.submenu-left {
+    position: relative;
+    display: block;
+    width: 280px;
+    float: left;
+}
+
+.submenu-title {
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    display: none;
+}
+
+.submenu-title h2 {
+    position: relative;
+    display: block;
+    color: #00589e;
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.submenu-title p {
+    position: relative;
+    display: block;
+    color: #999;
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -1px;
+
+    padding-right: 20px;
+}
+
+.submenu-right {
+    position: relative;
+    display: block;
+    width: calc(100% - 280px);
+    float: right;
+    border-left: 1px solid #dcdcdc;
+    background-color: #fff;
+}
+
+.submenu-box {
+    position: relative;
+    display: block;
+    width: 100%;;
+}
+
+.submenu-list {
+    position: relative;
+    display: table; 
+
+    table-layout: fixed;
+    width: 100%;
+
+    padding: 45px 0;
+}
+
+.submenu-list>li {
+    position: relative;
+    display: table-cell;
+    width: 25%;
+    border-right: 1px solid #dcdcdc;
+    padding: 0 20px;
+}
+.no-line {
+    border-right: 0 !important;
+}
+
+.submenu-list-tit {
+    position: relative;
+    display: block;
+    color: #000;
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.submenu-list-tit:hover{
+    color: #00589e;
+}
+
+.submenu-list-sub {
+    position: relative;
+    display: block;
+}
+
+.submenu-list-sub li {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.submenu-list-sub li a {
+    position: relative;
+    display: block;
+    color: #555;
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+.submenu-list-sub li a:hover{
+    color: #00589e;
 }
 
 
@@ -1824,7 +2002,7 @@ body {
     border: 0;
     cursor: pointer;
     margin-top: 2px;
-    
+
 }
 
 .sw-notice-pause-active {

@@ -364,13 +364,10 @@ body {
 
 /* 상단 */
 .header {
-    position: fixed;
-    left: 0;
-    top: 0;
+    position: relative;
     display: block;
     width: 100%;
-
-    height: 131px;
+    /* height: 131px; */
     z-index: 999;
 
     background-color: #fff;
@@ -379,7 +376,7 @@ body {
 .header-top {
     position: relative;
     display: block;
-    height: 78px;
+    height: 68px;
 }
 
 .header-top .container {
@@ -426,7 +423,7 @@ body {
     float: right;
 }
 
-.login li {
+.login > li {
     position: relative;
     display: block;
     float: left;
@@ -434,15 +431,15 @@ body {
     padding: 0 11px;
 }
 
-.login li:first-child {
+.login > li:first-child {
     padding-left: 0;
 }
 
-.login li:last-child {
+.login > li:last-child {
     padding-right: 0;
 }
 
-.login li::after {
+.login > li::after {
     content: '';
     position: absolute;
     right: 0;
@@ -453,11 +450,11 @@ body {
     background-color: #bbbbbb;
 }
 
-.login li:last-child::after {
+.login > li:last-child::after {
     content: none;
 }
 
-.login li a {
+.login > li > a {
     position: relative;
     display: block;
     font-size: 13px;
@@ -466,6 +463,16 @@ body {
     letter-spacing: -0.325px;
 
 }
+.arrow-list-login {
+    z-index: 1;
+    top: 20px !important;    
+}
+
+.arrow-list-login a {
+    font-size: 13px !important;
+    line-height: 30px !important;
+}
+
 
 #login-menu::after {
     content: '';
@@ -481,11 +488,17 @@ body {
 .header-main {
     position: relative;
     display: block;
-
-    height: calc(131px - 78px);
-
+    height: calc(131px - 68px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
+.header-main-active {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
 
 .header-main .container {
     height: 100%;
@@ -495,7 +508,7 @@ body {
     position: relative;
     display: block;
     float: left;
-    padding-bottom: 15px;
+    padding-top: 18px;
 }
 
 #all {
@@ -526,28 +539,31 @@ body {
     display: block;
 }
 
-.gnb li {
+.gnb > li {
     position: relative;
     display: block;
     float: left;
     padding: 0 15px;
 }
 
-.gnb li:first-child {
+.gnb > li:first-child {
     padding-left: 0;
 }
 
-.gnb li:last-child {
+.gnb > li:last-child {
     padding-right: 0;
 }
 
-.gnb li a {
+.gnb > li > a {
     position: relative;
     display: block;
     font-size: 17px;
     font-weight: 500;
     color: #000;
     line-height: 28px;
+}
+.gnb > li > a:hover {
+    color: #76bd42;
 }
 
 .ball::after {
@@ -563,16 +579,59 @@ body {
     background-color: #f58320;
 }
 
+.arrow-list {
+    position: absolute;
+    left: 50%;
+    top: 43px;
+
+    /* 펼침목록 숨기기 */
+    display: none;
+
+    padding: 5px 20px;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+}
+
+.arrow-list li {
+    position: relative;
+    display: block;
+}
+.arrow-list li a {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    white-space: nowrap;
+    text-align: left;
+    line-height: 35px;
+}
+
 #arrow i {
     position: relative;
     display: inline-block;
     width: 11px;
-    height: 7px;
-    background: url('../images/down_2.png') no-repeat center;
+    height: 8px;
+    background: url('../images/icoGnbArr2.png') no-repeat center;
+    background-position: 0px 0px;
     vertical-align: 3px;
     margin-left: 3px;
 }
 
+.arrow-list-event-active{
+    color: #76bd42 !important;
+}
+.arrow-list-event-active i {
+    background-position: 0px -8px !important;
+}
+
+.more-div {
+    position: relative;
+    display: block;
+    float:left;
+}
 
 #more {
     position: relative;
@@ -583,18 +642,38 @@ body {
     font-weight: 400;
     color: #666;
     padding-right: 15px;
-    background: url('../images/down_2.png') no-repeat;
-    background-position: right center;
-
     margin-left: 45px;
     margin-top: 5px;
 }
+
+#more i{
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: url('../images/icoGnbArr3.png') no-repeat center;
+    background-position: 0px 0px;
+    vertical-align: 2px;
+    margin-left: 3px;
+}
+
+.arrow-list-more-active{
+    color: #76bd42 !important;
+}
+
+.arrow-list-more-active i{
+    background-position: 0px -7px !important;
+}
+
 
 .header-main-right {
     position: relative;
     display: block;
     float: right;
+
+    padding-top: 9px;
 }
+
 
 .search {
     position: relative;
@@ -672,7 +751,7 @@ body {
 .contents {
     position: relative;
     display: block;
-    padding-top: 131px;
+    /* padding-top: 131px; */
 }
 
 

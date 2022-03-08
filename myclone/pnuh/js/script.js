@@ -1,12 +1,85 @@
 $(document).ready(function () {
-
-    // 하루동안 열지 않기 : 쿠키 구현 예정
     // 배너
     let quick_banner = $('.quick-banner');
     let quick_day_close = $('.quick-day-close');
+
     quick_day_close.click(function () {
+
+        // 서서히 배너가 사라진다.
         quick_banner.fadeOut(300);
+
+        // 사용자가 체크 박스를 체크했다면
+        // 쿠키를 구어준다.
+        let temp = quick_day_bt.hasClass('quick-day-bt-active');
+        if(temp == true) {
+            // 사용자가 체크를 했다면 쿠키를 생성합니다.
+            //setToday(quick_day_name, 1);
+        }        
     });
+
+    // 하루동안 열지않기 버튼
+    let quick_day_bt = $('.quick-day-bt');
+    // 쿠키의 이름
+    let quick_day_name = 'today';
+
+    quick_day_bt.click(function(){        
+        let temp = $(this).hasClass('quick-day-bt-active');
+        if(temp != true) {
+            $(this).addClass('quick-day-bt-active');
+        }else{
+            $(this).removeClass('quick-day-bt-active');
+        }
+    });
+
+    // 하루동안 열지 않기 : 쿠키 구현  
+    todayOpen(quick_day_name); // 'today' 라는 이름으로 쿠키검사
+
+    // 창열기  
+    function todayOpen(winName) {
+        let blnCookie = getCookie(winName);       
+        console.log(blnCookie);
+        if (!blnCookie) {
+            // 하루동안 보이기
+            // 쿠키가 존재하지 않으므로 보여준다.
+            quick_banner.show();
+        } else {
+            // 숨기기
+            // 쿠기가 존재하므로 내용을 숨긴다.
+            quick_banner.hide();
+        }
+    }
+    // 쿠키셋팅
+    function setToday(winName, expiredays) {
+        setCookie(winName, "expire", expiredays);        
+        
+    }
+    // 쿠키 가져오기  
+    function getCookie(name) {
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while (x <= document.cookie.length) {
+            var y = (x + nameOfCookie.length);
+            if (document.cookie.substring(x, y) == nameOfCookie) {
+                if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                    endOfCookie = document.cookie.length;
+                return unescape(document.cookie.substring(y, endOfCookie));
+            }
+            x = document.cookie.indexOf(" ", x) + 1;
+            if (x == 0)
+                break;
+        }
+        return "";
+    }
+
+    // 24시간 기준 쿠키 설정하기  
+    // 만료 후 클릭한 시간까지 쿠키 설정  
+    function setCookie(name, value, expiredays) {
+        var todayDate = new Date();
+        todayDate.setDate(todayDate.getDate() + expiredays);
+        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+    }
+
+
 
     // 빠른 서비스 기능
     let quick_link = $('.quick-link');
@@ -29,13 +102,13 @@ $(document).ready(function () {
     let language_wrap = $('.language-wrap');
     // laguage 클릭하면 language_wrap 에 
     // language-wrap-active 를 addClass 한다.
-    language.click(function(event){
+    language.click(function (event) {
         event.preventDefault();
         // language_wrap.addClass('language-wrap-active');
         language_wrap.toggleClass('language-wrap-active');
     });
 
-    language_wrap.mouseleave(function(){
+    language_wrap.mouseleave(function () {
         language_wrap.removeClass('language-wrap-active');
     });
 
@@ -53,7 +126,7 @@ $(document).ready(function () {
 
 
     // 버튼 클릭처리
-    site_search.click(function(event){
+    site_search.click(function (event) {
         // href를 막는다.
         event.preventDefault();
         // form 닫기 버튼을 보여준다.
@@ -61,7 +134,7 @@ $(document).ready(function () {
         // 텍스트 필드 넓이는 class 추가
         site_search_div.addClass('site-search-div-active');
         // 텍스트 필드 포커스 주기         
-        setTimeout(function(){
+        setTimeout(function () {
             site_search_txt.focus();
         }, 200);
 
@@ -70,12 +143,12 @@ $(document).ready(function () {
     });
 
     // 닫기 버튼 클릭 처리
-    site_search_bt.click(function(event){
+    site_search_bt.click(function (event) {
         // form의 버튼을 클릭하면 갱신
         // 막아준다.
         event.preventDefault();
         // 닫기 버튼을 숨긴다.        
-        setTimeout(function(){
+        setTimeout(function () {
             site_search_bt.hide();
             // 텍스트 필드 내용을 제어한다.
             site_search_txt.val('');
@@ -83,7 +156,7 @@ $(document).ready(function () {
         // 텍스트 필드 넓이는 class 제거
         site_search_div.removeClass('site-search-div-active');
     });
-    
+
     // 주메뉴 고정 기능
     let header = $('.header');
     let main = $('.main');
@@ -110,6 +183,88 @@ $(document).ready(function () {
             scrollTop: 0
         }, 500)
     });
+
+    // 주메뉴 기능
+    let gnb_a = $('.gnb li a');
+    // 서브메뉴 영역을 담당하는 div
+    let submenu_div = $('.submenu-div');
+    // 서브메뉴들의 높이를 파악해서 슬라이드 높이값으로 사용한다.
+    let submenu_height = [210, 434, 236, 210, 302, 210];
+    // 주메뉴의 높이값
+    let mainmenu_height = 100;
+    // 각 주메뉴의 타이틀 들
+    let submenu_title = $('.submenu-title');
+    // 각 주메뉴의 서브메뉴들 
+    let submenu_box = $('.submenu-box');
+
+    // 각 주메뉴의 포커스 유지
+    let gnb_li = $('.gnb>li');
+
+    // 배경 가림막
+    let submenu_dim = $('.submenu-dim');
+
+    // 마우스가 주메뉴에 롤 오버가 되면 submenu_div 를 늘여준다.
+    $.each(gnb_a, function (index, item) {
+        $(this).mouseenter(function () {
+            // 배경을 늘려준다.
+            submenu_div.css('height', submenu_height[index] + mainmenu_height);
+
+            // index 에 해당하는 타이틀을 보여준다.
+            submenu_title.hide();
+            submenu_title.eq(index).show();
+
+            // index에 해당하는 서브메뉴를 보여준다.
+            submenu_box.hide();
+            submenu_box.eq(index).show();
+
+            // 포커스 유지
+            gnb_li.removeClass('gnb-li-focus');
+            gnb_li.eq(index).addClass('gnb-li-focus');
+
+            // 서브메뉴 배경 보여주기
+            submenu_dim.stop().fadeIn(200);
+
+        });
+    });
+
+    // 서브메뉴를 선택하러 가는 동안에 롤아웃을 시킬지 말지 결정한다.
+    let menu_timer;
+    let menu_timer_delay = 100; // 0.5초
+
+    // 마우스가 롤 아웃하면 메뉴 사라지기
+    let nav = $('.nav');
+    nav.mouseleave(function () {
+        menu_timer = setTimeout(menu_up, menu_timer_delay);
+    });
+    nav.mouseenter(function () {
+        clearTimeout(menu_timer);
+    });
+
+    function menu_up() {
+        clearTimeout(menu_timer);
+        submenu_div.css('height', mainmenu_height);
+
+        // 포커스 유지 해제
+        gnb_li.removeClass('gnb-li-focus');
+
+        // 서브메뉴 배경 보여주기
+        submenu_dim.stop().fadeOut(100);
+    }
+
+    // 서브메뉴를 선택하러 가면 사라진다.
+    // 포커스도 유지한다.    
+    let submenu_wrap = $('.submenu-wrap .container');
+    submenu_wrap.mouseleave(function () {
+        clearTimeout(menu_timer);
+        menu_timer = setTimeout(menu_up, menu_timer_delay);
+    });
+    // 서브메뉴로 이동하는 경우에 무조건 롤아웃을 처리 하지 않는다.
+    submenu_wrap.mouseenter(function () {
+        clearTimeout(menu_timer);
+    });
+
+
+
 
     // PNUH 네트워크   
     let pnuh_bt = $('#pnuh-bt');
@@ -296,12 +451,12 @@ window.onload = function () {
     });
 
     let sw_quick_pause = $('.sw-quick-pause');
-    sw_quick_pause.click(function(){
+    sw_quick_pause.click(function () {
         let temp = $(this).hasClass('sw-quick-pause-active');
-        if(temp != true) {
+        if (temp != true) {
             $(this).addClass('sw-quick-pause-active');
             sw_quick.autoplay.stop();
-        }else{
+        } else {
             $(this).removeClass('sw-quick-pause-active');
             sw_quick.autoplay.start();
         }
@@ -309,10 +464,10 @@ window.onload = function () {
 
     // 비주얼 슬라이드
     let sw_visual = new Swiper('.sw-visual', {
-        
+
         loop: true,
         autoplay: {
-            delay: 2000, 
+            delay: 2000,
             disableOninteraction: false,
         },
         navigation: {
@@ -327,12 +482,12 @@ window.onload = function () {
     });
 
     let sw_visual_pause = $('.sw-visual-pause');
-    sw_visual_pause.click(function(){
+    sw_visual_pause.click(function () {
         let temp = $(this).hasClass('sw-visual-pause-active');
-        if(temp != true) {
+        if (temp != true) {
             $(this).addClass('sw-visual-pause-active');
             sw_visual.autoplay.stop();
-        }else{
+        } else {
             $(this).removeClass('sw-visual-pause-active');
             sw_visual.autoplay.start();
         }
@@ -340,10 +495,10 @@ window.onload = function () {
 
     // 공지사항 슬라이드
     let sw_notice = new Swiper('.sw-notice', {
-        
+
         loop: true,
         autoplay: {
-            delay: 2000, 
+            delay: 2000,
             disableOninteraction: false,
         },
         navigation: {
@@ -358,12 +513,12 @@ window.onload = function () {
     });
 
     let sw_notice_pause = $('.sw-notice-pause');
-    sw_notice_pause.click(function(){
+    sw_notice_pause.click(function () {
         let temp = $(this).hasClass('sw-notice-pause-active');
-        if(temp != true) {
+        if (temp != true) {
             $(this).addClass('sw-notice-pause-active');
             sw_notice.autoplay.stop();
-        }else{
+        } else {
             $(this).removeClass('sw-notice-pause-active');
             sw_notice.autoplay.start();
         }

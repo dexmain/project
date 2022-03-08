@@ -283,6 +283,7 @@ body {
     visibility: visible;
     transition: .3s;
 }
+
 /* 헤더 */
 .header {
     position: fixed;
@@ -559,6 +560,20 @@ body {
 }
 
 /* // 헤더 */
+/* 전체메뉴 */
+.all-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 2000px;
+    background:url('../images/bg_gnb.jpeg')no-repeat center;
+    z-index: 999;
+}
+.all-menu .container{}
+
+/* // 전체메뉴 */
+
 /* 메인 */
 .main {
     position: relative;

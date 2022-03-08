@@ -1,5 +1,58 @@
 $(document).ready(function () {
 
+    // 로그인 펼침목록
+    let login_menu = $('#login-menu');
+    let arrow_list_login = $('.arrow-list-login');
+    login_menu.click(function(event){
+        event.preventDefault();
+        arrow_list_login.toggle();
+        
+        arrow_list_event.hide();
+        arrow_list_more.hide();
+
+        more.removeClass('arrow-list-more-active');
+        more.html('더보기<i></i>');
+        arrow.removeClass('arrow-list-event-active');
+    });
+
+    // 이벤트목록    
+    let arrow = $('#arrow');
+    let arrow_list_event = $('.arrow-list-event');
+    arrow.click(function(event){
+        event.preventDefault();
+        arrow_list_event.toggle();
+
+        arrow.toggleClass('arrow-list-event-active');
+        more.removeClass('arrow-list-more-active');
+        more.html('더보기<i></i>');
+
+        arrow_list_more.hide();
+        arrow_list_login.hide();
+    });
+
+    // 더보기 목록
+    let more = $('#more');
+    let arrow_list_more = $('.arrow-list-more');
+    more.click(function(event){
+        event.preventDefault();
+        arrow_list_more.toggle();
+
+        // 내용을 변경하기
+        let temp = more.hasClass('arrow-list-more-active');
+        if(temp != true) {
+            more.html('접기<i></i>');
+        }else{
+            more.html('더보기<i></i>');
+        }
+
+        more.toggleClass('arrow-list-more-active');
+        arrow.removeClass('arrow-list-event-active');
+
+        arrow_list_event.hide();
+        arrow_list_login.hide();
+    });
+
+
     // 펼침기능
     let link_list = $('.link-list');
     let link_bt = $('.link-bt');
@@ -16,18 +69,22 @@ $(document).ready(function () {
     });
 
     // 위로가기 사라짐 효과
+    let header_main = $('.header-main');
+
     $(window).scroll(function () {
         // 스크롤 바가 이동한 거리 체크
         let sc = $(window).scrollTop();
-        if (sc >= 50) {
-            gotop.addClass('gotop-active');
+        if (sc >= 68) {
+            header_main.addClass('header-main-active');
+            $('.contents').css('padding-top', 63);
         } else {
-            gotop.removeClass('gotop-active');
+            header_main.removeClass('header-main-active');
+            $('.contents').css('padding-top', 0);
         }
-
     });
 
 });
+
 
 window.onload = function () {
 

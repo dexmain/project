@@ -25,6 +25,7 @@ img {
 
 html {
     font-size: 10px;
+    overflow-y: hidden;
 }
 
 body {

@@ -9,6 +9,9 @@ $(document).ready(function () {
     let $eng_area = $('.eng-area');
     let $language = $('.language');
     let $planet = $('.planet');
+    let $all_menu = $('.all-menu');
+    let $all_menu_bt = $('.all-menu-bt');
+    let $all_menu_close = $('.all-menu-close');
 
     // 섹션
     let $visual = $('.visual');
@@ -36,6 +39,15 @@ $(document).ready(function () {
     // let $submenu_col = $('.submenu-col');
     // let $submenu_row = $('.submenu-row');
 
+    // all-menu
+    $all_menu_bt.click(function(){
+        $('body').addClass('lock');
+        $all_menu.fadeIn(300);
+    });
+    $all_menu_close.click(function(){
+        $('body').removeClass('lock');
+        $all_menu.fadeOut(300);
+    });
     // gotop
     $gotop.click(function () {
         $('html,body').animate({

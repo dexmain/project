@@ -5,25 +5,44 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" type="image/x-icon" href="images/faviconV2.png">
-    <title>생명보험협회 clone</title>
+
+    <link rel="apple-touch-icon-precomposed" href="images/mobile_web_icon.png">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>생명보험협회</title>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <![endif]-->
     <script src="js/prefixfree.min.js"></script>
-    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
 
     <script src="js/swiper/swiper.min.js"></script>
     <link rel="stylesheet" href="js/swiper/swiper.min.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 
 <body>
+    <div class="modal">
+        <div class="cap"></div>
+        <div class="modal-wrap">
+            <b>이 사이트는 학습용으로 제작되었으며<br>리소스는 원저작자에게 있습니다.</b>
+            ※ 본 사이트는 Chrome 에 최적화 되어있습니다.
+            <div class="modal-desc">
+            </div>
+
+            <button class="modal-close"></button>
+        </div>
+    </div>
     <div class="wrap">
         <!-- 상단 -->
         <header class="header">
+
             <div class="container">
                 <a href="index.html" class="logo">
                     <img src="images/t_logo.jpg" alt="생명보험협회">
@@ -36,7 +55,6 @@
                         <li>생명보험협회</li>
                     </ul>
                 </nav>
-
                 <div class="help">
                     <form class="search">
                         <input type="text" class="search-txt" placeholder="검색하기">
@@ -45,12 +63,182 @@
                     <button class="sitemap">사이트맵</button>
                     <a href="#" class="language">EN</a>
                 </div>
-
                 <a href="#" class="quick">
                     <img src="images/btn_gongsi.png" alt="생명보험협회공시">
                 </a>
-
             </div>
+
+            <!-- 서브메뉴 -->
+            <div class="submenu-div">
+                <div class="container">
+
+                    <div class="submenu-box">
+                        <ul class="submenu-list">
+                            <li>
+                                <a href="#" class="submenu-list-cate">소비자포탈</a>
+                                <a href="#" class="submenu-list-cate">휴먼계좌통합조회</a>
+                                <a href="#" class="submenu-list-cate">생명보험통계</a>
+
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-금융통계월보(생명보험편)</a></li>
+                                    <li><a href="#">-월간생명보험통계</a></li>
+                                    <li><a href="#">-통계연보</a></li>
+                                    <li><a href="#">-50년통계</a></li>
+                                    <li><a href="#">-FactBook</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="submenu-list-cate">내보험찾아줌</a>
+                                <a href="#" class="submenu-list-cate">교육문화센터</a>
+                                <a href="#" class="submenu-list-cate">생명보험사회공헌활동공시</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-공동사회공헌활동</a></li>
+                                    <li><a href="#">-회사별사회공헌활동</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-list-cate">공시실</a>
+                                <a href="#" class="submenu-list-cate">사회공헌활동</a>
+                                <a href="#" class="submenu-list-cate">보험사기 예방안내</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-보험사기 예방안내</a></li>
+                                    <li><a href="#">-보험사기 관련 자료</a></li>
+                                    <li><a href="#">-보험사기 홍보</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-list-cate">보험 다모아</a>
+                                <a href="#" class="submenu-list-cate">보험대리점공시</a>
+                                <a href="#" class="submenu-list-cate">장애인ㆍ장기기증자보험가입<br>차별 신고센터 안내</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="submenu-box">
+                        <ul class="submenu-list">
+                            <li>
+                                <a href="#" class="submenu-list-cate">모집종사자 관련서비스</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-모집종사자 관련안내 및 조회</a></li>
+                                    <li><a href="#">-e클린보험서비스</a></li>
+                                    <li><a href="#">-대출모집인 조회</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="submenu-list-cate">보험대리점 관리자</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-보험대리점 검사업무 안내</a></li>
+                                    <li><a href="#">-보험대리점 검사 관련 참고자료</a></li>
+                                    <li><a href="#">-보험대리점 순회교육 안내</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-list-cate">자격시험센터</a>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-list-cate">우수인증설계사</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="submenu-box">
+                        <ul class="submenu-list">
+                            <li>
+                                <a href="#" class="submenu-list-cate">생명보험상품 광고심의</a>
+                                <ul class="submenu-list-sub submenu-list-sub-2x">
+                                    <li><a href="#">-과장광고신고센터</a></li>
+                                    <li><a href="#">-광고심의규정 위반내역</a></li>
+                                </ul>
+                                <a href="#" class="submenu-list-cate">홍보신문고</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="submenu-list-cate">신상품심의위원회</a>
+                                <ul class="submenu-list-sub submenu-list-sub-2x">
+                                    <li><a href="#">-배타적사용권부여상품</a></li>
+                                    <li><a href="#">-배타적사용권긴청사항 및 심의결과</a></li>
+                                    <li><a href="#">-배타적사용권 침해신청사항</a></li>
+                                    <li><a href="#">-이의신청사항</a></li>
+                                    <li><a href="#">-관련규정</a></li>
+                                </ul>
+                                <a href="#" class="submenu-list-cate">옴부즈만</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="submenu-list-cate">자율규제운영</a>
+                                <ul class="submenu-list-sub submenu-list-sub-2x">
+                                    <li><a href="#">-자율규제 규정정보</a></li>
+                                    <li><a href="#">-자율규제 변경공고</a></li>
+                                    <li><a href="#">-규제심의위원회 운영</a></li>
+                                </ul>
+                                <a href="#" class="submenu-list-cate">비조치의견서</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-비조치의견서 신청</a></li>
+                                    <li><a href="#">-비조치의견서 회신사례</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="submenu-list-cate">IFRS 17</a>
+                                <ul class="submenu-list-sub submenu-list-sub-2x">
+                                    <li><a href="#">-IFRS 17소개</a></li>
+                                    <li><a href="#">-회계기준</a></li>
+                                    <li><a href="#">-자료실</a></li>
+                                    <li><a href="#">-게시판</a></li>
+                                </ul>
+                                <a href="#" class="submenu-list-cate">부동산 투기의혹 불법대출<br>자진신고센터</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="submenu-box">
+                        <ul class="submenu-list">
+                            <li>
+                                <a href="#" class="submenu-list-cate">협회소개</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-협회장인사말</a></li>
+                                    <li><a href="#">-협회개요</a></li>
+                                    <li><a href="#">-조직 및 연락처</a></li>
+                                    <li><a href="#">-오시는 길</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="submenu-list-cate">알림</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-공지사항</a></li>
+                                    <li><a href="#">-보도자료</a></li>
+                                    <li><a href="#">-회원사소식</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-list-cate">간행물</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-월간생명보험</a></li>
+                                    <li><a href="#">-해외금융보험동향</a></li>
+                                    <li><a href="#">-생명보험협회보</a></li>
+                                    <li><a href="#">-LIB(영문연차보고서)</a></li>
+                                    <li><a href="#">-생명보험성향조사</a></li>
+                                    <li><a href="#">-협회60년사</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-list-cate">회원사 및 유관기관</a>
+                                <ul class="submenu-list-sub">
+                                    <li><a href="#">-회원사안내</a></li>
+                                    <li><a href="#">-회원사변천과정조회</a></li>
+                                    <li><a href="#">-생명보험협회보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
 
         </header>
         <!--// 상단  -->
@@ -58,6 +246,7 @@
         <div class="main">
             <!-- 메인 비주얼 -->
             <section class="visual">
+
                 <div class="container">
                     <p class="mb-10">"New Value Creation"</p>
                     <h2 class="mb-70">생명보험 산업의 새로운 가치 창출</h2>
@@ -131,13 +320,12 @@
 
                 <div class="visual-news">
                     <div class="container clearfix">
+
                         <div class="visual-news-left">
-                            <p>
-                                <a href="#" class="visual-news-link">
-                                    <img src="images/icon_notice.png" alt="">
-                                    공지사항
-                                </a>
-                            </p>
+                            <a href="#" class="visual-news-link">
+                                <img src="images/icon_notice.png">
+                                공지사항
+                            </a>
                             <div class="swiper-container sw-vs-notice">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -165,38 +353,25 @@
                                     </div>
                                 </div>
                             </div>
+
                             <button class="sw-vs-notice-next"></button>
-                            <script>
-                                var swiper = new Swiper(".sw-vs-notice", {
-                                    direction: "vertical",
-                                    slidesPerView: 1,
-                                    loop: true,
-                                    speed: 500,
-                                    autoplay: {
-                                        delay: 3000,
-                                        disableOnInteraction:false,
-                                    },
-                                    navigation: {
-                                        nextEl: ".sw-vs-notice-next",
-                                    },
-                                });
-                                
-                            </script>
-                            
+
+                           
+
                         </div>
+
                         <div class="visual-news-right">
-                            <p>
-                                <a href="#" class="visual-news-link">
-                                    <img src="images/icon_news.png" alt="">보도자료
-                                </a>
-                            </p>
+                            <a href="#" class="visual-news-link">
+                                <img src="images/icon_news.png"> 보도자료
+                            </a>
                             <div class="swiper-container sw-vs-news">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <a href="#">[보도자료] 생보업계 위기극복과 지속성장 기반 마련을 위한 3대 핵심과제 추진_2022신년 비대면 기자간담회</a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="#">[보도자료] 기존 실손 가입자가 ’22년 6월까지 4세대 실손보험으로 전환시 1년간 보험료 50% 할인 혜택을 제공합니다.</a>
+                                        <a href="#">[보도자료] 기존 실손 가입자가 ’22년 6월까지 4세대 실손보험으로 전환시 1년간 보험료 50% 할인 혜택을
+                                            제공합니다.</a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="#">[보도자료] 보험범죄방지 유공자 시상</a>
@@ -213,24 +388,11 @@
                                 </div>
                             </div>
                             <button class="sw-vs-news-next"></button>
-                            <script>
-                                var swiper = new Swiper(".sw-vs-news", {
-                                    direction: "vertical",
-                                    slidesPerView: 1,
-                                    loop: true,
-                                    speed: 500,
-                                    disableOnInteraction:false,
-                                    autoplay: {
-                                        delay: 3000,
-                                    },
-                                    navigation: {
-                                        nextEl: ".sw-vs-news-next",
-                                    },
-                                });
-                            </script>
+
                         </div>
                     </div>
                 </div>
+
             </section>
             <!-- 협회소식 -->
             <section class="news">
@@ -330,43 +492,6 @@
 
                             </div>
 
-                            <script>
-                                let sw_news = new Swiper('.sw-news', {
-                                    // loop: true,
-                                    // autoplay: {
-                                    //     delay: 1000,
-                                    //     disableOnInteraction: false,
-                                    // },
-                                    speed: 500,
-                                    pagination: {
-                                        el: '.sw-news-pg',
-                                        clickable: true,
-                                    },
-                                });
-
-                                $('.sw-news-bt').click(function () {
-
-                                    // 현재 sw-news-bt-active 가 없으면
-                                    // 자동 실행 중이다.
-
-                                    // sw-news-bt-active 가 있으면
-                                    // 멈춘 상태이다.
-
-                                    let state = $(this).hasClass('sw-news-bt-active');
-
-                                    if (state == true) {
-                                        // 현재 멈추고 있으니 플레이 상태로 바꾼다.
-                                        sw_news.autoplay.start();
-                                    } else {
-                                        // 현재 플레이 중이니 멈춤 상태로 바꾼다.
-                                        sw_news.autoplay.stop();
-                                    }
-
-
-                                    $(this).toggleClass('sw-news-bt-active');
-                                });
-                            </script>
-
                         </div>
                     </div>
                     <div class="news-bottom clearfix">
@@ -448,6 +573,7 @@
                                 </li>
                             </ul>
 
+
                         </div>
 
                         <div class="customer-img">
@@ -499,37 +625,39 @@
             <section class="worker">
                 <div class="container">
                     <h2 class="section-title">모집종사자</h2>
-                    <div class="worker-list">
+                    <div class="worker-list clearfix">
                         <a href="#" class="worker-list-box">
+                            <h3>모집종사자 <br>관련안내 및 조회</h3>
+                            <p>설계사 등록조회, 말소신청<br>e클린보험 서비스,<br>보험모집종사자 등록증 출력</p>
                             <div class="worker-ani">
                                 <img src="images/recruit_obj0101.png" alt="그림" class="ani-1-1">
                                 <img src="images/recruit_obj0102.png" alt="그림" class="ani-1-2">
                             </div>
-                            <h3>모집종사자 <br>관련안내 및 조회</h3>
-                            <p>설계사 등록조회, 말소신청<br>e클린보험 서비스,<br>보험모집종사자 등록증 출력</p>
                         </a>
                         <a href="#" class="worker-list-box">
-
+                            <h3>보험대리점 관리자</h3>
+                            <p>보험대리점 검사관련 안내 및<br>참고자료</p>
                             <div class="worker-ani">
                                 <img src="images/recruit_obj0401.png" alt="그림" class="ani-2-1">
                                 <img src="images/recruit_obj0402.png" alt="그림" class="ani-2-2">
                                 <img src="images/recruit_obj0403.png" alt="그림" class="ani-2-3">
                                 <img src="images/recruit_obj0404.png" alt="그림" class="ani-2-4">
                                 <img src="images/recruit_obj0405.png" alt="그림" class="ani-2-5">
+
                             </div>
-                            <h3>보험대리점 관리자</h3>
-                            <p>보험대리점 검사관련 안내 및<br>참고자료</p>
                         </a>
                         <a href="#" class="worker-list-box">
+                            <h3>자격시험센터</h3>
+                            <p>설계사, 변액보험, 언더라이터, 종합자산관리사</p>
                             <div class="worker-ani">
                                 <img src="images/recruit_obj0201.png" alt="그림" class="ani-3-1">
                                 <img src="images/recruit_obj0202.png" alt="그림" class="ani-3-2">
                                 <img src="images/recruit_obj0203.png" alt="그림" class="ani-3-3">
                             </div>
-                            <h3>자격시험센터</h3>
-                            <p>설계사, 변액보험, 언더라이터, 종합자산관리사</p>
                         </a>
                         <a href="#" class="worker-list-box">
+                            <h3>우수인증설계사</h3>
+                            <p>전문성과 윤리성을 충족한<br>우수설계사</p>
                             <div class="worker-ani">
                                 <img src="images/recruit_obj0301.png" alt="그림" class="ani-4-1">
                                 <img src="images/recruit_obj0302.png" alt="그림" class="ani-4-2">
@@ -538,8 +666,6 @@
                                 <img src="images/recruit_obj0304.png" alt="그림" class="ani-4-5">
                                 <img src="images/recruit_obj0305.png" alt="그림" class="ani-4-6">
                             </div>
-                            <h3>우수인증설계사</h3>
-                            <p>전문성과 윤리성을 충족한<br>우수설계사</p>
                         </a>
                     </div>
                 </div>
@@ -558,7 +684,7 @@
                             <p>신상품 개발이익보호를 위한<br>배타적사용권 부여</p>
                         </a>
                         <a href="#" class="partner-link">
-                            <h3 class="partner-2y">생명보험협회 <br>자율규제 운영</h3>
+                            <h3 class="partner-2y">생명보험협회<br>자율규제 운영</h3>
                             <p>협회가 제정, 운영하는<br>각종규정 안내</p>
                         </a>
                         <a href="#" class="partner-link">
@@ -663,21 +789,6 @@
                     <button class="sw-banner-prev"></button>
                     <button class="sw-banner-next"></button>
 
-                    <script>
-                        new Swiper('.sw-banner', {
-                            loop: true,
-                            slidesPerView: 7,
-                            autoplay: {
-                                delay: 1000,
-                                disableOnInteraction: false,
-                            },
-                            speed: 500,
-                            navigation: {
-                                nextEl: '.sw-banner-next',
-                                prevEl: '.sw-banner-prev'
-                            }
-                        });
-                    </script>
                 </div>
             </section>
         </div>
@@ -685,16 +796,19 @@
         <!-- 하단 -->
         <footer class="footer">
             <div class="container clearfix">
-                <div class="footer-left">
+                <div class="footer-left clearfix">
+
                     <a href="index.html" class="footer-logo">
                         <img src="images/t_logo.jpg" alt="">
                     </a>
+
                     <ul class="footer-list">
                         <li><a href="#"><strong>개인정보처리방침</strong></a></li>
                         <li>(04554)서울특별시 중구 퇴계로 173, 16층(충무로3가)ㆍ 사업자등록번호 : 201-82-30608ㆍ TEL : 02-2262-6600</li>
-                        <li>상호명 : 사단법인 생명보험협회ㆍ 대표자 : 정희수   (통신판매업신고:2015-서울중구-1480 | <a href="#">확인</a>)</li>
+                        <li>상호명 : 사단법인 생명보험협회ㆍ 대표자 : 정희수 (통신판매업신고:2015-서울중구-1480 | <a href="#">확인</a>)</li>
                         <li>Copyright ⓒ 2019 by KOREA Life Insurance Association. All Rights Reserved.</li>
                     </ul>
+
                 </div>
                 <div class="footer-right">
                     <a href="#"><img src="images/wa.png" alt="web accessibility" class="wa"></a>

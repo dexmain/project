@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    // 모달창
+    let $modal = $('.modal');
+    let $modal_close = $('.modal-close');
+    $modal_close.click(function(){
+        $('html').css('overflow-y','auto');
+        $modal.fadeOut(300);
+    });
+    
     let nav = $('.nav');
     let gnb = $('.gnb');
     let gnb_li = $('.gnb>li');

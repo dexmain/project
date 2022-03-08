@@ -39,6 +39,13 @@ $(document).ready(function () {
     // let $submenu_col = $('.submenu-col');
     // let $submenu_row = $('.submenu-row');
 
+    // 모달창
+    let $modal = $('.modal');
+    let $modal_close = $('.modal-close');
+    $modal_close.click(function(){
+        $('html').css('overflow-y','auto');
+        $modal.fadeOut(300);
+    });
     // all-menu
     $all_menu_bt.click(function(){
         $('body').addClass('lock');

@@ -1,5 +1,11 @@
 window.onload = function () {
-
+    // 모달창
+    let $modal = $('.modal');
+    let $modal_close = $('.modal-close');
+    $modal_close.click(function(){
+        $('html').css('overflow-y','auto');
+        $modal.fadeOut(300);
+    })
     // 패밀리 사이트 기능
     let family_hide = $('.family-hide');
     let family_wrap =  $('.family-wrap');

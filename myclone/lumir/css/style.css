@@ -241,6 +241,9 @@ a {
     text-decoration: none;
     line-height: 1.4em;
 }
+span {
+    word-break: keep-all;
+}
 
 li {
     list-style: none;
@@ -736,14 +739,12 @@ body {
 }
 
 .all-menu-main {
-    position: relative;
     margin-top: 75px;
     display: flex;
     flex-flow: wrap;
 }
 
 .all-menu-left {
-    position: relative;
     display: flex;
     flex-flow: column;
     width: 45%;
@@ -1918,6 +1919,8 @@ body {
 }
 
 /* //하단 */
+
+/* max 1240 */
 @media screen and (max-width: 1240px) {
     .all-menu-wrap {
         height: auto;
@@ -1966,7 +1969,9 @@ body {
         margin-top: 0 !important;
     }
     .all-language {
-        display: none;
+        position: absolute;
+        top: 57px;
+        right: 80px;
     }
 
     .nav {
@@ -1975,6 +1980,13 @@ body {
 
     .business-item+.business-item {
         padding-left: 20px;
+    }
+    .number {
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .txt-box {
+        padding:0;
     }
 
     .orbit {
@@ -2043,4 +2055,7 @@ body {
     .footer-menu {
         display: none;
     }
+}
+@media screen and (max-width: 767px) {
+
 }

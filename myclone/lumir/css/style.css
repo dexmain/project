@@ -2184,11 +2184,11 @@ body {
     }
 
     .product {
-        padding: 60px 0 0 0;
+        padding: 60px 0;
         background-position: center center !important;
     }
     .product .container {
-        height: 500px;
+        height: auto;
     }
     .product-tit {
         width: 250px;
@@ -2208,15 +2208,17 @@ body {
     }
 
     .orbit {
+        position: relative;
         width: 100vw;
         height: auto;
+        top: 0;
     }
     .sw-orbit{
         position: relative;
         transform:none;
         width: 100%;
-        top: auto;
         left: auto;
+        padding:60px 0;
     }
     
     .sw-orbit-box {
@@ -2232,5 +2234,20 @@ body {
     .slide-txt {
         transform:translateY(0);
         opacity: 1;
+    }
+    .sw-pg {
+        position: absolute;
+        top: 100%;
+        text-align: center;
+        
+    }
+    .swiper-pagination-bullet {
+        width: 13px;
+        height: 13px;
+        border: 2px solid #fff;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
     }
 }

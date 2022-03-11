@@ -20,7 +20,6 @@ $(document).ready(function () {
     let $satellite = $('.satellite');
     let $visual_txt = $('.visual-txt');
     let $business_item = $('.business-item');
-
     // 섹션
     let $visual = $('.visual');
     let $product = $('.product');
@@ -216,6 +215,7 @@ $(document).ready(function () {
                 centeredSlides: true,
                 pagination: {
                     el: '.sw-pg',
+                    clickable:true,
                 },
                 on: {
                     activeIndexChange: function () {
@@ -265,3 +265,6 @@ $(document).ready(function () {
     }
     visual_txt();productSlide();
 });
+window.onload(function(){
+
+})

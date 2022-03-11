@@ -111,7 +111,7 @@ $(document).ready(function () {
         var scrollBottom = $(window).scrollTop() + $(window).height() + 30;
         // 비즈니스 애니메이션 (행성 이미지 & 비즈니스 아이템)
         let sc = $(window).scrollTop();
-        let planet_bool = sc >= $visual_h / 4;
+        let planet_bool = scrollBottom >= $visual_h;
         let gotop_bool = sc >= 200;
         // console.log('sloganTop : ' + $sloganTop);
         // console.log('$storylist-top : ' + $storyList.offset().top);
@@ -150,25 +150,28 @@ $(document).ready(function () {
 
         $gotop.toggleClass('gotop-active', gotop_bool);
         $planet.toggleClass('planet-active', planet_bool);
-        console.log(scrollBottom);
-        console.log($sloganTop);
         universe();
     });
-    // 리사이즈
-    $(window).resize(function () {
-        // 비즈니스 애니메이션 (행성 이미지 & 비즈니스 아이템)
-        sc = $(window).scrollTop();
-        planet_bool = sc >= $visual_h / 4;
-        gotop_bool = sc >= 200;
-        universe();
-        productSlide();
+
+    let $body_w = $('body').width();
+    let orbitSwiper = new Swiper('.sw-orbit', {
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true,
+        },
+        on: {
+            activeIndexChange: function () {
+                $satl_road.children('a').removeClass('point-active');
+                $satl_road.children('a').eq(this.realIndex).addClass('point-active');
+            }
+        },
     });
 
     // 프로덕트 슬라이드
     function productSlide() {
-        let $body_w = $('body').width();
         if ($body_w >= 767) {
-            var orbitSwiper = new Swiper('.sw-orbit', {
+            orbitSwiper.destroy();
+            orbitSwiper = new Swiper('.sw-orbit', {
                 effect: "fade",
                 fadeEffect: {
                     crossFade: true,
@@ -192,7 +195,6 @@ $(document).ready(function () {
             }
             $satl_road.find('a').click(function () {
                 let i = $(this).index();
-                console.log(i);
                 $satellite.removeClass('p0 p1 p2 p3 p4');
                 $satellite.hide();
                 $satellite.addClass('p' + i);
@@ -203,11 +205,12 @@ $(document).ready(function () {
             })
             setInterval(slideAuto, 100);
         } else if ($body_w < 767) {
-            var orbitSwiper = new Swiper('.sw-orbit', {
+            console.log('767 down');
+            orbitSwiper.destroy();
+            orbitSwiper = new Swiper('.sw-orbit', {
                 loop: true,
                 effect: 'slide',
                 slidesPerView: '1',
-                centeredSlides: true,
                 pagination: {
                     el: '.sw-pg',
                     clickable: true,
@@ -233,10 +236,17 @@ $(document).ready(function () {
             if (bool == true) {
                 $product.css('background-position-y', -410 + (updown / 2));
             }
-
         }
     }
-
+    // 리사이즈
+    $(window).resize(function () {
+        // 비즈니스 애니메이션 (행성 이미지 & 비즈니스 아이템)
+        sc = $(window).scrollTop();
+        $body_w = $('body').width();
+        gotop_bool = sc >= 200;
+        universe();
+        productSlide();
+    });
 
 
 

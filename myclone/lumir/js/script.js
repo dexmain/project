@@ -12,14 +12,16 @@ $(document).ready(function () {
     let $all_menu = $('.all-menu');
     let $all_menu_bt = $('.all-menu-bt');
     let $all_menu_close = $('.all-menu-close');
-    let $storyBox = $('.story-box');
-    let $storyList = $('.story-list');
     let $sw_orbit = $('.sw-orbit');
     let $orbit = $('.orbit');
     let $satl_road = $('.satl-road');
     let $satellite = $('.satellite');
     let $visual_txt = $('.visual-txt');
     let $business_item = $('.business-item');
+    let $slogan_box = $('.slogan-box');
+    let $news_item = $('.news-item');
+    let $story_box = $('.story-box');
+    let $storyList = $('.story-list');
     // 섹션
     let $visual = $('.visual');
     let $product = $('.product');
@@ -34,7 +36,6 @@ $(document).ready(function () {
     let $productTop = $product.offset().top;
     let $sloganTop = $slogan.offset().top;
     let $newsTop = $news.offset().top;
-    let $storyTop = $story.offset().top;
     // 높이
     let $visual_h = $visual.height();
     let $slogan_h = $slogan.height();
@@ -111,15 +112,12 @@ $(document).ready(function () {
         // 비즈니스 애니메이션 (행성 이미지 & 비즈니스 아이템)
         let sc = $(window).scrollTop();
         let planet_bool = sc >= $visual_h / 4;
-        let slogan_bool = scrollBottom >= $sloganTop + $slogan_h / 2;
-        let news_bool = scrollBottom >= $newsTop + $news_h / 2;
-        let story_1_bool = scrollBottom >= $storyList.offset().top + 30;
-        let story_2_bool = scrollBottom >= $storyBox.eq(3).offset().top;
         let gotop_bool = sc >= 200;
         // console.log('sloganTop : ' + $sloganTop);
         // console.log('$storylist-top : ' + $storyList.offset().top);
         // console.log('sc : ' + sc);
         // console.log('scrollBottom : ' + scrollBottom);
+
 
         $.each($business_item, function (index, item) {
             if (scrollBottom >= $business_item.eq(index).offset().top + $business_item_h / 3) {
@@ -128,52 +126,48 @@ $(document).ready(function () {
                 $business_item.eq(index).removeClass('business-item-active');
             }
         });
+        $.each($slogan_box, function (index, item) {
+            if (scrollBottom >= $(this).offset().top) {
+                $(this).addClass('slogan-box-active');
+            } else if (scrollBottom < $(this).offset().top) {
+                $(this).removeClass('slogan-box-active');
+            }
+        });
+        $.each($news_item, function (index, item) {
+            if (scrollBottom >= $(this).offset().top) {
+                $(this).addClass('news-item-active');
+            } else if (scrollBottom < $(this).offset().top) {
+                $(this).removeClass('news-item-active');
+            }
+        });
+        $.each($story_box, function (index, item) {
+            if (scrollBottom >= $(this).offset().top) {
+                $(this).addClass('story-box-active');
+            } else if (scrollBottom < $(this).offset().top) {
+                $(this).removeClass('story-box-active');
+            }
+        });
+
         $gotop.toggleClass('gotop-active', gotop_bool);
         $planet.toggleClass('planet-active', planet_bool);
-        $slogan.toggleClass('slogan-active', slogan_bool);
-        $news.toggleClass('news-active', news_bool);
-        $('.story-box:lt(3)').toggleClass('story-box-active', story_1_bool);
-        $('.story-box:gt(2)').toggleClass('story-box-active', story_2_bool);
-
+        console.log(scrollBottom);
+        console.log($sloganTop);
         universe();
     });
-
     // 리사이즈
     $(window).resize(function () {
-        var scrollBottom = $(window).scrollTop() + $(window).height() + 30;
         // 비즈니스 애니메이션 (행성 이미지 & 비즈니스 아이템)
-        let sc = $(window).scrollTop();
-        let planet_bool = sc >= $visual_h / 4;
-        let slogan_bool = scrollBottom >= $sloganTop + $slogan_h / 2;
-        let news_bool = scrollBottom >= $newsTop + $news_h / 2;
-        let story_1_bool = scrollBottom >= $storyList.offset().top + 30;
-        let story_2_bool = scrollBottom >= $storyBox.eq(3).offset().top;
-        let gotop_bool = sc >= 200;
-        // console.log('sloganTop : ' + $sloganTop);
-        // console.log('$storylist-top : ' + $storyList.offset().top);
-        // console.log('sc : ' + sc);
-        // console.log('scrollBottom : ' + scrollBottom);
-
-        $.each($business_item, function (index, item) {
-            if (scrollBottom >= $business_item.eq(index).offset().top + $business_item_h / 3) {
-                $business_item.eq(index).addClass('business-item-active');
-            } else if (scrollBottom < $business_item.eq(index).offset().top + $business_item_h / 3) {
-                $business_item.eq(index).removeClass('business-item-active');
-            }
-        });
-        $gotop.toggleClass('gotop-active', gotop_bool);
-        $planet.toggleClass('planet-active', planet_bool);
-        $slogan.toggleClass('slogan-active', slogan_bool);
-        $news.toggleClass('news-active', news_bool);
-        $('.story-box:lt(3)').toggleClass('story-box-active', story_1_bool);
-        $('.story-box:gt(2)').toggleClass('story-box-active', story_2_bool);
+        sc = $(window).scrollTop();
+        planet_bool = sc >= $visual_h / 4;
+        gotop_bool = sc >= 200;
         universe();
         productSlide();
     });
+
     // 프로덕트 슬라이드
     function productSlide() {
-
-        if ($('body').width() >= 767) {
+        let $body_w = $('body').width();
+        if ($body_w >= 767) {
             var orbitSwiper = new Swiper('.sw-orbit', {
                 effect: "fade",
                 fadeEffect: {
@@ -208,14 +202,15 @@ $(document).ready(function () {
                 $satellite.fadeIn(300);
             })
             setInterval(slideAuto, 100);
-        } else if ($('body').width() < 767) {
+        } else if ($body_w < 767) {
             var orbitSwiper = new Swiper('.sw-orbit', {
+                loop: true,
                 effect: 'slide',
                 slidesPerView: '1',
                 centeredSlides: true,
                 pagination: {
                     el: '.sw-pg',
-                    clickable:true,
+                    clickable: true,
                 },
                 on: {
                     activeIndexChange: function () {
@@ -239,17 +234,6 @@ $(document).ready(function () {
                 $product.css('background-position-y', -410 + (updown / 2));
             }
 
-        } else if ($('body').width() >= 767 && $('body').width() < 1240) {
-            var scrollBottom = $(window).scrollTop() + $(window).height() + 30;
-
-
-            let bool = scrollBottom >= $productTop;
-            let updown = scrollBottom - $productTop;
-            console.log(scrollBottom);
-            console.log($productTop);
-            if (bool == true) {
-                $product.css('background-position-y', -300 + (updown / 2));
-            }
         }
     }
 
@@ -263,8 +247,6 @@ $(document).ready(function () {
     function visual_txt() {
         $visual_txt.addClass('txt-up');
     }
-    visual_txt();productSlide();
+    visual_txt();
+    productSlide();
 });
-window.onload(function(){
-
-})

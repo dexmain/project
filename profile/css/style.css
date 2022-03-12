@@ -1,0 +1,154 @@
+@charset 'utf-8';
+@import url('notosanskr/NotoSansKR.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline-style: none; */
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+/* 공통요소 */
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    display: block;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* header 가 fixed 이므로 110 지정 */
+    padding-top: 110px;
+}
+
+.title {
+    position: relative;
+    display: block;
+    font-size: 45px;
+    margin: 20px 0;
+    font-weight: 800;
+}
+
+.wrap {
+    position: relative;
+    display: block;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 고정 help 메뉴 */
+.fix-menu {
+    position: fixed;
+    left: calc(50% + 550px);
+    bottom: 300px;
+    display: block;
+    z-index: 9999;
+}
+
+.fix-menu li {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.fix-menu a {
+    position: relative;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.fix-menu a:hover {
+    background-color: #f00;
+}
+
+/* 고정메뉴 */
+.fix-content {
+    position: fixed;
+    left: calc(50% + 450px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    z-index: 9999;
+}
+
+.fix-content li {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.fix-content a {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    border-radius: 50%;
+    background-color: #000;
+    transition: background-color 0.3s;
+}
+
+.fix-content a:hover {
+    background-color: #f00;
+}
+.wrap-swiper {
+    width: 100vw;
+    height:100vh;
+}
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+section {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.main {
+    background-color: #000;
+}
+.profile {
+    background-color: #f00;
+}
+.portfolio{
+    background-color: yellow;
+}
+.skill {
+    background-color: yellowgreen;
+}
+.mbti {
+    background-color: blue;
+}
+.contact {
+    background-color: chocolate;
+}

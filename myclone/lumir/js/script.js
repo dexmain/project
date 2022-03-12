@@ -173,6 +173,7 @@ $(document).ready(function () {
             orbitSwiper.destroy();
             orbitSwiper = new Swiper('.sw-orbit', {
                 effect: "fade",
+                centeredSlides: true,
                 fadeEffect: {
                     crossFade: true,
                 },

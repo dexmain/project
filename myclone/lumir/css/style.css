@@ -297,10 +297,10 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    display: none;
+    display: block;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 9999;
 }
 
@@ -1401,7 +1401,12 @@ body {
     display: block;
     width: 350px;
 }
-
+.swiper-slide {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .sw-orbit-box {
     position: relative;
     display: block;
@@ -1416,6 +1421,7 @@ body {
     display: block;
     margin-bottom: 20px;
     font-size: 34px;
+    font-weight: 500;
     color: #fff;
     text-align: center;
     transition: .3s ease;
@@ -1444,6 +1450,7 @@ body {
 }
 
 .slide-txt a {
+    display: block;
     line-height: 2.55em;
 }
 
@@ -1469,14 +1476,12 @@ body {
 
 .slide-more {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block !important;
     margin: 0 auto;
     font-size: 14px;
     width: 160px;
     height: 50px;
-    line-height: 50px;
+    line-height: 50px !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 25px;
     text-align: center;

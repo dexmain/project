@@ -315,16 +315,18 @@ body {
     z-index: 999;
     background-color: #fff;
     border-radius: 50px;
-    border: 4px solid #5179e0;
     text-align: center;
+    font-size: 15px;
+    overflow: hidden;
 }
 
 .modal-wrap b {
     position: relative;
     display: block;
+    font-size: 17px;
     font-weight: 600;
     margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .modal-desc {
@@ -344,8 +346,15 @@ body {
     border: none;
     cursor: pointer;
     transition: .3s;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s .5s;
 }
-
+.comment-on .modal-close {
+    transition: opacity .3s;
+    opacity: 0;
+    visibility: hidden;
+}
 .modal-close:hover {
     transform: rotate(225deg);
 }
@@ -367,12 +376,61 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-
     display: block;
     width: 2px;
     height: 100%;
     background-color: #999;
 }
+
+.modal-comment {
+    position: absolute;
+    display: block;
+
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    background-color: #5179e0;
+    transition: .5s .3s;
+}
+.comment-on .modal-comment {
+    height: 100%;
+    transition: .5s;
+}
+.comment-bt {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    font-size: 17px;
+}
+.comment-box {
+    position: relative;
+    display: block;
+    
+    padding-top: 10px;
+}
+.comment-box p{
+    position: relative;
+    display: block;
+    font-size: 15px;
+    margin-top: 40px;
+    opacity: 0;
+    color:#fff;
+    transition: opacity .3s;
+}
+.comment-on .comment-box p{
+    margin-top: 0;
+    opacity: 1;
+    transition: opacity .3s .5s;
+}
+
+
+
+.comment-on .comment-bt {}
 
 .wrap {
     position: relative;
@@ -1401,12 +1459,14 @@ body {
     display: block;
     width: 350px;
 }
+
 .swiper-slide {
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .sw-orbit-box {
     position: relative;
     display: block;
@@ -1955,6 +2015,7 @@ body {
     .service::after {
         margin: 0 15px 0 15px;
     }
+
     .visual {
         height: 800px;
     }
@@ -1962,6 +2023,7 @@ body {
     .product {
         background-position: center center !important;
     }
+
     .story-more {
         bottom: 150px;
     }
@@ -2132,6 +2194,7 @@ body {
     .gotop-active {
         display: none;
     }
+
     .header .container {
         height: 60px !important;
     }
@@ -2139,55 +2202,70 @@ body {
     .logo {
         width: 80px;
     }
+
     .userarea {
         margin-left: auto;
     }
+
     .language {
         margin-right: 20px;
     }
+
     .all-menu-top {
         padding-top: 30px;
     }
+
     .all-menu-close {
         top: 30px;
     }
+
     .all-menu-wrap {
-        background:url('../images/bg_gnb_m.png')no-repeat center;
+        background: url('../images/bg_gnb_m.png')no-repeat center;
         height: auto;
         padding-bottom: 100px;
     }
+
     .all-menu-main {
         margin-top: 45px;
     }
+
     .all-tit {
         font-size: 25px;
     }
+
     .all-sub-col {
         font-size: 14px;
         margin-bottom: 10px;
     }
-    li:last-child>.all-sub-col{
+
+    li:last-child>.all-sub-col {
         margin-bottom: 0;
     }
+
     .all-sub-row {
         font-size: 12px;
     }
+
     .all-gnb>li {
         width: 100%;
         padding-left: 15%;
         margin-bottom: 30px;
 
     }
+
     .all-sub {
         margin-top: 15px;
     }
+
     .light {
         top: 300px;
         left: 750px;
     }
+
     .all-menu-left {
         display: none;
     }
+
     .visual {
         height: 90vh;
     }
@@ -2462,6 +2540,7 @@ body {
         width: 100%;
         height: auto;
     }
+
     .recruit-box:last-child {
         margin-top: 50px;
     }
@@ -2480,6 +2559,7 @@ body {
         margin-top: 25px;
         font-size: 15px;
     }
+
     .recruit-box:last-child::before {
         content: '';
         position: absolute;
@@ -2489,22 +2569,28 @@ body {
         height: 1px;
         background-color: #fff;
     }
+
     .footer {
         height: auto;
     }
-    .footer .container{
+
+    .footer .container {
         padding: 60px 20px;
     }
+
     .footer .logo {
         width: 100px;
         margin-bottom: 40px;
     }
+
     .company-tit {
         font-size: 18px;
     }
+
     .address {
         margin-bottom: 50px;
     }
+
     .copy {
         font-size: 12px;
     }

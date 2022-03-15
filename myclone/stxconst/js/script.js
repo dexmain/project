@@ -7,8 +7,8 @@ window.onload = function() {
         $('html').css('overflow-y', 'auto');
         $modal.fadeOut(300);
     });
-    $comment_bt.click(function () {
-
+    $comment_bt.click(function (e) {
+        e.preventDefault();
         $(this).hide();
         $(this).text('닫기').show(300);
         if($modal.hasClass('comment-on')){

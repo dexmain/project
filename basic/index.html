@@ -1,363 +1,42 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UACompatible" content="IE=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="images/mobile_web_icon.png">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>홍길동 포트폴리오</title>
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <![endif]-->
-    <script src="js/prefixfree.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <link rel="stylesheet" href="css/reset.css">
-    <!-- Progressbar 관련 -->
-    <script type="text/javascript" src="js/progressbar.min.js"></script>
-    <!-- swiper -->
-    <link rel="stylesheet" href="js/swiper/swiper.min.css">
-    <script src="js/swiper/swiper.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container {
+            position: relative;
+            padding: 10px;
+            display: grid;
+            background-color: lightgray;
+            grid-template-columns: repeat(3,1);
+            grid-template-rows: 300px 300px 100px 200px;
+        }
 
-    <!-- aos 관련 코드 -->
-    <link href="js/aos/aos.css" rel="stylesheet">
-    <script src="js/aos/aos.js"></script>
-
-    <!-- lightbox2 참조 -->
-    <link rel="stylesheet" type="text/css" href="js/lightbox2/css/lightbox.css">
-    <script src="js/lightbox2/js/lightbox.js"></script>
-
-    <!-- nicescroll.js -->
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <!-- TweenMax -->
-    <script src="js/tweenmax/gsap.min.js"></script>
-
-    <!-- 딩벳폰트 참조 -->
-    <link rel="stylesheet" href="css/fontello/css/animation.css">
-    <link rel="stylesheet" href="css/fontello/css/fontello.css">
-
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+        .item {
+            padding: 10px;
+            border: 3px solid brown;
+            position: relative;
+            display: inline-block;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- 고정 help 메뉴 -->
-    <ul class="fix-menu">
-        <li><a href="#" class="icon-download-cloud animate-spin">포트폴리오 다운로드</a></li>
-        <li><a href="#" target="_blank" class="ico-process">사이트 기획</a></li>
-        <li><a href="mailto:aaa@aaa.net" class="ico-mail icon-mail-alt">이메일</a></li>
-        <li><a href="#" class="gotop icon-up-thin">위로가기</a></li>
-    </ul>
-    <!-- 고정메뉴 -->
-    <ul class="fix-content">
-        <li><a href="#home">Visual</a></li>
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#life">Life</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="wrap" id="home">
-        <!-- 헤더영역 -->
-        <header class="header">
-            <div class="container">
-                <a href="#" class="logo">
-                </a>
-
-                <nav class="nav">
-                    <ul class="gnb">
-                        <li><i class="fa-solid fa-circle-dot"></i><a href="#home">home</a></li>
-                        <li><i class="fa-solid fa-circle-dot"></i><a href="#profile">profile</a></li>
-                        <li><i class="fa-solid fa-circle-dot"></i><a href="#portfolio">portfolio</a></li>
-                        <li><i class="fa-solid fa-circle-dot"></i><a href="#life">life</a></li>
-                        <li><i class="fa-solid fa-circle-dot"></i><a href="#contact">contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <!-- 비주얼 영역 -->
-        <section class="visual" data-aos="flip-left">
-        </section>
-        <!-- 프로필 영역 -->
-        <section class="profile" id="profile" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
-            <div class="container clearfix">
-                <h2 class="title" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">Profile</h2>
-
-                <img src="http://placeimg.com/300/400/people" alt="홍길동" class="profile-img" data-aos="fade-up"
-                    data-aos-delay="700" data-aos-duration="800">
-
-                <div class="profile-wrap" data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-                    <div class="profile-list">
-                        <span class="profile-title">이름</span>
-                        <div class="proflie-txt">홍길동</div>
-                    </div>
-
-                    <div class="profile-list">
-                        <span class="profile-title">학력</span>
-                        <div class="proflie-txt">
-                            <ul class="profile-desc">
-                                <li>학교</li>
-                                <li>전공</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="profile-list">
-                        <span class="profile-title">MBTI</span>
-                        <div class="profile-txt">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla deserunt similique quia
-                            facilis nesciunt, repellendus ab modi quae necessitatibus eos neque autem dolorem
-                            consequatur ullam iste, veniam provident. Rem, quas.
-                        </div>
-                    </div>
-
-                    <div class="profile-list">
-                        <span class="profile-title">Skill</span>
-                        <div class="profile-txt">
-                            스킬배치(Progress-bar 예정)
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- 포트폴리오 영역 -->
-        <section class="portfolio" id="portfolio" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
-            <div class="container">
-                <div class="phone">
-                    <img src="images/vue.png" alt="">
-                </div>
-                <h2 class="title" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">Portfolio</h2>
-                <div class="portfolio-list" data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
-                    <h3>Personal Clone coding</h3>
-                    <div class="swiper-container sw-pcc">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination sw-pcc-pg"></div>
-                    </div>
-                </div>
-                <div class="portfolio-list" data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-                    <h3>Study Clone coding</h3>
-                    <div class="swiper-container sw-scc">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="pcc-div">
-                                    <img src="http://placeimg.com/300/400/tech" alt="">
-                                    <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-                                        expedita, quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit
-                                        a ex provident explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                    <a href="#" target="_blank" class="pcc-link">Work</a>
-                                    <a href="#" target="_blank" class="pcc-link">GitHub</a>
-                                    <a href="#" target="_blank" class="pcc-link">Origin</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination sw-scc-pg"></div>
-                    </div>
-                </div>
-                <div class="portfolio-list" data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
-                    <h3>Vue Project</h3>
-                    <div class="portfolio-vue">
-                        <ul class="portfolio-vue-list clearfix">
-                            <li>
-                                <img src="http://placeimg.com/300/400/tech" alt="">
-                                <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos expedita,
-                                    quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit a ex provident
-                                    explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                <a href="http://placeimg.com/1000/1000/tech" target="_blank" data-lightbox="vue"
-                                    data-title="사진입니다.">Work</a>
-                                <a href="#" target="_blank">GitHub</a>
-                            </li>
-                            <li>
-                                <img src="http://placeimg.com/300/400/tech" alt="">
-                                <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos expedita,
-                                    quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit a ex provident
-                                    explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                <a href="http://placeimg.com/500/500/people" target="_blank" data-lightbox="vue"
-                                    data-title="사람사진입니다.">Work</a>
-                                <a href="#" target="_blank">GitHub</a>
-                            </li>
-                            <li>
-                                <img src="http://placeimg.com/300/400/tech" alt="">
-                                <p>프로젝트설명 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos expedita,
-                                    quo ducimus cum odio maxime aliquid deleniti illo reprehenderit velit a ex provident
-                                    explicabo eum quas, placeat vel? Animi, aliquam.</p>
-                                <a href="http://placeimg.com/500/800/animal" target="_blank" data-lightbox="my"
-                                    data-title="동물사진입니다.">Work</a>
-                                <a href="#" target="_blank">GitHub</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 라이프 영역 -->
-        <section class="life" id="life" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
-            <div class="container">
-                <h2 class="title">Life</h2>
-                <div class="life-box">
-                    <img src="http://placeimg.com/300/400/people" alt="홍길동">
-                    <p class="life-txt">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deserunt harum similique eos
-                        modi sed qui. Deleniti quae delectus atque, dignissimos tenetur ab rem repellendus architecto
-                        sit ratione cupiditate labore.
-                    </p>
-                </div>
-                <div class="life-box">
-                    <img src="http://placeimg.com/300/400/people" alt="홍길동">
-                    <p class="life-txt">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deserunt harum similique eos
-                        modi sed qui. Deleniti quae delectus atque, dignissimos tenetur ab rem repellendus architecto
-                        sit ratione cupiditate labore.
-                    </p>
-                </div>
-                <div class="life-box">
-                    <img src="http://placeimg.com/300/400/people" alt="홍길동">
-                    <p class="life-txt">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deserunt harum similique eos
-                        modi sed qui. Deleniti quae delectus atque, dignissimos tenetur ab rem repellendus architecto
-                        sit ratione cupiditate labore.
-                    </p>
-                </div>
-            </div>
-
-        </section>
-        <!-- 연락처 영역 -->
-        <section class="contact" id="contact" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
-            <div class="container clearfix">
-                <h2 class="title">Contact</h2>
-                <div class="contact-box">
-                    Email: <a href="mailto:aaa@naver.com">aaa@naver.com</a>
-                </div>
-                <div class="contact-box">
-                    카카오 오픈채팅: <img src="http://placeimg.com/300/300/tech" alt="홍길동">
-                </div>
-                <div class="contact-box">
-                    문의하기: <a href="#" target="_blank">문의하기(구글설문지)</a>
-                </div>
-                <div class="contact-box">
-                    포트폴리오: <a href="#">다운로드</a>
-                </div>
-            </div>
-            <div class="address-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.21092555025!2d128.59185951526402!3d35.86834758015111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565e3c3dd62828f%3A0xb36b33bf2f38782a!2z6re466aw7Lu07ZOo7YSw7JWE7Yq47ZWZ7JuQIOuMgOq1rOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1646895312768!5m2!1sko!2skr"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div id="html"></div>
-            <div id="js"></div>
-            <div id="css"></div>
-            <div id="php"></div>
-            <div id="mysql"></div>
-            <div id=""></div>
-        </section>
-        <!-- 하단영역 -->
-        <footer class="footer">
-            <div class="container">
-                Copyright 2022 By 닉네임
-            </div>
-        </footer>
+    <div class="container">
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+        <div class="item">d</div>
+        <div class="item">e</div>
+        <div class="item">f</div>
+        <div class="item">g</div>
+        <div class="item">h</div>
+        <div class="item">i</div>
     </div>
-
 </body>
 
 </html>

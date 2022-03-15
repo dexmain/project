@@ -123,6 +123,11 @@ body {
 .wrap-swiper {
     width: 100vw;
     height:100vh;
+    background:url('../images/cyborg-gears.png')no-repeat center;
+    background-size: cover;
+}
+.cap {
+    width: 100%;
 }
 .swiper-slide {
     width: 100%;
@@ -135,6 +140,7 @@ section {
     height: 100%;
 }
 .main {
+    width: 50%;
     background-color: #000;
 }
 .profile {

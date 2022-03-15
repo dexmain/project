@@ -2,9 +2,20 @@ window.onload = function() {
     // 모달창
     let $modal = $('.modal');
     let $modal_close = $('.modal-close');
-    $modal_close.click(function(){
-        $('html').css('overflow-y','auto');
+    let $comment_bt = $('.comment-bt');
+    $modal_close.click(function () {
+        $('html').css('overflow-y', 'auto');
         $modal.fadeOut(300);
+    });
+    $comment_bt.click(function () {
+
+        $(this).hide();
+        $(this).text('닫기').show(300);
+        if($modal.hasClass('comment-on')){
+            $(this).hide();
+            $(this).text('작업 리뷰').show(300);
+        }
+        $modal.toggleClass('comment-on');
     });
     // gnb 기능  
     // 1. gnb 를 저장한다.

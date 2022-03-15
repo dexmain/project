@@ -46,7 +46,7 @@ body {
     display: block;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 9999;
 }
 
@@ -54,26 +54,31 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: block;
     width: 500px;
     height: 300px;
     z-index: 999;
     background-color: #fff;
     border-radius: 50px;
-    border: 4px solid #ed1c24;
     text-align: center;
+    font-size: 15px;
+    overflow: hidden;
 }
-.modal-wrap b{
+
+.modal-wrap b {
     position: relative;
     display: block;
+    font-size: 17px;
     font-weight: 600;
     margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
+
 .modal-desc {
     margin-top: 50px;
 }
+
 .modal-close {
     position: absolute;
     display: block;
@@ -87,10 +92,19 @@ body {
     border: none;
     cursor: pointer;
     transition: .3s;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s .5s;
+}
+.comment-on .modal-close {
+    transition: opacity .3s;
+    opacity: 0;
+    visibility: hidden;
 }
 .modal-close:hover {
     transform: rotate(225deg);
 }
+
 .modal-close::before {
     content: '';
     position: absolute;
@@ -101,17 +115,63 @@ body {
     height: 2px;
     background-color: #999;
 }
+
 .modal-close::after {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-
     display: block;
     width: 2px;
     height: 100%;
     background-color: #999;
+}
+
+.modal-comment {
+    position: absolute;
+    display: block;
+
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    background-color: #ec1c24;
+    transition: .5s .3s;
+}
+.comment-on .modal-comment {
+    height: 100%;
+    transition: .5s;
+}
+.comment-bt {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    font-size: 17px;
+}
+.comment-box {
+    position: relative;
+    display: block;
+    
+    padding-top: 10px;
+}
+.comment-box p{
+    position: relative;
+    display: block;
+    font-size: 15px;
+    margin-top: 40px;
+    opacity: 0;
+    color:#fff;
+    transition: opacity .3s;
+}
+.comment-on .comment-box p{
+    margin-top: 0;
+    opacity: 1;
+    transition: opacity .3s .5s;
 }
 /* 공통 요소 */
 .container {

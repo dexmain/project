@@ -62,9 +62,8 @@ $(document).ready(function () {
             $(this).hide();
             $(this).text('작업 리뷰').show(300);
         }
-
         $modal.toggleClass('comment-on');
-    })
+    });
 
     // all-menu
     $all_menu_bt.click(function () {

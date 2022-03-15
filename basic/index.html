@@ -8,34 +8,39 @@
     <title>Grid</title>
     <style>
         .container {
-            position: relative;
             padding: 10px;
-            display: grid;
             background-color: lightgray;
-            grid-template-columns: repeat(3,1);
-            grid-template-rows: 300px 300px 100px 200px;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px, auto));
         }
 
         .item {
             padding: 10px;
             border: 3px solid brown;
-            position: relative;
-            display: inline-block;
+            color: #fff;
+            background-color: hotpink;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="item">a</div>
-        <div class="item">b</div>
-        <div class="item">c</div>
-        <div class="item">d</div>
-        <div class="item">e</div>
-        <div class="item">f</div>
-        <div class="item">g</div>
-        <div class="item">h</div>
-        <div class="item">i</div>
+        <div class="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit
+        </div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque sunt sit aliquam, dolorem temporibus unde qui laboriosam, architecto corrupti laborum expedita illo. Esse, fugiat sunt itaque illum quam velit perferendis.
+        </div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">I</div>
+        <div class="item">I</div>
     </div>
 </body>
 

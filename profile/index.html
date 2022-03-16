@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/mobile_web_icon.png">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>진현우 portfolio</title>
+    <title>jhw's portfolio</title>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <![endif]-->
@@ -17,7 +17,7 @@
     <script src="js/respond.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <!-- Progressbar 관련 -->
-    <script type="text/javascript" src="js/progressbar.min.js"></script>
+    <!-- <script type="text/javascript" src="js/progressbar.min.js"></script> -->
     <!-- swiper -->
     <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <script src="js/swiper/swiper.min.js"></script>
@@ -27,13 +27,13 @@
     <script src="js/aos/aos.js"></script>
 
     <!-- lightbox2 참조 -->
-    <link rel="stylesheet" type="text/css" href="js/lightbox2/css/lightbox.css">
-    <script src="js/lightbox2/js/lightbox.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="js/lightbox2/css/lightbox.css"> -->
+    <!-- <script src="js/lightbox2/js/lightbox.js"></script> -->
 
     <!-- nicescroll.js -->
     <script src="js/jquery.nicescroll.min.js"></script>
     <!-- TweenMax -->
-    <script src="js/tweenmax/gsap.min.js"></script>
+    <!-- <script src="js/tweenmax/gsap.min.js"></script> -->
 
     <!-- 딩벳폰트 참조 -->
     <link rel="stylesheet" href="css/fontello/css/animation.css">
@@ -45,23 +45,37 @@
 
 <body>
     <!-- 고정 help 메뉴 -->
-    <ul class="fix-menu">
+    <!-- <ul class="fix-menu">
         <li><a href="#" class="icon-download-cloud">포트폴리오 다운로드</a></li>
         <li><a href="#" target="_blank" class="ico-process">사이트 기획</a></li>
         <li><a href="mailto:aaa@aaa.net" class="ico-mail icon-mail-alt">이메일</a></li>
         <li><a href="#" class="gotop icon-up-thin">위로가기</a></li>
-    </ul>
+    </ul> -->
     <!-- 고정메뉴 -->
-    <div class="wrap" id="home">
-        <div class="swiper wrap-swiper">
-            <span class="sticker gear-1"></span>
+    <span class="sticker gear-1"></span>
             <span class="sticker gear-2"></span>
+            <span class="sticker gear-3"></span>
+    <div class="wrap" id="home">
+        <div class="page-box"></div>
+        <header class="header">
+            <div class="header-top">
+
+            </div>
+            <a href="#" class="logo"></a>
+        </header>
+        <div class="swiper wrap-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <section class="main">
-                        <header class="header">
-                            <a href="#" class="logo"></a>
-                        </header>
+                    <section class="visual">
+                        <div class="container">
+                            <div class="visual-photo">
+                                <img src="" alt="">
+                            </div>
+                            <span class="visual-txt">
+                                    <b>소통</b> 하는 개발자<br><br>
+                                    <strong>"진현우"</strong> 입니다.
+                            </span>
+                        </div>
                     </section>
                 </div>
                 <div class="swiper-slide">
@@ -90,10 +104,8 @@
                     </section>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
     </div>
-
 </body>
 
 </html>

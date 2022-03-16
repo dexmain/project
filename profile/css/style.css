@@ -1,6 +1,10 @@
 @charset 'utf-8';
 @import url('notosanskr/NotoSansKR.css');
+@import url('font.css');
 
+/* #7d50f9 */
+/* #ff2e93 */
+/* #142664 */
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +30,13 @@ html {
     font-size: 10px;
 }
 
+body {
+    font-size: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: mintcream;
+    overflow-y: hidden;
+}
+
 /* 공통요소 */
 .clearfix::after {
     content: '';
@@ -40,8 +51,6 @@ html {
     display: block;
     max-width: 1080px;
     margin: 0 auto;
-    /* header 가 fixed 이므로 110 지정 */
-    padding-top: 110px;
 }
 
 .title {
@@ -54,18 +63,44 @@ html {
 
 .wrap {
     position: relative;
+    margin: 40px auto;
     display: block;
+    width: calc(100vw - 200px);
+    height: calc(100vh - 100px);
+    background-color: #fff;
+    box-shadow: 0px 0px 35px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
 }
 
-body {
-    font-size: 1rem;
-    font-family: 'Noto Sans KR', sans-serif;
-}
+
 .sticker {
     position: absolute;
-    background:url('../images/cyborg-gears.png')no-repeat center;
+    background: url('../images/cyborg-gears.png')no-repeat center;
     background-size: contain;
 }
+
+.gear-1 {
+    width: 800px;
+    height: 800px;
+    top: -350px;
+    left: -300px;
+}
+
+.gear-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -170px;
+    left: 300px;
+}
+
+/* .gear-3 {
+    width: 500px;
+    height: 500px;
+    right: -100px;
+    top: -150px;
+    background:url('../images/cyborg-gears-reverse.png')no-repeat center;
+    background-size: contain;
+} */
 /* 고정 help 메뉴 */
 .fix-menu {
     position: fixed;
@@ -124,68 +159,148 @@ body {
 .fix-content a:hover {
     background-color: #f00;
 }
-.wrap-swiper {
-    width: 100vw;
-    height:100vh;
-    background-color: rgb(147, 69, 250);
-    background-size: cover;
+
+.page-box {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-flow: column;
+    right: 0;
+    z-index: 999;
 }
+
+.swiper-pagination-bullet {
+    position: relative;
+    border-radius: 0;
+    transform: translateX(40%);
+    width: 120px;
+    height: 44px;
+    padding-left: 5px;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+    color: #303030;
+    font-size: 14px;
+    font-family: 'GmarketSansMedium';
+    border-right: 0;
+    opacity: 1;
+    margin-top: 15px;
+    border: 1px solid #00e6b3;
+    box-shadow: 0px 0px 0px 0px #00e6b3;
+    line-height: 45px;
+    border-right: 0;
+    background-color: #fff;
+    text-align: left;
+    transition: .3s;
+}
+
+.swiper-pagination-bullet-active {
+    border: none;
+    z-index: 1;
+    border: 1px solid #7d50f9;
+    box-shadow: 8px 8px 0px 0px #7d50f9;
+    color: #303030;
+    font-size: 20px;
+    border-right: 0;
+    transform: translateX(0);
+}
+
+/* 헤더 */
+.header {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 9999;
+}
+
+.header-top {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 25px;
+}
+
+.logo {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 160px;
+    height: 80px;
+    background: url('../images/mylogo.png')no-repeat center;
+    background-size: contain;
+}
+
+/* 메인 */
+.wrap-swiper {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 105px;
+    overflow: hidden;
+}
+
 .swiper-slide {
     width: 100%;
     height: 100%;
-    padding: 30px 40px;
 }
 
-.gear-1 {
-    width: 800px;
-    height: 800px;
-    top: -350px;
-    left: -300px;
-}
-.gear-2 {
-    width: 300px;
-    height: 300px;
-    bottom: -170px;
-    left: 300px;
-}
 section {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    border: 3px solid #000;
 }
-.main {
-    background-color: rgb(255, 193, 50);
+
+.visual {}
+
+.visual .container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
 }
-.header{
+
+.visual-photo {
     position: relative;
     display: block;
-    margin-top: 30px;
-    width: 100%;
-    height: 100px;
+    width: 350px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 15px 15px 0px 0px #00e6b3;
+    border: 2px solid #303033;
 }
-.logo {
+
+.visual-txt {
     position: relative;
-    display: block;
-    margin-left: 50px;
-    width: 160px;
-    height: 80px;
-    background:url('../images/mylogo.png')no-repeat center;
-    background-size: contain;
+    display: inline-block;
+    font-family: 'GmarketSansMedium';
+    color: #303033;
+    font-size: 35px;
+    margin-left: -30px;
+    margin-top: 200px;
 }
-.profile {
-    background-color: #f00;
+
+.visual-txt b {
+    font-size: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #7d50f9;
 }
-.portfolio{
-    background-color: yellow;
+
+.visual-txt strong {
+    margin-left: 80px;
+    font-size: 60px;
+    font-weight: bold;
 }
-.skill {
-    background-color: yellowgreen;
-}
-.mbti {
-    background-color: blue;
-}
-.contact {
-    background-color: chocolate;
-}
+
+.profile {}
+
+.portfolio {}
+
+.skill {}
+
+.mbti {}
+
+.contact {}

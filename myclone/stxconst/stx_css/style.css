@@ -375,7 +375,7 @@ body {
     position: relative;
     display: block;
     height: 910px;
-    background: url('../images/img_visual01.png') no-repeat center;
+    background: url('../stx_images/img_visual01.png') no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 
@@ -428,7 +428,7 @@ body {
     display: block;
     width: 33px;
     height: 33px;
-    background: url('../images/bg_common.png') no-repeat;
+    background: url('../stx_images/bg_common.png') no-repeat;
     background-position: -122px 0;
     border: 0;
     font-size: 0;
@@ -508,7 +508,7 @@ body {
     height: 420px;
 
     float: left;
-    background: url('../images/img_business.png') no-repeat;
+    background: url('../stx_images/img_business.png') no-repeat;
 }
 
 .part-list li:nth-child(1) {
@@ -548,7 +548,7 @@ body {
     display: block;
     width: 130px;
     height: 111px;
-    background: url('../images/bg_common.png') no-repeat;
+    background: url('../stx_images/bg_common.png') no-repeat;
 
     font-size: 0;
 }
@@ -685,7 +685,7 @@ body {
     width: 47px;
     height: 23px;
 
-    background: url('../images/bg_common.png') no-repeat;
+    background: url('../stx_images/bg_common.png') no-repeat;
     background-position: 0px -48px;
 }
 
@@ -714,14 +714,14 @@ body {
 
 .customer a:nth-child(1) {
     float: left;
-    background: #fff url('../images/bg_faq.png') no-repeat;
+    background: #fff url('../stx_images/bg_faq.png') no-repeat;
 
     background-position: calc(100% - 40px) 50%;
 }
 
 .customer a:nth-child(2) {
     float: right;
-    background: #fff url('../images/bg_custom.png') no-repeat;
+    background: #fff url('../stx_images/bg_custom.png') no-repeat;
 
     background-position: calc(100% - 40px) 50%;
 }
@@ -758,7 +758,7 @@ body {
     display: block;
     height: 370px;
 
-    background: url('../images/img_about.png') no-repeat;
+    background: url('../stx_images/img_about.png') no-repeat;
     background-position: right center;
 }
 
@@ -828,7 +828,7 @@ body {
     display: inline-block;
     width: 100px;
     height: 108px;
-    background: url('../images/bg_icon.png') no-repeat;
+    background: url('../stx_images/bg_icon.png') no-repeat;
 }
 
 .about-bottom a:nth-child(1) {
@@ -875,7 +875,7 @@ body {
     width: 255px;
     height: 60px;
 
-    background: url('../images/logo_footer.png') no-repeat;
+    background: url('../stx_images/logo_footer.png') no-repeat;
 }
 
 .f-right {

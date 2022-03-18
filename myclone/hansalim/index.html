@@ -1,33 +1,37 @@
+<?php
+    include_once('./_common.php');
+    include_once(G5_LIB_PATH."/latest.lib.php");
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="han_images/favicon.ico">
 
-    <link rel="apple-touch-icon-precomposed" href="images/mobile_web_icon.png">
+    <link rel="apple-touch-icon-precomposed" href="han_images/mobile_web_icon.png">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
     <title>한살림 장보기 :: 지구를 살리는 뜻깊은 생활실천, 한살림</title>
     <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
+        <script src="han_js/html5shiv.js"></script>
         <![endif]-->
-    <script src="js/prefixfree.min.js"></script>
-    <script src="js/jquery.min.js"></script>
+    <script src="han_js/prefixfree.min.js"></script>
+    <script src="han_js/jquery.min.js"></script>
 
     <!-- swiper -->
-    <link rel="stylesheet" href="js/swiper/swiper.min.css">
-    <script src="js/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="han_js/swiper/swiper.min.css">
+    <script src="han_js/swiper/swiper.min.js"></script>
 
     <!-- nicescroll -->
-    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="han_js/jquery.nicescroll.min.js"></script>
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="han_css/reset.css">
+    <link rel="stylesheet" href="han_css/style.css">
 
-    <script src="js/script.js"></script>
+    <script src="han_js/script.js"></script>
 </head>
 
 <body>
@@ -60,7 +64,7 @@
             <li>
                 <a href="#">
                     최근 본 물품
-                    <img src="images/noImg80.png" alt="물품">
+                    <img src="han_images/noImg80.png" alt="물품">
                 </a>
             </li>
             <li>
@@ -260,7 +264,7 @@
                         <!--// 전체메뉴 -->
 
                         <a href="#" id="all">
-                            <img src="images/menu_icon.png" alt="전체물품">
+                            <img src="han_images/menu_icon.png" alt="전체물품">
                             전체물품
                         </a>
 
@@ -296,7 +300,7 @@
                     <div class="header-main-right ">
                         <form action="" method="" class="search">
                             <input type="text" name="" id="" class="good-name" placeholder="무엇을 찾아드릴까요?">
-                            <input type="image" src="images/btnSearch.png" class="search-bt">
+                            <input type="image" src="han_images/btnSearch.png" class="search-bt">
                         </form>
                         <a href="#" class="bucket">
                             <i>0</i>
@@ -317,34 +321,34 @@
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_01.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_01.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_02.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_02.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_03.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_03.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_04.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_04.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_05.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_05.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_06.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_06.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_07.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_07.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_08.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_08.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_09.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_09.jpg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_10.jpg" alt="상품"></a>
+                            <a href="#"><img src="han_images/swiper_img_10.jpg" alt="상품"></a>
                         </div>
 
                     </div>
@@ -362,6 +366,14 @@
                 <!--// 상단 비주얼 슬라이드 -->
 
             </section>
+            <?php
+    // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
+    // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
+    // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
+    echo latest('pic_list', 'han_good', 4, 23);            // 최소설치시 자동생성되는 자유게시판
+    echo latest('pic_list', 'han_good', 4, 23);            // 최소설치시 자동생성되는 질문답변게시판
+    echo latest('pic_list', 'han_good', 4, 23);        // 최소설치시 자동생성되는 공지사항게시판
+    ?>
             <!-- 이 물품은 어떠세요? -->
             <section class="recommend">
                 <div class="container">
@@ -370,7 +382,7 @@
                     <div class="good-wrap clearfix">
                         <a href="#" class="good-link no-ml">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -391,7 +403,7 @@
 
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -411,7 +423,7 @@
 
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -430,7 +442,7 @@
                         </a>
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -452,7 +464,7 @@
                     <div class="good-wrap clearfix no-mb">
                         <a href="#" class="good-link no-ml">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -471,7 +483,7 @@
                         </a>
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -490,7 +502,7 @@
                         </a>
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -509,7 +521,7 @@
                         </a>
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -564,7 +576,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -585,7 +597,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -606,7 +618,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -627,7 +639,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -648,7 +660,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -669,7 +681,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -690,7 +702,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -711,7 +723,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -732,7 +744,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -776,26 +788,26 @@
                     <div class="new-main clearfix">
                         <div class="new-main-left">
                             <a href="#" class="new-good-big">
-                                <img src="images/new_1.jpg" alt="제품">
+                                <img src="han_images/new_1.jpg" alt="제품">
                                 <p class="new-good-title">국산 꽃사슴 녹용과 홍삼을 한 번에 '녹용홍삼정'</p>
                                 <span class="new-good-desc">꽃사슴 녹용, 6년근 홍삼에 한약재까지 더해 진하게 농축</span>
                             </a>
                         </div>
                         <div class="new-main-right clearfix">
                             <a href="#" class="new-good-sm">
-                                <img src="images/new_2.jpg" alt="제품" class="new-good-sm-img">
+                                <img src="han_images/new_2.jpg" alt="제품" class="new-good-sm-img">
                                 <span class="new-good-sm-title">녹용, 홍삼, 영지버섯을 한 알에 '녹용홍삼환'</span>
                             </a>
                             <a href="#" class="new-good-sm">
-                                <img src="images/new_3.jpg" alt="제품" class="new-good-sm-img">
+                                <img src="han_images/new_3.jpg" alt="제품" class="new-good-sm-img">
                                 <span class="new-good-sm-title">새콤 짭조름한 절임반찬 '명이나물장아찌'</span>
                             </a>
                             <a href="#" class="new-good-sm">
-                                <img src="images/new_4.jpg" alt="제품" class="new-good-sm-img">
+                                <img src="han_images/new_4.jpg" alt="제품" class="new-good-sm-img">
                                 <span class="new-good-sm-title">제주딱새우와 토마토의 만남 '칠리새우'</span>
                             </a>
                             <a href="#" class="new-good-sm">
-                                <img src="images/new_5.jpg" alt="제품" class="new-good-sm-img">
+                                <img src="han_images/new_5.jpg" alt="제품" class="new-good-sm-img">
                                 <span class="new-good-sm-title">진한 원유에 새콤달콤 딸기과즙 '유기농딸기요구르트'</span>
                             </a>
                         </div>
@@ -837,7 +849,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -859,7 +871,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -881,7 +893,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -903,7 +915,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -925,7 +937,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -947,7 +959,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -969,7 +981,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -991,7 +1003,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -1013,7 +1025,7 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="han_images/good.jpg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
@@ -1217,7 +1229,7 @@
                     <div class="popular-bottom clearfix">
                         <a href="#" class="good-link no-ml">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -1236,7 +1248,7 @@
                         </a>
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -1255,7 +1267,7 @@
                         </a>
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -1274,7 +1286,7 @@
                         </a>
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="han_images/good.jpg" alt="제품">
                             </span>
                             <div class="good-info">
                                 <span class="good-cate">
@@ -1332,7 +1344,7 @@
                                         <a href="#">
 
                                             <p class="brand-nature-title">
-                                                <img src="images/brand_1.png" alt="">
+                                                <img src="han_images/brand_1.png" alt="">
                                                 <span>참여인증</span>
                                             </p>
                                             <ul class="brand-nature-detail">
@@ -1355,7 +1367,7 @@
                                         <a href="#">
 
                                             <p class="brand-nature-title">
-                                                <img src="images/brand_2.png" alt="">
+                                                <img src="han_images/brand_2.png" alt="">
                                                 <span>병재사용</span>
                                             </p>
                                             <ul class="brand-nature-detail">
@@ -1376,7 +1388,7 @@
                                     <div class="brand-nature">
                                         <a href="#">
                                             <p class="brand-nature-title">
-                                                <img src="images/brand_3.png" alt="">
+                                                <img src="han_images/brand_3.png" alt="">
                                                 <span>토박이씨앗살림</span>
                                             </p>
                                             <ul class="brand-nature-detail">
@@ -1396,7 +1408,7 @@
                                     <div class="brand-nature">
                                         <a href="#">
                                             <p class="brand-nature-title">
-                                                <img src="images/brand_4.png" alt="">
+                                                <img src="han_images/brand_4.png" alt="">
                                                 <span>우리보리살림</span>
                                             </p>
                                             <ul class="brand-nature-detail">
@@ -1416,7 +1428,7 @@
                                     <div class="brand-nature">
                                         <a href="#">
                                             <p class="brand-nature-title">
-                                                <img src="images/brand_5.png" alt="">
+                                                <img src="han_images/brand_5.png" alt="">
                                                 <span>가까운 먹을거리</span>
                                             </p>
                                             <ul class="brand-nature-detail">
@@ -1436,7 +1448,7 @@
                                     <div class="brand-nature">
                                         <a href="#">
                                             <p class="brand-nature-title">
-                                                <img src="images/brand_6.png" alt="">
+                                                <img src="han_images/brand_6.png" alt="">
                                                 <span>우리밀 살리기</span>
                                             </p>
                                             <ul class="brand-nature-detail">
@@ -1467,22 +1479,22 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <a href="#">
-                                        <img src="images/banner_1.jpg" alt="">
+                                        <img src="han_images/banner_1.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#">
-                                        <img src="images/banner_2.jpg" alt="">
+                                        <img src="han_images/banner_2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#">
-                                        <img src="images/banner_3.jpg" alt="">
+                                        <img src="han_images/banner_3.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#">
-                                        <img src="images/banner_4.jpg" alt="">
+                                        <img src="han_images/banner_4.jpg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -1509,7 +1521,7 @@
                     <div class="cook-main clearfix">
                         <div class="cook-left">
                             <!-- js 로 배경을 인라인 방식으로 변경 해보자. -->
-                            <a href="#" style="background: url('images/cook_main.jpg') no-repeat center">
+                            <a href="#" style="background: url('han_images/cook_main.jpg') no-repeat center">
                                 <div class="cook-box">
                                     <span class="cook-title">
                                         요리방법
@@ -1528,7 +1540,7 @@
                                     <li>
                                         <button class="cook-bt"></button>
                                         <a href="#" class="cook-good">
-                                            <img src="images/cook_1.jpg" alt="제품">
+                                            <img src="han_images/cook_1.jpg" alt="제품">
                                             <p class="cook-good-info">
                                                 <span class="cook-good-title">월앙매실(선물용/1L)</span>
                                                 <span class="cook-good-price">
@@ -1540,7 +1552,7 @@
                                     <li>
                                         <button class="cook-bt"></button>
                                         <a href="#" class="cook-good">
-                                            <img src="images/cook_1.jpg" alt="제품">
+                                            <img src="han_images/cook_1.jpg" alt="제품">
                                             <p class="cook-good-info">
                                                 <span class="cook-good-title">월앙매실(선물용/1L)</span>
                                                 <span class="cook-good-price">
@@ -1552,7 +1564,7 @@
                                     <li>
                                         <button class="cook-bt"></button>
                                         <a href="#" class="cook-good">
-                                            <img src="images/cook_1.jpg" alt="제품">
+                                            <img src="han_images/cook_1.jpg" alt="제품">
                                             <p class="cook-good-info">
                                                 <span class="cook-good-title">월앙매실(선물용/1L)</span>
                                                 <span class="cook-good-price">
@@ -1564,7 +1576,7 @@
                                     <li>
                                         <button class="cook-bt"></button>
                                         <a href="#" class="cook-good">
-                                            <img src="images/cook_1.jpg" alt="제품">
+                                            <img src="han_images/cook_1.jpg" alt="제품">
                                             <p class="cook-good-info">
                                                 <span class="cook-good-title">월앙매실(선물용/1L)</span>
                                                 <span class="cook-good-price">
@@ -1576,7 +1588,7 @@
                                     <li>
                                         <button class="cook-bt"></button>
                                         <a href="#" class="cook-good">
-                                            <img src="images/cook_1.jpg" alt="제품">
+                                            <img src="han_images/cook_1.jpg" alt="제품">
                                             <p class="cook-good-info">
                                                 <span class="cook-good-title">월앙매실(선물용/1L)</span>
                                                 <span class="cook-good-price">
@@ -1645,7 +1657,7 @@
 
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="han_images/reveiw_1.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
@@ -1681,7 +1693,7 @@
 
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="han_images/reveiw_1.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
@@ -1717,7 +1729,7 @@
 
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="han_images/reveiw_1.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
@@ -1753,7 +1765,7 @@
 
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="han_images/reveiw_1.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
@@ -1789,7 +1801,7 @@
 
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="han_images/reveiw_1.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
@@ -1825,7 +1837,7 @@
 
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="han_images/reveiw_1.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
@@ -1861,7 +1873,7 @@
 
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="han_images/reveiw_1.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>

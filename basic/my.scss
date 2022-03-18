@@ -1,0 +1,62 @@
+.section {
+    width: 100%;
+    border: 5px solide red;
+    .list {
+        float: left;
+    }
+    >li:hover {
+        background-color: red;
+        
+    }
+}
+.btn {
+    position: absolute;
+    &.active {
+        color: red;
+    }
+    &:last-child {
+        color:red;
+    }
+}
+.list {
+    $w:100px;
+    $h:50px;
+    li {
+        width: $w;
+        height: $h;
+    }
+    @at-root .box {
+
+    }
+}
+.box {
+    font: {
+        family: 굴림;
+        size:12px;
+        weight: bold;
+    };
+    margin: {
+        top: 10px;
+        left: 20px;
+    };
+    padding: {
+        left: 40px;
+    };
+}
+// 변수
+$color-primary: #f00;
+$img-url: "images/test.png";
+$w: 400px;
+.box{
+    $color : #f00;
+    width:$w;
+    margin-left: $w;
+    background:$color-primary url($img-url);
+    @at-root .box2{
+        background-color: $color;
+    }
+}
+.box2 {
+    color:$color;
+    font-size: 12;
+}

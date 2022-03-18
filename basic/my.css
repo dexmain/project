@@ -1,0 +1,50 @@
+@charset "UTF-8";
+.section {
+  width: 100%;
+  border: 5px solide red;
+}
+
+.section .list {
+  float: left;
+}
+
+.section > li:hover {
+  background-color: red;
+}
+
+.btn {
+  position: absolute;
+}
+
+.btn.active {
+  color: red;
+}
+
+.btn:last-child {
+  color: red;
+}
+
+.list li {
+  width: 100px;
+  height: 50px;
+}
+
+.box {
+  font-family: 굴림;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-left: 40px;
+}
+
+.box {
+  width: 400px;
+  margin-left: 400px;
+  background: #f00 url("images/test.png");
+}
+
+.box2 {
+  background-color: #f00;
+}
+/*# sourceMappingURL=my.css.map */

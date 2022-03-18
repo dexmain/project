@@ -854,13 +854,13 @@ section {
     position: relative;
     display: block;
     width: 100%;
-    padding: 0 80px 50px 80px;
+    padding: 20px 80px 50px 80px;
 }
 .skill-txt h1 {
     position: relative;
     display: inline-block;
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .skill-txt h1::before {
     content: '';
@@ -880,6 +880,11 @@ section {
     font-size: 15px;
     line-height: 20px;
     margin-bottom: 10px;
+    opacity: 0;
+}
+.swiper-slide-active .skill-txt span {
+    transition: opacity .5s 1.5s;
+    opacity: 1;
 }
 .skill-txt span::before {
     content: '';

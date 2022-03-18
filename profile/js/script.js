@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     // 전체화면 슬라이드
+    let stat_once = 0;
     let menu = ['home', 'profile', 'portfolio', 'skill', 'MBTI', 'contact']
     let wrap_swiper = new Swiper(".wrap-swiper", {
         effect: 'fade',
@@ -18,8 +19,11 @@ $(document).ready(function () {
         on: {
             slideChange: function () {
                 console.log(this.realIndex);
-                if (this.realIndex == 3) {
+                
+                if (this.realIndex == 3 && stat_once == 0) {
                     stat();
+                    stat_once = 1;
+                    return stat_once;
                 }
             }
         }

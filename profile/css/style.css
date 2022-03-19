@@ -861,6 +861,13 @@ section {
     display: inline-block;
     font-size: 30px;
     margin-bottom: 30px;
+    opacity: 0;
+
+}
+.swiper-slide-active .skill-txt h1 {
+    transition: opacity .5s .5s;
+    opacity: 1;
+    animation: Bounce .5s .5s;
 }
 .skill-txt h1::before {
     content: '';
@@ -933,5 +940,107 @@ section {
 }
 
 .mbti {}
-
+.mbti .container {
+}
+.mbti-tit {
+    position: relative;
+    display: block;
+    padding-top: 30px;
+    text-align: center;
+    opacity: 0;
+}
+.swiper-slide-active .mbti-tit {
+    opacity: 1;
+    transition: opacity .5s .5s;
+    animation:Bounce .5s .5s;
+}
+.mbti-tit h1 {
+    font-size: 30px;
+}
+.mbti-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.mbti-box {
+    position: relative;
+    display: block;
+    opacity: 0;
+}
+.mbti-box span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    font-size: 40px;
+    color: #303033;
+}
+.mbti-box>div {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    
+}
+.swiper-slide-active .mbti-box:nth-child(1){
+    animation: Bounce .5s .5s;
+    transition: opacity .5s .5s;
+    opacity: 1;
+}
+.swiper-slide-active .mbti-box:nth-child(2){
+    animation: Bounce .5s .6s;
+    transition: opacity .5s .6s;
+    opacity: 1;
+}
+.swiper-slide-active .mbti-box:nth-child(3){
+    animation: Bounce .5s .7s;
+    transition: opacity .5s .7s;
+    opacity: 1;
+}
+.swiper-slide-active .mbti-box:nth-child(4){
+    animation: Bounce .5s .8s;
+    transition: opacity .5s .8s;
+    opacity: 1;
+}
+.mbti .progressbar-text{
+    top: auto !important;
+    font-size: 20px;
+    bottom: 40px;
+}
+.mbti .progressbar-text::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    bottom: 2px;
+    display: block;
+    width: 140%;
+    height: 7px;
+    background-color: #00e6b3;
+    opacity: .5;
+    z-index: -1;
+}
+.mbti-txt {
+    position: relative;
+    display: block;
+    font-size: 17px;
+    padding-top: 30px;
+}
+.mbti-txt p{
+    position: relative;
+    margin-bottom: 10px;
+}
+.mbti-txt p::before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -14px;
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #303033;
+}
 .contact {}

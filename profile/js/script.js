@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     // 전체화면 슬라이드
     let stat_once = 0;
+    let mbti_once = 0;
     let menu = ['home', 'profile', 'portfolio', 'skill', 'MBTI', 'contact']
     let wrap_swiper = new Swiper(".wrap-swiper", {
         effect: 'fade',
@@ -19,11 +20,15 @@ $(document).ready(function () {
         on: {
             slideChange: function () {
                 console.log(this.realIndex);
-                
+
                 if (this.realIndex == 3 && stat_once == 0) {
                     stat();
                     stat_once = 1;
                     return stat_once;
+                } else if (this.realIndex == 4 && mbti_once == 0) {
+                    mbti();
+                    mbti_once = 1;
+                    return mbti_once;
                 }
             }
         }
@@ -221,4 +226,148 @@ $(document).ready(function () {
         jquerybar.animate(0.95); // Number from 0.0 to 1.0
         vuebar.animate(0.70); // Number from 0.0 to 1.0
     };
+
+    function mbti() {
+
+        let mbti_e = new ProgressBar.Circle(e, {
+            color: '#303033',
+            // This has to be the same size as the maximum width to
+            // prevent clipping
+            strokeWidth: 12,
+            trailWidth: 12,
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1000,
+            text: {
+                autoStyleContainer: false
+            },
+            from: {
+                color: '#ed4646',
+                width: 12,
+            },
+            to: {
+                color: '#ed4646',
+                width: 12,
+            },
+            // Set default step function for all animate calls
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
+            }
+        });
+        let mbti_s = new ProgressBar.Circle(s, {
+            color: '#303033',
+            // This has to be the same size as the maximum width to
+            // prevent clipping
+            strokeWidth: 12,
+            trailWidth: 12,
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1100,
+            text: {
+                autoStyleContainer: false
+            },
+            from: {
+                color: '#f0be25',
+                width: 12,
+            },
+            to: {
+                color: '#f0be25',
+                width: 12,
+            },
+            // Set default step function for all animate calls
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
+            }
+        });
+        let mbti_f = new ProgressBar.Circle(f, {
+            color: '#303033',
+            // This has to be the same size as the maximum width to
+            // prevent clipping
+            strokeWidth: 12,
+            trailWidth: 12,
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1200,
+            text: {
+                autoStyleContainer: false
+            },
+            from: {
+                color: '#379ad6',
+                width: 12,
+            },
+            to: {
+                color: '#379ad6',
+                width: 12,
+            },
+            // Set default step function for all animate calls
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
+            }
+        });
+        let mbti_p = new ProgressBar.Circle(p, {
+            color: '#303033',
+            // This has to be the same size as the maximum width to
+            // prevent clipping
+            strokeWidth: 12,
+            trailWidth: 12,
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1300,
+            text: {
+                autoStyleContainer: false
+            },
+            from: {
+                color: '#7d50f9',
+                width: 12,
+            },
+            to: {
+                color: '#7d50f9',
+                width: 12,
+            },
+            // Set default step function for all animate calls
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
+            }
+        });
+        mbti_e.animate(0.75); // Number from 0.0 to 1.0
+        mbti_s.animate(0.54); // Number from 0.0 to 1.0
+        mbti_f.animate(0.69); // Number from 0.0 to 1.0
+        mbti_p.animate(0.75); // Number from 0.0 to 1.0
+    }
 })

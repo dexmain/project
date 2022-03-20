@@ -228,146 +228,173 @@ $(document).ready(function () {
     };
 
     function mbti() {
-
-        let mbti_e = new ProgressBar.Circle(e, {
-            color: '#303033',
-            // This has to be the same size as the maximum width to
-            // prevent clipping
-            strokeWidth: 12,
-            trailWidth: 12,
+        let e_bar = new ProgressBar.Line(e, {
+            delay:1000,
+            strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
-            delay: 1000,
+            color: '#FF651E',
+            trailColor: '#eee',
+            trailWidth: 4,
+            reverse: true,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '4px',
+            },
             text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#999',
+                    position: 'absolute',
+                    top: '-15px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
                 autoStyleContainer: false
             },
-            from: {
-                color: '#ed4646',
-                width: 12,
-            },
-            to: {
-                color: '#ed4646',
-                width: 12,
-            },
-            // Set default step function for all animate calls
-            step: function (state, circle) {
-                circle.path.setAttribute('stroke', state.color);
-                circle.path.setAttribute('stroke-width', state.width);
-
-                var value = Math.round(circle.value() * 100);
-                if (value === 0) {
-                    circle.setText('');
-                } else {
-                    circle.setText(value);
-                }
-
+            step: (state, bar) => {
+                bar.setText(Math.round(bar.value() * 100) + ' %');
             }
         });
-        let mbti_s = new ProgressBar.Circle(s, {
-            color: '#303033',
-            // This has to be the same size as the maximum width to
-            // prevent clipping
-            strokeWidth: 12,
-            trailWidth: 12,
+        let s_bar = new ProgressBar.Line(s, {
+            delay:1200,
+            strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
-            delay: 1100,
+            color: '#eee',
+            trailColor: '#f0be25',
+            trailWidth: 4,
+            reverse: true,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '4px',
+            },
             text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#999',
+                    position: 'absolute',
+                    right:'0',
+                    top: '-15px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
                 autoStyleContainer: false
             },
-            from: {
-                color: '#f0be25',
-                width: 12,
-            },
-            to: {
-                color: '#f0be25',
-                width: 12,
-            },
-            // Set default step function for all animate calls
-            step: function (state, circle) {
-                circle.path.setAttribute('stroke', state.color);
-                circle.path.setAttribute('stroke-width', state.width);
-
-                var value = Math.round(circle.value() * 100);
-                if (value === 0) {
-                    circle.setText('');
-                } else {
-                    circle.setText(value);
-                }
-
+            step: (state, bar) => {
+                bar.setText(100 - (Math.round(bar.value() * 100)) + ' %');
             }
         });
-        let mbti_f = new ProgressBar.Circle(f, {
-            color: '#303033',
-            // This has to be the same size as the maximum width to
-            // prevent clipping
-            strokeWidth: 12,
-            trailWidth: 12,
+        let f_bar = new ProgressBar.Line(f, {
+            delay:1400,
+            strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
-            delay: 1200,
+            color: '#eee',
+            trailColor: '#00c180',
+            trailWidth: 4,
+            reverse: true,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '4px',
+            },
             text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#999',
+                    position: 'absolute',
+                    right:'0',
+                    top: '-15px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
                 autoStyleContainer: false
             },
-            from: {
-                color: '#379ad6',
-                width: 12,
-            },
-            to: {
-                color: '#379ad6',
-                width: 12,
-            },
-            // Set default step function for all animate calls
-            step: function (state, circle) {
-                circle.path.setAttribute('stroke', state.color);
-                circle.path.setAttribute('stroke-width', state.width);
-
-                var value = Math.round(circle.value() * 100);
-                if (value === 0) {
-                    circle.setText('');
-                } else {
-                    circle.setText(value);
-                }
-
+            step: (state, bar) => {
+                bar.setText(100 - (Math.round(bar.value() * 100)) + ' %');
             }
         });
-        let mbti_p = new ProgressBar.Circle(p, {
-            color: '#303033',
-            // This has to be the same size as the maximum width to
-            // prevent clipping
-            strokeWidth: 12,
-            trailWidth: 12,
+        let p_bar = new ProgressBar.Line(p, {
+            delay:1600,
+            strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
-            delay: 1300,
+            color: '#eee',
+            trailColor: '#7d50f9',
+            trailWidth: 4,
+            reverse: true,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '4px',
+            },
             text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#999',
+                    position: 'absolute',
+                    right:'0',
+                    top: '-15px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
                 autoStyleContainer: false
             },
-            from: {
-                color: '#7d50f9',
-                width: 12,
-            },
-            to: {
-                color: '#7d50f9',
-                width: 12,
-            },
-            // Set default step function for all animate calls
-            step: function (state, circle) {
-                circle.path.setAttribute('stroke', state.color);
-                circle.path.setAttribute('stroke-width', state.width);
-
-                var value = Math.round(circle.value() * 100);
-                if (value === 0) {
-                    circle.setText('');
-                } else {
-                    circle.setText(value);
-                }
-
+            step: (state, bar) => {
+                bar.setText(100 - (Math.round(bar.value() * 100)) + ' %');
             }
         });
-        mbti_e.animate(0.75); // Number from 0.0 to 1.0
-        mbti_s.animate(0.54); // Number from 0.0 to 1.0
-        mbti_f.animate(0.69); // Number from 0.0 to 1.0
-        mbti_p.animate(0.75); // Number from 0.0 to 1.0
+        let t_bar = new ProgressBar.Line(t, {
+            delay:1600,
+            strokeWidth: 2,
+            easing: 'easeInOut',
+            duration: 1400,
+            color: '#eee',
+            trailColor: '#303033',
+            trailWidth: 2,
+            reverse: true,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '4px',
+            },
+            text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#999',
+                    position: 'absolute',
+                    right:'0',
+                    top: '-15px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
+                autoStyleContainer: false
+            },
+            step: (state, bar) => {
+                bar.setText(100 - (Math.round(bar.value() * 100)) + ' %');
+            }
+        });
+        e_bar.animate(0.75);
+        s_bar.set(1);
+        s_bar.animate(0.46);
+        f_bar.set(1);
+        f_bar.animate(0.31);
+        p_bar.set(1);
+        p_bar.animate(0.25);
+        t_bar.set(1);
+        t_bar.animate(0.49);
     }
 })

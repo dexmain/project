@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
+    let $header = $('.header');
     // 전체화면 슬라이드
     let stat_once = 0;
     let mbti_once = 0;
-    let menu = ['home', 'profile', 'portfolio', 'skill', 'MBTI', 'contact']
+    let menu = ['home', 'about', 'portfolio', 'skill', 'MBTI', 'contact']
     let wrap_swiper = new Swiper(".wrap-swiper", {
         effect: 'fade',
         slidesPerView: 1,
@@ -29,6 +30,10 @@ $(document).ready(function () {
                     mbti();
                     mbti_once = 1;
                     return mbti_once;
+                }else if (this.realIndex == 5) {
+                    $header.fadeOut(300);
+                } else if(this.realIndex != 5){
+                    $header.fadeIn(300);
                 }
             }
         }
@@ -229,14 +234,13 @@ $(document).ready(function () {
 
     function mbti() {
         let e_bar = new ProgressBar.Line(e, {
-            delay:1000,
+            delay: 1000,
             strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
             color: '#FF651E',
             trailColor: '#eee',
             trailWidth: 4,
-            reverse: true,
             svgStyle: {
                 width: '100%',
                 height: '100%',
@@ -249,6 +253,7 @@ $(document).ready(function () {
                     color: '#999',
                     position: 'absolute',
                     top: '-15px',
+                    left: '50%',
                     padding: 0,
                     margin: 0,
                     transform: null
@@ -260,14 +265,13 @@ $(document).ready(function () {
             }
         });
         let s_bar = new ProgressBar.Line(s, {
-            delay:1200,
+            delay: 1200,
             strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
             color: '#eee',
             trailColor: '#f0be25',
             trailWidth: 4,
-            reverse: true,
             svgStyle: {
                 width: '100%',
                 height: '100%',
@@ -279,7 +283,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#999',
                     position: 'absolute',
-                    right:'0',
+                    left: '50%',
                     top: '-15px',
                     padding: 0,
                     margin: 0,
@@ -292,14 +296,13 @@ $(document).ready(function () {
             }
         });
         let f_bar = new ProgressBar.Line(f, {
-            delay:1400,
+            delay: 1400,
             strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
             color: '#eee',
             trailColor: '#00c180',
             trailWidth: 4,
-            reverse: true,
             svgStyle: {
                 width: '100%',
                 height: '100%',
@@ -311,7 +314,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#999',
                     position: 'absolute',
-                    right:'0',
+                    left: '50%',
                     top: '-15px',
                     padding: 0,
                     margin: 0,
@@ -324,14 +327,13 @@ $(document).ready(function () {
             }
         });
         let p_bar = new ProgressBar.Line(p, {
-            delay:1600,
+            delay: 1600,
             strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
             color: '#eee',
             trailColor: '#7d50f9',
             trailWidth: 4,
-            reverse: true,
             svgStyle: {
                 width: '100%',
                 height: '100%',
@@ -343,7 +345,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#999',
                     position: 'absolute',
-                    right:'0',
+                    left: '50%',
                     top: '-15px',
                     padding: 0,
                     margin: 0,
@@ -356,14 +358,13 @@ $(document).ready(function () {
             }
         });
         let t_bar = new ProgressBar.Line(t, {
-            delay:1600,
+            delay: 1600,
             strokeWidth: 2,
             easing: 'easeInOut',
             duration: 1400,
             color: '#eee',
             trailColor: '#303033',
             trailWidth: 2,
-            reverse: true,
             svgStyle: {
                 width: '100%',
                 height: '100%',
@@ -375,7 +376,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#999',
                     position: 'absolute',
-                    right:'0',
+                    left: '50%',
                     top: '-15px',
                     padding: 0,
                     margin: 0,

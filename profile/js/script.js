@@ -1,43 +1,98 @@
 $(document).ready(function () {
-
     let $header = $('.header');
     // 전체화면 슬라이드
     let stat_once = 0;
     let mbti_once = 0;
     let menu = ['home', 'about', 'portfolio', 'skill', 'MBTI', 'contact']
-    let wrap_swiper = new Swiper(".wrap-swiper", {
-        effect: 'fade',
-        slidesPerView: 1,
-        mousewheel: true,
-        touchRatio: 0,
-        speed: 500,
-        pagination: {
-            el: ".page-box",
-            clickable: true,
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '">' + (menu[index]) + '</span>';
-            },
-        },
-        on: {
-            slideChange: function () {
-                console.log(this.realIndex);
 
-                if (this.realIndex == 3 && stat_once == 0) {
-                    stat();
-                    stat_once = 1;
-                    return stat_once;
-                } else if (this.realIndex == 4 && mbti_once == 0) {
-                    mbti();
-                    mbti_once = 1;
-                    return mbti_once;
-                }else if (this.realIndex == 5) {
-                    $header.fadeOut(300);
-                } else if(this.realIndex != 5){
-                    $header.fadeIn(300);
-                }
+    let wrap_swiper = undefined;
+    let $all_menu_bt =$('.all-menu-bt');
+    let $all_menu =$('.all-menu');
+    $all_menu_bt.click(function(){
+        $(this).toggleClass('all-menu-bt-active');
+        $all_menu.toggleClass('all-menu-active');
+    })
+    function wrap() {
+        if (window.innerWidth > 1024) {
+            // 다바이스 크기가 480이상일때 /* 스크립트내용*/ 
+            if (typeof (wrap_swiper) == 'object') {
+                wrap_swiper.destroy();
             }
+            wrap_swiper = new Swiper(".wrap-swiper", {
+                direction: 'vertical',
+                effect:'fade',
+                slidesPerView: 1,
+                mousewheel: true,
+                touchRatio: 0,
+                speed: 500,
+                pagination: {
+                    el: ".page-box",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                    },
+                },
+                on: {
+                    slideChange: function () {
+                        console.log(this.realIndex);
+                        $('.wrap-slide').removeClass('wrap-active');
+                        $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
+                        if (this.realIndex == 3 && stat_once == 0) {
+                            stat();
+                            stat_once = 1;
+                            return stat_once;
+                        } else if (this.realIndex == 4 && mbti_once == 0) {
+                            mbti();
+                            mbti_once = 1;
+                            return mbti_once;
+                        } else if (this.realIndex == 5) {
+                            $header.fadeOut(300);
+                        } else if (this.realIndex != 5) {
+                            $header.fadeIn(300);
+                        }
+                    }
+                }
+            });
+        } else if (window.innerWidth <= 1024) {
+            /* 스크립트내용*/
+            if (typeof (wrap_swiper) == 'object') {
+                wrap_swiper.destroy();
+            }
+            wrap_swiper = new Swiper(".wrap-swiper", {
+                direction: 'vertical',
+                slidesPerView: 1,
+                mousewheel: true,
+                touchRatio: 0,
+                freeMode: true,
+                pagination: {
+                    el: ".page-box",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                    },
+                },
+                on: {
+                    slideChange: function () {
+                        console.log(this.realIndex);
+                        $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
+                        if (this.realIndex == 3 && stat_once == 0) {
+                            stat();
+                            stat_once = 1;
+                            return stat_once;
+                        } else if (this.realIndex == 4 && mbti_once == 0) {
+                            mbti();
+                            mbti_once = 1;
+                            return mbti_once;
+                        } else if (this.realIndex == 5) {
+                            $header.fadeOut(300);
+                        } else if (this.realIndex != 5) {
+                            $header.fadeIn(300);
+                        }
+                    }
+                }
+            });
         }
-    });
+    }
     // 포트폴리오 슬라이드
     var portfolio_swiper = new Swiper(".portfolio-swiper", {
         slidesPerView: 1,
@@ -398,4 +453,9 @@ $(document).ready(function () {
         t_bar.set(1);
         t_bar.animate(0.49);
     }
+    $(window).resize(function () {
+        wrap();
+        $('.wrap-slide').eq(0).addClass('wrap-active');
+    }).resize();
+    wrap();
 })

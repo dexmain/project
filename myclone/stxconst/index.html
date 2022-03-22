@@ -1,7 +1,3 @@
-<?php
-include_once('./_common.php');
-include_once(G5_LIB_PATH."/latest.lib.php");
-?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -9,19 +5,15 @@ include_once(G5_LIB_PATH."/latest.lib.php");
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>STX 건설</title>
-    <link rel="shortcut icon" href="stx_images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed" href="stx_images/mobile_web_icon.png">
     <!--[if lt IE 9]>
-        <script src="stx_js/html5shiv.js"></script>
+        <script src="js/html5shiv.js"></script>
         <![endif]-->
-    <script src="stx_js/respond.min.js"></script>
-    <script src="stx_js/prefixfree.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="stx_css/reset.css">
-    <script src="stx_js/script.js"></script>
-    <script src="stx_js/part.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/script.js"></script>
 
-    <link rel="stylesheet" href="stx_css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -33,7 +25,8 @@ include_once(G5_LIB_PATH."/latest.lib.php");
             <div class="modal-comment">
                 <a href="#" class="comment-bt">작업리뷰</a>
                 <div class="comment-box">
-                    <p></p>
+                    <p>
+                    </p>
                 </div>
             </div>
 
@@ -44,9 +37,9 @@ include_once(G5_LIB_PATH."/latest.lib.php");
         <!-- 상단 -->
         <header class="header">
             <div class="container">
-
-                <a href="http://jkr1230.dothome.co.kr/" title="STX 건설" class="logo">
-                    <img src="stx_images/logo.png" alt="STX 건설">
+                
+                <a href="index.html" title="STX 건설" class="logo">
+                    <img src="images/logo.png" alt="STX 건설">
                 </a>
 
                 <div class="language">
@@ -64,62 +57,7 @@ include_once(G5_LIB_PATH."/latest.lib.php");
 
             <nav class="nav">
                 <div class="container">
-                    <ul class="gnb">
-                        <li>
-                            <a href="http://jkr1230.dothome.co.kr/bbs/board.php?bo_table=text2">회사소개</a>
-                            <ul class="submenu">
-                                <li><a href="#">인사말</a></li>
-                                <li><a href="#">STX건설</a></li>
-                                <li><a href="#">기업문화</a></li>
-                                <li><a href="#">STX건설연혁</a></li>
-                                <li><a href="#">조직안내</a></li>
-                                <li><a href="#">윤리경영</a></li>
-                                <li><a href="#">안전·환경·품질경영</a></li>
-                                <li><a href="#">찾아오시는 길</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">사업분야</a>
-                            <ul class="submenu">
-                                <li><a href="#">건축사업</a></li>
-                                <li><a href="#">주택사업</a></li>
-                                <li><a href="#">토목사업</a></li>
-                                <li><a href="#">플랜트/공작기계사업</a></li>
-                                <li><a href="#">해외사업</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">사회공헌</a>
-                            <ul class="submenu">
-                                <li><a href="#">나눔의생각</a></li>
-                                <li><a href="#">주요활동분야</a></li>
-                                <li><a href="#">활동현황</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">홍보센터</a>
-                            <ul class="submenu">
-                                <li><a href="#">홍보동영상</a></li>
-                                <li><a href="#">홍보브로슈어</a></li>
-                                <li><a href="#">STX건설뉴스</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://jkr1230.dothome.co.kr/bbs/board.php?bo_table=test">고객지원</a>
-                            <ul class="submenu">
-                                <li><a href="#">자주묻는질문</a></li>
-                                <li><a href="#">고객문의</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">채용정보</a>
-                            <ul class="submenu">
-                                <li><a href="#">채용안내</a></li>
-                                <li><a href="#">채용공고</a></li>
-                                <li><a href="#">채용FAQ</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <ul class="gnb"></ul>
                 </div>
             </nav>
         </header>
@@ -213,11 +151,10 @@ include_once(G5_LIB_PATH."/latest.lib.php");
             <!-- 새소식 -->
             <section class="news">
                 <div class="container">
-
                     <div class="news-board">
                         <h3 class="news-title">공지사항</h3>
                         <ul class="news-board-list">
-                            <!-- <li>
+                            <li>
                                 <a href="#">
                                     <span class="news-board-txt">STX건설주식회사 M&A 관련 기본사항 안내</span>
                                     <span class="news-board-more"></span>
@@ -240,26 +177,14 @@ include_once(G5_LIB_PATH."/latest.lib.php");
                                     <span class="news-board-txt">STX건설 상호 사용 관련 안내</span>
                                     <span class="news-board-more"></span>
                                 </a>
-                            </li> -->
-                            <?php
-                            // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-                            // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-                            // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-                            echo latest('theme/stx_notice', 'test', 4, 23);      // 최소설치시 자동생성되는 자유게시판
-                            ?>
+                            </li>
                         </ul>
                     </div>
 
                     <div class="news-board">
                         <h3 class="news-title">보도자료</h3>
                         <ul class="news-board-list">
-                            <?php
-                            // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-                            // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-                            // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-                            echo latest('theme/stx_notice', 'test2', 4, 23);  // 최소설치시 자동생성되는 자유게시판
-                            ?>
-                            <!-- <li>
+                            <li>
                                 <a href="#">
                                     <span class="news-board-txt">STX건설, 춘천 레고랜드 테마파크 시공사 ‘선정’</span>
                                     <span class="news-board-more"></span>
@@ -270,7 +195,7 @@ include_once(G5_LIB_PATH."/latest.lib.php");
                                     <span class="news-board-txt">STX건설, 2018년 성장 '청신호'</span>
                                     <span class="news-board-more"></span>
                                 </a>
-                            </li> -->
+                            </li>
                         </ul>
                     </div>
 

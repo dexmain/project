@@ -158,7 +158,7 @@ li {
 
 html {
     font-size: 10px;
-
+    overflow: hidden;
 }
 
 body {
@@ -413,6 +413,7 @@ body {
     right: 20px;
     width: 50px;
     height: 44px;
+    cursor: pointer;
 }
 
 .all-menu-bt-active {}
@@ -478,7 +479,7 @@ body {
     height: 100vh;
     background-color: #7d50f9;
     z-index: 999;
-    transition: .5s;
+    transition: .3s;
 }
 
 .all-menu-active {
@@ -536,7 +537,7 @@ section {
 }
 
 .wrap-active .visual-photo {
-    transition: opacity 1s 1s;
+    transition: opacity 1s .5s;
     opacity: 1;
 }
 
@@ -1640,8 +1641,6 @@ section {
         border-radius: 0;
     }
 
-    .header {}
-
     .logo {
         margin-left: 20px;
     }
@@ -1650,31 +1649,83 @@ section {
         display: block;
     }
 
-    .profile-left h1 {}
-
-    .profile-txt {
-        transition-delay: .5s !important;
-    }
-
-    .profile-photo {
+    .profile-left h1,
+    .skill-box:nth-child(3),
+    .skill-txt h1,
+    .mbti-tit b {
         transition-delay: 0s !important;
+        animation-delay: 0s !important;
     }
 
-    .portfolio {
-        overflow: visible;
-    }
-
-    .portfolio-swiper {
+    .profile-txt,
+    .skill-txt span,
+    .skill-txt::after {
         transition-delay: .3s !important;
+    }
+
+    .profile-photo,
+    .portfolio-swiper,
+    .skill-box,
+    .mbti-tit {
+        transition-delay: 0s !important;
     }
 
     .gear {
         width: 200px !important;
         bottom: 75px !important;
     }
+
     .page-box {
         display: none;
     }
 
+    .skill .container {
+        padding: 50px;
+    }
+
+    .skill-progress, .mbti-tit span::after{
+        transition-delay: .5s !important;
+    }
+
+
+    #e-txt {
+        transition-delay: .5s !important;
+        animation-delay: .5s !important;
+    }
+
+    #s-txt {
+        transition-delay: .7s !important;
+        animation-delay: .7s !important;
+    }
+
+    #f-txt {
+        transition-delay: .9s !important;
+        animation-delay: .9s !important;
+    }
+
+    #p-txt {
+        transition-delay: 1.1s !important;
+        animation-delay: 1.1s !important;
+    }
+
+    #e {
+        transition-delay: .5s !important;
+        animation-delay: .5s !important;
+    }
+
+    #s {
+        transition-delay: .8s !important;
+        animation-delay: .8s !important;
+    }
+
+    #f {
+        transition-delay: 1.1s !important;
+        animation-delay: 1.1s !important;
+    }
+
+    #p {
+        transition-delay: 1.4s !important;
+        animation-delay: 1.4s !important;
+    }
 
 }

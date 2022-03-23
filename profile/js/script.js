@@ -6,12 +6,13 @@ $(document).ready(function () {
     let menu = ['home', 'about', 'portfolio', 'skill', 'MBTI', 'contact']
 
     let wrap_swiper = undefined;
-    let $all_menu_bt =$('.all-menu-bt');
-    let $all_menu =$('.all-menu');
-    $all_menu_bt.click(function(){
+    let $all_menu_bt = $('.all-menu-bt');
+    let $all_menu = $('.all-menu');
+    $all_menu_bt.click(function () {
         $(this).toggleClass('all-menu-bt-active');
         $all_menu.toggleClass('all-menu-active');
     })
+
     function wrap() {
         if (window.innerWidth > 1024) {
             // 다바이스 크기가 480이상일때 /* 스크립트내용*/ 
@@ -20,7 +21,7 @@ $(document).ready(function () {
             }
             wrap_swiper = new Swiper(".wrap-swiper", {
                 direction: 'vertical',
-                effect:'fade',
+                effect: 'fade',
                 slidesPerView: 1,
                 mousewheel: true,
                 touchRatio: 0,
@@ -83,9 +84,9 @@ $(document).ready(function () {
                             mbti();
                             mbti_once = 1;
                             return mbti_once;
-                        } else if (this.realIndex == 5) {
+                        } else if (this.realIndex == 5 && window.innerWidth > 480) {
                             $header.fadeOut(300);
-                        } else if (this.realIndex != 5) {
+                        } else if (this.realIndex != 5 &&window.innerWidth > 480) {
                             $header.fadeIn(300);
                         }
                     }
@@ -96,7 +97,7 @@ $(document).ready(function () {
     // 포트폴리오 슬라이드
     var portfolio_swiper = new Swiper(".portfolio-swiper", {
         slidesPerView: 1,
-        loopAdditionalSlides: 1,
+        loopAdditionalSlides: 3,
         loop: true,
         speed: 300,
         centeredSlides: true,
@@ -105,6 +106,10 @@ $(document).ready(function () {
             nextEl: ".sw-portfolio-next",
             prevEl: ".sw-portfolio-prev",
         },
+        pagination: {
+            el: ".port-pg",
+            type: "fraction",
+        }
     });
 
     let $port_next = $('.sw-portfolio-next');

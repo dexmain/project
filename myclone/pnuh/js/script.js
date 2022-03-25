@@ -270,9 +270,6 @@ $(document).ready(function () {
         clearTimeout(menu_timer);
     });
 
-
-
-
     // PNUH 네트워크   
     let pnuh_bt = $('#pnuh-bt');
     let pnuh_popup = $('.pnuh-popup');
@@ -381,35 +378,52 @@ $(document).ready(function () {
         let title = temp_arr[4].trim();
 
         // 실제 html 로 사용할 글자를 만든다.
-        let temp_html = '<div class="health-box">';
+        let temp_html = `
+            <div class="health-box" data-aos="fade-up" data-aos-duration="800">
+                <a href="${link}" alt="${alt}">
+                    <span class="health-img">
+                        <img src="${img}">
+                    </span>
+                    <span class="health-cate">
+                        ${cate}
+                    </span>
+                    <span class="health-tit">
+                        ${title}
+                    </span>
+                </a>
+            </div>
+        `;
 
-        // a 태그를 생성한다.
-        temp_html = temp_html + '<a href=';
-        temp_html = temp_html + link;
-        temp_html = temp_html + ' ';
-        temp_html = temp_html + 'alt=';
-        temp_html = temp_html + alt;
-        temp_html = temp_html + '>';
 
-        // 이미지가 들어간다.
-        temp_html = temp_html + '<span class="health-img">';
-        temp_html = temp_html + '<img src=';
-        temp_html = temp_html + img;
-        temp_html = temp_html + '>';
-        temp_html = temp_html + '</span>';
+        // let temp_html = '<div class="health-box" data-aos="fade-up" data-aos-duration="800">';
 
-        // 카테고리 출력
-        temp_html = temp_html + '<span class="health-cate">';
-        temp_html = temp_html + cate;
-        temp_html = temp_html + '</span>'
+        // // a 태그를 생성한다.
+        // temp_html = temp_html + '<a href=';
+        // temp_html = temp_html + link;
+        // temp_html = temp_html + ' ';
+        // temp_html = temp_html + 'alt=';
+        // temp_html = temp_html + alt;
+        // temp_html = temp_html + '>';
 
-        // 타이틀 출력
-        temp_html = temp_html + '<span class="health-tit">';
-        temp_html = temp_html + title;
-        temp_html = temp_html + '</span>';
+        // // 이미지가 들어간다.
+        // temp_html = temp_html + '<span class="health-img">';
+        // temp_html = temp_html + '<img src=';
+        // temp_html = temp_html + img;
+        // temp_html = temp_html + '>';
+        // temp_html = temp_html + '</span>';
 
-        temp_html = temp_html + '</a>'
-        temp_html = temp_html + '</div>';
+        // // 카테고리 출력
+        // temp_html = temp_html + '<span class="health-cate">';
+        // temp_html = temp_html + cate;
+        // temp_html = temp_html + '</span>'
+
+        // // 타이틀 출력
+        // temp_html = temp_html + '<span class="health-tit">';
+        // temp_html = temp_html + title;
+        // temp_html = temp_html + '</span>';
+
+        // temp_html = temp_html + '</a>'
+        // temp_html = temp_html + '</div>';
 
         return temp_html;
     }
@@ -438,6 +452,11 @@ $(document).ready(function () {
 
 //모든 리소스 로딩 완료
 window.onload = function () {
+
+    // aos 관련
+    AOS.init({
+        once: true
+    });
 
     // 퀵링크 슬라이드
     let sw_quick = new Swiper('.sw-quick', {

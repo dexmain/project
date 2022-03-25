@@ -1,4 +1,9 @@
 window.onload = function () {
+
+    // aos 관련
+    AOS.init({
+        once: true
+    });
     // 모달창
     let $modal = $('.modal');
     let $modal_close = $('.modal-close');

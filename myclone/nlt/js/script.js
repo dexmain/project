@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // 풀페이지
     $('#fullpage').fullpage({
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
@@ -6,8 +7,11 @@ $(document).ready(function () {
         scrollHorizontally: true,
         navigation: true,
         navigationPosition: 'right',
+        navigationTooltips: ['HOME', 'ABOUT', 'PRODUCT', 'R&D', 'CUSTOMER'],
+        showActiveTooltip: true,
     });
-
+    // 스크롤 다운
+    
     $lang = $('.language');
     $lang_list = $('.lang-list');
     $lang.click(function () {
